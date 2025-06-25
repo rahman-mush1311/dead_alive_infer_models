@@ -1,0 +1,1094 @@
+   1,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_001.png', cX=  17, cY= 644, Frame=   184
+   1,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_002.png', cX=  45, cY= 644, Frame=   185
+   1,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_003.png', cX=  71, cY= 644, Frame=   186
+   1,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_004.png', cX=  98, cY= 643, Frame=   187
+   1,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_005.png', cX= 123, cY= 643, Frame=   188
+   1,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_006.png', cX= 148, cY= 642, Frame=   189
+   1,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_007.png', cX= 172, cY= 642, Frame=   190
+   1,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_008.png', cX= 196, cY= 642, Frame=   191
+   1,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_009.png', cX= 220, cY= 641, Frame=   192
+   1,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_010.png', cX= 244, cY= 641, Frame=   193
+   1,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_011.png', cX= 268, cY= 640, Frame=   194
+   1,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_012.png', cX= 292, cY= 640, Frame=   195
+   1,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_013.png', cX= 315, cY= 639, Frame=   196
+   1,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_014.png', cX= 339, cY= 639, Frame=   197
+   1,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_015.png', cX= 362, cY= 639, Frame=   198
+   1,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_016.png', cX= 384, cY= 638, Frame=   199
+   1,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_017.png', cX= 406, cY= 638, Frame=   200
+   1,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_018.png', cX= 429, cY= 638, Frame=   201
+   1,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_019.png', cX= 452, cY= 638, Frame=   202
+   1,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_020.png', cX= 474, cY= 637, Frame=   203
+   1,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_021.png', cX= 496, cY= 637, Frame=   204
+   1,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_022.png', cX= 519, cY= 637, Frame=   205
+   1,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_023.png', cX= 541, cY= 637, Frame=   206
+   1,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_024.png', cX= 564, cY= 637, Frame=   207
+   1,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_025.png', cX= 586, cY= 638, Frame=   208
+   1,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_026.png', cX= 608, cY= 637, Frame=   209
+   1,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_027.png', cX= 632, cY= 637, Frame=   210
+   1,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_001\Image_028.png', cX= 655, cY= 637, Frame=   211
+   2,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_001.png', cX=  18, cY=1059, Frame=   626
+   2,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_002.png', cX=  48, cY=1060, Frame=   627
+   2,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_003.png', cX=  78, cY=1060, Frame=   628
+   2,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_004.png', cX= 102, cY=1062, Frame=   629
+   2,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_005.png', cX= 127, cY=1062, Frame=   630
+   2,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_006.png', cX= 154, cY=1062, Frame=   631
+   2,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_007.png', cX= 175, cY=1063, Frame=   632
+   2,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_008.png', cX= 198, cY=1063, Frame=   633
+   2,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_009.png', cX= 224, cY=1063, Frame=   634
+   2,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_010.png', cX= 242, cY=1062, Frame=   635
+   2,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_011.png', cX= 265, cY=1061, Frame=   636
+   2,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_012.png', cX= 292, cY=1062, Frame=   637
+   2,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_013.png', cX= 311, cY=1063, Frame=   638
+   2,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_014.png', cX= 333, cY=1064, Frame=   639
+   2,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_015.png', cX= 358, cY=1064, Frame=   640
+   2,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_016.png', cX= 379, cY=1065, Frame=   641
+   2,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_017.png', cX= 400, cY=1066, Frame=   642
+   2,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_018.png', cX= 426, cY=1066, Frame=   643
+   2,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_019.png', cX= 448, cY=1069, Frame=   644
+   2,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_020.png', cX= 471, cY=1069, Frame=   645
+   2,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_021.png', cX= 498, cY=1070, Frame=   646
+   2,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_022.png', cX= 524, cY=1072, Frame=   647
+   2,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_023.png', cX= 552, cY=1076, Frame=   648
+   2,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_024.png', cX= 578, cY=1077, Frame=   649
+   2,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_025.png', cX= 607, cY=1081, Frame=   650
+   2,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_026.png', cX= 636, cY=1081, Frame=   651
+   2,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_027.png', cX= 667, cY=1081, Frame=   652
+   2,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_028.png', cX= 698, cY=1083, Frame=   653
+   2,   29, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_029.png', cX=1164, cY=1112, Frame=   667
+   2,   30, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_030.png', cX=1202, cY=1113, Frame=   668
+   2,   31, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_031.png', cX=1838, cY=1127, Frame=   686
+   2,   32, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_002\Image_032.png', cX=3629, cY=1131, Frame=   755
+   3,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_001.png', cX=1332, cY=1735, Frame=   788
+   3,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_002.png', cX=1352, cY=1735, Frame=   789
+   3,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_003.png', cX=1374, cY=1735, Frame=   790
+   3,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_004.png', cX=1394, cY=1735, Frame=   791
+   3,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_005.png', cX=1414, cY=1735, Frame=   792
+   3,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_006.png', cX=1435, cY=1735, Frame=   793
+   3,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_007.png', cX=1458, cY=1733, Frame=   794
+   3,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_008.png', cX=1479, cY=1733, Frame=   795
+   3,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_009.png', cX=1500, cY=1733, Frame=   796
+   3,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_010.png', cX=1521, cY=1733, Frame=   797
+   3,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_011.png', cX=1541, cY=1732, Frame=   798
+   3,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_012.png', cX=1561, cY=1732, Frame=   799
+   3,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_013.png', cX=1582, cY=1732, Frame=   800
+   3,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_014.png', cX=1603, cY=1731, Frame=   801
+   3,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_015.png', cX=1622, cY=1730, Frame=   802
+   3,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_016.png', cX=1702, cY=1728, Frame=   806
+   3,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_017.png', cX=1723, cY=1729, Frame=   807
+   3,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_018.png', cX=1743, cY=1728, Frame=   808
+   3,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_019.png', cX=1763, cY=1728, Frame=   809
+   3,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_020.png', cX=1784, cY=1728, Frame=   810
+   3,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_021.png', cX=1805, cY=1727, Frame=   811
+   3,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_022.png', cX=1847, cY=1726, Frame=   812
+   3,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_023.png', cX=1848, cY=1726, Frame=   813
+   3,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_024.png', cX=1870, cY=1725, Frame=   814
+   3,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_025.png', cX=1891, cY=1726, Frame=   815
+   3,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_026.png', cX=1912, cY=1726, Frame=   816
+   3,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_027.png', cX=1932, cY=1726, Frame=   817
+   3,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_003\Image_028.png', cX=1953, cY=1726, Frame=   818
+   4,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_004\Image_001.png', cX= 338, cY= 720, Frame=  1040
+   5,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_001.png', cX=  12, cY= 303, Frame=  1066
+   5,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_002.png', cX=  36, cY= 304, Frame=  1067
+   5,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_003.png', cX=  67, cY= 304, Frame=  1068
+   5,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_004.png', cX=  97, cY= 301, Frame=  1069
+   5,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_005.png', cX= 124, cY= 303, Frame=  1070
+   5,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_006.png', cX= 152, cY= 301, Frame=  1071
+   5,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_007.png', cX= 181, cY= 302, Frame=  1072
+   5,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_008.png', cX= 210, cY= 300, Frame=  1073
+   5,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_009.png', cX= 236, cY= 299, Frame=  1074
+   5,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_010.png', cX= 262, cY= 299, Frame=  1075
+   5,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_011.png', cX= 289, cY= 300, Frame=  1076
+   5,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_012.png', cX= 317, cY= 299, Frame=  1077
+   5,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_013.png', cX= 344, cY= 297, Frame=  1078
+   5,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_014.png', cX= 371, cY= 297, Frame=  1079
+   5,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_015.png', cX= 396, cY= 298, Frame=  1080
+   5,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_016.png', cX= 422, cY= 297, Frame=  1081
+   5,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_017.png', cX= 447, cY= 297, Frame=  1082
+   5,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_018.png', cX= 473, cY= 297, Frame=  1083
+   5,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_019.png', cX= 498, cY= 298, Frame=  1084
+   5,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_020.png', cX= 522, cY= 298, Frame=  1085
+   5,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_021.png', cX= 548, cY= 299, Frame=  1086
+   5,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_022.png', cX= 574, cY= 299, Frame=  1087
+   5,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_023.png', cX= 599, cY= 298, Frame=  1088
+   5,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_024.png', cX= 624, cY= 298, Frame=  1089
+   5,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_025.png', cX= 649, cY= 299, Frame=  1090
+   5,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_026.png', cX= 674, cY= 299, Frame=  1091
+   5,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_027.png', cX= 701, cY= 299, Frame=  1092
+   5,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_005\Image_028.png', cX= 727, cY= 300, Frame=  1093
+   6,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_001.png', cX= 222, cY= 967, Frame=  1107
+   6,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_002.png', cX= 248, cY= 967, Frame=  1108
+   6,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_003.png', cX= 277, cY= 967, Frame=  1109
+   6,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_004.png', cX= 303, cY= 966, Frame=  1110
+   6,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_005.png', cX= 331, cY= 966, Frame=  1111
+   6,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_006.png', cX= 361, cY= 966, Frame=  1112
+   6,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_007.png', cX= 388, cY= 965, Frame=  1113
+   6,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_008.png', cX= 413, cY= 966, Frame=  1114
+   6,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_009.png', cX= 441, cY= 964, Frame=  1115
+   6,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_010.png', cX= 467, cY= 963, Frame=  1116
+   6,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_011.png', cX= 495, cY= 963, Frame=  1117
+   6,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_012.png', cX= 519, cY= 965, Frame=  1118
+   6,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_013.png', cX= 545, cY= 964, Frame=  1119
+   6,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_014.png', cX= 571, cY= 963, Frame=  1120
+   6,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_015.png', cX= 598, cY= 962, Frame=  1121
+   6,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_016.png', cX= 624, cY= 962, Frame=  1122
+   6,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_017.png', cX= 649, cY= 961, Frame=  1123
+   6,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_018.png', cX= 675, cY= 965, Frame=  1124
+   6,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_019.png', cX= 701, cY= 963, Frame=  1125
+   6,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_020.png', cX= 727, cY= 962, Frame=  1126
+   6,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_021.png', cX= 751, cY= 961, Frame=  1127
+   6,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_022.png', cX= 780, cY= 960, Frame=  1128
+   6,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_023.png', cX= 810, cY= 961, Frame=  1129
+   6,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_024.png', cX= 836, cY= 960, Frame=  1130
+   6,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_025.png', cX= 862, cY= 959, Frame=  1131
+   6,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_026.png', cX= 889, cY= 959, Frame=  1132
+   6,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_027.png', cX= 913, cY= 960, Frame=  1133
+   6,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_006\Image_028.png', cX= 938, cY= 961, Frame=  1134
+   7,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_007\Image_001.png', cX=1613, cY=2113, Frame=  1306
+   8,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_008\Image_001.png', cX=1555, cY=2111, Frame=  1310
+   8,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_008\Image_002.png', cX=1540, cY=2108, Frame=  1311
+   8,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_008\Image_003.png', cX=1526, cY=2110, Frame=  1312
+   8,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_008\Image_004.png', cX=1512, cY=2110, Frame=  1313
+   8,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_008\Image_005.png', cX=1499, cY=2110, Frame=  1314
+   9,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_009\Image_001.png', cX=1092, cY=  37, Frame=  1316
+  10,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_010\Image_001.png', cX= 213, cY=  53, Frame=  1318
+  11,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_011\Image_001.png', cX= 316, cY=  17, Frame=  1318
+  12,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_012\Image_001.png', cX= 320, cY= 995, Frame=  1318
+  13,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_013\Image_001.png', cX= 746, cY= 998, Frame=  1318
+  14,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_014\Image_001.png', cX= 956, cY= 197, Frame=  1318
+  15,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_015\Image_001.png', cX=1044, cY=1141, Frame=  1318
+  16,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_016\Image_001.png', cX=1185, cY= 997, Frame=  1318
+  17,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_017\Image_001.png', cX=1903, cY=1142, Frame=  1318
+   9,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_009\Image_002.png', cX=1100, cY=  37, Frame=  1319
+  18,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_018\Image_001.png', cX=1966, cY=  17, Frame=  1321
+  18,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_018\Image_002.png', cX=2182, cY=  12, Frame=  1322
+  19,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_019\Image_001.png', cX= 315, cY=  18, Frame=  1325
+  20,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_020\Image_001.png', cX= 321, cY= 994, Frame=  1325
+  21,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_021\Image_001.png', cX= 956, cY= 197, Frame=  1325
+  22,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_022\Image_001.png', cX=1092, cY=  44, Frame=  1331
+  23,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_023\Image_001.png', cX= 315, cY=  16, Frame=  1332
+  24,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_024\Image_001.png', cX= 914, cY= 186, Frame=  1332
+  25,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_025\Image_001.png', cX=1945, cY=  18, Frame=  1335
+  23,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_023\Image_002.png', cX= 314, cY=  16, Frame=  1336
+  24,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_024\Image_002.png', cX= 944, cY= 196, Frame=  1336
+  25,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_025\Image_002.png', cX=1946, cY=  18, Frame=  1338
+  26,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_026\Image_001.png', cX=1091, cY=  43, Frame=  1338
+  25,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_025\Image_003.png', cX=1948, cY=  18, Frame=  1341
+  26,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_026\Image_002.png', cX=1093, cY=  44, Frame=  1341
+  27,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_027\Image_001.png', cX=1359, cY=2121, Frame=  1341
+  28,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_028\Image_001.png', cX=2023, cY=2122, Frame=  1341
+  26,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_026\Image_003.png', cX=1096, cY=  42, Frame=  1342
+  27,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_027\Image_002.png', cX=1393, cY=2121, Frame=  1343
+  25,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_025\Image_004.png', cX=1942, cY=  19, Frame=  1346
+  25,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_025\Image_005.png', cX=1939, cY=  21, Frame=  1347
+  26,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_026\Image_004.png', cX=1092, cY=  45, Frame=  1347
+  25,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_025\Image_006.png', cX=1944, cY=  16, Frame=  1349
+  26,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_026\Image_005.png', cX=1096, cY=  47, Frame=  1353
+  29,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_001.png', cX=1005, cY=2123, Frame=  1354
+  29,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_002.png', cX=1202, cY=2123, Frame=  1355
+  29,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_003.png', cX=1200, cY=2061, Frame=  1356
+  29,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_004.png', cX=1198, cY=2059, Frame=  1357
+  29,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_005.png', cX=1195, cY=2058, Frame=  1358
+  29,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_006.png', cX=1194, cY=2058, Frame=  1359
+  29,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_007.png', cX=1193, cY=2057, Frame=  1360
+  29,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_008.png', cX=1193, cY=2056, Frame=  1361
+  29,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_009.png', cX=1192, cY=2054, Frame=  1362
+  29,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_010.png', cX=1193, cY=2053, Frame=  1363
+  29,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_011.png', cX=1194, cY=2052, Frame=  1364
+  29,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_012.png', cX=1194, cY=2052, Frame=  1365
+  29,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_013.png', cX=1194, cY=2051, Frame=  1366
+  29,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_014.png', cX=1193, cY=2050, Frame=  1367
+  29,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_015.png', cX=1192, cY=2049, Frame=  1368
+  29,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_016.png', cX=1192, cY=2048, Frame=  1369
+  29,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_017.png', cX=1193, cY=2047, Frame=  1370
+  29,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_018.png', cX=1192, cY=2046, Frame=  1371
+  29,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_019.png', cX=1193, cY=2045, Frame=  1372
+  29,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_020.png', cX=1193, cY=2044, Frame=  1373
+  29,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_021.png', cX=1194, cY=2042, Frame=  1374
+  29,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_022.png', cX=1195, cY=2042, Frame=  1375
+  29,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_023.png', cX=1196, cY=2041, Frame=  1376
+  29,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_024.png', cX=1197, cY=2039, Frame=  1377
+  29,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_025.png', cX=1199, cY=2039, Frame=  1378
+  29,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_026.png', cX=1202, cY=2038, Frame=  1379
+  29,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_027.png', cX=1206, cY=2036, Frame=  1380
+  29,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_029\Image_028.png', cX=1208, cY=2035, Frame=  1381
+  30,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_001.png', cX= 214, cY=1070, Frame=  1419
+  30,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_002.png', cX= 249, cY=1070, Frame=  1420
+  30,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_003.png', cX= 282, cY=1069, Frame=  1421
+  30,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_004.png', cX= 317, cY=1069, Frame=  1422
+  30,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_005.png', cX= 350, cY=1071, Frame=  1423
+  30,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_006.png', cX= 383, cY=1071, Frame=  1424
+  30,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_007.png', cX= 414, cY=1067, Frame=  1425
+  30,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_008.png', cX= 449, cY=1069, Frame=  1426
+  30,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_009.png', cX= 481, cY=1069, Frame=  1427
+  30,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_010.png', cX= 514, cY=1069, Frame=  1428
+  30,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_011.png', cX= 547, cY=1071, Frame=  1429
+  30,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_012.png', cX= 579, cY=1068, Frame=  1430
+  30,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_013.png', cX= 612, cY=1068, Frame=  1431
+  30,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_014.png', cX= 642, cY=1066, Frame=  1432
+  30,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_015.png', cX= 676, cY=1067, Frame=  1433
+  30,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_016.png', cX= 709, cY=1066, Frame=  1434
+  30,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_017.png', cX= 744, cY=1069, Frame=  1435
+  30,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_018.png', cX= 776, cY=1068, Frame=  1436
+  30,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_019.png', cX= 809, cY=1069, Frame=  1437
+  30,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_020.png', cX= 843, cY=1067, Frame=  1438
+  30,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_021.png', cX= 877, cY=1068, Frame=  1439
+  30,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_022.png', cX= 907, cY=1068, Frame=  1440
+  30,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_023.png', cX= 940, cY=1069, Frame=  1441
+  30,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_024.png', cX= 973, cY=1068, Frame=  1442
+  30,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_025.png', cX=1005, cY=1066, Frame=  1443
+  30,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_026.png', cX=1036, cY=1067, Frame=  1444
+  30,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_027.png', cX=1066, cY=1068, Frame=  1445
+  30,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_030\Image_028.png', cX=1098, cY=1068, Frame=  1446
+  31,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_001.png', cX= 212, cY= 409, Frame=  1540
+  31,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_002.png', cX= 244, cY= 408, Frame=  1541
+  31,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_003.png', cX= 276, cY= 408, Frame=  1542
+  31,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_004.png', cX= 310, cY= 408, Frame=  1543
+  31,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_005.png', cX= 342, cY= 408, Frame=  1544
+  31,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_006.png', cX= 375, cY= 407, Frame=  1545
+  31,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_007.png', cX= 405, cY= 407, Frame=  1546
+  31,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_008.png', cX= 439, cY= 408, Frame=  1547
+  31,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_009.png', cX= 473, cY= 408, Frame=  1548
+  31,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_010.png', cX= 505, cY= 406, Frame=  1549
+  31,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_011.png', cX= 539, cY= 407, Frame=  1550
+  31,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_012.png', cX= 572, cY= 407, Frame=  1551
+  31,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_013.png', cX= 605, cY= 407, Frame=  1552
+  31,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_014.png', cX= 637, cY= 407, Frame=  1553
+  31,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_015.png', cX= 669, cY= 409, Frame=  1554
+  31,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_016.png', cX= 701, cY= 409, Frame=  1555
+  31,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_017.png', cX= 733, cY= 409, Frame=  1556
+  31,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_018.png', cX= 765, cY= 410, Frame=  1557
+  31,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_019.png', cX= 795, cY= 410, Frame=  1558
+  31,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_020.png', cX= 826, cY= 410, Frame=  1559
+  31,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_021.png', cX= 858, cY= 411, Frame=  1560
+  31,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_022.png', cX= 889, cY= 411, Frame=  1561
+  31,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_023.png', cX= 920, cY= 412, Frame=  1562
+  31,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_024.png', cX= 951, cY= 413, Frame=  1563
+  31,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_025.png', cX= 983, cY= 413, Frame=  1564
+  31,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_026.png', cX=1015, cY= 413, Frame=  1565
+  31,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_027.png', cX=1046, cY= 413, Frame=  1566
+  31,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_031\Image_028.png', cX=1144, cY= 416, Frame=  1567
+  32,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_001.png', cX=1239, cY= 417, Frame=  1572
+  32,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_002.png', cX=1270, cY= 417, Frame=  1573
+  32,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_003.png', cX=1300, cY= 418, Frame=  1574
+  32,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_004.png', cX=1331, cY= 418, Frame=  1575
+  32,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_005.png', cX=1363, cY= 419, Frame=  1576
+  32,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_006.png', cX=1394, cY= 419, Frame=  1577
+  32,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_007.png', cX=1422, cY= 420, Frame=  1578
+  32,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_008.png', cX=1453, cY= 421, Frame=  1579
+  32,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_009.png', cX=1483, cY= 421, Frame=  1580
+  32,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_010.png', cX=1515, cY= 422, Frame=  1581
+  32,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_011.png', cX=1544, cY= 422, Frame=  1582
+  32,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_012.png', cX=1575, cY= 423, Frame=  1583
+  32,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_013.png', cX=1606, cY= 423, Frame=  1584
+  32,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_014.png', cX=1637, cY= 423, Frame=  1585
+  32,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_015.png', cX=1668, cY= 423, Frame=  1586
+  32,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_016.png', cX=1698, cY= 424, Frame=  1587
+  32,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_017.png', cX=1730, cY= 424, Frame=  1588
+  32,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_018.png', cX=1763, cY= 425, Frame=  1589
+  32,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_019.png', cX=1793, cY= 426, Frame=  1590
+  32,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_020.png', cX=1823, cY= 426, Frame=  1591
+  32,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_021.png', cX=1854, cY= 427, Frame=  1592
+  32,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_032\Image_022.png', cX=1886, cY= 427, Frame=  1593
+  33,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_001.png', cX=2006, cY= 429, Frame=  1594
+  33,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_002.png', cX=2006, cY= 429, Frame=  1595
+  33,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_003.png', cX=2006, cY= 429, Frame=  1596
+  33,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_004.png', cX=2006, cY= 429, Frame=  1597
+  33,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_005.png', cX=2038, cY= 428, Frame=  1598
+  33,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_006.png', cX=2066, cY= 429, Frame=  1599
+  33,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_007.png', cX=2097, cY= 431, Frame=  1600
+  33,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_008.png', cX=2127, cY= 430, Frame=  1601
+  33,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_009.png', cX=2158, cY= 430, Frame=  1602
+  33,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_010.png', cX=2187, cY= 430, Frame=  1603
+  33,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_011.png', cX=2218, cY= 430, Frame=  1604
+  33,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_012.png', cX=2249, cY= 431, Frame=  1605
+  33,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_013.png', cX=2281, cY= 432, Frame=  1606
+  33,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_014.png', cX=2312, cY= 431, Frame=  1607
+  33,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_015.png', cX=2343, cY= 432, Frame=  1608
+  33,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_016.png', cX=2374, cY= 432, Frame=  1609
+  33,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_017.png', cX=2406, cY= 431, Frame=  1610
+  33,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_018.png', cX=2434, cY= 433, Frame=  1611
+  33,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_019.png', cX=2463, cY= 433, Frame=  1612
+  33,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_020.png', cX=2494, cY= 432, Frame=  1613
+  33,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_021.png', cX=2524, cY= 431, Frame=  1614
+  33,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_022.png', cX=2554, cY= 432, Frame=  1615
+  33,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_023.png', cX=2583, cY= 432, Frame=  1616
+  33,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_024.png', cX=2612, cY= 431, Frame=  1617
+  33,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_025.png', cX=2643, cY= 432, Frame=  1618
+  33,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_026.png', cX=2672, cY= 431, Frame=  1619
+  33,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_027.png', cX=2700, cY= 431, Frame=  1620
+  33,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_028.png', cX=2729, cY= 431, Frame=  1621
+  33,   29, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_029.png', cX=2759, cY= 432, Frame=  1622
+  33,   30, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_030.png', cX=2791, cY= 432, Frame=  1623
+  33,   31, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_033\Image_031.png', cX=2847, cY= 432, Frame=  1624
+  34,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_001.png', cX= 207, cY=1562, Frame=  1641
+  34,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_002.png', cX= 234, cY=1563, Frame=  1642
+  34,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_003.png', cX= 260, cY=1564, Frame=  1643
+  34,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_004.png', cX= 286, cY=1564, Frame=  1644
+  34,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_005.png', cX= 313, cY=1565, Frame=  1645
+  34,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_006.png', cX= 342, cY=1566, Frame=  1646
+  34,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_007.png', cX= 368, cY=1567, Frame=  1647
+  34,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_008.png', cX= 392, cY=1567, Frame=  1648
+  34,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_009.png', cX= 418, cY=1568, Frame=  1649
+  34,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_010.png', cX= 443, cY=1569, Frame=  1650
+  34,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_011.png', cX= 468, cY=1568, Frame=  1651
+  34,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_012.png', cX= 493, cY=1570, Frame=  1652
+  34,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_013.png', cX= 516, cY=1572, Frame=  1653
+  34,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_014.png', cX= 540, cY=1571, Frame=  1654
+  34,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_015.png', cX= 565, cY=1572, Frame=  1655
+  34,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_016.png', cX= 591, cY=1572, Frame=  1656
+  34,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_017.png', cX= 615, cY=1573, Frame=  1657
+  34,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_018.png', cX= 638, cY=1573, Frame=  1658
+  34,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_019.png', cX= 660, cY=1573, Frame=  1659
+  34,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_020.png', cX= 685, cY=1574, Frame=  1660
+  34,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_021.png', cX= 710, cY=1575, Frame=  1661
+  34,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_022.png', cX= 736, cY=1576, Frame=  1662
+  34,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_023.png', cX= 761, cY=1577, Frame=  1663
+  34,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_024.png', cX= 783, cY=1576, Frame=  1664
+  34,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_025.png', cX= 807, cY=1578, Frame=  1665
+  34,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_026.png', cX= 832, cY=1578, Frame=  1666
+  34,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_027.png', cX= 858, cY=1577, Frame=  1667
+  34,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_028.png', cX= 881, cY=1576, Frame=  1668
+  34,   29, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_029.png', cX= 902, cY=1576, Frame=  1669
+  34,   30, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_030.png', cX= 924, cY=1577, Frame=  1670
+  34,   31, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_031.png', cX= 948, cY=1576, Frame=  1671
+  34,   32, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_032.png', cX= 970, cY=1577, Frame=  1672
+  34,   33, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_033.png', cX= 994, cY=1576, Frame=  1673
+  34,   34, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_034.png', cX=1017, cY=1577, Frame=  1674
+  34,   35, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_035.png', cX=1039, cY=1577, Frame=  1675
+  34,   36, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_036.png', cX=1061, cY=1576, Frame=  1676
+  34,   37, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_037.png', cX=1086, cY=1577, Frame=  1677
+  34,   38, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_038.png', cX=1107, cY=1576, Frame=  1678
+  34,   39, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_039.png', cX=1130, cY=1576, Frame=  1679
+  34,   40, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_040.png', cX=1153, cY=1577, Frame=  1680
+  34,   41, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_041.png', cX=1175, cY=1577, Frame=  1681
+  34,   42, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_042.png', cX=1199, cY=1576, Frame=  1682
+  34,   43, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_043.png', cX=1223, cY=1578, Frame=  1683
+  34,   44, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_044.png', cX=1247, cY=1577, Frame=  1684
+  34,   45, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_045.png', cX=1270, cY=1577, Frame=  1685
+  34,   46, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_046.png', cX=1292, cY=1577, Frame=  1686
+  34,   47, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_047.png', cX=1315, cY=1577, Frame=  1687
+  34,   48, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_048.png', cX=1338, cY=1577, Frame=  1688
+  34,   49, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_049.png', cX=1360, cY=1577, Frame=  1689
+  34,   50, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_050.png', cX=1382, cY=1577, Frame=  1690
+  34,   51, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_051.png', cX=1403, cY=1577, Frame=  1691
+  34,   52, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_052.png', cX=1424, cY=1576, Frame=  1692
+  34,   53, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_053.png', cX=1445, cY=1577, Frame=  1693
+  34,   54, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_054.png', cX=1470, cY=1575, Frame=  1694
+  34,   55, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_055.png', cX=1492, cY=1575, Frame=  1695
+  34,   56, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_056.png', cX=1515, cY=1575, Frame=  1696
+  34,   57, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_057.png', cX=1535, cY=1575, Frame=  1697
+  34,   58, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_058.png', cX=1556, cY=1574, Frame=  1698
+  34,   59, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_059.png', cX=1579, cY=1574, Frame=  1699
+  34,   60, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_060.png', cX=1604, cY=1573, Frame=  1700
+  34,   61, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_061.png', cX=1628, cY=1572, Frame=  1701
+  34,   62, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_062.png', cX=1650, cY=1572, Frame=  1702
+  34,   63, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_063.png', cX=1672, cY=1572, Frame=  1703
+  34,   64, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_064.png', cX=1695, cY=1572, Frame=  1704
+  34,   65, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_065.png', cX=1719, cY=1572, Frame=  1705
+  34,   66, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_066.png', cX=1741, cY=1571, Frame=  1706
+  34,   67, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_067.png', cX=1765, cY=1571, Frame=  1707
+  34,   68, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_068.png', cX=1787, cY=1570, Frame=  1708
+  34,   69, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_069.png', cX=1808, cY=1570, Frame=  1709
+  34,   70, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_070.png', cX=1829, cY=1570, Frame=  1710
+  34,   71, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_071.png', cX=1852, cY=1570, Frame=  1711
+  34,   72, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_072.png', cX=1875, cY=1569, Frame=  1712
+  34,   73, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_073.png', cX=1898, cY=1569, Frame=  1713
+  34,   74, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_074.png', cX=1919, cY=1568, Frame=  1714
+  34,   75, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_075.png', cX=1940, cY=1567, Frame=  1715
+  34,   76, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_076.png', cX=1963, cY=1567, Frame=  1716
+  34,   77, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_077.png', cX=1985, cY=1567, Frame=  1717
+  34,   78, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_078.png', cX=2010, cY=1565, Frame=  1718
+  34,   79, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_079.png', cX=2031, cY=1566, Frame=  1719
+  34,   80, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_080.png', cX=2052, cY=1566, Frame=  1720
+  34,   81, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_081.png', cX=2076, cY=1566, Frame=  1721
+  34,   82, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_082.png', cX=2099, cY=1566, Frame=  1722
+  34,   83, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_083.png', cX=2122, cY=1565, Frame=  1723
+  34,   84, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_084.png', cX=2146, cY=1566, Frame=  1724
+  34,   85, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_085.png', cX=2166, cY=1564, Frame=  1725
+  34,   86, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_086.png', cX=2188, cY=1565, Frame=  1726
+  34,   87, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_087.png', cX=2209, cY=1564, Frame=  1727
+  34,   88, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_088.png', cX=2231, cY=1563, Frame=  1728
+  34,   89, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_089.png', cX=2254, cY=1565, Frame=  1729
+  34,   90, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_090.png', cX=2275, cY=1564, Frame=  1730
+  34,   91, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_091.png', cX=2297, cY=1563, Frame=  1731
+  34,   92, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_092.png', cX=2318, cY=1564, Frame=  1732
+  34,   93, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_093.png', cX=2341, cY=1563, Frame=  1733
+  34,   94, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_094.png', cX=2362, cY=1563, Frame=  1734
+  34,   95, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_095.png', cX=2383, cY=1562, Frame=  1735
+  34,   96, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_096.png', cX=2406, cY=1562, Frame=  1736
+  34,   97, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_097.png', cX=2428, cY=1562, Frame=  1737
+  34,   98, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_098.png', cX=2448, cY=1562, Frame=  1738
+  34,   99, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_099.png', cX=2470, cY=1561, Frame=  1739
+  34,  100, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_100.png', cX=2494, cY=1561, Frame=  1740
+  34,  101, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_101.png', cX=2518, cY=1561, Frame=  1741
+  34,  102, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_102.png', cX=2541, cY=1563, Frame=  1742
+  34,  103, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_103.png', cX=2562, cY=1563, Frame=  1743
+  34,  104, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_104.png', cX=2583, cY=1561, Frame=  1744
+  34,  105, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_105.png', cX=2604, cY=1561, Frame=  1745
+  34,  106, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_106.png', cX=2627, cY=1562, Frame=  1746
+  34,  107, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_107.png', cX=2648, cY=1562, Frame=  1747
+  34,  108, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_108.png', cX=2670, cY=1561, Frame=  1748
+  34,  109, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_109.png', cX=2690, cY=1561, Frame=  1749
+  34,  110, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_110.png', cX=2710, cY=1561, Frame=  1750
+  34,  111, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_111.png', cX=2730, cY=1561, Frame=  1751
+  34,  112, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_112.png', cX=2752, cY=1561, Frame=  1752
+  34,  113, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_113.png', cX=2774, cY=1560, Frame=  1753
+  34,  114, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_114.png', cX=2796, cY=1561, Frame=  1754
+  34,  115, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_115.png', cX=2817, cY=1561, Frame=  1755
+  34,  116, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_116.png', cX=2839, cY=1561, Frame=  1756
+  34,  117, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_117.png', cX=2862, cY=1561, Frame=  1757
+  34,  118, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_118.png', cX=2883, cY=1561, Frame=  1758
+  34,  119, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_119.png', cX=2905, cY=1561, Frame=  1759
+  34,  120, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_120.png', cX=2929, cY=1563, Frame=  1760
+  34,  121, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_121.png', cX=2950, cY=1563, Frame=  1761
+  34,  122, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_122.png', cX=2971, cY=1562, Frame=  1762
+  34,  123, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_123.png', cX=2994, cY=1562, Frame=  1763
+  34,  124, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_124.png', cX=3016, cY=1562, Frame=  1764
+  34,  125, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_125.png', cX=3039, cY=1562, Frame=  1765
+  34,  126, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_126.png', cX=3061, cY=1562, Frame=  1766
+  34,  127, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_127.png', cX=3080, cY=1563, Frame=  1767
+  34,  128, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_128.png', cX=3099, cY=1562, Frame=  1768
+  34,  129, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_129.png', cX=3122, cY=1563, Frame=  1769
+  34,  130, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_130.png', cX=3147, cY=1566, Frame=  1770
+  34,  131, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_131.png', cX=3168, cY=1566, Frame=  1771
+  34,  132, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_132.png', cX=3190, cY=1567, Frame=  1772
+  34,  133, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_133.png', cX=3210, cY=1568, Frame=  1773
+  34,  134, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_134.png', cX=3235, cY=1568, Frame=  1774
+  34,  135, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_135.png', cX=3253, cY=1568, Frame=  1775
+  34,  136, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_136.png', cX=3273, cY=1567, Frame=  1776
+  34,  137, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_137.png', cX=3292, cY=1570, Frame=  1777
+  34,  138, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_138.png', cX=3321, cY=1571, Frame=  1778
+  34,  139, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_139.png', cX=3342, cY=1572, Frame=  1779
+  34,  140, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_140.png', cX=3365, cY=1572, Frame=  1780
+  34,  141, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_141.png', cX=3389, cY=1573, Frame=  1781
+  34,  142, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_142.png', cX=3413, cY=1574, Frame=  1782
+  34,  143, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_143.png', cX=3434, cY=1576, Frame=  1783
+  34,  144, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_144.png', cX=3455, cY=1576, Frame=  1784
+  34,  145, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_145.png', cX=3477, cY=1578, Frame=  1785
+  34,  146, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_146.png', cX=3500, cY=1579, Frame=  1786
+  34,  147, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_147.png', cX=3522, cY=1582, Frame=  1787
+  34,  148, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_148.png', cX=3547, cY=1581, Frame=  1788
+  34,  149, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_149.png', cX=3566, cY=1580, Frame=  1789
+  34,  150, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_150.png', cX=3588, cY=1582, Frame=  1790
+  34,  151, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_151.png', cX=3609, cY=1584, Frame=  1791
+  34,  152, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_152.png', cX=3632, cY=1585, Frame=  1792
+  34,  153, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_153.png', cX=3655, cY=1585, Frame=  1793
+  34,  154, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_154.png', cX=3679, cY=1587, Frame=  1794
+  34,  155, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_155.png', cX=3703, cY=1588, Frame=  1795
+  34,  156, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_156.png', cX=3727, cY=1588, Frame=  1796
+  34,  157, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_157.png', cX=3751, cY=1589, Frame=  1797
+  34,  158, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_158.png', cX=3776, cY=1591, Frame=  1798
+  34,  159, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_159.png', cX=3801, cY=1591, Frame=  1799
+  34,  160, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_160.png', cX=3824, cY=1592, Frame=  1800
+  34,  161, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_161.png', cX=3849, cY=1592, Frame=  1801
+  34,  162, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_162.png', cX=3873, cY=1592, Frame=  1802
+  34,  163, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_163.png', cX=3897, cY=1592, Frame=  1803
+  34,  164, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_164.png', cX=3921, cY=1592, Frame=  1804
+  34,  165, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_165.png', cX=3945, cY=1591, Frame=  1805
+  34,  166, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_166.png', cX=3968, cY=1592, Frame=  1806
+  34,  167, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_167.png', cX=3987, cY=1591, Frame=  1807
+  34,  168, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_168.png', cX=4014, cY=1592, Frame=  1808
+  34,  169, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_169.png', cX=4037, cY=1592, Frame=  1809
+  34,  170, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_170.png', cX=4060, cY=1590, Frame=  1810
+  34,  171, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_034\Image_171.png', cX=4079, cY=1586, Frame=  1811
+  35,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_035\Image_001.png', cX= 387, cY= 661, Frame=  1872
+  36,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_036\Image_001.png', cX= 498, cY= 660, Frame=  1876
+  37,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_001.png', cX=  25, cY=1357, Frame=  2313
+  37,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_002.png', cX=  59, cY=1357, Frame=  2314
+  37,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_003.png', cX=  91, cY=1357, Frame=  2315
+  37,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_004.png', cX= 122, cY=1357, Frame=  2316
+  37,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_005.png', cX= 153, cY=1356, Frame=  2317
+  37,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_006.png', cX= 185, cY=1356, Frame=  2318
+  37,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_007.png', cX= 217, cY=1356, Frame=  2319
+  37,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_008.png', cX= 248, cY=1356, Frame=  2320
+  37,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_009.png', cX= 279, cY=1355, Frame=  2321
+  37,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_010.png', cX= 310, cY=1355, Frame=  2322
+  37,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_011.png', cX= 342, cY=1355, Frame=  2323
+  37,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_012.png', cX= 374, cY=1355, Frame=  2324
+  37,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_013.png', cX= 405, cY=1355, Frame=  2325
+  37,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_014.png', cX= 437, cY=1355, Frame=  2326
+  37,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_015.png', cX= 468, cY=1355, Frame=  2327
+  37,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_016.png', cX= 499, cY=1355, Frame=  2328
+  37,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_017.png', cX= 531, cY=1355, Frame=  2329
+  37,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_018.png', cX= 562, cY=1355, Frame=  2330
+  37,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_019.png', cX= 592, cY=1356, Frame=  2331
+  37,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_020.png', cX= 622, cY=1356, Frame=  2332
+  37,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_021.png', cX= 651, cY=1356, Frame=  2333
+  37,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_022.png', cX= 681, cY=1356, Frame=  2334
+  37,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_023.png', cX= 709, cY=1356, Frame=  2335
+  37,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_024.png', cX= 738, cY=1356, Frame=  2336
+  37,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_025.png', cX= 768, cY=1357, Frame=  2337
+  37,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_026.png', cX= 795, cY=1357, Frame=  2338
+  37,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_027.png', cX= 823, cY=1357, Frame=  2339
+  37,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_028.png', cX= 851, cY=1357, Frame=  2340
+  37,   29, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_029.png', cX= 879, cY=1357, Frame=  2341
+  37,   30, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_030.png', cX= 907, cY=1357, Frame=  2342
+  37,   31, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_031.png', cX= 935, cY=1356, Frame=  2343
+  37,   32, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_032.png', cX= 962, cY=1357, Frame=  2344
+  37,   33, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_033.png', cX= 990, cY=1356, Frame=  2345
+  37,   34, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_034.png', cX=1017, cY=1357, Frame=  2346
+  37,   35, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_035.png', cX=1044, cY=1358, Frame=  2347
+  37,   36, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_036.png', cX=1073, cY=1358, Frame=  2348
+  37,   37, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_037.png', cX=1102, cY=1358, Frame=  2349
+  37,   38, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_038.png', cX=1130, cY=1358, Frame=  2350
+  37,   39, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_039.png', cX=1157, cY=1359, Frame=  2351
+  37,   40, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_040.png', cX=1184, cY=1359, Frame=  2352
+  37,   41, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_041.png', cX=1212, cY=1359, Frame=  2353
+  37,   42, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_042.png', cX=1239, cY=1359, Frame=  2354
+  37,   43, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_043.png', cX=1267, cY=1359, Frame=  2355
+  37,   44, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_044.png', cX=1294, cY=1358, Frame=  2356
+  37,   45, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_045.png', cX=1321, cY=1359, Frame=  2357
+  37,   46, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_046.png', cX=1348, cY=1358, Frame=  2358
+  37,   47, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_047.png', cX=1376, cY=1358, Frame=  2359
+  37,   48, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_048.png', cX=1403, cY=1358, Frame=  2360
+  37,   49, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_049.png', cX=1430, cY=1358, Frame=  2361
+  37,   50, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_050.png', cX=1458, cY=1358, Frame=  2362
+  37,   51, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_051.png', cX=1486, cY=1358, Frame=  2363
+  37,   52, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_052.png', cX=1513, cY=1358, Frame=  2364
+  37,   53, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_053.png', cX=1541, cY=1358, Frame=  2365
+  37,   54, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_054.png', cX=1569, cY=1357, Frame=  2366
+  37,   55, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_055.png', cX=1598, cY=1358, Frame=  2367
+  37,   56, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_056.png', cX=1626, cY=1357, Frame=  2368
+  37,   57, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_057.png', cX=1654, cY=1357, Frame=  2369
+  37,   58, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_058.png', cX=1682, cY=1357, Frame=  2370
+  37,   59, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_059.png', cX=1710, cY=1357, Frame=  2371
+  37,   60, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_060.png', cX=1737, cY=1357, Frame=  2372
+  37,   61, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_061.png', cX=1764, cY=1357, Frame=  2373
+  37,   62, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_062.png', cX=1791, cY=1356, Frame=  2374
+  37,   63, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_063.png', cX=1817, cY=1356, Frame=  2375
+  37,   64, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_064.png', cX=1844, cY=1356, Frame=  2376
+  37,   65, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_065.png', cX=1870, cY=1356, Frame=  2377
+  37,   66, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_066.png', cX=1898, cY=1356, Frame=  2378
+  37,   67, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_037\Image_067.png', cX=1977, cY=1356, Frame=  2379
+  38,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_038\Image_001.png', cX=  58, cY= 867, Frame=  2508
+  39,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_001.png', cX= 127, cY= 866, Frame=  2510
+  39,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_002.png', cX= 158, cY= 865, Frame=  2511
+  39,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_003.png', cX= 190, cY= 865, Frame=  2512
+  39,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_004.png', cX= 220, cY= 866, Frame=  2513
+  39,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_005.png', cX= 248, cY= 866, Frame=  2514
+  39,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_006.png', cX= 277, cY= 865, Frame=  2515
+  39,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_007.png', cX= 306, cY= 865, Frame=  2516
+  39,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_008.png', cX= 335, cY= 865, Frame=  2517
+  39,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_009.png', cX= 363, cY= 864, Frame=  2518
+  39,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_010.png', cX= 392, cY= 864, Frame=  2519
+  39,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_011.png', cX= 421, cY= 864, Frame=  2520
+  39,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_012.png', cX= 449, cY= 863, Frame=  2521
+  39,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_013.png', cX= 478, cY= 864, Frame=  2522
+  39,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_014.png', cX= 506, cY= 862, Frame=  2523
+  39,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_015.png', cX= 535, cY= 864, Frame=  2524
+  39,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_016.png', cX= 565, cY= 862, Frame=  2525
+  39,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_017.png', cX= 593, cY= 862, Frame=  2526
+  39,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_018.png', cX= 624, cY= 861, Frame=  2527
+  39,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_019.png', cX= 653, cY= 861, Frame=  2528
+  39,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_020.png', cX= 682, cY= 861, Frame=  2529
+  39,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_021.png', cX= 711, cY= 862, Frame=  2530
+  39,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_022.png', cX= 739, cY= 860, Frame=  2531
+  39,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_023.png', cX= 768, cY= 860, Frame=  2532
+  39,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_024.png', cX= 795, cY= 860, Frame=  2533
+  39,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_025.png', cX= 824, cY= 861, Frame=  2534
+  39,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_026.png', cX= 851, cY= 861, Frame=  2535
+  39,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_027.png', cX= 879, cY= 861, Frame=  2536
+  39,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_028.png', cX= 906, cY= 860, Frame=  2537
+  39,   29, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_029.png', cX= 933, cY= 861, Frame=  2538
+  39,   30, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_030.png', cX= 961, cY= 861, Frame=  2539
+  39,   31, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_031.png', cX= 988, cY= 860, Frame=  2540
+  39,   32, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_032.png', cX=1015, cY= 860, Frame=  2541
+  39,   33, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_033.png', cX=1043, cY= 860, Frame=  2542
+  39,   34, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_034.png', cX=1071, cY= 861, Frame=  2543
+  39,   35, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_035.png', cX=1099, cY= 862, Frame=  2544
+  39,   36, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_036.png', cX=1126, cY= 861, Frame=  2545
+  39,   37, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_037.png', cX=1154, cY= 861, Frame=  2546
+  39,   38, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_038.png', cX=1183, cY= 862, Frame=  2547
+  39,   39, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_039.png', cX=1212, cY= 862, Frame=  2548
+  39,   40, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_040.png', cX=1240, cY= 861, Frame=  2549
+  39,   41, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_041.png', cX=1268, cY= 861, Frame=  2550
+  39,   42, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_042.png', cX=1296, cY= 861, Frame=  2551
+  39,   43, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_043.png', cX=1325, cY= 863, Frame=  2552
+  39,   44, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_044.png', cX=1351, cY= 862, Frame=  2553
+  39,   45, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_045.png', cX=1379, cY= 863, Frame=  2554
+  39,   46, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_046.png', cX=1405, cY= 862, Frame=  2555
+  39,   47, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_047.png', cX=1433, cY= 863, Frame=  2556
+  39,   48, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_048.png', cX=1459, cY= 862, Frame=  2557
+  39,   49, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_049.png', cX=1486, cY= 863, Frame=  2558
+  39,   50, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_050.png', cX=1513, cY= 861, Frame=  2559
+  39,   51, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_051.png', cX=1540, cY= 863, Frame=  2560
+  39,   52, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_052.png', cX=1566, cY= 862, Frame=  2561
+  39,   53, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_053.png', cX=1593, cY= 862, Frame=  2562
+  39,   54, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_054.png', cX=1621, cY= 862, Frame=  2563
+  39,   55, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_055.png', cX=1648, cY= 862, Frame=  2564
+  39,   56, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_056.png', cX=1675, cY= 862, Frame=  2565
+  39,   57, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_057.png', cX=1703, cY= 862, Frame=  2566
+  39,   58, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_058.png', cX=1731, cY= 862, Frame=  2567
+  39,   59, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_059.png', cX=1759, cY= 863, Frame=  2568
+  39,   60, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_060.png', cX=1786, cY= 862, Frame=  2569
+  39,   61, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_061.png', cX=1815, cY= 862, Frame=  2570
+  39,   62, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_062.png', cX=1842, cY= 862, Frame=  2571
+  39,   63, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_063.png', cX=1870, cY= 863, Frame=  2572
+  39,   64, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_064.png', cX=1896, cY= 863, Frame=  2573
+  39,   65, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_065.png', cX=1923, cY= 863, Frame=  2574
+  39,   66, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_066.png', cX=1949, cY= 863, Frame=  2575
+  39,   67, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_067.png', cX=1975, cY= 863, Frame=  2576
+  39,   68, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_068.png', cX=2002, cY= 863, Frame=  2577
+  39,   69, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_069.png', cX=2029, cY= 863, Frame=  2578
+  39,   70, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_070.png', cX=2056, cY= 864, Frame=  2579
+  39,   71, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_071.png', cX=2083, cY= 864, Frame=  2580
+  39,   72, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_072.png', cX=2110, cY= 864, Frame=  2581
+  39,   73, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_073.png', cX=2136, cY= 863, Frame=  2582
+  39,   74, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_074.png', cX=2163, cY= 863, Frame=  2583
+  39,   75, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_075.png', cX=2190, cY= 864, Frame=  2584
+  39,   76, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_076.png', cX=2217, cY= 864, Frame=  2585
+  39,   77, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_077.png', cX=2244, cY= 864, Frame=  2586
+  39,   78, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_078.png', cX=2272, cY= 864, Frame=  2587
+  39,   79, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_079.png', cX=2300, cY= 864, Frame=  2588
+  39,   80, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_080.png', cX=2327, cY= 863, Frame=  2589
+  39,   81, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_081.png', cX=2356, cY= 864, Frame=  2590
+  39,   82, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_082.png', cX=2383, cY= 864, Frame=  2591
+  39,   83, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_083.png', cX=2411, cY= 864, Frame=  2592
+  39,   84, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_084.png', cX=2437, cY= 863, Frame=  2593
+  39,   85, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_085.png', cX=2463, cY= 864, Frame=  2594
+  39,   86, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_086.png', cX=2490, cY= 863, Frame=  2595
+  39,   87, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_087.png', cX=2516, cY= 864, Frame=  2596
+  39,   88, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_088.png', cX=2542, cY= 863, Frame=  2597
+  39,   89, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_089.png', cX=2568, cY= 864, Frame=  2598
+  39,   90, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_090.png', cX=2594, cY= 864, Frame=  2599
+  39,   91, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_091.png', cX=2621, cY= 864, Frame=  2600
+  39,   92, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_092.png', cX=2646, cY= 863, Frame=  2601
+  39,   93, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_093.png', cX=2672, cY= 863, Frame=  2602
+  39,   94, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_094.png', cX=2698, cY= 864, Frame=  2603
+  39,   95, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_095.png', cX=2725, cY= 864, Frame=  2604
+  39,   96, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_096.png', cX=2751, cY= 863, Frame=  2605
+  39,   97, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_097.png', cX=2778, cY= 864, Frame=  2606
+  39,   98, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_098.png', cX=2804, cY= 863, Frame=  2607
+  39,   99, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_099.png', cX=2831, cY= 864, Frame=  2608
+  39,  100, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_100.png', cX=2859, cY= 864, Frame=  2609
+  39,  101, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_101.png', cX=2887, cY= 864, Frame=  2610
+  39,  102, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_102.png', cX=2914, cY= 864, Frame=  2611
+  39,  103, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_103.png', cX=2942, cY= 864, Frame=  2612
+  39,  104, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_104.png', cX=2968, cY= 864, Frame=  2613
+  39,  105, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_105.png', cX=3020, cY= 863, Frame=  2615
+  39,  106, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_106.png', cX=3047, cY= 864, Frame=  2616
+  39,  107, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_107.png', cX=3072, cY= 863, Frame=  2617
+  39,  108, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_108.png', cX=3099, cY= 861, Frame=  2618
+  39,  109, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_109.png', cX=3123, cY= 861, Frame=  2619
+  39,  110, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_110.png', cX=3150, cY= 862, Frame=  2620
+  39,  111, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_111.png', cX=3175, cY= 861, Frame=  2621
+  39,  112, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_112.png', cX=3201, cY= 861, Frame=  2622
+  39,  113, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_113.png', cX=3226, cY= 861, Frame=  2623
+  39,  114, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_114.png', cX=3252, cY= 861, Frame=  2624
+  39,  115, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_115.png', cX=3278, cY= 860, Frame=  2625
+  39,  116, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_116.png', cX=3304, cY= 858, Frame=  2626
+  39,  117, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_117.png', cX=3329, cY= 858, Frame=  2627
+  39,  118, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_118.png', cX=3356, cY= 857, Frame=  2628
+  39,  119, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_119.png', cX=3381, cY= 857, Frame=  2629
+  39,  120, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_120.png', cX=3461, cY= 851, Frame=  2632
+  39,  121, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_121.png', cX=3486, cY= 849, Frame=  2633
+  39,  122, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_122.png', cX=3538, cY= 843, Frame=  2635
+  39,  123, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_123.png', cX=3591, cY= 838, Frame=  2637
+  39,  124, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_124.png', cX=3618, cY= 834, Frame=  2638
+  39,  125, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_125.png', cX=3701, cY= 825, Frame=  2641
+  39,  126, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_126.png', cX=3759, cY= 819, Frame=  2643
+  39,  127, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_127.png', cX=3848, cY= 813, Frame=  2646
+  39,  128, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_039\Image_128.png', cX=3879, cY= 814, Frame=  2647
+  40,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_001.png', cX=  14, cY=1732, Frame=  2727
+  41,    1, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_001.png', cX=  13, cY=1844, Frame=  2727
+  40,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_002.png', cX=  39, cY=1731, Frame=  2728
+  41,    2, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_002.png', cX=  38, cY=1847, Frame=  2728
+  40,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_003.png', cX=  62, cY=1732, Frame=  2729
+  41,    3, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_003.png', cX=  67, cY=1849, Frame=  2729
+  40,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_004.png', cX=  85, cY=1732, Frame=  2730
+  41,    4, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_004.png', cX=  93, cY=1851, Frame=  2730
+  40,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_005.png', cX= 112, cY=1733, Frame=  2731
+  41,    5, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_005.png', cX= 119, cY=1854, Frame=  2731
+  40,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_006.png', cX= 134, cY=1734, Frame=  2732
+  41,    6, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_006.png', cX= 144, cY=1857, Frame=  2732
+  40,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_007.png', cX= 157, cY=1734, Frame=  2733
+  41,    7, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_007.png', cX= 169, cY=1859, Frame=  2733
+  40,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_008.png', cX= 180, cY=1735, Frame=  2734
+  41,    8, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_008.png', cX= 193, cY=1862, Frame=  2734
+  41,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_009.png', cX= 218, cY=1866, Frame=  2735
+  40,    9, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_009.png', cX= 228, cY=1737, Frame=  2736
+  41,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_010.png', cX= 243, cY=1868, Frame=  2736
+  40,   10, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_010.png', cX= 250, cY=1738, Frame=  2737
+  41,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_011.png', cX= 266, cY=1869, Frame=  2737
+  40,   11, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_011.png', cX= 272, cY=1740, Frame=  2738
+  41,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_012.png', cX= 291, cY=1872, Frame=  2738
+  40,   12, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_012.png', cX= 294, cY=1741, Frame=  2739
+  41,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_013.png', cX= 317, cY=1874, Frame=  2739
+  40,   13, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_013.png', cX= 317, cY=1742, Frame=  2740
+  41,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_014.png', cX= 342, cY=1876, Frame=  2740
+  40,   14, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_014.png', cX= 339, cY=1743, Frame=  2741
+  41,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_015.png', cX= 366, cY=1878, Frame=  2741
+  40,   15, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_015.png', cX= 360, cY=1745, Frame=  2742
+  41,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_016.png', cX= 388, cY=1880, Frame=  2742
+  40,   16, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_016.png', cX= 380, cY=1746, Frame=  2743
+  41,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_017.png', cX= 411, cY=1882, Frame=  2743
+  40,   17, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_017.png', cX= 400, cY=1747, Frame=  2744
+  41,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_018.png', cX= 436, cY=1883, Frame=  2744
+  40,   18, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_018.png', cX= 421, cY=1749, Frame=  2745
+  41,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_019.png', cX= 458, cY=1884, Frame=  2745
+  40,   19, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_019.png', cX= 441, cY=1750, Frame=  2746
+  41,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_020.png', cX= 481, cY=1885, Frame=  2746
+  40,   20, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_020.png', cX= 462, cY=1751, Frame=  2747
+  41,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_021.png', cX= 504, cY=1886, Frame=  2747
+  40,   21, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_021.png', cX= 483, cY=1751, Frame=  2748
+  41,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_022.png', cX= 526, cY=1888, Frame=  2748
+  40,   22, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_022.png', cX= 502, cY=1753, Frame=  2749
+  41,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_023.png', cX= 549, cY=1890, Frame=  2749
+  40,   23, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_023.png', cX= 521, cY=1753, Frame=  2750
+  41,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_024.png', cX= 572, cY=1891, Frame=  2750
+  40,   24, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_024.png', cX= 540, cY=1754, Frame=  2751
+  41,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_025.png', cX= 595, cY=1891, Frame=  2751
+  40,   25, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_025.png', cX= 561, cY=1755, Frame=  2752
+  41,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_026.png', cX= 618, cY=1892, Frame=  2752
+  40,   26, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_026.png', cX= 580, cY=1755, Frame=  2753
+  41,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_027.png', cX= 641, cY=1892, Frame=  2753
+  40,   27, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_027.png', cX= 600, cY=1756, Frame=  2754
+  41,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_028.png', cX= 663, cY=1893, Frame=  2754
+  40,   28, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_028.png', cX= 620, cY=1758, Frame=  2755
+  41,   29, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_029.png', cX= 687, cY=1894, Frame=  2755
+  40,   29, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_029.png', cX= 640, cY=1758, Frame=  2756
+  41,   30, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_030.png', cX= 711, cY=1896, Frame=  2756
+  40,   30, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_030.png', cX= 660, cY=1757, Frame=  2757
+  41,   31, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_031.png', cX= 736, cY=1896, Frame=  2757
+  40,   31, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_031.png', cX= 680, cY=1758, Frame=  2758
+  41,   32, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_032.png', cX= 758, cY=1896, Frame=  2758
+  40,   32, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_032.png', cX= 700, cY=1759, Frame=  2759
+  41,   33, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_033.png', cX= 780, cY=1896, Frame=  2759
+  40,   33, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_033.png', cX= 722, cY=1760, Frame=  2760
+  41,   34, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_034.png', cX= 805, cY=1897, Frame=  2760
+  40,   34, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_034.png', cX= 742, cY=1761, Frame=  2761
+  41,   35, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_035.png', cX= 830, cY=1897, Frame=  2761
+  40,   35, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_035.png', cX= 762, cY=1761, Frame=  2762
+  41,   36, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_036.png', cX= 855, cY=1898, Frame=  2762
+  40,   36, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_036.png', cX= 782, cY=1761, Frame=  2763
+  41,   37, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_037.png', cX= 878, cY=1898, Frame=  2763
+  40,   37, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_037.png', cX= 801, cY=1762, Frame=  2764
+  41,   38, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_038.png', cX= 900, cY=1898, Frame=  2764
+  40,   38, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_038.png', cX= 820, cY=1762, Frame=  2765
+  41,   39, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_039.png', cX= 922, cY=1897, Frame=  2765
+  40,   39, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_039.png', cX= 839, cY=1762, Frame=  2766
+  41,   40, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_040.png', cX= 946, cY=1897, Frame=  2766
+  40,   40, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_040.png', cX= 859, cY=1763, Frame=  2767
+  41,   41, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_041.png', cX= 967, cY=1899, Frame=  2767
+  40,   41, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_041.png', cX= 878, cY=1763, Frame=  2768
+  41,   42, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_042.png', cX= 990, cY=1898, Frame=  2768
+  40,   42, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_042.png', cX= 895, cY=1762, Frame=  2769
+  41,   43, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_043.png', cX=1012, cY=1898, Frame=  2769
+  40,   43, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_043.png', cX= 912, cY=1763, Frame=  2770
+  41,   44, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_044.png', cX=1034, cY=1897, Frame=  2770
+  40,   44, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_044.png', cX= 931, cY=1763, Frame=  2771
+  41,   45, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_045.png', cX=1055, cY=1897, Frame=  2771
+  40,   45, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_045.png', cX= 951, cY=1763, Frame=  2772
+  41,   46, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_046.png', cX=1079, cY=1897, Frame=  2772
+  40,   46, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_046.png', cX= 971, cY=1762, Frame=  2773
+  41,   47, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_047.png', cX=1101, cY=1897, Frame=  2773
+  40,   47, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_047.png', cX= 990, cY=1762, Frame=  2774
+  41,   48, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_048.png', cX=1123, cY=1897, Frame=  2774
+  40,   48, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_048.png', cX=1010, cY=1763, Frame=  2775
+  41,   49, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_049.png', cX=1146, cY=1896, Frame=  2775
+  40,   49, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_049.png', cX=1028, cY=1762, Frame=  2776
+  41,   50, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_050.png', cX=1168, cY=1895, Frame=  2776
+  40,   50, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_050.png', cX=1046, cY=1763, Frame=  2777
+  41,   51, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_051.png', cX=1191, cY=1894, Frame=  2777
+  40,   51, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_051.png', cX=1065, cY=1762, Frame=  2778
+  41,   52, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_052.png', cX=1215, cY=1894, Frame=  2778
+  40,   52, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_052.png', cX=1085, cY=1761, Frame=  2779
+  41,   53, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_053.png', cX=1238, cY=1892, Frame=  2779
+  40,   53, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_053.png', cX=1106, cY=1761, Frame=  2780
+  41,   54, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_054.png', cX=1262, cY=1892, Frame=  2780
+  40,   54, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_054.png', cX=1126, cY=1760, Frame=  2781
+  41,   55, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_055.png', cX=1284, cY=1891, Frame=  2781
+  40,   55, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_055.png', cX=1145, cY=1760, Frame=  2782
+  41,   56, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_056.png', cX=1308, cY=1891, Frame=  2782
+  40,   56, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_056.png', cX=1163, cY=1759, Frame=  2783
+  41,   57, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_057.png', cX=1332, cY=1891, Frame=  2783
+  40,   57, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_057.png', cX=1182, cY=1759, Frame=  2784
+  41,   58, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_058.png', cX=1355, cY=1890, Frame=  2784
+  40,   58, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_058.png', cX=1202, cY=1759, Frame=  2785
+  41,   59, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_059.png', cX=1379, cY=1889, Frame=  2785
+  40,   59, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_059.png', cX=1222, cY=1759, Frame=  2786
+  41,   60, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_060.png', cX=1401, cY=1886, Frame=  2786
+  40,   60, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_060.png', cX=1241, cY=1758, Frame=  2787
+  41,   61, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_061.png', cX=1422, cY=1886, Frame=  2787
+  40,   61, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_061.png', cX=1258, cY=1759, Frame=  2788
+  41,   62, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_062.png', cX=1445, cY=1887, Frame=  2788
+  40,   62, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_062.png', cX=1278, cY=1756, Frame=  2789
+  41,   63, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_063.png', cX=1465, cY=1885, Frame=  2789
+  40,   63, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_063.png', cX=1296, cY=1758, Frame=  2790
+  41,   64, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_064.png', cX=1488, cY=1885, Frame=  2790
+  40,   64, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_064.png', cX=1313, cY=1757, Frame=  2791
+  41,   65, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_065.png', cX=1509, cY=1884, Frame=  2791
+  40,   65, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_065.png', cX=1332, cY=1756, Frame=  2792
+  41,   66, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_066.png', cX=1532, cY=1884, Frame=  2792
+  40,   66, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_066.png', cX=1351, cY=1756, Frame=  2793
+  41,   67, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_067.png', cX=1553, cY=1883, Frame=  2793
+  40,   67, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_067.png', cX=1370, cY=1755, Frame=  2794
+  41,   68, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_068.png', cX=1575, cY=1883, Frame=  2794
+  40,   68, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_068.png', cX=1388, cY=1755, Frame=  2795
+  41,   69, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_069.png', cX=1596, cY=1882, Frame=  2795
+  40,   69, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_069.png', cX=1405, cY=1754, Frame=  2796
+  41,   70, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_070.png', cX=1620, cY=1882, Frame=  2796
+  40,   70, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_070.png', cX=1422, cY=1754, Frame=  2797
+  41,   71, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_071.png', cX=1641, cY=1881, Frame=  2797
+  40,   71, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_071.png', cX=1441, cY=1754, Frame=  2798
+  41,   72, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_072.png', cX=1664, cY=1882, Frame=  2798
+  40,   72, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_072.png', cX=1460, cY=1754, Frame=  2799
+  41,   73, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_073.png', cX=1685, cY=1882, Frame=  2799
+  40,   73, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_073.png', cX=1480, cY=1753, Frame=  2800
+  41,   74, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_074.png', cX=1709, cY=1881, Frame=  2800
+  40,   74, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_074.png', cX=1500, cY=1753, Frame=  2801
+  41,   75, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_075.png', cX=1730, cY=1881, Frame=  2801
+  40,   75, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_075.png', cX=1520, cY=1753, Frame=  2802
+  41,   76, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_076.png', cX=1753, cY=1880, Frame=  2802
+  40,   76, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_076.png', cX=1538, cY=1752, Frame=  2803
+  41,   77, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_077.png', cX=1777, cY=1879, Frame=  2803
+  40,   77, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_077.png', cX=1557, cY=1752, Frame=  2804
+  41,   78, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_078.png', cX=1801, cY=1878, Frame=  2804
+  40,   78, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_078.png', cX=1577, cY=1751, Frame=  2805
+  41,   79, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_079.png', cX=1825, cY=1877, Frame=  2805
+  40,   79, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_079.png', cX=1598, cY=1751, Frame=  2806
+  41,   80, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_080.png', cX=1848, cY=1876, Frame=  2806
+  40,   80, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_080.png', cX=1617, cY=1751, Frame=  2807
+  41,   81, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_081.png', cX=1869, cY=1877, Frame=  2807
+  40,   81, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_081.png', cX=1635, cY=1751, Frame=  2808
+  41,   82, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_082.png', cX=1893, cY=1877, Frame=  2808
+  40,   82, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_082.png', cX=1653, cY=1750, Frame=  2809
+  41,   83, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_083.png', cX=1915, cY=1877, Frame=  2809
+  40,   83, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_083.png', cX=1671, cY=1749, Frame=  2810
+  41,   84, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_084.png', cX=1936, cY=1877, Frame=  2810
+  40,   84, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_084.png', cX=1689, cY=1750, Frame=  2811
+  41,   85, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_085.png', cX=1958, cY=1875, Frame=  2811
+  40,   85, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_085.png', cX=1707, cY=1749, Frame=  2812
+  41,   86, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_086.png', cX=1978, cY=1873, Frame=  2812
+  40,   86, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_086.png', cX=1725, cY=1749, Frame=  2813
+  41,   87, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_087.png', cX=2000, cY=1873, Frame=  2813
+  40,   87, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_087.png', cX=1744, cY=1748, Frame=  2814
+  41,   88, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_088.png', cX=2022, cY=1873, Frame=  2814
+  40,   88, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_088.png', cX=1761, cY=1748, Frame=  2815
+  41,   89, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_089.png', cX=2043, cY=1873, Frame=  2815
+  40,   89, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_089.png', cX=1781, cY=1747, Frame=  2816
+  41,   90, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_090.png', cX=2064, cY=1873, Frame=  2816
+  40,   90, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_090.png', cX=1798, cY=1746, Frame=  2817
+  41,   91, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_091.png', cX=2085, cY=1872, Frame=  2817
+  40,   91, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_091.png', cX=1816, cY=1746, Frame=  2818
+  41,   92, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_092.png', cX=2107, cY=1871, Frame=  2818
+  40,   92, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_092.png', cX=1835, cY=1745, Frame=  2819
+  41,   93, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_093.png', cX=2129, cY=1871, Frame=  2819
+  40,   93, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_093.png', cX=1853, cY=1745, Frame=  2820
+  41,   94, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_094.png', cX=2152, cY=1870, Frame=  2820
+  40,   94, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_094.png', cX=1872, cY=1744, Frame=  2821
+  41,   95, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_095.png', cX=2172, cY=1870, Frame=  2821
+  40,   95, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_095.png', cX=1891, cY=1744, Frame=  2822
+  41,   96, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_096.png', cX=2193, cY=1869, Frame=  2822
+  40,   96, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_096.png', cX=1910, cY=1742, Frame=  2823
+  41,   97, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_097.png', cX=2215, cY=1869, Frame=  2823
+  40,   97, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_097.png', cX=1929, cY=1742, Frame=  2824
+  41,   98, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_098.png', cX=2238, cY=1869, Frame=  2824
+  40,   98, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_098.png', cX=1948, cY=1742, Frame=  2825
+  41,   99, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_099.png', cX=2261, cY=1868, Frame=  2825
+  40,   99, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_099.png', cX=1967, cY=1742, Frame=  2826
+  41,  100, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_100.png', cX=2284, cY=1868, Frame=  2826
+  40,  100, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_100.png', cX=1987, cY=1742, Frame=  2827
+  41,  101, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_101.png', cX=2306, cY=1868, Frame=  2827
+  40,  101, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_101.png', cX=2006, cY=1742, Frame=  2828
+  41,  102, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_102.png', cX=2327, cY=1868, Frame=  2828
+  40,  102, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_102.png', cX=2026, cY=1741, Frame=  2829
+  41,  103, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_103.png', cX=2349, cY=1867, Frame=  2829
+  40,  103, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_103.png', cX=2044, cY=1741, Frame=  2830
+  41,  104, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_104.png', cX=2372, cY=1867, Frame=  2830
+  40,  104, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_104.png', cX=2062, cY=1741, Frame=  2831
+  41,  105, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_105.png', cX=2393, cY=1867, Frame=  2831
+  40,  105, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_105.png', cX=2080, cY=1740, Frame=  2832
+  41,  106, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_106.png', cX=2414, cY=1867, Frame=  2832
+  40,  106, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_106.png', cX=2097, cY=1740, Frame=  2833
+  41,  107, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_107.png', cX=2434, cY=1868, Frame=  2833
+  40,  107, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_107.png', cX=2115, cY=1739, Frame=  2834
+  41,  108, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_108.png', cX=2454, cY=1867, Frame=  2834
+  40,  108, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_108.png', cX=2133, cY=1739, Frame=  2835
+  41,  109, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_109.png', cX=2475, cY=1867, Frame=  2835
+  40,  109, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_109.png', cX=2151, cY=1738, Frame=  2836
+  41,  110, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_110.png', cX=2495, cY=1867, Frame=  2836
+  40,  110, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_110.png', cX=2168, cY=1737, Frame=  2837
+  41,  111, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_111.png', cX=2516, cY=1867, Frame=  2837
+  40,  111, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_111.png', cX=2186, cY=1737, Frame=  2838
+  41,  112, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_112.png', cX=2537, cY=1867, Frame=  2838
+  40,  112, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_112.png', cX=2204, cY=1737, Frame=  2839
+  41,  113, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_113.png', cX=2557, cY=1867, Frame=  2839
+  40,  113, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_113.png', cX=2223, cY=1737, Frame=  2840
+  41,  114, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_114.png', cX=2576, cY=1867, Frame=  2840
+  40,  114, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_114.png', cX=2241, cY=1737, Frame=  2841
+  41,  115, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_115.png', cX=2597, cY=1867, Frame=  2841
+  40,  115, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_115.png', cX=2260, cY=1737, Frame=  2842
+  41,  116, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_116.png', cX=2617, cY=1867, Frame=  2842
+  40,  116, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_116.png', cX=2279, cY=1735, Frame=  2843
+  41,  117, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_117.png', cX=2638, cY=1868, Frame=  2843
+  40,  117, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_117.png', cX=2297, cY=1735, Frame=  2844
+  41,  118, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_118.png', cX=2659, cY=1867, Frame=  2844
+  40,  118, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_118.png', cX=2315, cY=1735, Frame=  2845
+  41,  119, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_119.png', cX=2679, cY=1867, Frame=  2845
+  40,  119, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_119.png', cX=2333, cY=1736, Frame=  2846
+  41,  120, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_120.png', cX=2700, cY=1867, Frame=  2846
+  40,  120, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_120.png', cX=2352, cY=1736, Frame=  2847
+  41,  121, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_121.png', cX=2721, cY=1867, Frame=  2847
+  40,  121, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_121.png', cX=2371, cY=1735, Frame=  2848
+  41,  122, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_122.png', cX=2742, cY=1866, Frame=  2848
+  40,  122, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_122.png', cX=2391, cY=1735, Frame=  2849
+  41,  123, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_123.png', cX=2764, cY=1867, Frame=  2849
+  40,  123, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_123.png', cX=2411, cY=1735, Frame=  2850
+  41,  124, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_124.png', cX=2786, cY=1867, Frame=  2850
+  40,  124, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_124.png', cX=2428, cY=1734, Frame=  2851
+  41,  125, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_125.png', cX=2806, cY=1867, Frame=  2851
+  40,  125, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_125.png', cX=2445, cY=1734, Frame=  2852
+  41,  126, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_126.png', cX=2826, cY=1866, Frame=  2852
+  40,  126, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_126.png', cX=2463, cY=1734, Frame=  2853
+  41,  127, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_127.png', cX=2847, cY=1866, Frame=  2853
+  40,  127, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_127.png', cX=2482, cY=1734, Frame=  2854
+  41,  128, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_128.png', cX=2867, cY=1867, Frame=  2854
+  40,  128, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_128.png', cX=2500, cY=1733, Frame=  2855
+  41,  129, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_129.png', cX=2888, cY=1867, Frame=  2855
+  40,  129, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_129.png', cX=2518, cY=1733, Frame=  2856
+  41,  130, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_130.png', cX=2908, cY=1867, Frame=  2856
+  40,  130, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_130.png', cX=2536, cY=1734, Frame=  2857
+  41,  131, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_131.png', cX=2927, cY=1867, Frame=  2857
+  40,  131, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_131.png', cX=2553, cY=1733, Frame=  2858
+  41,  132, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_132.png', cX=2946, cY=1866, Frame=  2858
+  40,  132, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_132.png', cX=2569, cY=1732, Frame=  2859
+  41,  133, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_133.png', cX=2965, cY=1866, Frame=  2859
+  40,  133, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_133.png', cX=2586, cY=1732, Frame=  2860
+  41,  134, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_134.png', cX=2984, cY=1865, Frame=  2860
+  40,  134, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_134.png', cX=2604, cY=1733, Frame=  2861
+  41,  135, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_135.png', cX=3005, cY=1865, Frame=  2861
+  40,  135, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_135.png', cX=2622, cY=1732, Frame=  2862
+  41,  136, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_136.png', cX=3026, cY=1865, Frame=  2862
+  40,  136, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_136.png', cX=2640, cY=1732, Frame=  2863
+  41,  137, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_137.png', cX=3046, cY=1865, Frame=  2863
+  40,  137, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_137.png', cX=2658, cY=1733, Frame=  2864
+  41,  138, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_138.png', cX=3066, cY=1866, Frame=  2864
+  40,  138, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_138.png', cX=2675, cY=1733, Frame=  2865
+  41,  139, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_139.png', cX=3085, cY=1866, Frame=  2865
+  40,  139, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_139.png', cX=2692, cY=1732, Frame=  2866
+  41,  140, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_140.png', cX=3105, cY=1866, Frame=  2866
+  40,  140, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_140.png', cX=2710, cY=1733, Frame=  2867
+  41,  141, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_141.png', cX=3126, cY=1866, Frame=  2867
+  40,  141, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_141.png', cX=2729, cY=1732, Frame=  2868
+  41,  142, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_142.png', cX=3146, cY=1866, Frame=  2868
+  40,  142, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_142.png', cX=2748, cY=1733, Frame=  2869
+  41,  143, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_143.png', cX=3168, cY=1867, Frame=  2869
+  40,  143, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_143.png', cX=2767, cY=1732, Frame=  2870
+  41,  144, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_144.png', cX=3190, cY=1866, Frame=  2870
+  40,  144, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_144.png', cX=2787, cY=1734, Frame=  2871
+  41,  145, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_145.png', cX=3209, cY=1866, Frame=  2871
+  40,  145, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_145.png', cX=2805, cY=1733, Frame=  2872
+  41,  146, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_146.png', cX=3230, cY=1867, Frame=  2872
+  40,  146, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_146.png', cX=2822, cY=1733, Frame=  2873
+  41,  147, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_147.png', cX=3251, cY=1867, Frame=  2873
+  40,  147, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_147.png', cX=2840, cY=1732, Frame=  2874
+  41,  148, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_148.png', cX=3272, cY=1866, Frame=  2874
+  40,  148, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_148.png', cX=2857, cY=1732, Frame=  2875
+  41,  149, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_149.png', cX=3294, cY=1867, Frame=  2875
+  40,  149, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_149.png', cX=2875, cY=1731, Frame=  2876
+  41,  150, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_150.png', cX=3314, cY=1867, Frame=  2876
+  40,  150, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_150.png', cX=2893, cY=1732, Frame=  2877
+  41,  151, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_151.png', cX=3333, cY=1868, Frame=  2877
+  40,  151, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_151.png', cX=2911, cY=1732, Frame=  2878
+  41,  152, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_152.png', cX=3351, cY=1868, Frame=  2878
+  40,  152, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_152.png', cX=2928, cY=1733, Frame=  2879
+  41,  153, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_153.png', cX=3371, cY=1868, Frame=  2879
+  40,  153, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_153.png', cX=2944, cY=1732, Frame=  2880
+  41,  154, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_154.png', cX=3391, cY=1868, Frame=  2880
+  40,  154, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_154.png', cX=2960, cY=1732, Frame=  2881
+  41,  155, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_155.png', cX=3412, cY=1868, Frame=  2881
+  40,  155, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_155.png', cX=2978, cY=1732, Frame=  2882
+  41,  156, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_156.png', cX=3432, cY=1869, Frame=  2882
+  40,  156, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_156.png', cX=2995, cY=1732, Frame=  2883
+  41,  157, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_157.png', cX=3450, cY=1870, Frame=  2883
+  40,  157, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_157.png', cX=3013, cY=1732, Frame=  2884
+  41,  158, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_158.png', cX=3469, cY=1869, Frame=  2884
+  40,  158, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_158.png', cX=3030, cY=1733, Frame=  2885
+  41,  159, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_159.png', cX=3488, cY=1869, Frame=  2885
+  40,  159, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_159.png', cX=3048, cY=1733, Frame=  2886
+  41,  160, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_160.png', cX=3509, cY=1869, Frame=  2886
+  40,  160, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_160.png', cX=3064, cY=1733, Frame=  2887
+  41,  161, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_161.png', cX=3529, cY=1870, Frame=  2887
+  40,  161, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_161.png', cX=3081, cY=1733, Frame=  2888
+  41,  162, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_162.png', cX=3550, cY=1870, Frame=  2888
+  40,  162, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_162.png', cX=3100, cY=1734, Frame=  2889
+  41,  163, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_163.png', cX=3570, cY=1870, Frame=  2889
+  40,  163, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_163.png', cX=3120, cY=1733, Frame=  2890
+  41,  164, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_164.png', cX=3590, cY=1871, Frame=  2890
+  40,  164, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_164.png', cX=3136, cY=1733, Frame=  2891
+  41,  165, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_165.png', cX=3611, cY=1871, Frame=  2891
+  40,  165, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_165.png', cX=3155, cY=1733, Frame=  2892
+  41,  166, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_166.png', cX=3634, cY=1871, Frame=  2892
+  40,  166, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_166.png', cX=3174, cY=1733, Frame=  2893
+  41,  167, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_167.png', cX=3655, cY=1872, Frame=  2893
+  40,  167, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_167.png', cX=3193, cY=1733, Frame=  2894
+  41,  168, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_168.png', cX=3679, cY=1872, Frame=  2894
+  40,  168, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_168.png', cX=3210, cY=1733, Frame=  2895
+  41,  169, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_169.png', cX=3700, cY=1872, Frame=  2895
+  40,  169, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_169.png', cX=3227, cY=1733, Frame=  2896
+  41,  170, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_170.png', cX=3720, cY=1872, Frame=  2896
+  40,  170, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_170.png', cX=3246, cY=1734, Frame=  2897
+  41,  171, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_171.png', cX=3740, cY=1872, Frame=  2897
+  40,  171, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_171.png', cX=3265, cY=1733, Frame=  2898
+  41,  172, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_172.png', cX=3762, cY=1872, Frame=  2898
+  40,  172, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_172.png', cX=3283, cY=1733, Frame=  2899
+  41,  173, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_173.png', cX=3782, cY=1872, Frame=  2899
+  40,  173, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_173.png', cX=3300, cY=1734, Frame=  2900
+  41,  174, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_174.png', cX=3803, cY=1873, Frame=  2900
+  40,  174, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_174.png', cX=3317, cY=1734, Frame=  2901
+  41,  175, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_175.png', cX=3823, cY=1873, Frame=  2901
+  40,  175, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_175.png', cX=3334, cY=1735, Frame=  2902
+  41,  176, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_176.png', cX=3843, cY=1873, Frame=  2902
+  40,  176, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_176.png', cX=3352, cY=1735, Frame=  2903
+  41,  177, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_177.png', cX=3864, cY=1873, Frame=  2903
+  40,  177, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_177.png', cX=3369, cY=1736, Frame=  2904
+  41,  178, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_178.png', cX=3884, cY=1873, Frame=  2904
+  40,  178, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_178.png', cX=3387, cY=1737, Frame=  2905
+  41,  179, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_179.png', cX=3904, cY=1873, Frame=  2905
+  40,  179, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_179.png', cX=3404, cY=1738, Frame=  2906
+  41,  180, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_180.png', cX=3928, cY=1875, Frame=  2906
+  40,  180, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_180.png', cX=3422, cY=1737, Frame=  2907
+  41,  181, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_181.png', cX=3948, cY=1874, Frame=  2907
+  40,  181, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_181.png', cX=3440, cY=1738, Frame=  2908
+  41,  182, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_182.png', cX=3968, cY=1874, Frame=  2908
+  40,  182, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_182.png', cX=3457, cY=1739, Frame=  2909
+  41,  183, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_183.png', cX=3987, cY=1875, Frame=  2909
+  40,  183, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_183.png', cX=3474, cY=1739, Frame=  2910
+  41,  184, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_184.png', cX=4007, cY=1876, Frame=  2910
+  40,  184, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_184.png', cX=3493, cY=1739, Frame=  2911
+  41,  185, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_185.png', cX=4029, cY=1876, Frame=  2911
+  40,  185, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_185.png', cX=3513, cY=1739, Frame=  2912
+  41,  186, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_186.png', cX=4051, cY=1877, Frame=  2912
+  40,  186, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_186.png', cX=3531, cY=1739, Frame=  2913
+  41,  187, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_187.png', cX=4071, cY=1877, Frame=  2913
+  40,  187, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_187.png', cX=3548, cY=1739, Frame=  2914
+  41,  188, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_041\Image_188.png', cX=4086, cY=1878, Frame=  2914
+  40,  188, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_188.png', cX=3568, cY=1740, Frame=  2915
+  40,  189, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_189.png', cX=3587, cY=1740, Frame=  2916
+  40,  190, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_190.png', cX=3607, cY=1740, Frame=  2917
+  40,  191, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_191.png', cX=3627, cY=1742, Frame=  2918
+  40,  192, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_192.png', cX=3645, cY=1742, Frame=  2919
+  40,  193, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_193.png', cX=3662, cY=1742, Frame=  2920
+  40,  194, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_194.png', cX=3681, cY=1743, Frame=  2921
+  40,  195, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_195.png', cX=3701, cY=1742, Frame=  2922
+  40,  196, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_196.png', cX=3719, cY=1743, Frame=  2923
+  40,  197, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_197.png', cX=3736, cY=1744, Frame=  2924
+  40,  198, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_198.png', cX=3754, cY=1745, Frame=  2925
+  40,  199, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_199.png', cX=3772, cY=1746, Frame=  2926
+  40,  200, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_200.png', cX=3791, cY=1745, Frame=  2927
+  40,  201, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_201.png', cX=3811, cY=1746, Frame=  2928
+  40,  202, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_202.png', cX=3829, cY=1746, Frame=  2929
+  40,  203, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_203.png', cX=3847, cY=1746, Frame=  2930
+  40,  204, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_204.png', cX=3865, cY=1747, Frame=  2931
+  40,  205, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_205.png', cX=3884, cY=1747, Frame=  2932
+  40,  206, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_206.png', cX=3903, cY=1746, Frame=  2933
+  40,  207, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_207.png', cX=3922, cY=1747, Frame=  2934
+  40,  208, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_208.png', cX=3941, cY=1747, Frame=  2935
+  40,  209, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_209.png', cX=3960, cY=1747, Frame=  2936
+  40,  210, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_210.png', cX=3979, cY=1747, Frame=  2937
+  40,  211, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_211.png', cX=3998, cY=1747, Frame=  2938
+  40,  212, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_212.png', cX=4019, cY=1746, Frame=  2939
+  40,  213, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_213.png', cX=4040, cY=1747, Frame=  2940
+  40,  214, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_214.png', cX=4058, cY=1747, Frame=  2941
+  40,  215, '..\VideoTestCases\Tox Ostra 5-26-25 Initial T4Hr 480ppb F3\Images_001\Object_040\Image_215.png', cX=4078, cY=1745, Frame=  2942

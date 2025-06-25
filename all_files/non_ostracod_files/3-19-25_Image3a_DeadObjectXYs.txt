@@ -1,0 +1,887 @@
+  53,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_001.png', cX= 223, cY=1576, Frame=   578
+  53,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_002.png', cX= 296, cY=1575, Frame=   579
+  53,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_003.png', cX= 370, cY=1575, Frame=   580
+  53,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_004.png', cX= 442, cY=1575, Frame=   581
+  53,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_005.png', cX= 513, cY=1576, Frame=   582
+  53,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_006.png', cX= 585, cY=1576, Frame=   583
+  53,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_007.png', cX= 656, cY=1576, Frame=   584
+  53,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_008.png', cX= 727, cY=1574, Frame=   585
+  53,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_009.png', cX= 797, cY=1573, Frame=   586
+  53,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_010.png', cX= 866, cY=1572, Frame=   587
+  53,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_011.png', cX= 934, cY=1571, Frame=   588
+  53,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_012.png', cX=1002, cY=1569, Frame=   589
+  53,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_013.png', cX=1069, cY=1568, Frame=   590
+  53,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_014.png', cX=1135, cY=1567, Frame=   591
+  53,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_015.png', cX=1202, cY=1563, Frame=   592
+  53,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_016.png', cX=1267, cY=1562, Frame=   593
+  53,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_017.png', cX=1333, cY=1558, Frame=   594
+  53,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_018.png', cX=1397, cY=1556, Frame=   595
+  53,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_019.png', cX=1460, cY=1555, Frame=   596
+  53,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_020.png', cX=1521, cY=1552, Frame=   597
+  53,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_021.png', cX=1582, cY=1552, Frame=   598
+  53,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_022.png', cX=1643, cY=1550, Frame=   599
+  53,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_023.png', cX=1704, cY=1546, Frame=   600
+  53,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_024.png', cX=1765, cY=1543, Frame=   601
+  53,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_025.png', cX=1826, cY=1538, Frame=   602
+  53,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_026.png', cX=1885, cY=1534, Frame=   603
+  53,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_027.png', cX=1944, cY=1528, Frame=   604
+  53,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_028.png', cX=2001, cY=1524, Frame=   605
+  53,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_029.png', cX=2058, cY=1519, Frame=   606
+  53,   30, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_030.png', cX=2113, cY=1516, Frame=   607
+  53,   31, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_031.png', cX=2168, cY=1514, Frame=   608
+  53,   32, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_032.png', cX=2222, cY=1512, Frame=   609
+  53,   33, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_033.png', cX=2277, cY=1510, Frame=   610
+  53,   34, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_034.png', cX=2332, cY=1508, Frame=   611
+  53,   35, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_035.png', cX=2386, cY=1508, Frame=   612
+  53,   36, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_036.png', cX=2440, cY=1507, Frame=   613
+  53,   37, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_037.png', cX=2493, cY=1506, Frame=   614
+  53,   38, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_038.png', cX=2546, cY=1505, Frame=   615
+  53,   39, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_039.png', cX=2599, cY=1504, Frame=   616
+  53,   40, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_040.png', cX=2650, cY=1503, Frame=   617
+  53,   41, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_041.png', cX=2701, cY=1502, Frame=   618
+  53,   42, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_042.png', cX=2751, cY=1501, Frame=   619
+  53,   43, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_043.png', cX=2800, cY=1499, Frame=   620
+  53,   44, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_044.png', cX=2849, cY=1498, Frame=   621
+  53,   45, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_045.png', cX=2896, cY=1498, Frame=   622
+  53,   46, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_046.png', cX=2944, cY=1498, Frame=   623
+  53,   47, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_047.png', cX=2991, cY=1498, Frame=   624
+  53,   48, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_048.png', cX=3038, cY=1497, Frame=   625
+  53,   49, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_049.png', cX=3084, cY=1498, Frame=   626
+  53,   50, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_050.png', cX=3131, cY=1496, Frame=   627
+  53,   51, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_051.png', cX=3175, cY=1495, Frame=   628
+  53,   52, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_052.png', cX=3220, cY=1493, Frame=   629
+  53,   53, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_053.png', cX=3264, cY=1492, Frame=   630
+  53,   54, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_054.png', cX=3309, cY=1490, Frame=   631
+  53,   55, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_055.png', cX=3352, cY=1490, Frame=   632
+  53,   56, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_056.png', cX=3397, cY=1488, Frame=   633
+  53,   57, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_057.png', cX=3441, cY=1486, Frame=   634
+  53,   58, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_058.png', cX=3486, cY=1485, Frame=   635
+  53,   59, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_059.png', cX=3531, cY=1483, Frame=   636
+  53,   60, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_060.png', cX=3577, cY=1481, Frame=   637
+  53,   61, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_061.png', cX=3622, cY=1480, Frame=   638
+  53,   62, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_062.png', cX=3669, cY=1479, Frame=   639
+  53,   63, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_063.png', cX=3715, cY=1478, Frame=   640
+  53,   64, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_064.png', cX=3761, cY=1477, Frame=   641
+  53,   65, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_065.png', cX=3807, cY=1476, Frame=   642
+  53,   66, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_066.png', cX=3853, cY=1474, Frame=   643
+  53,   67, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_053\Image_067.png', cX=3850, cY=1452, Frame=   644
+ 136,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_001.png', cX= 212, cY= 633, Frame=  1599
+ 136,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_002.png', cX= 244, cY= 630, Frame=  1600
+ 136,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_003.png', cX= 275, cY= 627, Frame=  1601
+ 136,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_004.png', cX= 306, cY= 624, Frame=  1602
+ 136,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_005.png', cX= 336, cY= 621, Frame=  1603
+ 136,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_006.png', cX= 367, cY= 618, Frame=  1604
+ 136,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_007.png', cX= 398, cY= 615, Frame=  1605
+ 136,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_008.png', cX= 428, cY= 613, Frame=  1606
+ 136,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_009.png', cX= 459, cY= 610, Frame=  1607
+ 136,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_010.png', cX= 489, cY= 608, Frame=  1608
+ 136,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_011.png', cX= 519, cY= 605, Frame=  1609
+ 136,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_012.png', cX= 549, cY= 603, Frame=  1610
+ 136,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_013.png', cX= 580, cY= 601, Frame=  1611
+ 136,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_014.png', cX= 611, cY= 599, Frame=  1612
+ 136,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_015.png', cX= 641, cY= 596, Frame=  1613
+ 136,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_016.png', cX= 671, cY= 595, Frame=  1614
+ 136,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_017.png', cX= 701, cY= 593, Frame=  1615
+ 136,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_018.png', cX= 732, cY= 591, Frame=  1616
+ 136,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_019.png', cX= 761, cY= 589, Frame=  1617
+ 136,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_020.png', cX= 792, cY= 588, Frame=  1618
+ 136,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_021.png', cX= 822, cY= 586, Frame=  1619
+ 136,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_022.png', cX= 851, cY= 584, Frame=  1620
+ 136,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_023.png', cX= 882, cY= 582, Frame=  1621
+ 136,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_024.png', cX= 912, cY= 581, Frame=  1622
+ 136,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_025.png', cX= 942, cY= 579, Frame=  1623
+ 136,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_026.png', cX= 972, cY= 578, Frame=  1624
+ 136,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_027.png', cX=1002, cY= 576, Frame=  1625
+ 136,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_028.png', cX=1032, cY= 574, Frame=  1626
+ 136,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_029.png', cX=1062, cY= 574, Frame=  1627
+ 136,   30, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_030.png', cX=1091, cY= 571, Frame=  1628
+ 136,   31, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_031.png', cX=1120, cY= 569, Frame=  1629
+ 136,   32, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_032.png', cX=1150, cY= 567, Frame=  1630
+ 136,   33, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_033.png', cX=1179, cY= 566, Frame=  1631
+ 136,   34, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_034.png', cX=1209, cY= 564, Frame=  1632
+ 136,   35, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_035.png', cX=1238, cY= 562, Frame=  1633
+ 136,   36, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_036.png', cX=1268, cY= 561, Frame=  1634
+ 136,   37, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_037.png', cX=1297, cY= 559, Frame=  1635
+ 136,   38, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_038.png', cX=1326, cY= 557, Frame=  1636
+ 136,   39, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_039.png', cX=1356, cY= 556, Frame=  1637
+ 136,   40, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_040.png', cX=1386, cY= 554, Frame=  1638
+ 136,   41, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_041.png', cX=1416, cY= 552, Frame=  1639
+ 136,   42, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_042.png', cX=1445, cY= 550, Frame=  1640
+ 136,   43, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_043.png', cX=1475, cY= 549, Frame=  1641
+ 136,   44, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_044.png', cX=1505, cY= 546, Frame=  1642
+ 136,   45, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_045.png', cX=1535, cY= 545, Frame=  1643
+ 136,   46, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_046.png', cX=1564, cY= 542, Frame=  1644
+ 136,   47, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_047.png', cX=1594, cY= 540, Frame=  1645
+ 136,   48, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_048.png', cX=1624, cY= 538, Frame=  1646
+ 136,   49, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_049.png', cX=1653, cY= 536, Frame=  1647
+ 136,   50, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_050.png', cX=1683, cY= 534, Frame=  1648
+ 136,   51, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_051.png', cX=1713, cY= 531, Frame=  1649
+ 136,   52, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_052.png', cX=1742, cY= 529, Frame=  1650
+ 136,   53, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_053.png', cX=1772, cY= 526, Frame=  1651
+ 136,   54, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_054.png', cX=1802, cY= 523, Frame=  1652
+ 136,   55, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_055.png', cX=1832, cY= 519, Frame=  1653
+ 136,   56, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_056.png', cX=1862, cY= 517, Frame=  1654
+ 136,   57, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_057.png', cX=1891, cY= 514, Frame=  1655
+ 136,   58, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_058.png', cX=1921, cY= 511, Frame=  1656
+ 136,   59, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_059.png', cX=1951, cY= 507, Frame=  1657
+ 136,   60, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_060.png', cX=1981, cY= 504, Frame=  1658
+ 136,   61, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_061.png', cX=2011, cY= 500, Frame=  1659
+ 136,   62, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_062.png', cX=2041, cY= 496, Frame=  1660
+ 136,   63, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_063.png', cX=2071, cY= 492, Frame=  1661
+ 136,   64, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_064.png', cX=2101, cY= 488, Frame=  1662
+ 136,   65, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_065.png', cX=2131, cY= 483, Frame=  1663
+ 136,   66, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_066.png', cX=2161, cY= 479, Frame=  1664
+ 136,   67, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_067.png', cX=2191, cY= 474, Frame=  1665
+ 136,   68, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_068.png', cX=2221, cY= 469, Frame=  1666
+ 136,   69, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_069.png', cX=2251, cY= 464, Frame=  1667
+ 136,   70, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_070.png', cX=2281, cY= 459, Frame=  1668
+ 136,   71, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_071.png', cX=2310, cY= 454, Frame=  1669
+ 136,   72, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_072.png', cX=2339, cY= 449, Frame=  1670
+ 136,   73, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_073.png', cX=2368, cY= 442, Frame=  1671
+ 136,   74, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_074.png', cX=2397, cY= 435, Frame=  1672
+ 136,   75, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_075.png', cX=2426, cY= 430, Frame=  1673
+ 136,   76, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_076.png', cX=2455, cY= 424, Frame=  1674
+ 136,   77, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_077.png', cX=2484, cY= 416, Frame=  1675
+ 136,   78, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_078.png', cX=2513, cY= 409, Frame=  1676
+ 136,   79, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_079.png', cX=2542, cY= 402, Frame=  1677
+ 136,   80, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_080.png', cX=2571, cY= 394, Frame=  1678
+ 136,   81, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_081.png', cX=2600, cY= 386, Frame=  1679
+ 136,   82, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_082.png', cX=2629, cY= 377, Frame=  1680
+ 136,   83, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_083.png', cX=2658, cY= 368, Frame=  1681
+ 136,   84, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_084.png', cX=2687, cY= 359, Frame=  1682
+ 136,   85, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_085.png', cX=2716, cY= 349, Frame=  1683
+ 136,   86, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_086.png', cX=2744, cY= 338, Frame=  1684
+ 136,   87, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_087.png', cX=2773, cY= 326, Frame=  1685
+ 136,   88, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_088.png', cX=2802, cY= 315, Frame=  1686
+ 136,   89, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_089.png', cX=2831, cY= 302, Frame=  1687
+ 136,   90, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_090.png', cX=2859, cY= 289, Frame=  1688
+ 136,   91, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_091.png', cX=2888, cY= 275, Frame=  1689
+ 136,   92, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_092.png', cX=2916, cY= 260, Frame=  1690
+ 136,   93, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_093.png', cX=2944, cY= 244, Frame=  1691
+ 136,   94, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_094.png', cX=2970, cY= 227, Frame=  1692
+ 136,   95, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_095.png', cX=2997, cY= 208, Frame=  1693
+ 136,   96, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_096.png', cX=3023, cY= 189, Frame=  1694
+ 136,   97, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_097.png', cX=3048, cY= 169, Frame=  1695
+ 142,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_001.png', cX= 223, cY=1033, Frame=  1695
+ 136,   98, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_098.png', cX=3070, cY= 146, Frame=  1696
+ 142,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_002.png', cX= 267, cY=1034, Frame=  1696
+ 136,   99, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_099.png', cX=3091, cY= 123, Frame=  1697
+ 142,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_003.png', cX= 308, cY=1031, Frame=  1697
+ 136,  100, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_100.png', cX=3111, cY=  98, Frame=  1698
+ 142,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_004.png', cX= 348, cY=1028, Frame=  1698
+ 136,  101, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_101.png', cX=3127, cY=  73, Frame=  1699
+ 142,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_005.png', cX= 391, cY=1028, Frame=  1699
+ 136,  102, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_136\Image_102.png', cX=3142, cY=  41, Frame=  1700
+ 142,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_006.png', cX= 431, cY=1027, Frame=  1700
+ 142,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_007.png', cX= 470, cY=1026, Frame=  1701
+ 142,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_008.png', cX= 512, cY=1028, Frame=  1702
+ 142,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_009.png', cX= 553, cY=1030, Frame=  1703
+ 142,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_010.png', cX= 593, cY=1029, Frame=  1704
+ 142,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_011.png', cX= 632, cY=1028, Frame=  1705
+ 142,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_012.png', cX= 672, cY=1028, Frame=  1706
+ 142,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_013.png', cX= 713, cY=1029, Frame=  1707
+ 142,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_014.png', cX= 753, cY=1028, Frame=  1708
+ 142,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_015.png', cX= 792, cY=1026, Frame=  1709
+ 142,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_016.png', cX= 834, cY=1030, Frame=  1710
+ 142,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_017.png', cX= 874, cY=1029, Frame=  1711
+ 142,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_018.png', cX= 913, cY=1027, Frame=  1712
+ 142,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_019.png', cX= 952, cY=1026, Frame=  1713
+ 142,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_020.png', cX= 992, cY=1027, Frame=  1714
+ 142,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_021.png', cX=1030, cY=1025, Frame=  1715
+ 142,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_022.png', cX=1070, cY=1025, Frame=  1716
+ 142,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_023.png', cX=1109, cY=1024, Frame=  1717
+ 142,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_024.png', cX=1149, cY=1025, Frame=  1718
+ 142,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_025.png', cX=1188, cY=1024, Frame=  1719
+ 142,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_026.png', cX=1226, cY=1022, Frame=  1720
+ 142,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_027.png', cX=1265, cY=1022, Frame=  1721
+ 142,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_028.png', cX=1304, cY=1022, Frame=  1722
+ 142,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_029.png', cX=1344, cY=1023, Frame=  1723
+ 142,   30, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_030.png', cX=1382, cY=1021, Frame=  1724
+ 142,   31, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_031.png', cX=1422, cY=1020, Frame=  1725
+ 142,   32, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_032.png', cX=1460, cY=1020, Frame=  1726
+ 142,   33, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_033.png', cX=1499, cY=1019, Frame=  1727
+ 142,   34, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_034.png', cX=1538, cY=1019, Frame=  1728
+ 142,   35, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_035.png', cX=1578, cY=1019, Frame=  1729
+ 142,   36, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_036.png', cX=1617, cY=1018, Frame=  1730
+ 142,   37, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_037.png', cX=1655, cY=1017, Frame=  1731
+ 142,   38, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_038.png', cX=1693, cY=1016, Frame=  1732
+ 142,   39, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_039.png', cX=1732, cY=1013, Frame=  1733
+ 142,   40, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_040.png', cX=1771, cY=1014, Frame=  1734
+ 142,   41, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_041.png', cX=1809, cY=1013, Frame=  1735
+ 142,   42, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_042.png', cX=1849, cY=1013, Frame=  1736
+ 142,   43, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_043.png', cX=1887, cY=1012, Frame=  1737
+ 142,   44, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_044.png', cX=1925, cY=1008, Frame=  1738
+ 142,   45, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_045.png', cX=1964, cY=1007, Frame=  1739
+ 142,   46, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_046.png', cX=2002, cY=1005, Frame=  1740
+ 142,   47, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_047.png', cX=2041, cY=1002, Frame=  1741
+ 142,   48, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_048.png', cX=2080, cY=1004, Frame=  1742
+ 142,   49, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_049.png', cX=2118, cY=1000, Frame=  1743
+ 142,   50, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_050.png', cX=2157, cY= 998, Frame=  1744
+ 142,   51, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_051.png', cX=2194, cY= 995, Frame=  1745
+ 142,   52, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_052.png', cX=2233, cY= 993, Frame=  1746
+ 142,   53, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_053.png', cX=2271, cY= 990, Frame=  1747
+ 142,   54, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_054.png', cX=2308, cY= 986, Frame=  1748
+ 142,   55, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_055.png', cX=2346, cY= 983, Frame=  1749
+ 142,   56, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_056.png', cX=2384, cY= 980, Frame=  1750
+ 142,   57, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_057.png', cX=2421, cY= 976, Frame=  1751
+ 142,   58, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_058.png', cX=2457, cY= 973, Frame=  1752
+ 142,   59, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_059.png', cX=2495, cY= 969, Frame=  1753
+ 142,   60, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_060.png', cX=2531, cY= 965, Frame=  1754
+ 142,   61, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_061.png', cX=2568, cY= 961, Frame=  1755
+ 142,   62, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_062.png', cX=2604, cY= 956, Frame=  1756
+ 142,   63, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_063.png', cX=2639, cY= 951, Frame=  1757
+ 142,   64, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_064.png', cX=2675, cY= 946, Frame=  1758
+ 142,   65, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_065.png', cX=2710, cY= 941, Frame=  1759
+ 142,   66, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_066.png', cX=2745, cY= 937, Frame=  1760
+ 142,   67, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_067.png', cX=2780, cY= 932, Frame=  1761
+ 142,   68, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_068.png', cX=2814, cY= 926, Frame=  1762
+ 142,   69, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_069.png', cX=2848, cY= 922, Frame=  1763
+ 142,   70, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_070.png', cX=2882, cY= 917, Frame=  1764
+ 142,   71, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_071.png', cX=2922, cY= 926, Frame=  1765
+ 142,   72, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_072.png', cX=2960, cY= 926, Frame=  1766
+ 142,   73, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_073.png', cX=2991, cY= 913, Frame=  1767
+ 142,   74, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_074.png', cX=3020, cY= 899, Frame=  1768
+ 142,   75, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_075.png', cX=3046, cY= 884, Frame=  1769
+ 142,   76, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_076.png', cX=3079, cY= 878, Frame=  1770
+ 142,   77, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_077.png', cX=3110, cY= 871, Frame=  1771
+ 142,   78, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_078.png', cX=3142, cY= 864, Frame=  1772
+ 142,   79, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_079.png', cX=3173, cY= 856, Frame=  1773
+ 142,   80, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_080.png', cX=3204, cY= 848, Frame=  1774
+ 142,   81, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_081.png', cX=3235, cY= 841, Frame=  1775
+ 142,   82, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_082.png', cX=3266, cY= 834, Frame=  1776
+ 142,   83, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_083.png', cX=3297, cY= 826, Frame=  1777
+ 142,   84, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_084.png', cX=3327, cY= 817, Frame=  1778
+ 142,   85, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_085.png', cX=3357, cY= 808, Frame=  1779
+ 142,   86, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_086.png', cX=3388, cY= 800, Frame=  1780
+ 142,   87, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_087.png', cX=3418, cY= 792, Frame=  1781
+ 142,   88, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_088.png', cX=3447, cY= 783, Frame=  1782
+ 142,   89, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_089.png', cX=3477, cY= 774, Frame=  1783
+ 142,   90, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_090.png', cX=3506, cY= 764, Frame=  1784
+ 142,   91, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_091.png', cX=3535, cY= 755, Frame=  1785
+ 142,   92, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_092.png', cX=3564, cY= 744, Frame=  1786
+ 142,   93, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_093.png', cX=3593, cY= 734, Frame=  1787
+ 142,   94, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_094.png', cX=3622, cY= 725, Frame=  1788
+ 142,   95, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_095.png', cX=3651, cY= 717, Frame=  1789
+ 142,   96, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_096.png', cX=3679, cY= 707, Frame=  1790
+ 142,   97, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_097.png', cX=3707, cY= 698, Frame=  1791
+ 142,   98, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_098.png', cX=3736, cY= 690, Frame=  1792
+ 142,   99, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_099.png', cX=3763, cY= 681, Frame=  1793
+ 142,  100, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_100.png', cX=3791, cY= 674, Frame=  1794
+ 142,  101, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_101.png', cX=3818, cY= 666, Frame=  1795
+ 142,  102, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_102.png', cX=3845, cY= 659, Frame=  1796
+ 142,  103, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_103.png', cX=3874, cY= 654, Frame=  1797
+ 142,  104, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_104.png', cX=3898, cY= 644, Frame=  1798
+ 142,  105, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_105.png', cX=3925, cY= 636, Frame=  1799
+ 142,  106, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_106.png', cX=3953, cY= 637, Frame=  1800
+ 142,  107, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_107.png', cX=3978, cY= 628, Frame=  1801
+ 142,  108, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_108.png', cX=4003, cY= 623, Frame=  1802
+ 142,  109, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_109.png', cX=4029, cY= 620, Frame=  1803
+ 142,  110, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_110.png', cX=4053, cY= 616, Frame=  1804
+ 142,  111, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_111.png', cX=4067, cY= 602, Frame=  1805
+ 142,  112, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_112.png', cX=4074, cY= 571, Frame=  1806
+ 142,  113, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_142\Image_113.png', cX=4081, cY= 556, Frame=  1807
+ 147,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_001.png', cX= 224, cY=1221, Frame=  1880
+ 147,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_002.png', cX= 244, cY=1220, Frame=  1881
+ 147,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_003.png', cX= 264, cY=1219, Frame=  1882
+ 147,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_004.png', cX= 283, cY=1217, Frame=  1883
+ 147,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_005.png', cX= 303, cY=1216, Frame=  1884
+ 147,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_006.png', cX= 323, cY=1215, Frame=  1885
+ 147,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_007.png', cX= 343, cY=1213, Frame=  1886
+ 147,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_008.png', cX= 362, cY=1212, Frame=  1887
+ 147,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_009.png', cX= 381, cY=1211, Frame=  1888
+ 147,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_010.png', cX= 400, cY=1209, Frame=  1889
+ 147,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_011.png', cX= 420, cY=1207, Frame=  1890
+ 147,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_012.png', cX= 438, cY=1207, Frame=  1891
+ 147,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_013.png', cX= 456, cY=1206, Frame=  1892
+ 147,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_014.png', cX= 473, cY=1205, Frame=  1893
+ 147,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_015.png', cX= 494, cY=1203, Frame=  1894
+ 147,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_016.png', cX= 513, cY=1201, Frame=  1895
+ 147,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_017.png', cX= 531, cY=1200, Frame=  1896
+ 147,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_018.png', cX= 550, cY=1197, Frame=  1897
+ 147,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_019.png', cX= 568, cY=1196, Frame=  1898
+ 147,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_020.png', cX= 587, cY=1196, Frame=  1899
+ 147,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_021.png', cX= 606, cY=1193, Frame=  1900
+ 147,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_022.png', cX= 625, cY=1192, Frame=  1901
+ 147,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_023.png', cX= 643, cY=1191, Frame=  1902
+ 147,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_024.png', cX= 662, cY=1189, Frame=  1903
+ 147,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_025.png', cX= 681, cY=1188, Frame=  1904
+ 147,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_026.png', cX= 699, cY=1186, Frame=  1905
+ 147,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_027.png', cX= 719, cY=1186, Frame=  1906
+ 147,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_028.png', cX= 738, cY=1184, Frame=  1907
+ 147,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_029.png', cX= 758, cY=1182, Frame=  1908
+ 147,   30, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_030.png', cX= 777, cY=1181, Frame=  1909
+ 147,   31, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_031.png', cX= 796, cY=1179, Frame=  1910
+ 147,   32, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_032.png', cX= 816, cY=1178, Frame=  1911
+ 147,   33, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_033.png', cX= 835, cY=1177, Frame=  1912
+ 147,   34, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_034.png', cX= 854, cY=1176, Frame=  1913
+ 147,   35, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_035.png', cX= 873, cY=1175, Frame=  1914
+ 147,   36, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_036.png', cX= 893, cY=1174, Frame=  1915
+ 147,   37, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_037.png', cX= 912, cY=1174, Frame=  1916
+ 147,   38, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_038.png', cX= 931, cY=1171, Frame=  1917
+ 147,   39, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_039.png', cX= 950, cY=1170, Frame=  1918
+ 147,   40, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_040.png', cX= 968, cY=1169, Frame=  1919
+ 147,   41, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_041.png', cX= 987, cY=1168, Frame=  1920
+ 147,   42, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_042.png', cX=1005, cY=1167, Frame=  1921
+ 147,   43, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_043.png', cX=1023, cY=1165, Frame=  1922
+ 147,   44, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_044.png', cX=1041, cY=1164, Frame=  1923
+ 147,   45, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_045.png', cX=1059, cY=1162, Frame=  1924
+ 147,   46, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_046.png', cX=1077, cY=1161, Frame=  1925
+ 147,   47, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_047.png', cX=1094, cY=1159, Frame=  1926
+ 147,   48, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_048.png', cX=1112, cY=1157, Frame=  1927
+ 147,   49, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_049.png', cX=1130, cY=1157, Frame=  1928
+ 147,   50, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_050.png', cX=1147, cY=1155, Frame=  1929
+ 147,   51, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_051.png', cX=1165, cY=1154, Frame=  1930
+ 147,   52, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_052.png', cX=1182, cY=1152, Frame=  1931
+ 147,   53, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_053.png', cX=1200, cY=1150, Frame=  1932
+ 147,   54, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_054.png', cX=1217, cY=1150, Frame=  1933
+ 147,   55, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_055.png', cX=1234, cY=1147, Frame=  1934
+ 147,   56, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_056.png', cX=1252, cY=1145, Frame=  1935
+ 147,   57, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_057.png', cX=1270, cY=1144, Frame=  1936
+ 147,   58, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_058.png', cX=1288, cY=1142, Frame=  1937
+ 147,   59, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_059.png', cX=1305, cY=1141, Frame=  1938
+ 147,   60, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_060.png', cX=1322, cY=1139, Frame=  1939
+ 147,   61, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_061.png', cX=1340, cY=1137, Frame=  1940
+ 147,   62, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_062.png', cX=1359, cY=1135, Frame=  1941
+ 147,   63, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_063.png', cX=1376, cY=1134, Frame=  1942
+ 147,   64, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_064.png', cX=1394, cY=1133, Frame=  1943
+ 147,   65, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_065.png', cX=1412, cY=1130, Frame=  1944
+ 147,   66, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_066.png', cX=1430, cY=1128, Frame=  1945
+ 147,   67, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_067.png', cX=1448, cY=1127, Frame=  1946
+ 147,   68, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_068.png', cX=1467, cY=1125, Frame=  1947
+ 147,   69, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_069.png', cX=1485, cY=1124, Frame=  1948
+ 147,   70, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_070.png', cX=1503, cY=1122, Frame=  1949
+ 147,   71, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_071.png', cX=1521, cY=1120, Frame=  1950
+ 147,   72, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_072.png', cX=1537, cY=1118, Frame=  1951
+ 147,   73, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_073.png', cX=1557, cY=1117, Frame=  1952
+ 147,   74, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_074.png', cX=1574, cY=1115, Frame=  1953
+ 147,   75, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_075.png', cX=1592, cY=1114, Frame=  1954
+ 147,   76, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_076.png', cX=1610, cY=1112, Frame=  1955
+ 147,   77, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_077.png', cX=1628, cY=1110, Frame=  1956
+ 147,   78, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_078.png', cX=1647, cY=1107, Frame=  1957
+ 147,   79, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_079.png', cX=1664, cY=1104, Frame=  1958
+ 147,   80, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_080.png', cX=1680, cY=1103, Frame=  1959
+ 147,   81, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_081.png', cX=1698, cY=1103, Frame=  1960
+ 147,   82, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_082.png', cX=1716, cY=1100, Frame=  1961
+ 147,   83, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_083.png', cX=1733, cY=1098, Frame=  1962
+ 147,   84, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_084.png', cX=1751, cY=1097, Frame=  1963
+ 147,   85, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_085.png', cX=1769, cY=1095, Frame=  1964
+ 147,   86, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_086.png', cX=1786, cY=1092, Frame=  1965
+ 147,   87, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_087.png', cX=1802, cY=1090, Frame=  1966
+ 147,   88, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_088.png', cX=1819, cY=1087, Frame=  1967
+ 147,   89, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_089.png', cX=1835, cY=1084, Frame=  1968
+ 147,   90, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_090.png', cX=1852, cY=1083, Frame=  1969
+ 147,   91, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_091.png', cX=1869, cY=1081, Frame=  1970
+ 147,   92, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_092.png', cX=1887, cY=1079, Frame=  1971
+ 147,   93, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_093.png', cX=1904, cY=1077, Frame=  1972
+ 147,   94, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_094.png', cX=1921, cY=1074, Frame=  1973
+ 147,   95, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_095.png', cX=1937, cY=1071, Frame=  1974
+ 147,   96, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_096.png', cX=1951, cY=1069, Frame=  1975
+ 147,   97, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_097.png', cX=1967, cY=1067, Frame=  1976
+ 147,   98, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_098.png', cX=1984, cY=1065, Frame=  1977
+ 147,   99, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_099.png', cX=2001, cY=1062, Frame=  1978
+ 147,  100, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_100.png', cX=2018, cY=1059, Frame=  1979
+ 147,  101, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_101.png', cX=2035, cY=1057, Frame=  1980
+ 147,  102, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_102.png', cX=2051, cY=1055, Frame=  1981
+ 147,  103, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_103.png', cX=2068, cY=1053, Frame=  1982
+ 147,  104, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_104.png', cX=2085, cY=1050, Frame=  1983
+ 147,  105, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_105.png', cX=2099, cY=1047, Frame=  1984
+ 147,  106, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_106.png', cX=2113, cY=1046, Frame=  1985
+ 147,  107, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_107.png', cX=2131, cY=1043, Frame=  1986
+ 147,  108, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_108.png', cX=2147, cY=1041, Frame=  1987
+ 147,  109, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_109.png', cX=2164, cY=1038, Frame=  1988
+ 147,  110, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_110.png', cX=2182, cY=1035, Frame=  1989
+ 147,  111, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_111.png', cX=2200, cY=1033, Frame=  1990
+ 147,  112, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_112.png', cX=2216, cY=1029, Frame=  1991
+ 147,  113, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_113.png', cX=2234, cY=1026, Frame=  1992
+ 147,  114, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_114.png', cX=2251, cY=1023, Frame=  1993
+ 147,  115, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_115.png', cX=2267, cY=1020, Frame=  1994
+ 147,  116, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_116.png', cX=2285, cY=1016, Frame=  1995
+ 147,  117, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_117.png', cX=2303, cY=1013, Frame=  1996
+ 147,  118, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_118.png', cX=2319, cY=1009, Frame=  1997
+ 147,  119, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_119.png', cX=2337, cY=1005, Frame=  1998
+ 147,  120, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_120.png', cX=2353, cY=1002, Frame=  1999
+ 147,  121, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_121.png', cX=2370, cY=1000, Frame=  2000
+ 147,  122, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_122.png', cX=2386, cY= 996, Frame=  2001
+ 147,  123, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_123.png', cX=2403, cY= 992, Frame=  2002
+ 147,  124, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_124.png', cX=2420, cY= 988, Frame=  2003
+ 147,  125, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_125.png', cX=2436, cY= 985, Frame=  2004
+ 147,  126, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_126.png', cX=2452, cY= 982, Frame=  2005
+ 147,  127, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_127.png', cX=2469, cY= 979, Frame=  2006
+ 147,  128, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_128.png', cX=2486, cY= 975, Frame=  2007
+ 147,  129, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_129.png', cX=2503, cY= 972, Frame=  2008
+ 147,  130, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_130.png', cX=2518, cY= 968, Frame=  2009
+ 147,  131, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_131.png', cX=2534, cY= 963, Frame=  2010
+ 147,  132, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_132.png', cX=2550, cY= 960, Frame=  2011
+ 147,  133, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_133.png', cX=2567, cY= 955, Frame=  2012
+ 147,  134, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_134.png', cX=2582, cY= 951, Frame=  2013
+ 147,  135, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_135.png', cX=2599, cY= 947, Frame=  2014
+ 147,  136, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_136.png', cX=2614, cY= 943, Frame=  2015
+ 147,  137, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_137.png', cX=2630, cY= 938, Frame=  2016
+ 147,  138, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_138.png', cX=2646, cY= 934, Frame=  2017
+ 147,  139, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_139.png', cX=2661, cY= 929, Frame=  2018
+ 147,  140, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_140.png', cX=2676, cY= 924, Frame=  2019
+ 147,  141, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_141.png', cX=2692, cY= 920, Frame=  2020
+ 147,  142, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_142.png', cX=2708, cY= 916, Frame=  2021
+ 147,  143, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_143.png', cX=2725, cY= 911, Frame=  2022
+ 147,  144, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_144.png', cX=2741, cY= 906, Frame=  2023
+ 147,  145, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_145.png', cX=2757, cY= 902, Frame=  2024
+ 147,  146, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_146.png', cX=2773, cY= 897, Frame=  2025
+ 147,  147, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_147.png', cX=2789, cY= 892, Frame=  2026
+ 147,  148, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_148.png', cX=2805, cY= 887, Frame=  2027
+ 147,  149, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_149.png', cX=2822, cY= 883, Frame=  2028
+ 147,  150, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_150.png', cX=2837, cY= 877, Frame=  2029
+ 147,  151, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_151.png', cX=2854, cY= 873, Frame=  2030
+ 147,  152, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_147\Image_152.png', cX=2869, cY= 870, Frame=  2031
+ 153,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_001.png', cX= 253, cY= 956, Frame=  2191
+ 153,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_002.png', cX= 316, cY= 949, Frame=  2192
+ 153,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_003.png', cX= 378, cY= 943, Frame=  2193
+ 153,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_004.png', cX= 440, cY= 937, Frame=  2194
+ 154,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_001.png', cX= 262, cY=1335, Frame=  2194
+ 153,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_005.png', cX= 499, cY= 933, Frame=  2195
+ 154,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_002.png', cX= 337, cY=1333, Frame=  2195
+ 153,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_006.png', cX= 559, cY= 927, Frame=  2196
+ 154,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_003.png', cX= 410, cY=1328, Frame=  2196
+ 153,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_007.png', cX= 619, cY= 922, Frame=  2197
+ 154,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_004.png', cX= 482, cY=1324, Frame=  2197
+ 153,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_008.png', cX= 678, cY= 917, Frame=  2198
+ 154,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_005.png', cX= 552, cY=1319, Frame=  2198
+ 153,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_009.png', cX= 736, cY= 912, Frame=  2199
+ 154,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_006.png', cX= 621, cY=1315, Frame=  2199
+ 153,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_010.png', cX= 793, cY= 907, Frame=  2200
+ 154,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_007.png', cX= 690, cY=1309, Frame=  2200
+ 153,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_011.png', cX= 850, cY= 902, Frame=  2201
+ 154,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_008.png', cX= 756, cY=1307, Frame=  2201
+ 153,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_012.png', cX= 907, cY= 897, Frame=  2202
+ 154,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_009.png', cX= 823, cY=1303, Frame=  2202
+ 153,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_013.png', cX= 962, cY= 893, Frame=  2203
+ 154,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_010.png', cX= 889, cY=1299, Frame=  2203
+ 153,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_014.png', cX=1017, cY= 889, Frame=  2204
+ 154,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_011.png', cX= 953, cY=1296, Frame=  2204
+ 153,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_015.png', cX=1072, cY= 886, Frame=  2205
+ 154,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_012.png', cX=1016, cY=1292, Frame=  2205
+ 153,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_016.png', cX=1127, cY= 882, Frame=  2206
+ 154,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_013.png', cX=1082, cY=1287, Frame=  2206
+ 153,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_017.png', cX=1183, cY= 878, Frame=  2207
+ 154,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_014.png', cX=1145, cY=1284, Frame=  2207
+ 153,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_018.png', cX=1238, cY= 873, Frame=  2208
+ 154,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_015.png', cX=1208, cY=1281, Frame=  2208
+ 153,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_019.png', cX=1293, cY= 869, Frame=  2209
+ 154,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_016.png', cX=1271, cY=1277, Frame=  2209
+ 153,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_020.png', cX=1348, cY= 866, Frame=  2210
+ 154,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_017.png', cX=1332, cY=1272, Frame=  2210
+ 153,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_153\Image_021.png', cX=1510, cY= 854, Frame=  2212
+ 154,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_018.png', cX=1513, cY=1262, Frame=  2213
+ 154,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_019.png', cX=1573, cY=1256, Frame=  2214
+ 154,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_020.png', cX=1633, cY=1252, Frame=  2215
+ 154,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_021.png', cX=1692, cY=1249, Frame=  2216
+ 154,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_022.png', cX=1749, cY=1245, Frame=  2217
+ 154,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_023.png', cX=1809, cY=1242, Frame=  2218
+ 155,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_001.png', cX= 254, cY= 189, Frame=  2218
+ 154,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_024.png', cX=1865, cY=1238, Frame=  2219
+ 155,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_002.png', cX= 320, cY= 186, Frame=  2219
+ 154,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_025.png', cX=1924, cY=1233, Frame=  2220
+ 155,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_003.png', cX= 383, cY= 184, Frame=  2220
+ 154,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_026.png', cX=1980, cY=1230, Frame=  2221
+ 155,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_004.png', cX= 446, cY= 181, Frame=  2221
+ 154,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_027.png', cX=2036, cY=1226, Frame=  2222
+ 155,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_005.png', cX= 507, cY= 179, Frame=  2222
+ 154,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_028.png', cX=2090, cY=1222, Frame=  2223
+ 155,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_006.png', cX= 567, cY= 177, Frame=  2223
+ 154,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_029.png', cX=2146, cY=1217, Frame=  2224
+ 155,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_007.png', cX= 628, cY= 176, Frame=  2224
+ 154,   30, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_030.png', cX=2200, cY=1214, Frame=  2225
+ 155,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_008.png', cX= 686, cY= 174, Frame=  2225
+ 154,   31, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_031.png', cX=2253, cY=1210, Frame=  2226
+ 155,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_009.png', cX= 747, cY= 173, Frame=  2226
+ 154,   32, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_032.png', cX=2307, cY=1205, Frame=  2227
+ 155,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_010.png', cX= 805, cY= 172, Frame=  2227
+ 154,   33, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_033.png', cX=2359, cY=1201, Frame=  2228
+ 155,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_011.png', cX= 863, cY= 172, Frame=  2228
+ 154,   34, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_034.png', cX=2411, cY=1196, Frame=  2229
+ 155,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_012.png', cX= 920, cY= 171, Frame=  2229
+ 154,   35, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_035.png', cX=2461, cY=1192, Frame=  2230
+ 155,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_013.png', cX= 979, cY= 171, Frame=  2230
+ 154,   36, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_036.png', cX=2511, cY=1188, Frame=  2231
+ 155,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_014.png', cX=1037, cY= 169, Frame=  2231
+ 154,   37, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_037.png', cX=2563, cY=1184, Frame=  2232
+ 155,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_015.png', cX=1095, cY= 170, Frame=  2232
+ 154,   38, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_038.png', cX=2615, cY=1179, Frame=  2233
+ 155,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_016.png', cX=1157, cY= 170, Frame=  2233
+ 154,   39, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_039.png', cX=2668, cY=1175, Frame=  2234
+ 155,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_017.png', cX=1219, cY= 170, Frame=  2234
+ 154,   40, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_040.png', cX=2722, cY=1170, Frame=  2235
+ 155,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_018.png', cX=1283, cY= 168, Frame=  2235
+ 154,   41, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_041.png', cX=2776, cY=1165, Frame=  2236
+ 155,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_019.png', cX=1346, cY= 167, Frame=  2236
+ 154,   42, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_042.png', cX=2829, cY=1160, Frame=  2237
+ 155,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_020.png', cX=1409, cY= 166, Frame=  2237
+ 154,   43, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_043.png', cX=2884, cY=1155, Frame=  2238
+ 155,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_021.png', cX=1473, cY= 164, Frame=  2238
+ 154,   44, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_044.png', cX=2937, cY=1150, Frame=  2239
+ 155,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_022.png', cX=1536, cY= 164, Frame=  2239
+ 154,   45, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_045.png', cX=2991, cY=1145, Frame=  2240
+ 155,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_023.png', cX=1602, cY= 161, Frame=  2240
+ 154,   46, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_046.png', cX=3044, cY=1141, Frame=  2241
+ 155,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_024.png', cX=1667, cY= 159, Frame=  2241
+ 154,   47, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_047.png', cX=3099, cY=1136, Frame=  2242
+ 155,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_025.png', cX=1731, cY= 157, Frame=  2242
+ 154,   48, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_048.png', cX=3153, cY=1128, Frame=  2243
+ 155,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_026.png', cX=1796, cY= 156, Frame=  2243
+ 154,   49, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_049.png', cX=3205, cY=1123, Frame=  2244
+ 155,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_027.png', cX=1861, cY= 155, Frame=  2244
+ 154,   50, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_050.png', cX=3255, cY=1117, Frame=  2245
+ 155,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_028.png', cX=1927, cY= 153, Frame=  2245
+ 154,   51, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_051.png', cX=3307, cY=1112, Frame=  2246
+ 155,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_029.png', cX=1993, cY= 152, Frame=  2246
+ 154,   52, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_052.png', cX=3357, cY=1106, Frame=  2247
+ 155,   30, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_030.png', cX=2059, cY= 150, Frame=  2247
+ 154,   53, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_053.png', cX=3407, cY=1099, Frame=  2248
+ 155,   31, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_031.png', cX=2128, cY= 147, Frame=  2248
+ 154,   54, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_054.png', cX=3453, cY=1094, Frame=  2249
+ 155,   32, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_032.png', cX=2195, cY= 142, Frame=  2249
+ 154,   55, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_055.png', cX=3501, cY=1088, Frame=  2250
+ 155,   33, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_033.png', cX=2261, cY= 136, Frame=  2250
+ 154,   56, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_056.png', cX=3547, cY=1082, Frame=  2251
+ 155,   34, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_034.png', cX=2327, cY= 130, Frame=  2251
+ 154,   57, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_057.png', cX=3593, cY=1078, Frame=  2252
+ 155,   35, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_035.png', cX=2391, cY= 125, Frame=  2252
+ 154,   58, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_058.png', cX=3638, cY=1075, Frame=  2253
+ 155,   36, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_036.png', cX=2456, cY= 120, Frame=  2253
+ 154,   59, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_059.png', cX=3684, cY=1066, Frame=  2254
+ 155,   37, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_037.png', cX=2521, cY= 114, Frame=  2254
+ 154,   60, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_060.png', cX=3731, cY=1058, Frame=  2255
+ 155,   38, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_038.png', cX=2586, cY= 110, Frame=  2255
+ 154,   61, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_061.png', cX=3774, cY=1054, Frame=  2256
+ 155,   39, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_039.png', cX=2651, cY= 104, Frame=  2256
+ 154,   62, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_062.png', cX=3821, cY=1047, Frame=  2257
+ 155,   40, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_040.png', cX=2717, cY=  96, Frame=  2257
+ 154,   63, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_063.png', cX=3863, cY=1042, Frame=  2258
+ 155,   41, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_041.png', cX=2787, cY=  89, Frame=  2258
+ 154,   64, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_064.png', cX=3893, cY=1034, Frame=  2259
+ 155,   42, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_042.png', cX=2853, cY=  77, Frame=  2259
+ 154,   65, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_065.png', cX=3952, cY=1029, Frame=  2260
+ 155,   43, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_043.png', cX=2920, cY=  61, Frame=  2260
+ 154,   66, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_066.png', cX=3982, cY=1028, Frame=  2261
+ 155,   44, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_155\Image_044.png', cX=2981, cY=  37, Frame=  2261
+ 154,   67, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_067.png', cX=4026, cY=1021, Frame=  2263
+ 154,   68, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_068.png', cX=4071, cY=1004, Frame=  2264
+ 154,   69, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_154\Image_069.png', cX=4089, cY=1002, Frame=  2265
+ 157,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_001.png', cX= 247, cY=1356, Frame=  2290
+ 157,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_002.png', cX= 299, cY=1352, Frame=  2291
+ 157,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_003.png', cX= 351, cY=1350, Frame=  2292
+ 157,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_004.png', cX= 403, cY=1348, Frame=  2293
+ 157,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_005.png', cX= 452, cY=1345, Frame=  2294
+ 157,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_006.png', cX= 500, cY=1343, Frame=  2295
+ 157,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_007.png', cX= 548, cY=1339, Frame=  2296
+ 157,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_008.png', cX= 596, cY=1337, Frame=  2297
+ 157,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_009.png', cX= 642, cY=1335, Frame=  2298
+ 157,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_010.png', cX= 686, cY=1333, Frame=  2299
+ 157,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_011.png', cX= 729, cY=1330, Frame=  2300
+ 157,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_012.png', cX= 773, cY=1329, Frame=  2301
+ 157,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_013.png', cX= 816, cY=1328, Frame=  2302
+ 157,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_014.png', cX= 858, cY=1326, Frame=  2303
+ 157,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_015.png', cX= 900, cY=1324, Frame=  2304
+ 157,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_016.png', cX= 942, cY=1323, Frame=  2305
+ 157,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_017.png', cX= 983, cY=1321, Frame=  2306
+ 157,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_018.png', cX=1022, cY=1318, Frame=  2307
+ 157,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_019.png', cX=1062, cY=1317, Frame=  2308
+ 157,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_020.png', cX=1100, cY=1315, Frame=  2309
+ 157,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_021.png', cX=1140, cY=1312, Frame=  2310
+ 157,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_022.png', cX=1180, cY=1311, Frame=  2311
+ 157,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_023.png', cX=1218, cY=1309, Frame=  2312
+ 157,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_024.png', cX=1256, cY=1306, Frame=  2313
+ 157,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_025.png', cX=1293, cY=1303, Frame=  2314
+ 157,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_026.png', cX=1329, cY=1302, Frame=  2315
+ 157,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_027.png', cX=1365, cY=1300, Frame=  2316
+ 157,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_028.png', cX=1403, cY=1300, Frame=  2317
+ 157,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_029.png', cX=1441, cY=1298, Frame=  2318
+ 157,   30, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_030.png', cX=1479, cY=1296, Frame=  2319
+ 157,   31, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_031.png', cX=1515, cY=1296, Frame=  2320
+ 157,   32, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_032.png', cX=1552, cY=1294, Frame=  2321
+ 157,   33, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_033.png', cX=1587, cY=1292, Frame=  2322
+ 157,   34, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_034.png', cX=1623, cY=1289, Frame=  2323
+ 157,   35, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_035.png', cX=1658, cY=1288, Frame=  2324
+ 157,   36, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_036.png', cX=1692, cY=1287, Frame=  2325
+ 157,   37, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_037.png', cX=1727, cY=1286, Frame=  2326
+ 157,   38, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_038.png', cX=1764, cY=1284, Frame=  2327
+ 157,   39, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_039.png', cX=1801, cY=1283, Frame=  2328
+ 157,   40, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_040.png', cX=1837, cY=1281, Frame=  2329
+ 157,   41, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_041.png', cX=1872, cY=1281, Frame=  2330
+ 157,   42, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_042.png', cX=1909, cY=1279, Frame=  2331
+ 157,   43, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_043.png', cX=1945, cY=1278, Frame=  2332
+ 157,   44, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_044.png', cX=1980, cY=1277, Frame=  2333
+ 157,   45, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_045.png', cX=2016, cY=1275, Frame=  2334
+ 157,   46, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_046.png', cX=2051, cY=1273, Frame=  2335
+ 157,   47, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_047.png', cX=2085, cY=1272, Frame=  2336
+ 157,   48, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_048.png', cX=2119, cY=1270, Frame=  2337
+ 157,   49, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_049.png', cX=2153, cY=1269, Frame=  2338
+ 157,   50, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_050.png', cX=2186, cY=1267, Frame=  2339
+ 157,   51, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_051.png', cX=2216, cY=1265, Frame=  2340
+ 157,   52, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_052.png', cX=2248, cY=1262, Frame=  2341
+ 157,   53, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_053.png', cX=2280, cY=1262, Frame=  2342
+ 157,   54, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_054.png', cX=2312, cY=1259, Frame=  2343
+ 157,   55, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_055.png', cX=2344, cY=1256, Frame=  2344
+ 157,   56, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_056.png', cX=2377, cY=1254, Frame=  2345
+ 157,   57, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_057.png', cX=2409, cY=1253, Frame=  2346
+ 157,   58, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_058.png', cX=2441, cY=1250, Frame=  2347
+ 157,   59, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_059.png', cX=2471, cY=1249, Frame=  2348
+ 157,   60, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_060.png', cX=2501, cY=1247, Frame=  2349
+ 157,   61, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_061.png', cX=2528, cY=1244, Frame=  2350
+ 157,   62, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_062.png', cX=2557, cY=1243, Frame=  2351
+ 157,   63, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_063.png', cX=2587, cY=1243, Frame=  2352
+ 157,   64, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_064.png', cX=2615, cY=1241, Frame=  2353
+ 157,   65, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_065.png', cX=2644, cY=1240, Frame=  2354
+ 157,   66, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_066.png', cX=2674, cY=1239, Frame=  2355
+ 157,   67, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_067.png', cX=2703, cY=1237, Frame=  2356
+ 157,   68, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_068.png', cX=2732, cY=1236, Frame=  2357
+ 157,   69, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_069.png', cX=2762, cY=1234, Frame=  2358
+ 157,   70, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_070.png', cX=2792, cY=1233, Frame=  2359
+ 157,   71, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_071.png', cX=2822, cY=1231, Frame=  2360
+ 157,   72, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_072.png', cX=2852, cY=1231, Frame=  2361
+ 157,   73, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_073.png', cX=2882, cY=1229, Frame=  2362
+ 157,   74, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_074.png', cX=2913, cY=1227, Frame=  2363
+ 157,   75, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_075.png', cX=2944, cY=1225, Frame=  2364
+ 157,   76, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_076.png', cX=2975, cY=1223, Frame=  2365
+ 157,   77, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_077.png', cX=3006, cY=1221, Frame=  2366
+ 157,   78, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_078.png', cX=3035, cY=1219, Frame=  2367
+ 157,   79, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_079.png', cX=3066, cY=1217, Frame=  2368
+ 157,   80, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_080.png', cX=3095, cY=1215, Frame=  2369
+ 157,   81, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_081.png', cX=3124, cY=1212, Frame=  2370
+ 157,   82, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_082.png', cX=3152, cY=1210, Frame=  2371
+ 157,   83, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_083.png', cX=3180, cY=1208, Frame=  2372
+ 157,   84, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_084.png', cX=3207, cY=1205, Frame=  2373
+ 157,   85, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_085.png', cX=3233, cY=1204, Frame=  2374
+ 157,   86, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_086.png', cX=3260, cY=1202, Frame=  2375
+ 157,   87, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_087.png', cX=3285, cY=1201, Frame=  2376
+ 157,   88, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_088.png', cX=3312, cY=1199, Frame=  2377
+ 157,   89, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_089.png', cX=3337, cY=1197, Frame=  2378
+ 157,   90, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_090.png', cX=3364, cY=1195, Frame=  2379
+ 157,   91, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_091.png', cX=3389, cY=1194, Frame=  2380
+ 157,   92, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_092.png', cX=3415, cY=1193, Frame=  2381
+ 157,   93, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_093.png', cX=3441, cY=1192, Frame=  2382
+ 157,   94, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_094.png', cX=3465, cY=1191, Frame=  2383
+ 157,   95, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_095.png', cX=3488, cY=1193, Frame=  2384
+ 157,   96, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_096.png', cX=3509, cY=1193, Frame=  2385
+ 157,   97, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_097.png', cX=3532, cY=1194, Frame=  2386
+ 157,   98, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_098.png', cX=3555, cY=1197, Frame=  2387
+ 157,   99, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_099.png', cX=3578, cY=1199, Frame=  2388
+ 157,  100, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_100.png', cX=3602, cY=1204, Frame=  2389
+ 157,  101, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_101.png', cX=3628, cY=1210, Frame=  2390
+ 157,  102, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_102.png', cX=3654, cY=1216, Frame=  2391
+ 157,  103, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_103.png', cX=3682, cY=1222, Frame=  2392
+ 157,  104, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_104.png', cX=3711, cY=1227, Frame=  2393
+ 157,  105, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_105.png', cX=3741, cY=1229, Frame=  2394
+ 157,  106, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_106.png', cX=3770, cY=1230, Frame=  2395
+ 157,  107, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_107.png', cX=3799, cY=1229, Frame=  2396
+ 157,  108, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_108.png', cX=3827, cY=1226, Frame=  2397
+ 157,  109, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_109.png', cX=3852, cY=1222, Frame=  2398
+ 157,  110, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_110.png', cX=3878, cY=1220, Frame=  2399
+ 157,  111, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_111.png', cX=3904, cY=1218, Frame=  2400
+ 159,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_001.png', cX= 206, cY=1902, Frame=  2400
+ 157,  112, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_112.png', cX=3930, cY=1217, Frame=  2401
+ 159,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_002.png', cX= 277, cY=1901, Frame=  2401
+ 157,  113, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_113.png', cX=3958, cY=1216, Frame=  2402
+ 159,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_003.png', cX= 350, cY=1902, Frame=  2402
+ 157,  114, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_114.png', cX=3987, cY=1215, Frame=  2403
+ 159,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_004.png', cX= 420, cY=1900, Frame=  2403
+ 157,  115, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_115.png', cX=4017, cY=1212, Frame=  2404
+ 159,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_005.png', cX= 491, cY=1902, Frame=  2404
+ 157,  116, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_116.png', cX=4046, cY=1207, Frame=  2405
+ 159,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_006.png', cX= 559, cY=1900, Frame=  2405
+ 157,  117, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_157\Image_117.png', cX=4074, cY=1200, Frame=  2406
+ 159,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_007.png', cX= 629, cY=1901, Frame=  2406
+ 159,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_008.png', cX= 695, cY=1900, Frame=  2407
+ 159,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_009.png', cX= 761, cY=1902, Frame=  2408
+ 159,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_010.png', cX= 827, cY=1898, Frame=  2409
+ 159,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_011.png', cX= 892, cY=1897, Frame=  2410
+ 159,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_012.png', cX= 954, cY=1896, Frame=  2411
+ 159,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_013.png', cX=1018, cY=1894, Frame=  2412
+ 159,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_014.png', cX=1081, cY=1891, Frame=  2413
+ 159,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_015.png', cX=1144, cY=1890, Frame=  2414
+ 159,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_016.png', cX=1205, cY=1887, Frame=  2415
+ 159,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_017.png', cX=1268, cY=1886, Frame=  2416
+ 159,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_018.png', cX=1330, cY=1884, Frame=  2417
+ 159,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_019.png', cX=1392, cY=1882, Frame=  2418
+ 159,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_020.png', cX=1450, cY=1879, Frame=  2419
+ 159,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_021.png', cX=1512, cY=1878, Frame=  2420
+ 159,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_022.png', cX=1569, cY=1875, Frame=  2421
+ 159,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_023.png', cX=1631, cY=1873, Frame=  2422
+ 159,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_024.png', cX=1688, cY=1870, Frame=  2423
+ 159,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_025.png', cX=1749, cY=1868, Frame=  2424
+ 159,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_026.png', cX=1807, cY=1865, Frame=  2425
+ 159,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_027.png', cX=1867, cY=1863, Frame=  2426
+ 159,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_028.png', cX=1926, cY=1860, Frame=  2427
+ 159,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_029.png', cX=1985, cY=1859, Frame=  2428
+ 159,   30, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_030.png', cX=2043, cY=1858, Frame=  2429
+ 159,   31, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_031.png', cX=2101, cY=1857, Frame=  2430
+ 159,   32, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_032.png', cX=2157, cY=1857, Frame=  2431
+ 159,   33, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_033.png', cX=2207, cY=1855, Frame=  2432
+ 159,   34, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_034.png', cX=2259, cY=1855, Frame=  2433
+ 159,   35, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_035.png', cX=2312, cY=1855, Frame=  2434
+ 159,   36, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_036.png', cX=2366, cY=1853, Frame=  2435
+ 159,   37, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_037.png', cX=2420, cY=1854, Frame=  2436
+ 159,   38, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_038.png', cX=2471, cY=1853, Frame=  2437
+ 159,   39, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_039.png', cX=2525, cY=1853, Frame=  2438
+ 159,   40, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_040.png', cX=2576, cY=1852, Frame=  2439
+ 159,   41, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_041.png', cX=2629, cY=1851, Frame=  2440
+ 159,   42, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_042.png', cX=2679, cY=1850, Frame=  2441
+ 159,   43, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_043.png', cX=2729, cY=1849, Frame=  2442
+ 159,   44, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_044.png', cX=2782, cY=1848, Frame=  2443
+ 159,   45, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_045.png', cX=2832, cY=1847, Frame=  2444
+ 159,   46, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_046.png', cX=2882, cY=1846, Frame=  2445
+ 159,   47, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_047.png', cX=2933, cY=1844, Frame=  2446
+ 159,   48, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_048.png', cX=2982, cY=1843, Frame=  2447
+ 159,   49, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_049.png', cX=3034, cY=1841, Frame=  2448
+ 159,   50, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_050.png', cX=3082, cY=1840, Frame=  2449
+ 159,   51, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_051.png', cX=3133, cY=1838, Frame=  2450
+ 159,   52, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_052.png', cX=3183, cY=1839, Frame=  2451
+ 159,   53, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_053.png', cX=3229, cY=1837, Frame=  2452
+ 159,   54, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_054.png', cX=3278, cY=1835, Frame=  2453
+ 159,   55, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_055.png', cX=3327, cY=1835, Frame=  2454
+ 159,   56, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_056.png', cX=3374, cY=1833, Frame=  2455
+ 159,   57, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_057.png', cX=3423, cY=1832, Frame=  2456
+ 159,   58, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_058.png', cX=3469, cY=1831, Frame=  2457
+ 159,   59, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_059.png', cX=3518, cY=1829, Frame=  2458
+ 159,   60, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_060.png', cX=3567, cY=1829, Frame=  2459
+ 159,   61, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_061.png', cX=3612, cY=1828, Frame=  2460
+ 159,   62, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_062.png', cX=3660, cY=1826, Frame=  2461
+ 159,   63, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_063.png', cX=3708, cY=1826, Frame=  2462
+ 159,   64, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_064.png', cX=3754, cY=1825, Frame=  2463
+ 159,   65, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_065.png', cX=3801, cY=1824, Frame=  2464
+ 159,   66, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_066.png', cX=3846, cY=1823, Frame=  2465
+ 159,   67, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_067.png', cX=3894, cY=1821, Frame=  2466
+ 159,   68, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_068.png', cX=3941, cY=1820, Frame=  2467
+ 159,   69, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_069.png', cX=3986, cY=1819, Frame=  2468
+ 159,   70, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_070.png', cX=4033, cY=1815, Frame=  2469
+ 159,   71, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_159\Image_071.png', cX=4074, cY=1815, Frame=  2470
+ 164,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_001.png', cX= 425, cY=1515, Frame=  2513
+ 164,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_002.png', cX= 492, cY=1512, Frame=  2514
+ 164,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_003.png', cX= 559, cY=1511, Frame=  2515
+ 164,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_004.png', cX= 624, cY=1508, Frame=  2516
+ 164,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_005.png', cX= 688, cY=1505, Frame=  2517
+ 164,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_006.png', cX= 752, cY=1503, Frame=  2518
+ 164,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_007.png', cX= 814, cY=1500, Frame=  2519
+ 164,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_008.png', cX= 876, cY=1497, Frame=  2520
+ 165,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_001.png', cX= 255, cY=1635, Frame=  2520
+ 164,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_009.png', cX= 940, cY=1493, Frame=  2521
+ 165,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_002.png', cX= 315, cY=1633, Frame=  2521
+ 164,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_010.png', cX=1001, cY=1489, Frame=  2522
+ 165,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_003.png', cX= 373, cY=1632, Frame=  2522
+ 164,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_011.png', cX=1062, cY=1487, Frame=  2523
+ 165,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_004.png', cX= 427, cY=1630, Frame=  2523
+ 166,    1, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_001.png', cX= 231, cY=1934, Frame=  2523
+ 164,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_012.png', cX=1121, cY=1483, Frame=  2524
+ 165,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_005.png', cX= 482, cY=1631, Frame=  2524
+ 166,    2, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_002.png', cX= 308, cY=1932, Frame=  2524
+ 164,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_013.png', cX=1179, cY=1479, Frame=  2525
+ 165,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_006.png', cX= 536, cY=1630, Frame=  2525
+ 166,    3, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_003.png', cX= 383, cY=1929, Frame=  2525
+ 164,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_014.png', cX=1239, cY=1477, Frame=  2526
+ 165,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_007.png', cX= 592, cY=1627, Frame=  2526
+ 166,    4, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_004.png', cX= 456, cY=1926, Frame=  2526
+ 164,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_015.png', cX=1300, cY=1473, Frame=  2527
+ 165,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_008.png', cX= 646, cY=1626, Frame=  2527
+ 166,    5, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_005.png', cX= 528, cY=1923, Frame=  2527
+ 164,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_016.png', cX=1357, cY=1470, Frame=  2528
+ 165,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_009.png', cX= 697, cY=1624, Frame=  2528
+ 166,    6, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_006.png', cX= 601, cY=1920, Frame=  2528
+ 164,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_017.png', cX=1417, cY=1466, Frame=  2529
+ 165,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_010.png', cX= 748, cY=1622, Frame=  2529
+ 166,    7, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_007.png', cX= 671, cY=1918, Frame=  2529
+ 164,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_018.png', cX=1474, cY=1464, Frame=  2530
+ 165,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_011.png', cX= 798, cY=1621, Frame=  2530
+ 166,    8, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_008.png', cX= 744, cY=1917, Frame=  2530
+ 164,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_019.png', cX=1534, cY=1460, Frame=  2531
+ 165,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_012.png', cX= 852, cY=1619, Frame=  2531
+ 166,    9, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_009.png', cX= 813, cY=1911, Frame=  2531
+ 164,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_020.png', cX=1593, cY=1457, Frame=  2532
+ 165,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_013.png', cX= 901, cY=1619, Frame=  2532
+ 166,   10, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_010.png', cX= 884, cY=1907, Frame=  2532
+ 164,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_021.png', cX=1651, cY=1452, Frame=  2533
+ 165,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_014.png', cX= 949, cY=1615, Frame=  2533
+ 166,   11, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_011.png', cX= 953, cY=1904, Frame=  2533
+ 164,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_022.png', cX=1707, cY=1450, Frame=  2534
+ 165,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_015.png', cX=1000, cY=1613, Frame=  2534
+ 166,   12, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_012.png', cX=1021, cY=1901, Frame=  2534
+ 164,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_023.png', cX=1764, cY=1447, Frame=  2535
+ 165,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_016.png', cX=1048, cY=1611, Frame=  2535
+ 166,   13, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_013.png', cX=1090, cY=1897, Frame=  2535
+ 164,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_024.png', cX=1822, cY=1443, Frame=  2536
+ 165,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_017.png', cX=1097, cY=1609, Frame=  2536
+ 166,   14, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_014.png', cX=1157, cY=1894, Frame=  2536
+ 164,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_025.png', cX=1878, cY=1440, Frame=  2537
+ 165,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_018.png', cX=1145, cY=1608, Frame=  2537
+ 166,   15, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_015.png', cX=1225, cY=1890, Frame=  2537
+ 164,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_026.png', cX=1934, cY=1436, Frame=  2538
+ 165,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_019.png', cX=1193, cY=1606, Frame=  2538
+ 166,   16, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_016.png', cX=1291, cY=1886, Frame=  2538
+ 164,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_027.png', cX=1990, cY=1433, Frame=  2539
+ 165,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_020.png', cX=1239, cY=1602, Frame=  2539
+ 166,   17, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_017.png', cX=1359, cY=1883, Frame=  2539
+ 164,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_028.png', cX=2047, cY=1430, Frame=  2540
+ 165,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_021.png', cX=1285, cY=1601, Frame=  2540
+ 166,   18, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_018.png', cX=1424, cY=1881, Frame=  2540
+ 164,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_029.png', cX=2101, cY=1426, Frame=  2541
+ 165,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_022.png', cX=1330, cY=1601, Frame=  2541
+ 166,   19, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_019.png', cX=1491, cY=1876, Frame=  2541
+ 164,   30, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_030.png', cX=2161, cY=1424, Frame=  2542
+ 165,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_023.png', cX=1377, cY=1600, Frame=  2542
+ 166,   20, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_020.png', cX=1556, cY=1873, Frame=  2542
+ 164,   31, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_031.png', cX=2213, cY=1421, Frame=  2543
+ 165,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_024.png', cX=1422, cY=1599, Frame=  2543
+ 166,   21, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_021.png', cX=1623, cY=1869, Frame=  2543
+ 164,   32, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_032.png', cX=2267, cY=1417, Frame=  2544
+ 165,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_025.png', cX=1466, cY=1596, Frame=  2544
+ 166,   22, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_022.png', cX=1687, cY=1865, Frame=  2544
+ 164,   33, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_033.png', cX=2319, cY=1414, Frame=  2545
+ 165,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_026.png', cX=1511, cY=1595, Frame=  2545
+ 166,   23, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_023.png', cX=1754, cY=1862, Frame=  2545
+ 164,   34, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_034.png', cX=2371, cY=1410, Frame=  2546
+ 165,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_027.png', cX=1554, cY=1594, Frame=  2546
+ 166,   24, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_024.png', cX=1818, cY=1861, Frame=  2546
+ 164,   35, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_035.png', cX=2421, cY=1407, Frame=  2547
+ 165,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_028.png', cX=1599, cY=1592, Frame=  2547
+ 166,   25, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_025.png', cX=1884, cY=1859, Frame=  2547
+ 164,   36, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_036.png', cX=2438, cY=1437, Frame=  2548
+ 165,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_165\Image_029.png', cX=1683, cY=1590, Frame=  2548
+ 164,   37, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_037.png', cX=2438, cY=1438, Frame=  2549
+ 166,   26, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_026.png', cX=2012, cY=1856, Frame=  2549
+ 164,   38, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_038.png', cX=2466, cY=1436, Frame=  2550
+ 166,   27, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_027.png', cX=2075, cY=1854, Frame=  2550
+ 164,   39, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_039.png', cX=2498, cY=1434, Frame=  2551
+ 166,   28, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_028.png', cX=2138, cY=1854, Frame=  2551
+ 164,   40, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_040.png', cX=2528, cY=1433, Frame=  2552
+ 166,   29, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_029.png', cX=2200, cY=1854, Frame=  2552
+ 164,   41, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_041.png', cX=2557, cY=1432, Frame=  2553
+ 166,   30, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_030.png', cX=2263, cY=1854, Frame=  2553
+ 164,   42, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_042.png', cX=2585, cY=1431, Frame=  2554
+ 166,   31, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_031.png', cX=2323, cY=1855, Frame=  2554
+ 164,   43, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_043.png', cX=2613, cY=1430, Frame=  2555
+ 166,   32, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_032.png', cX=2384, cY=1855, Frame=  2555
+ 164,   44, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_044.png', cX=2640, cY=1429, Frame=  2556
+ 166,   33, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_033.png', cX=2443, cY=1855, Frame=  2556
+ 164,   45, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_045.png', cX=2667, cY=1428, Frame=  2557
+ 166,   34, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_034.png', cX=2502, cY=1856, Frame=  2557
+ 164,   46, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_046.png', cX=2692, cY=1426, Frame=  2558
+ 166,   35, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_035.png', cX=2560, cY=1855, Frame=  2558
+ 164,   47, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_047.png', cX=2718, cY=1426, Frame=  2559
+ 166,   36, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_036.png', cX=2618, cY=1855, Frame=  2559
+ 164,   48, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_048.png', cX=2742, cY=1425, Frame=  2560
+ 166,   37, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_037.png', cX=2674, cY=1857, Frame=  2560
+ 164,   49, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_049.png', cX=2766, cY=1425, Frame=  2561
+ 166,   38, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_038.png', cX=2728, cY=1856, Frame=  2561
+ 164,   50, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_050.png', cX=2789, cY=1425, Frame=  2562
+ 166,   39, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_166\Image_039.png', cX=2824, cY=1872, Frame=  2562
+ 164,   51, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_051.png', cX=2812, cY=1426, Frame=  2563
+ 164,   52, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_052.png', cX=2837, cY=1426, Frame=  2564
+ 164,   53, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_053.png', cX=2861, cY=1425, Frame=  2565
+ 164,   54, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_054.png', cX=2883, cY=1426, Frame=  2566
+ 164,   55, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_055.png', cX=2905, cY=1426, Frame=  2567
+ 164,   56, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_056.png', cX=2930, cY=1426, Frame=  2568
+ 164,   57, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_057.png', cX=2954, cY=1426, Frame=  2569
+ 164,   58, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_058.png', cX=2978, cY=1425, Frame=  2570
+ 164,   59, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_059.png', cX=3003, cY=1424, Frame=  2571
+ 164,   60, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_060.png', cX=3028, cY=1423, Frame=  2572
+ 164,   61, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_061.png', cX=3053, cY=1423, Frame=  2573
+ 164,   62, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_062.png', cX=3078, cY=1421, Frame=  2574
+ 164,   63, '..\VideoTestCases\Ostra Tank 3-19-25 Image3\Images_001\Object_164\Image_063.png', cX=3153, cY=1418, Frame=  2575
