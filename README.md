@@ -17,12 +17,18 @@ __Data Preprocessing:__
   
 __Statistical Modeling:__
 - we divide the imaging chamber into 5*5 times grid because inside the water chamber, water flow is not uniform. 
-- we apply MGD on each grid cell and calcualte the probabilistic value for each displacements for an object. 
+- we apply MGD on each grid cell and calcualte the probabilistic value for each displacements for an object.
+- 
 ##__driver_GridDisplacementModel.py__ identifies the grid cell location, computes grid statisitics, applies normalization and computes the final model parameters###
 - we classify the motile response with two types of models: 1)__Outlier Model:__ where grid MGDS are trained using only drifting displacements and actively swimming organisms are classified as outlier
                                                             2)__Bayesian Model:__ where grid MGDs are trained using both the drifting and actively swimming displacements and their log sum values are compared to assign class.
+  
 ##__GridOutlierModel.py__ computes threshold for the outlier model and classifies each object. 
+
 ##__GridBayesianModel.py__ classifies each object under each grid probabilisitic values. Furthermore, it adjusts the margin for the Bayesian Model. 
+
 ##__driver_main.py__ asks user choice, based on choice the program run modeling training and infers with the toxic induced objects. 
+
 ##__driver_preprocessing_util.py__ runs the model training and inference tasks. 
+
 ##__visualize_object_trajectory.py__ contains all the visualization related functions.  
