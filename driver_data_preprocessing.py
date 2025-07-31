@@ -16,6 +16,7 @@ INFER="infer"
 TRACKING_DATA = "tracking_data"
 TRUE_LABELS = "true_labels"
 PREDICTED_LABELS= "predicted_labels"
+SCORES = "scores"
 
 class PreProcessingObservations:
     def __init__(self):
@@ -100,31 +101,80 @@ class PreProcessingObservations:
             return date_str, image_id, obs_type
         else:
             raise ValueError(f"Filename pattern mismatch: {filename}")
+            
+    def is_starting_or_ending_near_edge(self,track, width=4096, height=2160, margin_ratio=0.25):
+    
+        x_start, y_start = track[0][1], track[0][2]  # Starting coordinates
+        x_end, y_end = track[-1][1], track[-1][2]    # Ending coordinates
 
-    
-    def compute_global_stats(self, curr_obs):
-    
-        """
-        Computes global mean and covariance of dx/dy for all objects and stores in self.total_mu and self.total_cov_matrix.
-        Parameters:
-        -curr_obs: one dictionary of sample parsed observation {pbject id: [(frame1,x1,y1)..(framen,xn,yn)]}
-        Returns:
-        N/A
-        """
+        margin_x = margin_ratio * width
+        margin_y = margin_ratio * height
+       
+        valid_entry = (x_start <= margin_x or y_start <= margin_y)
+        valid_exit = (x_end >= (width - margin_x) or y_end >= (height - margin_y))
         
-        all_dx_dy = []
-        tracking_only_obs = {obj_id: obj_data[TRACKING_DATA]for obj_id, obj_data in curr_obs.items()}
-        # First pass: compute dx/dy for all object
-        for obj_id, obs in tracking_only_obs.items():                
+        if valid_entry and valid_exit:
+            return True
+        else:
+            return False
+            
+    def trajectory_quality_analysis(self,curr_obs):
+        
+        truncated_observations=collections.defaultdict(list)
+        for obj_id,obs in curr_obs.items():
+            is_valid=self.is_starting_or_ending_near_edge(obs)
+            if is_valid==True:
+                truncated_observations[obj_id]=obs
+            else:
+                print(f"{obj_id} is starting late or ending early!!")
+        return truncated_observations        
+    
+    def get_displacement_sequence(self,curr_obs):
+        """
+        Computes the displacement sequence for the objects and returns a modified dictionary
+        Parameters:
+        -curr_obs: one dictionary of sample parsed observation {object id: [(frame1,x1,y1)..(framen,xn,yn)]}
+        Returns:
+        - curr_obs_displacements: one dictionary of observation sequences {object id: [(dx1,dy1)..(,dxn-1,dyn-1)]}
+        """
+        curr_obs_displacements = collections.defaultdict(list)
+        for obj_id, obs in curr_obs.items(): 
+            curr_obj_dx_dy=[]
             for i in range(len(obs) - 1):
                 dframe = obs[i+1][0] - obs[i][0]
                 if dframe > 0:
                     dx = (obs[i+1][1] - obs[i][1]) / dframe
                     dy = (obs[i+1][2] - obs[i][2]) / dframe                  
-                    all_dx_dy.append([dx,dy])
+                    curr_obj_dx_dy.append([dx,dy])
                     
                 else:
                     print(f"!!!!dframe has invalid value while computing the global stats: {dframe}")
+            if curr_obj_dx_dy:
+                curr_obs_displacements[obj_id]=curr_obj_dx_dy
+            else:
+                print(f"Displacements couldn't be calculated lack of observations,size is: {len(obs)}")
+        return curr_obs_displacements
+        
+    def compute_global_stats(self, curr_obs):
+    
+        """
+        Computes global mean and covariance of dx/dy for all objects and stores in self.total_mu and self.total_cov_matrix.
+        Parameters:
+        -curr_obs: one dictionary of sample parsed observation {object id: [(frame1,x1,y1)..(framen,xn,yn)]}
+        Returns:
+        N/A
+        """
+        
+        all_dx_dy = []
+        #tracking_only_obs = {obj_id: obj_data[TRACKING_DATA]for obj_id, obj_data in curr_obs.items()}
+        #gets the displacement sequence
+        curr_obs_displacements=self.get_displacement_sequence(curr_obs)
+       
+        for obj_id, dis in curr_obs_displacements.items():                
+            if len(dis)>1:
+                all_dx_dy.extend(dis)
+            else:
+                print(f"object id {obj_id}: displacement sequence lenght is {len(dis)}")
                     
         if all_dx_dy:
             # Global averages of dx and dy across all objects
@@ -134,93 +184,80 @@ class PreProcessingObservations:
             
             self.total_mu = all_dx_dy_mu.tolist()        
             self.total_cov_matrix = all_dx_dy_cov
-            self.total_obs=len(tracking_only_obs)
+            self.total_obs=len(curr_obs_displacements)
             ##########SANITY CHECKING#########################
-            #print(f"current sample files stats mu are: {self.total_mu[0]:.2f},{self.total_mu[1]:.2f}\n"
-                    #f"and cov is: {self.total_cov_matrix}")
+            print(f"current sample files stats mu are: {self.total_mu[0]:.2f},{self.total_mu[1]:.2f}\n"
+                    f"and cov is: {self.total_cov_matrix}")
         return
     
-    def observations_labeling_by_average_variance(self, curr_obs, file_type, compute_stats):
+    def observations_labeling_by_average_variance(self,curr_obs, file_type,enable_global_stats):
         """
-        seperates the dictionary observation into dead alive set, if it comes from mixed observation we apply automatic labeling stategy or else 
-        to the corresponding file type
-        Parameters: one dictionary of sample parsed observation {pbject id: [(frame1,x1,y1)..(framen,xn,yn)]}
-        -curr_obs: 
-        """
-        all_dx_dy=[]
-        object_avg = {}
-        labeled_obs = collections.defaultdict(list)
-              
-        if file_type==0:
-            for obj_id, obs in curr_obs.items():
-                curr_obj_dx_dy=[]   
-                for i in range(len(obs) - 1):
-                    dframe = obs[i+1][0] - obs[i][0]
-                    if dframe > 0:
-                        dx = (obs[i+1][1] - obs[i][1]) / dframe
-                        dy = (obs[i+1][2] - obs[i][2]) / dframe
-                        curr_obj_dx_dy.append([dx,dy])
-                        all_dx_dy.append([dx,dy])
-                        
-                    else:
-                        print(f"dframe has invalid value: {dframe}")
-                if curr_obj_dx_dy:
-                    curr_obj_dx_dy_np = numpy.array(curr_obj_dx_dy)
-                    curr_obj_dx_dy_mu = numpy.mean(curr_obj_dx_dy_np , axis=0)
-                    curr_obj_dx_dy_var = numpy.var(curr_obj_dx_dy_np , axis=0)
-                    avg_dx,avg_dy=curr_obj_dx_dy_mu[0],curr_obj_dx_dy_mu[1]
-                    object_avg[obj_id] = (curr_obj_dx_dy_mu[0], curr_obj_dx_dy_mu[1], curr_obj_dx_dy_var[0], curr_obj_dx_dy_var[1])
-                
-            if all_dx_dy:
-               
-                all_dx_dy_np=numpy.array(all_dx_dy)
-                all_dx_dy_mu=numpy.mean(all_dx_dy_np, axis=0)
-                all_dx_dy_cov=numpy.cov(all_dx_dy_np.T)
-                
-                global_avg_dx=all_dx_dy_mu[0]
-                global_avg_dy=all_dx_dy_mu[1]
+        label the dictionary with 0/1. Each object's displacements statistics is compared against global statistics.
+        if any object's mean and variance in any direction is greater than mean then we label it is as MOVING otherwise NOTMOVING
+        and if object's trajectory data is less than 5 we discard those objects
         
-                global_var_dx = all_dx_dy_cov[0][0]
-                global_var_dy = all_dx_dy_cov[1][1]
-            
-            else:
-                print(f"!!!WARNING!!! current dictionary has no observations")
-                return 
-            
-            for obj_id, (avg_dx, avg_dy,var_dx,var_dy) in object_avg.items():
-                obs = curr_obs[obj_id]
-                if len(obs) > 5 and ((avg_dx > global_avg_dx and var_dx > global_var_dx) or (avg_dy > global_avg_dy and var_dy > global_var_dy)):
-                    labeled_obs[obj_id] = {
-                        TRACKING_DATA: obs,
-                        TRUE_LABELS: MOVING
-                    }
-                    
-                elif len(obs) > 5:
-                    labeled_obs[obj_id] = {
-                        TRACKING_DATA: obs,
-                        TRUE_LABELS: NOTMOVING
-                    }
-                   
-            
-        elif file_type==2:
-            for obj_id, obs in curr_obs.items():
-                if len(obs)>=5:
-                        labeled_obs[obj_id]={
-                        TRACKING_DATA: obs,
-                        TRUE_LABELS: NOTMOVING
-                    }
+        Parameters:
+        -curr_obs: one dictionary of sample parsed observation {object id: [(frame1,x1,y1)..(framen,xn,yn)]}
+        - file_type: 0/1/2 denoting mixed observations, non-ostracods and ostracods
+        - enable_global_stats: True/False if it is from train observations then we compute global stats otherwise we don't
+        
+        Returns:
+        - labeled_obs: a dictionary of the parsed observations and their true labels; {object id: {TRACKING_DATA: [(frame1,x1,y1)..(framen,xn,yn)], TRUE_LABELS: 0/1}}
+        """
+        
+        labeled_obs=collections.defaultdict(list)
+        
+        if enable_global_stats==True:
+            self.compute_global_stats(curr_obs)
         else:
-            for obj_id, obs in curr_obs.items():
-                if len(obs)>=5:
-                        labeled_obs[obj_id]={
-                        TRACKING_DATA: obs,
-                        TRUE_LABELS: MOVING
-                    }
+            print(f"It is a test set no need compute stats!")
         
-        if compute_stats == True:
-            self.compute_global_stats(labeled_obs)
+        curr_obs_displacements=self.get_displacement_sequence(curr_obs)
+        
+        if file_type==0:
+        
+            global_mean_dx=self.total_mu[0]
+            global_mean_dy=self.total_mu[1]
+            global_std_dx = numpy.sqrt(self.total_cov_matrix[0][0])
+            global_std_dy = numpy.sqrt(self.total_cov_matrix[1][1])
+            
+            for obj_id,displacements in curr_obs_displacements.items():
+                if len(displacements)>5:
+                    
+                    obs=curr_obs[obj_id]
+                    curr_obj_dx_dy=numpy.array(displacements)
+                    
+                    obj_mu=numpy.mean(curr_obj_dx_dy,axis=0)
+                    obj_cov=numpy.cov(curr_obj_dx_dy.T)
+                    obj_var_dx=numpy.sqrt(obj_cov[0][0])
+                    obj_var_dy=numpy.sqrt(obj_cov[1][1])
+
+                    if (obj_mu[0]>global_mean_dx and obj_var_dx>global_std_dx) or (obj_mu[1]>global_mean_dy and obj_var_dy>global_std_dy):
+                        
+                        labeled_obs[obj_id]={ TRACKING_DATA: obs,
+                                      SCORES: obj_mu,
+                                      TRUE_LABELS: MOVING
+                        }
+                    else:
+                        labeled_obs[obj_id]={ TRACKING_DATA: obs,
+                                      SCORES: obj_mu,
+                                      TRUE_LABELS: NOTMOVING
+                        }
+        elif file_type==1:
+            for obj_id,obs in curr_obs.items():
+                if len(obs)>5:
+                     labeled_obs[obj_id]={ TRACKING_DATA: obs,
+                                      TRUE_LABELS: MOVING
+                        }
+        else:
+            for obj_id,obs in curr_obs.items():
+                if len(obs)>5:
+                     labeled_obs[obj_id]={ TRACKING_DATA: obs,
+                                      TRUE_LABELS: NOTMOVING
+                        }
+            
         return labeled_obs
-    
+        
     def prepare_train_test(self,curr_obs,train_ratio=0.8):
         """
         Splits a dictionary into train and test sets based on a specified ratio.

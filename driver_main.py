@@ -1,6 +1,6 @@
 from driver_data_preprocessing import PreProcessingObservations
-from driver_data_preprocessing_utils import get_visualization_ids,run_tracked_videos_by_filename,infer_with_trained_model
-from visualize_object_trajectory import plot_object_trajectories
+from driver_data_preprocessing_utils import run_hourly_graph,get_visualization_ids,run_tracked_videos_by_filename,infer_with_trained_model,run_trajectory_plot,run_outlier_model,collect_infer_data,prepare_train_infer_data,calculate_class_probability
+from visualize_object_trajectory import plot_object_trajectories,plot_confusion_matrix
 
 from driver_GridDisplacementModel import GridDisplacementModel
 from GridOutlierModel import OutlierModelEvaluation
@@ -23,12 +23,13 @@ NOTMOVING=0
 TRAIN="train"
 INFER="infer"
 SEARCH="search"
-
+    
 if __name__ == "__main__":
+    #run_outlier_for_infer()
 
-    #run_outlier_model()
     #run_bayesian_model()
     #run_tracked_videos_by_filename()
+    
     user_test_performance=False  
     user_file_selected_mode=INFER
     user_selected_mode = input("Do you want to test on the toxic data? (y/n): ").strip().lower()
@@ -69,32 +70,47 @@ if __name__ == "__main__":
         user_visual_mode = input("Do you want visualize trajectory of the predicted tox data (y/n): ").strip().lower()
         
         if user_visual_mode== 'y':
-            visualize_objects = int(input(
-                """If you want to visualize:
-                1 → Correctly predicted MOVING objects
-                2 → Correctly predicted NOTMOVING objects
-                3 → Falsely predicted objects
-                Enter your choice: """
-            ))
+            while True:
+                command = input("type 'e' to quit): ").strip().lower()            
+                if command == "e":
+                    print("Exiting loop. Goodbye!")
+                    break
+                else:
+                    visualize_objects = int(input(
+                        """If you want to visualize:
+                        1 → Correctly predicted MOVING objects
+                        2 → Correctly predicted NOTMOVING objects
+                        3 → Falsely predicted objects
+                        Enter your choice: """
+                    ))
 
-            if visualize_objects==1:
-                moving_obs_ids= get_visualization_ids(all_infer_obs_labeled, MOVING, MOVING)
-                plot_object_trajectories(all_infer_obs_labeled,moving_obs_ids,user_model_mode)
-            elif visualize_objects==2:
-                non_moving_obs_ids= get_visualization_ids(all_infer_obs_labeled, NOTMOVING, NOTMOVING)
-                plot_object_trajectories(all_infer_obs_labeled,non_moving_obs_ids,user_model_mode)
-            else:
-                moving_mislabeled_obs_ids= get_visualization_ids(all_infer_obs_labeled, MOVING, NOTMOVING)
-                plot_object_trajectories(all_infer_obs_labeled,moving_mislabeled_obs_ids,user_model_mode)
-                non_moving_mislabeled_obs_ids= get_visualization_ids(all_infer_obs_labeled, NOTMOVING, MOVING)
-                plot_object_trajectories(all_infer_obs_labeled,non_moving_mislabeled_obs_ids,user_model_mode)
+                    if visualize_objects==1:
+                        moving_obs_ids= get_visualization_ids(all_infer_obs_labeled, MOVING, MOVING)
+                        plot_object_trajectories(all_infer_obs_labeled,moving_obs_ids,user_model_mode)
+                    elif visualize_objects==2:
+                        non_moving_obs_ids= get_visualization_ids(all_infer_obs_labeled, NOTMOVING, NOTMOVING)
+                        plot_object_trajectories(all_infer_obs_labeled,non_moving_obs_ids,user_model_mode)
+                    else:
+                        moving_mislabeled_obs_ids= get_visualization_ids(all_infer_obs_labeled, MOVING, NOTMOVING)
+                        plot_object_trajectories(all_infer_obs_labeled,moving_mislabeled_obs_ids,user_model_mode)
+                        non_moving_mislabeled_obs_ids= get_visualization_ids(all_infer_obs_labeled, NOTMOVING, MOVING)
+                        plot_object_trajectories(all_infer_obs_labeled,non_moving_mislabeled_obs_ids,user_model_mode)
         else:
             print(f"user doesn't want to see the predicted tox objects tracks!")
     else:
-        print(f"user doesn't want to test on toxic data")
-        
-    
-    
+        print(f"user wants to visualize per file trajectory related data!")
+        run_hourly_graph()
+        '''
+        while True:
+            command = input("Enter command (type 'exit' to quit): ").strip().lower()
+            
+            if command == "exit":
+                print("Exiting loop. Goodbye!")
+                break
+            else:
+                print(f"going to plot trajectory function!")
+                run_trajectory_plot()
+        '''
     
     
     

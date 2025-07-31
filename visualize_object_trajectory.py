@@ -14,6 +14,7 @@ LOG_PDFS="log_pdfs"
 DEAD_PDFS="dead_log_sum_pdfs"
 ALIVE_PDFS="alive_log_sum_pdfs"
 TRACKING_DATA = "tracking_data"
+SCORES = "scores"
 
 MOVING=1
 NOTMOVING=0
@@ -94,11 +95,12 @@ def plot_object_trajectories(curr_obs,extracted_ids,model_type):
             x = [p[1] for p in points]  # Extract x-coordinates
             y = [p[2] for p in points]  # Extract y-coordinates
     
-            plt.plot(x, y, marker="o", linestyle="-", color="brown")  # Plot trajectory
+            plt.plot(x, y, marker="o", linestyle="-", color="green")  # Plot trajectory
 
             # Labels & Formatting
             plt.xlabel("X Coordinate")
             plt.ylabel("Y Coordinate")
+            #plt.title(f" Assigned True Label {'MOVING' if label_true == MOVING else 'NOT_MOVING'}")
             plt.title(f"{model_type} True Label {'MOVING' if label_true == MOVING else 'NOT_MOVING'} | Predicted: {'MOVING' if label_predicted == MOVING else 'NOT_MOVING'}")
             plt.legend(title=f"Object id {obj_id}")
             plt.grid(True, linestyle="--", alpha=0.6)  
@@ -106,6 +108,103 @@ def plot_object_trajectories(curr_obs,extracted_ids,model_type):
             #i+=1
             plt.show()
 
+def plot_displacements_across_frames(obj_displacements):
+    """
+    Plot displacement magnitudes for selected objects.
+    """
+    frames = []
+    mags = []
+    
+    for obj_id, (frame_list,magnitudes_list) in obj_displacements.items():
+        print(f"working in here! {obj_id}: {frame_list}, {magnitudes_list}")
+        frames.extend(frame_list)
+        mags.extend(magnitudes_list)
+
+    plt.figure(figsize=(10, 6))
+    plt.hist2d(frames, mags, bins=[100, 20], cmap='viridis')
+    plt.xlabel("Frame Number")
+    plt.ylabel("Displacement Magnitude")
+    plt.title("2D Histogram of Displacement Magnitude Over Time")
+    plt.colorbar(label='Count')
+    plt.tight_layout()
+    plt.show()
+    
+    return 
+
+def plot_score_components(labeled_obs,all_zdx_zdy):
+
+
+    # Separate scores by label
+    moving_scores = [v[SCORES] for v in labeled_obs.values() if v[TRUE_LABELS] == MOVING]
+    notmoving_scores = [v[SCORES] for v in labeled_obs.values() if v[TRUE_LABELS] == NOTMOVING]
+
+    # Define bins based on combined data
+    all_scores = moving_scores + notmoving_scores
+    bins = numpy.histogram_bin_edges(all_scores, bins='auto')
+
+    # Plot both histograms
+    plt.figure(figsize=(8, 5))
+
+    plt.hist(notmoving_scores, bins=bins, color='lightcoral', edgecolor='black', alpha=0.7, label='NOTMOVING')
+    plt.hist(moving_scores, bins=bins, color='mediumseagreen', edgecolor='black', alpha=0.7, label='MOVING')
+
+    # Optional mean line
+    global_mean = numpy.mean(all_zdx_zdy)
+    plt.axvline(global_mean, color='blue', linestyle='--', linewidth=2, label=f'Mean of Z-scoce Distances= {global_mean:.2f}')
+
+    # Formatting
+    plt.title("Histogram of Object Scores by Label")
+    plt.xlabel("Mean Z-Score Distance")
+    plt.ylabel("Number of Objects")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+def plot_labeled_mean_displacements_by_lines(curr_obs,global_mean,global_cov):
+    moving_dx = []
+    moving_dy=[]
+    notmoving_dx = []
+    notmoving_dy=[]
+    print(f"global mean: {global_mean}, {global_cov}")
+    for obj_id, data in curr_obs.items():
+        stats=data[SCORES]
+        #print(f"for {obj_id}:{stats} mean is: {stats[0]},{stats[1]}, {data[TRUE_LABELS]}")
+    
+        if data[TRUE_LABELS] == MOVING:
+            moving_dx.append(stats[0])
+            moving_dy.append(stats[1])
+        else:
+            notmoving_dx.append(stats[0])
+            notmoving_dy.append(stats[1])
+    print(f"{len(moving_dx)},{len(moving_dy)},{len(notmoving_dx)},{len(notmoving_dy)}")
+    plt.figure(figsize=(8, 6))
+
+    # Global mean vector (from origin)
+    plt.axvline(global_mean[0], color='blue', linestyle='--', linewidth=2, label='Global Mean dx')
+    plt.axhline(global_mean[1], color='orange', linestyle='--', linewidth=2, label='Global Mean dy')
+
+    # 1σ spread lines (optional)
+    #plt.axvline(global_mean[0] + numpy.sqrt(global_cov[0][0]), color='black', linestyle='--', linewidth=1, label='dx ± 1σ')
+    #plt.axvline(global_mean[0] - numpy.sqrt(global_cov[0][0]), color='black', linestyle='--', linewidth=1)
+
+    # Horizontal dashed gray lines for dy ± std
+    #plt.axhline(global_mean[1] + numpy.sqrt(global_cov[1][1]), color='gray', linestyle='--', linewidth=1, label='dy ± 1σ')
+    #plt.axhline(global_mean[1] - numpy.sqrt(global_cov[1][1]), color='gray', linestyle='--', linewidth=1)
+
+    # Scatter of object displacements by label
+    plt.scatter(moving_dx, moving_dy, color='green', label='MOVING', alpha=0.7, edgecolors='k')
+    plt.scatter(notmoving_dx, notmoving_dy, color='red', label='NOTMOVING', alpha=0.7, edgecolors='k')
+
+   
+    plt.xlabel("Mean X Displacement")
+    plt.ylabel("Mean Y Displacement")
+    plt.title("Labeled Object Displacement Means with Global Vector")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+    
 def get_axis_limits(curr_obs):
 
     all_x=[]
@@ -226,5 +325,23 @@ def plot_confusion_matrix(curr_obs, obs_type,color, model_type):
         )
     
     plt.show()
+
+def plot_hourly_prediction(hour_list,total_list,alive_list,dose_rate):
+    
+    # Calculate alive percentages
+    alive_percentages = [(alive / total) * 100 for alive, total in zip(alive_list, total_list)]
+
+    # Plot
+    plt.figure(figsize=(8, 5))
+    plt.plot(hour_list, alive_percentages, marker='o', linestyle='-', color='purple')
+    plt.xticks(hour_list)
+    # Labels and formatting
+    plt.xlabel("Hour of Imaging")
+    plt.ylabel("Percentage of Alive Samples (%)")
+    plt.title(f"{dose_rate} Alive Prediction Rate Over Time")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
 
     

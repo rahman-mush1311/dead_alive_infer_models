@@ -3,7 +3,7 @@ from driver_GridDisplacementModel import GridDisplacementModel
 from GridOutlierModel import OutlierModelEvaluation 
 from GridBayesianModel import BayesianModel
 
-from visualize_object_trajectory import plot_confusion_matrix,run_ffplay,get_video_fps,get_axis_limits,plot_object_trajectories
+from visualize_object_trajectory import plot_hourly_prediction,plot_confusion_matrix,run_ffplay,get_video_fps,get_axis_limits,plot_object_trajectories,plot_displacements_across_frames,plot_score_components,plot_labeled_mean_displacements_by_lines
 
 import os
 import numpy
@@ -28,7 +28,9 @@ def collect_files_by_mode(base_dir, mode=TRAIN):
     
     Parameters:
     - base_dir: root directory to start from (default = current dir)
-    - mode: "train" or "infer"
+    - mode: "train" for taking the entire training  folder
+            "infer" for taking the entire testing folder
+            "search" for taking only one file from testing folder
     
     Returns:
     - List of file paths
@@ -100,19 +102,23 @@ def prepare_train_infer_data(collected_file_lists,mode):
     
         file_pre_processor = PreProcessingObservations()        
         observations,file_type=file_pre_processor.load_observations(files)
+        truncated_observations=file_pre_processor.trajectory_quality_analysis(observations)
         if mode==TRAIN:
-            train_observations,test_observations=file_pre_processor.prepare_train_test(observations,train_ratio=0.8)
+            train_observations,test_observations=file_pre_processor.prepare_train_test(truncated_observations,train_ratio=0.8)
      
             labeled_train_obs=file_pre_processor.observations_labeling_by_average_variance(train_observations, file_type, True)
+            #labeled_train_obs=file_pre_processor.label_obs_by_z_score_ranking(train_observations, file_type, True)
             if len(labeled_train_obs)>0:               
                 all_train_observations[files]=labeled_train_obs
                 observation_stats[files]={'mu': file_pre_processor.total_mu, 'cov': file_pre_processor.total_cov_matrix}
         
             labeled_test_obs=file_pre_processor.observations_labeling_by_average_variance(test_observations, file_type, False)
+            #labeled_test_obs=file_pre_processor.label_obs_by_z_score_ranking(test_observations, file_type, False)
             if len(labeled_test_obs)>0:               
                 all_test_observations[files]=labeled_test_obs
         else:
             labeled_infer_obs=file_pre_processor.observations_labeling_by_average_variance(observations, file_type, True)
+            #labeled_infer_obs=file_pre_processor.label_obs_by_z_score_ranking(observations, file_type, True)
             if len(labeled_infer_obs)>0:               
                 all_train_observations[files]=labeled_infer_obs
                 observation_stats[files]={'mu': file_pre_processor.total_mu, 'cov': file_pre_processor.total_cov_matrix}
@@ -496,4 +502,47 @@ def infer_with_trained_model(user_model_mode, user_test_performance, user_file_s
         all_infer_obs_labeled=get_obs_labeled_by_prediction(all_infer_obs,infer_probs_labeled_bayesin_model_with_threshold)
         
         return all_infer_obs_labeled
-               
+
+def run_trajectory_plot():
+    
+    user_base_dir = input("Enter the base directory where your desired data folder is located to show trajectory: ")
+    user_mode = SEARCH
+    
+    try:
+        collected_files = collect_files_by_mode(base_dir=user_base_dir, mode=user_mode)
+        #$$$$$$$$$$$$SANITY CHECKING$$$$$$$$$$$$$$$$$$$$$
+        print(f"Found {len(collected_files)} files for mode '{user_mode}'")
+        file_pre_processor = PreProcessingObservations()        
+        observations,file_type=file_pre_processor.load_observations(collected_files[0])
+        ranked_obs=file_pre_processor.observations_labeling_by_average_variance(observations,file_type,True)
+       
+        obs_mu = file_pre_processor.total_mu
+        obs_cov = file_pre_processor.total_cov_matrix
+        plot_labeled_mean_displacements_by_lines(ranked_obs,obs_mu,obs_cov)
+        
+        #plot_score_components(ranked_obs,all_zdx_zdy)
+        #labeled_obs=file_pre_processor.observations_labeling_by_average_variance(observations, file_type, True)
+        '''
+        moving_objects = sorted([obj_id for obj_id, obs in ranked_obs.items() if obs[TRUE_LABELS] == MOVING])
+        
+        print(f"Objects labeled as NOT MOVING:{len(moving_objects)}, {len(ranked_obs)}")
+        
+        for obj_id in moving_objects:
+            print(obj_id)
+        '''
+        #plot_object_trajectories(ranked_obs,moving_objects,0)
+        
+    except ValueError as e:
+        print(f"Error: {e}")
+    
+   
+    
+def run_hourly_graph():
+    #hour_list=[0,4,8,12,16,24,28,32,33,34,35,36]
+    #total_list=[119,190,58,204,78,40,127,146,55,91,94,62]
+    #alive_list=[32,44,10,56,14,9,22,37,8,16,13,9]
+    hour_list=[0,4,8]
+    total_list=[122,16,387]
+    alive_list=[34,2,54]
+    dose_rate="480 pbb days old ostracod"
+    plot_hourly_prediction(hour_list,total_list,alive_list,dose_rate)
