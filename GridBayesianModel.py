@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, accuracy_score, f1_score, recall_score, precision_score,roc_curve,ConfusionMatrixDisplay, auc
 
 #String literals to constants
-TRUE_LABELS = "true_labels"
-PREDICTED_LABELS= "predicted_labels"
+TRUE_LABEL = "true_label"
+PREDICTED_LABEL= "predicted_label"
 
 
 MOVING=1
@@ -72,8 +72,8 @@ class BayesianModel:
             curr_likelihood[obj_id] = {
                 DEAD_PDFS: dead_log_sum_pdf,
                 ALIVE_PDFS: alive_log_sum_pdf,
-                TRUE_LABELS: curr_obs_with_probs[obj_id][TRUE_LABELS],
-                PREDICTED_LABELS: cls
+                TRUE_LABEL: curr_obs_with_probs[obj_id][TRUE_LABEL],
+                PREDICTED_LABEL: cls
             }          
         
         return curr_likelihood
@@ -89,7 +89,7 @@ class BayesianModel:
             threshold = dead_logs_sum - alive_logs_sum
             self.filtered_thresholds.append(threshold)
             
-            curr_true_label = curr_likelihood_without_threshold[obj_id][TRUE_LABELS]
+            curr_true_label = curr_likelihood_without_threshold[obj_id][TRUE_LABEL]
             true_labels.append(curr_true_label)
         
         for i in range(len(self.filtered_thresholds)):
@@ -99,13 +99,13 @@ class BayesianModel:
                 alive_logs_sum = curr_likelihood_without_threshold[obj_id][ALIVE_PDFS]
                 if dead_logs_sum>alive_logs_sum+delta:
                     cls=NOTMOVING
-                    curr_likelihood_without_threshold[obj_id][PREDICTED_LABELS]=cls
+                    curr_likelihood_without_threshold[obj_id][PREDICTED_LABEL]=cls
                 else:
                     cls=MOVING
-                    curr_likelihood_without_threshold[obj_id][PREDICTED_LABELS]=cls
+                    curr_likelihood_without_threshold[obj_id][PREDICTED_LABEL]=cls
         
-            true_label = [curr_likelihood_without_threshold[obj_id][TRUE_LABELS] for obj_id in curr_likelihood_without_threshold]
-            predicted_label= [curr_likelihood_without_threshold[obj_id][PREDICTED_LABELS] for obj_id in curr_likelihood_without_threshold]
+            true_label = [curr_likelihood_without_threshold[obj_id][TRUE_LABEL] for obj_id in curr_likelihood_without_threshold]
+            predicted_label= [curr_likelihood_without_threshold[obj_id][PREDICTED_LABEL] for obj_id in curr_likelihood_without_threshold]
         
             # Create the confusion matrix
             cm = confusion_matrix(true_label, predicted_label, labels=[NOTMOVING, MOVING])
@@ -144,10 +144,10 @@ class BayesianModel:
             alive_logs_sum = curr_likelihood[obj_id][ALIVE_PDFS]
             if dead_logs_sum>alive_logs_sum+self.optimal_threshold:
                 cls=NOTMOVING
-                curr_likelihood[obj_id][PREDICTED_LABELS]=cls
+                curr_likelihood[obj_id][PREDICTED_LABEL]=cls
             else:
                 cls=MOVING
-                curr_likelihood[obj_id][PREDICTED_LABELS]=cls
+                curr_likelihood[obj_id][PREDICTED_LABEL]=cls
         
         return curr_likelihood 
         
@@ -162,7 +162,7 @@ class BayesianModel:
         -ids: list of ids where the labels meet the given conditions
         '''
         ids = [ obj_id for obj_id, details in curr_obs.items()
-        if details[TRUE_LABELS] == label_true and details[PREDICTED_LABELS] == label_predicted
+        if details[TRUE_LABEL] == label_true and details[PREDICTED_LABEL] == label_predicted
         ]
         print(len(ids))
         

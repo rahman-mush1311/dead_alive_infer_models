@@ -15,7 +15,7 @@ TRAIN="train"
 INFER="infer"
 
 class GridDisplacementModel:
-    def __init__(self, grid_rows=5, grid_cols=5, max_x=4128, max_y=2196):
+    def __init__(self, grid_rows=3, grid_cols=3, max_x=4128, max_y=2196):
         # self.n represents the number of observations for each cell
         self.n = [[ 0 for _ in range(grid_cols)] for _ in range(grid_rows)]
 

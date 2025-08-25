@@ -1,0 +1,224 @@
+import numpy 
+import scipy.stats 
+import math 
+from sklearn.mixture import GaussianMixture
+
+#String literals to constants
+TRACKING_DATA= "tracking_data"
+TRUE_LABEL = "true_label"
+PREDICTED_LABEL= "predicted_label"
+
+
+MOVING=1
+NOTMOVING=0
+
+LOG_PDFS="log_pdfs"
+DEAD_PDFS="dead_log_sum_pdfs"
+ALIVE_PDFS="alive_log_sum_pdfs"
+
+class GMMGridDisplacementModel:
+    def __init__(self, grid_rows=3, grid_cols=3, max_x=4128, max_y=2196):
+        self.max_x = max_x
+        self.max_y = max_y
+        
+        self.grid_rows = grid_rows
+        self.grid_cols = grid_cols
+        
+        # self.n represents the number of observations for each cell
+        self.n = [[ 0 for _ in range(grid_cols)] for _ in range(grid_rows)]
+
+        # self.gmms fitted GMM for each cell
+        self.gmms = [[None for _ in range(grid_cols)] for _ in range(grid_rows)] 
+        
+        
+    def calculate_displacements_grid_cell(self, observations,observations_mu,observations_cov_matrix):
+        '''
+        this creates a grid_row*grid col[3X3]size (grid_dis) by processing a dictionary of observations where each grid cell contains the displacements
+        the calculation of displacement across 2 axes is displacmenet along dx= x2-x1/frame_distance; dy=y2-y1/frame_distance
+        and the cell where the displacement belongs is calculate by using find_grid_cell() method
+        additionally, we normalize the displacements by necessary statistics
+    
+        Parameters:
+        - observation: dictionary containing object's observations(object id: (frame,x_cordinate,y_coordinate))
+        - observations_mu: array containing mu_dx,mu_dy of the corresponding files mean statistics
+        - observation_cov_matrix: 2*2 array containing the corresponding files covariance statistics
+        Returns:
+        - returns a 3*3 list of the normalized displacements(dx',dy') necessary to calculate gmm for each cell.
+        '''
+        #to keep the displacements in the grid formats
+        grid_dis = [[[] for _ in range(self.num_rows())] for _ in range(self.num_cols())]
+        
+        #extract necessary statistics for normalization
+        mu_dx,mu_dy=observations_mu
+        std_dx, std_dy = numpy.sqrt(numpy.diag(observations_cov_matrix))
+        #start calculating the displacement and assign to corresponding cell
+        for obj_id, obs in observations.items():
+            for i in range(len(obs) - 1):
+                dframe = obs[i+1][0] - obs[i][0]
+                #to do: dframe<=0 continue logging error
+                if dframe>0:
+                
+                    dx = obs[i+1][1] - obs[i][1]
+                    dy = obs[i+1][2] - obs[i][2]
+
+                    grid_row, grid_cell = self.find_grid_cell(obs[i][1],
+                                                      obs[i][2])
+                    grid_pos=grid_dis[grid_row][grid_cell]
+                    
+                    self.n[grid_row][grid_cell] += 1
+                    
+                    dx=dx/dframe
+                    dy=dy/dframe
+                    
+                    if std_dx!=0.0 and std_dy!=0.0:
+                        norm_dx=(dx-mu_dx)/std_dx
+                        norm_dy=(dy-mu_dy)/std_dy
+                        grid_pos.append((norm_dx,norm_dy))
+                    
+                else:
+                    print(f"{obj_id} {i} and {i+1} index's distance of frame is getting invalid values for calculation: {obs[i+1][0],obs[i][0]}")
+        
+        return grid_dis
+    
+    def calculate_parameters(self,grid_displacements):
+        '''
+        we calculate the each cell's mu & covariance matrices. traverse over each cell one by one then calculates mu, covariance using the points in that cell. 
+        - Parameters:
+        grid_displacements: normalized displacements [3X3]list. 
+        -Returns:
+        -N/A
+        '''
+        for row in range(self.num_rows()):
+            for col in range(self.num_cols()):
+                #n=self.n[row][col]
+                n=len(grid_displacements[row][col])
+                if n>1:
+                    if n<30:
+                        print(f"at grid {row}{col} obs are: {n} less than 30")
+                        #assert n == len(grid_displacements[row][col]), f"Mismatch: {n} is but items are: {len(grid_displacements[row][col])}"        
+                          
+                    dxdy_items = numpy.array(grid_displacements[row][col])
+                        
+                    cell_gmm = GaussianMixture(n_components=2, covariance_type='full', random_state=0)
+                    cell_gmm.fit(dxdy_items)
+                    self.gmms[row][col] = cell_gmm
+                    
+                    print(f"$$$$$$$$$$$$SANITY$$$$$$$$$$$$ \n Cell [{row},{col}] has {n} observations")
+                    print("Component Weights:", cell_gmm.weights_)        
+                    print("Component Means:\n", cell_gmm.means_)           
+                    print("Covariance Matrices:\n", cell_gmm.covariances_)
+                    
+                                                               
+                else:
+                    print(f"at grid {row}{col} obs are: {n}, not enough to calculate")
+                
+        return 
+        
+    
+    def compute_probabilities(self, observations,dx_norm, dy_norm, sx_norm, sy_norm):
+        '''
+        this calculates the probability of all objects using the given gmm model the calculation happens in probability(). for sanity checking purpose we don't consider if any object has only one set of coordinates.
+        Parameters:
+        -observations: dictionary containing object's observations(object id: (frame,x_cordinate,y_coordinate))
+        -dx_norm: float value of mean of x_cordinates
+        -dy_norm: float value of mean of y_coordinates
+        -sx_norm: float value of variance of x_cordinates
+        -sy_norm: float value of variance of y_coordinates
+        
+        Returns:
+        -probabilities: a dictionary containing {object_id: {TRACKING_DATA: [(frame1,x1,y1),..,(framen,xn,yn)]
+                                                            LOG_PDFS:list of log of probabilities for components}}
+        '''
+        probabilities={}
+        empty_obs=0
+        
+        for obj_id, obs in observations.items():
+            log_probs=[]
+
+            for i in range(len(obs) - 1):
+                x,y=obs[i][1],obs[i][2]
+                dframe = obs[i+1][0] - obs[i][0]
+                dx = obs[i+1][1] - obs[i][1]
+                dy = obs[i+1][2] - obs[i][2]
+                if dframe>0:
+                    dx,dy=(dx/dframe),(dy/dframe)
+                    norm_dx = (dx - dx_norm) / sx_norm 
+                    norm_dy = (dy - dy_norm) / sy_norm
+                    gmm_log_probs=self.gmm_probability(x, y, norm_dx, norm_dy) 
+                    log_probs.append(gmm_log_probs)               
+                else:
+                    print(f"!!!WARNING!!! invalid frame distance {dframe} for {x,y} for {obj_id}")
+                    
+            if len(obs)-1<=0:
+                empty_obs+=1
+                print(f"!!! WARNING!!! {obj_id} has {len(obs)} therefore empty probs!!")
+            if len(log_probs)>1:
+                #print(f"for {obj_id}: has {len(obs)} displacements and  gmm log probabilities for component 0: {len(obj_probabilities_comp0)} and comp 1 is {len(obj_probabilities_comp1)}")
+                probabilities[obj_id]={
+                TRACKING_DATA: obs,
+                LOG_PDFS: log_probs
+                }
+        
+        return probabilities
+        
+    def gmm_probability(self, x, y, dx_norm, dy_norm):
+        '''
+        this calculates the weighted log likelihood probability of one objects using the particular cell's gmm parameters. we use the find_grid_cell() for that
+        Parameters:
+        -x: int value of x_cordinate 
+        -y: int value of y_coordinates
+        -dx: normalized displacement of x_cordinate
+        -dy: normalized displacement of y_coordinates
+        
+        Returns:
+        -float containing the calculated probabilities for 2 components
+        '''
+        grid_row, grid_col = self.find_grid_cell(x, y)
+        cell_n = self.n[grid_row][grid_col]
+        cell_gmm = self.gmms[grid_row][grid_col]
+        if cell_gmm is not None:
+            weighted_likelihood=0.0
+            for i in range(cell_gmm.n_components):
+                #print(f"for component {i}: for {x,y}")
+                mu = cell_gmm.means_[i]
+                cov = cell_gmm.covariances_[i]
+                component_weight = cell_gmm.weights_[i]
+                
+                component_pdf = component_weight * scipy.stats.multivariate_normal.pdf([dx_norm, dy_norm],mean=mu, cov=cov)
+                weighted_likelihood += component_pdf  
+            log_mixture_pdf = numpy.log(weighted_likelihood + 1e-300)  # epsilon added to avoid log(0)
+            return log_mixture_pdf
+        else:
+            print(f"current cell [{grid_row}][{grid_col}] gmm is {cell_gmm} ")
+            return [float('-inf'), float('-inf')]  # handle missing GMM
+        
+    def find_grid_cell(self, x, y):
+        '''
+        find the where a particular displacement dx/dy should be assigned but it uses the starting x,y to calculate them.
+        Parameters:
+        x - int value of x-axis coordinate
+        y - int value of y-axis coordinate
+        Returns:
+        grid_row,grid_col- int value of 0<=grid_row, grid_col<5
+        '''
+        grid_row = y * self.num_rows() // self.max_y
+        grid_col = x * self.num_cols() // self.max_x
+        return grid_row, grid_col
+
+    def num_rows(self):
+        '''
+        returns the number of grid rows in the model.
+        
+        Returns:
+        -len(self.n): int rows in the grid model.
+        '''
+        return len(self.n)
+
+    def num_cols(self):
+        '''
+        returns the number of grid collums in the model.
+        
+        Returns:
+        len(self.n[0]): int cols in the grid model.
+        '''
+        return len(self.n[0])

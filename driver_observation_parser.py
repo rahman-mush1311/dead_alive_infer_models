@@ -4,43 +4,26 @@ import glob
 import os 
 import random
 import numpy
+import math
 import matplotlib.pyplot as plt
-from bisect import bisect_left
 
 
-DEAD='d'
-ALIVE='a'
+
+MOVING=1
+NOTMOVING=0
+
+TRACKING_DATA = "tracking_data"
+TURNING_FLAG="turning_flag"
+TRUE_LABEL="true_label"
+SCORE = "scoring_by_distance"
 
 class ParsingObservations:
     def __init__(self):
-        self.filelists = []
-    
-    def load_files_from_folder(self,filetype,filecount):
-        '''
-        in here we get the list of files/datasets from a particular folders (DEAD/ALIVE folders)
-        Parameters:
-        -filetype: which subfolder to go to
-        -filecount: int how many files/datasets to consider
-        '''
-        counter_flag=0
+        self.total_mu=[(0,0)]
+        self.total_cov_matrix=numpy.zeros((2, 2))
+        self.total_obs=0 
         
-        if filetype==DEAD:
-            subfolder = "dead_files"  
-        else:
-            subfolder = "alive_files"
-            
-        for root, dirs, files in os.walk(subfolder):
-            for file in files:
-                if file.endswith(".txt"):  # Only add .txt files
-                    self.filelists.append(os.path.join(root, file))
-                    
-                if len(self.filelists)>=filecount: #this is to give how many files to work with
-                    counter_flag=1
-                    break
-            if counter_flag==1:
-                break
-        #print(self.filelists)            
-    def load_observations(self,filename):
+    def load_observations(self,filepath):
         """
         Processes the input files and parses them to extract object ID, frame, x, and y coordinates.
         Parameters:
@@ -48,42 +31,35 @@ class ParsingObservations:
         Returns:
         -observations: a dictionary (object id: (frame,x_cordinate,y_coordinate)).
         """
-        pattern = re.compile(r'''
-        \s*(?P<object_id>\d+),
-        \s*(?P<within_frame_id>\d+),
-        \s*'(?P<file_path>[^']+)',
-        \s*cX\s*=\s*(?P<x>\d+),
-        \s*cY\s*=\s*(?P<y>\d+),
-        \s*Frame\s*=\s*(?P<frame>\d+)
-        ''', re.VERBOSE)
-        
-        
+        pattern = re.compile('''^[ ]*(?P<objectid>[0-9]+),[ ]*(?P<occurrence>[0-9]+),[ ]'[^']+',[ ]cX=[ ]*(?P<cx>[0-9]+),[ ]cY=[ ]*(?P<cy>[0-9]+),[ ]Frame=[ ]*(?P<frame>[0-9]+)''')
         
         observations = collections.defaultdict(list)
 
-        with open(filename) as object_xys:
-            prefix,extension=self.get_file_prefix(filename)
+        with open(filepath) as object_xys:
+            prefix,extension=self.get_file_prefix(filepath)
+            #print(f"Prefix is: {prefix}, extension is: {extension}")
             for line in object_xys:
                 m = pattern.match(line)
                 if m:
-                    obj_id = int(m.group('object_id'))
+                    
+                    objectid = int(m.group('objectid'))
+                    #occurrence = int(m.group('occurrence'))
+                    x = int(m.group('cx'))
+                    y = int(m.group('cy'))
                     frame = int(m.group('frame'))
-                    cX = int(m.group('x'))
-                    cY = int(m.group('y'))
-                    obj_id = f"{prefix}_{obj_id}_{extension}"
-                    observations[obj_id].append((frame, cX, cY))
+                    if prefix != "" and extension!= "":
+                        objectid=f"{prefix}_{objectid}_{extension}"
+                    observations[objectid].append((frame,x, y))
 
-        # Ensure observations are sorted by frame
-        
-        for object_id in observations:
-            observations[object_id].sort()
-        
+        for objectid in observations:
+            observations[objectid].sort()
+        '''
         for object_id, items in observations.items():
-            assert all(items[i][0] <= items[i + 1][0] for i in range(len(items) - 1)), f"Items for {object_id} are not sorted by frame"    
-        
+            assert all(items[i][3] <= items[i + 1][3] for i in range(len(items) - 1)), f"Items for {object_id} are not sorted by frame"    
+        '''
         return observations
     
-    def get_file_prefix(self, filename):
+    def get_file_prefix(self, filepath):
         '''
         extract the filename/dataset name to append it to object_id, since each dataset starts with 1... appending to same dictionaries will cause issues.
         Parameters:
@@ -91,199 +67,315 @@ class ParsingObservations:
         Returns:
         str matching re patterns
         '''
-        if re.search(r"DeadObjectXYs\.txt", filename):
-            return 'D', ''
+
+        '''
+        Extracts (date, image_id) from a filename if it contains 'ObjectXYs'.
+    
+        Returns:
+        (date_str, image_id) if valid; otherwise None
+        '''
+        filename = os.path.basename(filepath)
+        print(filename)
+        # Ensure it contains 'ObjectXYs'
+        if "trackStore" not in filename:
+            raise ValueError(f"Filename isn't valid: {filename}")
+            
+        # Regex pattern: match DATE, IMAGE info before ObjectXYs        
+        pattern = re.compile(r'(?P<date>\d{1,2}-\d{1,2}-\d{2})_(?P<image_id>.+)trackStore\.txt$')
+        match = pattern.search(filename)
+    
+        if match:
+            date_str = match.group('date')
+            image_id = match.group('image_id')
+                      
+            return date_str, image_id
         else:
-            file_pattern = re.compile(r'''(\d{1,2}-\d{1,2}-\d{2})_(\d+)_ObjectXYs\.txt|AliveObjectXYs(\w+)\.txt''')
-            match = file_pattern.search(filename)
-            if match.group(1)and match.group(2):
-                return (match.group(1), match.group(2)) 
-            else:
-                return ('Alive',match.group(3))
-        return '',''
+            raise ValueError(f"Filename pattern mismatch: {filename}")
     
-    def compute_global_stats(self, curr_obs):
-    
-        all_dx_dy = []
+    def angle_between(self,v1, v2):
+        """
+        takes two vector and calculates the angle between them
+        Parameters:
+        v1 = vector between point xn0,yn0->xn1,yn1
+        v2 = vector between point xn1,yn1->xn2,yn2
+        Returns:
+        angle in degree
+        """
+        dot = numpy.dot(v1, v2)
+        norm = numpy.linalg.norm(v1) * numpy.linalg.norm(v2)
+        if norm == 0:
+            return 0
+        cos_theta = numpy.clip(dot / norm, -1.0, 1.0)
+        return math.degrees(numpy.arccos(cos_theta))
         
-        # First pass: compute dx/dy for all object
-        for obj_id, obs in curr_obs.items():
-                
+    def detect_direction_stability(self,points, angle_threshold):
+        """
+        takes observation dictionary and returns a lists of object_id which has biologically impossible angle turn. we compute the angle between consecutive vectors
+        Parameters:
+        -observations: a dictionary (object id: (frame,x_cordinate,y_coordinate)).
+        -angle_threshold: int, value we consider as impossible turns
+        Returns:
+        -unstable_ids: list of object_id whose tracking vector has more than 30 turn
+        """
+        turning_angle_flag=False
+        angles=[]
+        turned_count=0
+        for i in range(len(points) - 2):
+            f1, x1, y1 = points[i]
+            f2, x2, y2 = points[i+1]
+            f3, x3, y3 = points[i+2]
+
+            v1 = [x2 - x1, y2 - y1]
+            v2 = [x3 - x2, y3 - y2]
+
+            if f2 > f1 and f3 > f2:
+                angle = self.angle_between(v1, v2)
+                angles.append(angle)
+                if angle > angle_threshold:
+                    turned_count+=1
+                    
+                    
+        
+        if turned_count>5:
+            #print(f"!!THREHSOLD!!!!")
+            turning_angle_flag=True
+        else:
+            #print(f"NOT MATCHING!!!")
+            turning_angle_flag=False
+
+        return turning_angle_flag,turned_count
+    
+    def is_starting_or_ending_near_edge(self,points, width, height, margin_ratio):
+        """
+        takes observation dictionary and returns 2 lists of object_id indentify as good track and object_ids identified as bad tracks based on boundary parameters
+        Parameters:
+        -observations: a dictionary (object id: (frame,x_cordinate,y_coordinate)).
+        -width: int, the frame width should be 4096
+        -height: int, the frame height should be 2160
+        -margin_ratio: float, pertencage of boundary margin we consider valid
+        Returns:
+        -valid_track_ids: list of object_id whose tracking is within the boundary
+        -invalid_track_ids: list of object_id whose tracking either starts late or ends early
+        """
+        
+        late_track_flag=False
+        end_track_flag=False
+        bad_track_flag=False
+        if len(points)>10:
+                x_start, y_start = points[0][1], points[0][2]  # Starting coordinates
+                x_end, y_end = points[-1][1], points[-1][2]    # Ending coordinates
+
+                margin_x = margin_ratio * width
+                margin_y = margin_ratio * height
+        
+                valid_entry = (x_start <= margin_x)
+                valid_exit = (x_end > (width - margin_x))
+            
+                if valid_entry:
+                    late_track_flag=False
+                else:
+                    late_track_flag=True
+                if valid_exit:
+                    end_track_flag=False
+                else:
+                    end_track_flag=True
+        else:
+            bad_track_flag=True
+        return bad_track_flag,late_track_flag,end_track_flag
+    
+    def is_missing_frame(self,o):
+        frames = [r[0] for r in o]  # actual frames observed
+        expected_frames = list(range(min(frames), min(frames) + len(frames)))  # expected consecutive frames
+    
+        missing = sorted(set(expected_frames) - set(frames))
+        extra = sorted(set(frames) - set(expected_frames))  # if needed for debug
+
+        missing_frame_flag = False
+        if len(missing) > 1:
+            missing_frame_flag = True
+
+        return missing_frame_flag
+    
+    def get_displacement_sequence(self,curr_obs):
+        """
+        Computes the displacement sequence for the objects and returns a modified dictionary
+        Parameters:
+        -curr_obs: one dictionary of sample parsed observation {object id: [(frame1,x1,y1)..(framen,xn,yn)]}
+        Returns:
+        - curr_obs_displacements: one dictionary of observation sequences {object id: [(dx1,dy1)..(,dxn-1,dyn-1)]}
+        """
+        curr_obs_displacements = collections.defaultdict(list)
+        for obj_id, obs in curr_obs.items(): 
+            curr_obj_dx_dy=[]
             for i in range(len(obs) - 1):
                 dframe = obs[i+1][0] - obs[i][0]
                 if dframe > 0:
                     dx = (obs[i+1][1] - obs[i][1]) / dframe
                     dy = (obs[i+1][2] - obs[i][2]) / dframe                  
-                    all_dx_dy.append([dx,dy])
+                    curr_obj_dx_dy.append([dx,dy])
                     
                 else:
-                    print(f"dframe has invalid value: {dframe}")
-
-        # Global averages of dx and dy across all objects
-        all_dx_dy_np=numpy.array(all_dx_dy)
-        all_dx_dy_mu=numpy.mean(all_dx_dy_np, axis=0)
-        all_dx_dy_var=numpy.var(all_dx_dy_np, axis=0)
-        all_dx_dy_cov=numpy.cov(all_dx_dy_np.T)
-        global_avg_dx,global_avg_dy = all_dx_dy_mu[0],all_dx_dy_mu[1]
+                    print(f"!!!!dframe has invalid value while computing the global stats: {dframe}")
+            if curr_obj_dx_dy:
+                curr_obs_displacements[obj_id]=curr_obj_dx_dy
+            else:
+                print(f"Displacements couldn't be calculated lack of observations,size is: {len(obs)}")
+        return curr_obs_displacements
         
-        print(f"Global avg var: {all_dx_dy_var[0]:.2f}, dy: {all_dx_dy_var[1]:.2f}")
-        return all_dx_dy_mu,all_dx_dy_cov
-    def split_observations_by_filename(self, curr_obs,curr_filename):
+    def compute_global_stats(self, curr_obs):
     
-        prefix,extension = self.get_file_prefix(curr_filename)
-        print(prefix, extension)
+        """
+        Computes global mean and covariance of dx/dy for all objects and stores in self.total_mu and self.total_cov_matrix.
+        Parameters:
+        -curr_obs: one dictionary of sample parsed observation {object id: [(frame1,x1,y1)..(framen,xn,yn)]}
+        Returns:
+        N/A
+        """
         
-        dead_obs = collections.defaultdict(list)
-        alive_obs = collections.defaultdict(list)
-        
-        if prefix.startswith("A"): 
-            for obj_id, obs in curr_obs.items():
-                if len(obs)>=5:
-                        alive_obs[obj_id]=obs
-            
-        else:
-            for obj_id, obs in curr_obs.items():
-                if len(obs)>=5:
-                        dead_obs[obj_id]=obs
-        print(f"from filewise name label function: total obs len is {len(curr_obs)}, dead obs len is {len(dead_obs)} and alive obs len is {len(alive_obs)}")
-        
-        return dead_obs,alive_obs
-    def split_observations_by_displacements(self, curr_obs, global_dx_dy_cov,curr_filename):
-        #need to subtract mu, take the absoulate value in subtraction values
-        prefix,extension = self.get_file_prefix(curr_filename)
-        print(prefix, extension)
-        
-        global_std_dx = numpy.sqrt(global_dx_dy_cov[0][0])
-        global_std_dy = numpy.sqrt(global_dx_dy_cov[1][1])
-        
-        dead_obs = collections.defaultdict(list)
-        alive_obs = collections.defaultdict(list)
-        if prefix.startswith("A"):
-            # First pass: compute max dx/dy per object
-            for obj_id, obs in curr_obs.items():
-                #curr_obj_dx=[]
-                #curr_obj_dy=[]
-                both_dxdy_indices=[]
-                for i in range(len(obs) - 1):
-                    dframe = obs[i+1][0] - obs[i][0]
-                    if dframe > 0:
-                        dx = (obs[i+1][1] - obs[i][1]) / dframe
-                        dy = (obs[i+1][2] - obs[i][2]) / dframe
-                        #curr_obj_dx.append(dx)
-                        #curr_obj_dy.append(dy)
-                        if dx > global_std_dx and dy > global_std_dy:
-                            both_dxdy_indices.append(i)
-                    
-                    else:
-                        print(f"dframe has invalid value: {dframe}")
-                if  both_dxdy_indices and len(obs)>=5:
-                    '''
-                    curr_obj_dx.sort()
-                    curr_obj_dy.sort()
-                
-                    low_dx_count = bisect_left(curr_obj_dx, global_std_dx)
-                    low_dy_count = bisect_left(curr_obj_dy, global_std_dy)
-                
-                    if low_dx_count >=5 and low_dy_count >=5 and len(obs) >=5:
-                        dead_obs[obj_id]=obs
-                    elif len(obs)>=5:
-                        alive_obs[obj_id]=obs
-                    '''
-                    indices = sorted(set(both_dxdy_indices)) #don't need that
-                    flag=False
-                    window_size=3
-                    ############SANITY CHECKING###############
-                    #print(f"for obj_id: {obj_id}, indices are: {indices} ")
-                    
-                    for k in range(len(indices) - 2):                        
-                        window = indices[k:k + window_size]
-                        ############SANITY CHECKING###############
-                        #print(f"for obj_id: {obj_id}, current indices are: {window} ")
-                        if all(window[x] + 1 == window[x + 1] for x in range(len(window) - 1)):
-                            flag=True
-                            alive_obs[obj_id]=obs
-                            ############SANITY CHECKING###############
-                            #print(f"{obj_id} goes to alive")
-                            break
-                            
-                        if flag==True:
-                            break
-                        else:
-                            continue
-                    else:
-                        dead_obs[obj_id]=obs
-                        ############SANITY CHECKING###############
-                        #print(f"{obj_id} goes to dead")
-                else:
-                    print(f"for {obj_id}: len of obs is {len(obs)}, or dx, dy empty")
-                       
-            ###########SAVING TRAJECTORY###############            
-            #self.visualize_object_trajectory(dead_obs)        
-        else:
-            dead_obs=curr_obs
-        print(f"from split function: total obs len is {len(curr_obs)}, dead obs len is {len(dead_obs)} and alive obs len is {len(alive_obs)}")
-        
-        return dead_obs,alive_obs
-    
-    def split_observations_by_average(self, curr_obs, global_dx_dy_mu,global_dx_dy_cov,curr_filename):
-    
-        prefix,extension = self.get_file_prefix(curr_filename)
-        print(prefix, extension)
-        
-        object_avg = {}
-
-        dead_obs = collections.defaultdict(list)
-        alive_obs = collections.defaultdict(list)
-        
-        global_avg_dx=global_dx_dy_mu[0]
-        global_avg_dy=global_dx_dy_mu[1]
-        global_std_dx = numpy.sqrt(global_dx_dy_cov[0][0])
-        global_std_dy = numpy.sqrt(global_dx_dy_cov[1][1])
-        global_var_dx = global_dx_dy_cov[0][0]
-        global_var_dy = global_dx_dy_cov[1][1]
-        
-        
-        if prefix.startswith("A"):
-            # First pass: compute max dx/dy per object
-            for obj_id, obs in curr_obs.items():
-                curr_obj_dx_dy=[]   
-                for i in range(len(obs) - 1):
-                    dframe = obs[i+1][0] - obs[i][0]
-                    if dframe > 0:
-                        dx = (obs[i+1][1] - obs[i][1]) / dframe
-                        dy = (obs[i+1][2] - obs[i][2]) / dframe
-                        curr_obj_dx_dy.append([dx,dy]) 
-                    
-                    else:
-                        print(f"dframe has invalid value: {dframe}")
-                if curr_obj_dx_dy:
-                    curr_obj_dx_dy_np = numpy.array(curr_obj_dx_dy)
-                    curr_obj_dx_dy_mu = numpy.mean(curr_obj_dx_dy_np , axis=0)
-                    curr_obj_dx_dy_var = numpy.var(curr_obj_dx_dy_np , axis=0)
-                    avg_dx,avg_dy=curr_obj_dx_dy_mu[0],curr_obj_dx_dy_mu[1]
-                    object_avg[obj_id] = (avg_dx, avg_dy,curr_obj_dx_dy_var[0],curr_obj_dx_dy_var[1])
-                
-            
-            for obj_id, (avg_dx, avg_dy,var_dx,var_dy) in object_avg.items():
-                obs = curr_obs[obj_id]
-                z_dx=(avg_dx-global_avg_dx)
-                z_dy=(avg_dy-global_avg_dy)
-                if len(obs) > 5 and ((avg_dx > global_avg_dx or avg_dy >global_avg_dy) or (var_dx > global_var_dx or var_dy > global_var_dy)):
-                    alive_obs[obj_id] = obs
-                    
-                elif len(obs) > 5:
-                    dead_obs[obj_id] = obs
-                   
-            
-        else:
-            for obj_id, obs in curr_obs.items():
-                if len(obs)>=5:
-                        dead_obs[obj_id]=obs
+        all_dx_dy = []
+        tracking_only_obs = {obj_id: obj_data[TRACKING_DATA]for obj_id, obj_data in curr_obs.items()}
+        #gets the displacement sequence
+        curr_obs_displacements=self.get_displacement_sequence(tracking_only_obs)
        
-        print(f"from average split function: total obs len is {len(curr_obs)}, dead obs len is {len(dead_obs)} and alive obs len is {len(alive_obs)}")
+        for obj_id, dis in curr_obs_displacements.items():                
+            if len(dis)>1:
+                all_dx_dy.extend(dis)
+            else:
+                print(f"object id {obj_id}: displacement sequence lenght is {len(dis)}")
+                    
+        if all_dx_dy:
+            # Global averages of dx and dy across all objects
+            all_dx_dy_np=numpy.array(all_dx_dy)
+            all_dx_dy_mu=numpy.mean(all_dx_dy_np, axis=0)
+            all_dx_dy_cov=numpy.cov(all_dx_dy_np.T)
+            
+            self.total_mu = all_dx_dy_mu.tolist()        
+            self.total_cov_matrix = all_dx_dy_cov
+            self.total_obs=len(curr_obs_displacements)
+            ##########SANITY CHECKING#########################
+            print(f"current sample files stats mu are: {self.total_mu[0]:.2f},{self.total_mu[1]:.2f}\n"
+                    f"and cov is: {self.total_cov_matrix}")
+        return
         
-        return dead_obs,alive_obs
+    def filtering_tracks(self,curr_obs):
+        
+        filetered_observation=collections.defaultdict(list)
+        for objectid in curr_obs:
+            bad_track_flag,late_track_flag,end_track_flag=self.is_starting_or_ending_near_edge(curr_obs[objectid],4096,2160,0.25)
+            missing_frame_flag=self.is_missing_frame(curr_obs[objectid])
+                
+            if missing_frame_flag==False and bad_track_flag==False and late_track_flag==False and end_track_flag==False:
+                filetered_observation[objectid]=curr_obs[objectid]
+            else:
+                continue
+        
+        return filetered_observation
     
+    def compute_traveled_distance(self,points):
+        """
+        takes observation dictionary and returns a dictionary of mean Euclidean magnitude of tracking points per frame
+        Parameters:
+        -observations: a dictionary (object id: (frame,x_cordinate,y_coordinate)).
+        Returns:
+        -avg_jump_per_frame: a dictionary (frame: (mean_magnitude_of_frame))
+        """
+        total_distance_traveled=0
+        
+        for i in range(len(points) - 1):
+            dist = math.sqrt((points[i+1][1] - points[i][1])**2 + (points[i+1][2] - points[i][2])**2)
+            total_distance_traveled+=dist
+            
+        return total_distance_traveled
+        
+    def rank_observations_by_distance(self,curr_obs):
+        
+        labeled_obs=collections.defaultdict(list)
+        scored_obs=collections.defaultdict(list)
+        '''
+        if enable_global_stats==True:
+            self.compute_global_stats(curr_obs)
+        else:
+            print(f"It is a test set no need compute stats!")
+        '''
+        
+        for objectid in curr_obs:
+            points=curr_obs[objectid]
+            distance_traveled= self.compute_traveled_distance(points)
+            turning_angle_flag,turned_count=self.detect_direction_stability(points,15)
+            if turning_angle_flag==True:
+                distance_traveled=turned_count*distance_traveled
+            scored_obs[objectid]={
+                TRACKING_DATA: curr_obs[objectid],
+                SCORE: distance_traveled
+            }
+            '''
+            turning_angle_flag=self.detect_direction_stability(points,20)
+            if turning_angle_flag==True:
+                labeled_obs[objectid]={
+                TRACKING_DATA: curr_obs[objectid],
+                TRUE_LABEL: MOVING
+                }
+            else:
+                labeled_obs[objectid]={
+                TRACKING_DATA: curr_obs[objectid],
+                TRUE_LABEL: NOTMOVING
+                }
+            '''
+        sorted_obs = sorted(scored_obs.items(), key=lambda item: item[1][SCORE], reverse=True)
+        top_n = int(len(sorted_obs) * 0.3)
+
+        for i, (obj_id, data) in enumerate(sorted_obs):
+            if i < top_n:
+                labeled_obs[obj_id]={
+                    TRACKING_DATA: curr_obs[obj_id],
+                    TRUE_LABEL: MOVING
+                }
+            else:
+                labeled_obs[obj_id]={
+                    TRACKING_DATA: curr_obs[obj_id],
+                    TRUE_LABEL: NOTMOVING
+                } 
+            
+        return labeled_obs
+        
+                
+    def observations_labeling_by_angle(self,curr_obs,enable_global_stats):
+        """
+        label the dictionary with 0/1. Each object's displacements statistics is compared against global statistics.
+        if any object's mean and variance in any direction is greater than mean then we label it is as MOVING otherwise NOTMOVING
+        and if object's trajectory data is less than 5 we discard those objects
+        
+        Parameters:
+        -curr_obs: one dictionary of sample parsed observation {object id: [(frame1,x1,y1)..(framen,xn,yn)]}
+        - file_type: 0/1/2 denoting mixed observations, non-ostracods and ostracods
+        - enable_global_stats: True/False if it is from train observations then we compute global stats otherwise we don't
+        
+        Returns:
+        - labeled_obs: a dictionary of the parsed observations and their true labels; {object id: {TRACKING_DATA: [(frame1,x1,y1)..(framen,xn,yn)], TRUE_LABELS: 0/1}}
+        """
+        
+        labeled_obs=collections.defaultdict(list)
+        
+        if enable_global_stats==True:
+            self.compute_global_stats(curr_obs)
+        else:
+            print(f"It is a test set no need compute stats!")
+        
+        for objectid in curr_obs:
+            points=curr_obs[objectid]
+            turning_angle_flag=self.detect_direction_stability(points,20)
+            if turning_angle_flag==True:
+                labeled_obs[objectid]={
+                TRACKING_DATA: curr_obs[objectid],
+                TRUE_LABEL: MOVING
+                }
+            else:
+                labeled_obs[objectid]={
+                TRACKING_DATA: curr_obs[objectid],
+                TRUE_LABEL: NOTMOVING
+                }
+                 
+        return labeled_obs
     def prepare_train_test(self,curr_obs,train_ratio=0.8):
         """
         Splits a dictionary into train and test sets based on a specified ratio.
@@ -312,27 +404,5 @@ class ParsingObservations:
         test_dict = {key: curr_obs[key] for key in test_keys}
 
         return train_dict,test_dict
-    
-    def visualize_labeled_objects(self,alive_points,dead_points,global_avg_dx,global_avg_dy,filename):
-    
-        alive_x, alive_y = zip(*alive_points) if alive_points else ([], [])
-        dead_x, dead_y = zip(*dead_points) if dead_points else ([], [])
-
-        # Plotting
-        plt.figure(figsize=(8, 6))
-        plt.scatter(dead_x, dead_y, color='red', alpha=0.6, label='Non-moving')
-        plt.scatter(alive_x, alive_y, color='green', alpha=0.8, label='Moving')
-
-        # Threshold lines
-        plt.axvline(global_avg_dx, color='blue', linestyle='--', linewidth=2, label='Global Mean dx')
-        plt.axhline(global_avg_dy, color='orange', linestyle='--', linewidth=2, label='Global Mean dy')
-
-        plt.xlabel('Average dx')
-        plt.ylabel('Average dy')
-        plt.title('Average & Variance-Based Labeling')
-        plt.legend()
-        plt.grid(True)
-        plt.tight_layout()
-        plt.show()
 
     

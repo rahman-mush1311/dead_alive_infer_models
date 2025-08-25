@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 from sklearn.metrics import confusion_matrix, accuracy_score, f1_score, recall_score, precision_score,roc_curve,ConfusionMatrixDisplay,auc
 
-TRUE_LABELS = "true_labels"
-PREDICTED_LABELS= "predicted_labels"
+TRUE_LABEL = "true_label"
+PREDICTED_LABEL= "predicted_label"
 LOG_PDFS="log_pdfs"
 DEAD_PDFS="dead_log_sum_pdfs"
 ALIVE_PDFS="alive_log_sum_pdfs"
@@ -88,8 +88,8 @@ def plot_object_trajectories(curr_obs,extracted_ids,model_type):
     i=0
     for obj_id in extracted_ids:        
         if obj_id in curr_obs:
-            label_true = curr_obs[obj_id][TRUE_LABELS]
-            label_predicted = curr_obs[obj_id][PREDICTED_LABELS]
+            label_true = curr_obs[obj_id][TRUE_LABEL]
+            label_predicted = curr_obs[obj_id][PREDICTED_LABEL]
             points = curr_obs[obj_id][TRACKING_DATA]
             
             x = [p[1] for p in points]  # Extract x-coordinates
@@ -291,8 +291,8 @@ def mean_covariance_overlay_plot(grid_mu_alive, grid_cov_alive, grid_mu_dead, gr
 
 def plot_confusion_matrix(curr_obs, obs_type,color, model_type):
     
-    true_label = [curr_obs[obj_id][TRUE_LABELS] for obj_id in curr_obs]
-    predicted_label= [curr_obs[obj_id][PREDICTED_LABELS] for obj_id in curr_obs]
+    true_label = [curr_obs[obj_id][TRUE_LABEL] for obj_id in curr_obs]
+    predicted_label= [curr_obs[obj_id][PREDICTED_LABEL] for obj_id in curr_obs]
         
     # Create the confusion matrix
     cm = confusion_matrix(true_label, predicted_label, labels=[NOTMOVING, MOVING])
@@ -338,10 +338,68 @@ def plot_hourly_prediction(hour_list,total_list,alive_list,dose_rate):
     # Labels and formatting
     plt.xlabel("Hour of Imaging")
     plt.ylabel("Percentage of Alive Samples (%)")
-    plt.title(f"{dose_rate} Alive Prediction Rate Over Time")
+    plt.title(f"{dose_rate}pbb Alive Prediction Rate Over Time With MGD")
     plt.grid(True)
     plt.tight_layout()
     plt.show()
+
+def grouped_bar_chart():
+
+    '''
+    # Example data (replace with your actual values)
+    time_points = ['0 hr', '4 hr', '8 hr']
+    alive_60 = [71, 68, 86]
+    alive_240 = [81, 37, 25]
+    alive_480 = [69, 7, 18]
+    alive_960 = [50, 22, 18]
+
+    # Position settings
+    x = numpy.arange(len(time_points))
+    bar_width = 0.2
+
+    # Create grouped bars
+    plt.bar(x - 1.5*bar_width, alive_60, bar_width, label='60 ppb')
+    plt.bar(x - 0.5*bar_width, alive_240, bar_width, label='240 ppb')
+    plt.bar(x + 0.5*bar_width, alive_480, bar_width, label='480 ppb')
+    plt.bar(x + 1.5*bar_width, alive_960, bar_width, label='960 ppb')
+
+    # Labels and formatting
+    plt.xlabel('Hour of Imaging')
+    plt.ylabel('Percentage of Alive Samples (%)')
+    plt.title('Alive Prediction Rate Over Time for Different Concentrations')
+    plt.xticks(x, time_points)
+    plt.ylim(0, 100)
+    plt.legend()
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+    plt.tight_layout()
+    plt.show()
+    '''
+
+    # Data
+    data = {
+    "60 ppb (Days-old)": {0: 107, 4: 180, 8: 46, 12: 194, 16: 68, 28: 124, 32: 138, 33: 50, 34: 81, 35: 86, 36: 43},
+    "240 ppb (Days-old)": {0: 32, 4: 37, 8: 386, 12: 215},
+    "480 ppb (Days-old)": {0: 127, 4: 12, 8: 378},
+    "960 ppb (Week-old)": {0: 32, 4: 156, 8: 96, 12: 59}
+    }
+
+    plt.figure(figsize=(8, 5))
+    for i, (label, t_counts) in enumerate(data.items()):
+        times = list(t_counts.keys())
+        counts = list(t_counts.values())
+        plt.scatter(times, [i]*len(times), s=[c*5 for c in counts], label=label, alpha=0.6)
+
+    plt.yticks(range(len(data)), list(data.keys()))
+    plt.xlabel("Imaging Time (hours)")
+    plt.ylabel("Concentration and Age")
+    plt.title("Toxic Sample Collection with Object Counts")
+    plt.grid(axis='x', linestyle='--', alpha=0.7)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
 
 
     
