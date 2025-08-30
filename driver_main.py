@@ -8,109 +8,97 @@ from GridBayesianModel import BayesianModel
 
 
 import numpy
+import os
+import math
+from collections import Counter
+from PIL import Image
+import matplotlib.pyplot
 
 TRUE_LABELS = "true_labels"
+PREDICTED_LABELS = "predicted_labels"
 LOG_PDFS="log_pdfs"
+TRACKING_DATA = "tracking_data"
 
-DEAD='d'
-ALIVE='a'
-MIXED='m'
-TOX='t'
 
-MOVING=1
-NOTMOVING=0   
+MOTILE=1
+NOTMOTILE=0   
 
-TRAIN="train"
-INFER="infer"
-SEARCH="search"
+
+def collect_files(fileForTrain,typeOffile):
+    """
+    takes the folder path from user and returns the filelists contained inside that folder. 
+    Parameters:
+    fileForTrain: string containing either train/ infer
+    typeOffile: string either .txt or .xlsx
+    Returns:
+    file_list- a list containing the filename along with the folder location
+    """
+    
+    user_base_dir = input(f"Enter the base directory where your {fileForTrain} data folder is located: ")
+    if not os.path.isdir(user_base_dir):
+        raise ValueError(f"{user_base_dir} is not a valid directory")
+        
+    else:
+        if typeOffile==".txt":
+            file_list = [
+                os.path.join(user_base_dir, f)
+                for f in os.listdir(user_base_dir)
+                if os.path.isfile(os.path.join(user_base_dir, f)) and f.lower().endswith(".txt")
+            ]
+        elif typeOffile==".xlsx":
+            file_list = [
+                os.path.join(user_base_dir, f)
+                for f in os.listdir(user_base_dir)
+                if os.path.isfile(os.path.join(user_base_dir, f)) and f.lower().endswith(".xlsx")
+            ]
+        else:
+            raise ValueError("Unsupported file type. Please use '.txt' or '.xlsx'")
+
+    return file_list
+
+def stats(x):
+    n = len(x)
+    s = sum(x)
+    mu = s / n if n else 0
+    std = math.sqrt(sum([(xi - mu) ** 2 for xi in x]))
+    max_x = max(x) if n else 0
+    min_x = min(x) if n else 0
+    print(f'{n=} {s=} {mu=} {std=} {max_x=} {min_x=}')
+
+def analyze_object(o):
+    occurrences = [r[0] for r in o]
+    assert occurrences == list(range(1, len(o) + 1)) # occurrences are sequential
+    dx = []
+    dy = []
+    for i in range(1, len(o)):
+        dx.append(o[i][1] - o[i-1][1])
+        dy.append(o[i][2] - o[i-1][2])
+    print('stats dx')
+    stats(dx)
+    print('stats dy')
+    stats(dy)
+    frames = [r[3] for r in o]
+    if frames != list(range(o[0][3], o[0][3] + len(o))):
+        print(f'**** FRAMES ARE NOT SEQUENTIAL: {frames}') # frame numbers are sequential
+
+def analyze(objects):
+    for objectid in objects:
+        print()
+        print(f'analyzing {objectid} with {len(objects[objectid])} objects')
+        analyze_object(objects[objectid])
     
 if __name__ == "__main__":
-    #run_outlier_for_infer()
-
-    #run_bayesian_model()
-    #run_tracked_videos_by_filename()
-    
-    user_test_performance=False  
-    user_file_selected_mode=INFER
-    user_selected_mode = input("Do you want to test on the toxic data? (y/n): ").strip().lower()
-    
-    if user_selected_mode == 'y':
-    
-        user_file_mode= int(input(
-                """If you select see the performance of the test set on non toxic elmenet multiple sample press:
-                1 → yes
-                2 → no
-                Enter your choice: """
-            ))
-            
-        user_model_mode = int(input(
-                """If you want to train model press:
-                1 → outlier model trainning
-                2 → bayesian model trainning
-                3 → bayesian model trainning with boundary adjustment
-                Enter your choice: """
-            ))
-            
-        user_test_performance_mode = int(input(
-                """If you want see the performance of the test set on non toxic elmenets press:
-                1 → yes
-                2 → no
-                Enter your choice: """
-            ))
-            
-        if user_test_performance_mode==1:
-            user_test_performance=True
-        else:
-            user_test_performance=False
-        if user_file_mode ==1:
-            user_file_selected_mode = INFER
-        else:
-            user_file_selected_mode = SEARCH
-        all_infer_obs_labeled=infer_with_trained_model(user_model_mode, user_test_performance,user_file_selected_mode)        
-        user_visual_mode = input("Do you want visualize trajectory of the predicted tox data (y/n): ").strip().lower()
-        
-        if user_visual_mode== 'y':
-            while True:
-                command = input("type 'e' to quit): ").strip().lower()            
-                if command == "e":
-                    print("Exiting loop. Goodbye!")
-                    break
-                else:
-                    visualize_objects = int(input(
-                        """If you want to visualize:
-                        1 → Correctly predicted MOVING objects
-                        2 → Correctly predicted NOTMOVING objects
-                        3 → Falsely predicted objects
-                        Enter your choice: """
-                    ))
-
-                    if visualize_objects==1:
-                        moving_obs_ids= get_visualization_ids(all_infer_obs_labeled, MOVING, MOVING)
-                        plot_object_trajectories(all_infer_obs_labeled,moving_obs_ids,user_model_mode)
-                    elif visualize_objects==2:
-                        non_moving_obs_ids= get_visualization_ids(all_infer_obs_labeled, NOTMOVING, NOTMOVING)
-                        plot_object_trajectories(all_infer_obs_labeled,non_moving_obs_ids,user_model_mode)
-                    else:
-                        moving_mislabeled_obs_ids= get_visualization_ids(all_infer_obs_labeled, MOVING, NOTMOVING)
-                        plot_object_trajectories(all_infer_obs_labeled,moving_mislabeled_obs_ids,user_model_mode)
-                        non_moving_mislabeled_obs_ids= get_visualization_ids(all_infer_obs_labeled, NOTMOVING, MOVING)
-                        plot_object_trajectories(all_infer_obs_labeled,non_moving_mislabeled_obs_ids,user_model_mode)
-        else:
-            print(f"user doesn't want to see the predicted tox objects tracks!")
-    else:
-        print(f"user wants to visualize per file trajectory related data!")
-        run_hourly_graph()
-        '''
-        while True:
-            command = input("Enter command (type 'exit' to quit): ").strip().lower()
-            
-            if command == "exit":
-                print("Exiting loop. Goodbye!")
-                break
-            else:
-                print(f"going to plot trajectory function!")
-                run_trajectory_plot()
-        '''
-    
+    collected_train_txt_file_lists=collect_files("train",".txt")
+    #print(collected_train_txt_file_lists)
+    collected_train_excel_file_lists=collect_files("train",".xlsx")
+    #print(collected_train_excel_file_lists)
+    file_processor=PreProcessingObservations()
+    for text_file, excel_file in zip(collected_train_txt_file_lists,collected_train_excel_file_lists):
+        #print(f" txt file is: {text_file},{excel_file}")
+        labeles_loaded=file_processor.load_labels(excel_file)
+        tracking_observations=file_processor.load_observations(text_file)
+        print(f"{text_file} has {len(tracking_observations)}")
+        print(f"{excel_file} has {len(labeles_loaded)}")
+        #analyze(observations)
     
     

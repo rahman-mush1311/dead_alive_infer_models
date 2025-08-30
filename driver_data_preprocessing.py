@@ -4,6 +4,7 @@ import glob
 import os 
 import random
 import numpy
+import pandas
 import matplotlib.pyplot as plt
 
 
@@ -25,46 +26,80 @@ class PreProcessingObservations:
         self.total_obs=0
     def load_observations(self,filename):
         """
-        Processes the input files and parses them to extract object ID, frame, x, and y coordinates.
+        Processes the input file and parses them to extract object ID, frame, x, and y coordinates.
         Parameters:
-        -filenames: list of filenames to parse
+        -filename: Text File(with their directory and filename) to parse
         Returns:
-        -observations: a dictionary (object id: (frame,x_cordinate,y_coordinate)).
+        -observations: a dictionary (object id: [(x_cordinate_1,y_coordinate_1,frame_1),...,(x_cordinate_n,y_coordinate_n,frame_n)].
         """
-        pattern = re.compile(r'''
-        \s*(?P<object_id>\d+),
-        \s*(?P<within_frame_id>\d+),
-        \s*'(?P<file_path>[^']+)',
-        \s*cX\s*=\s*(?P<x>\d+),
-        \s*cY\s*=\s*(?P<y>\d+),
-        \s*Frame\s*=\s*(?P<frame>\d+)
-        ''', re.VERBOSE)
+        pattern = re.compile('''^[ ]*(?P<objectid>[0-9]+),[ ]*(?P<occurrence>[0-9]+),[ ]'[^']+',[ ]cX=[ ]*(?P<cx>[0-9]+),[ ]cY=[ ]*(?P<cy>[0-9]+),[ ]Frame=[ ]*(?P<frame>[0-9]+)''')
         
         observations = collections.defaultdict(list)
-
-        with open(filename) as object_xys:
-            prefix,extension,obs_type=self.get_file_prefix(filename)
-            for line in object_xys:
+        with open(filename) as file_input:
+            for line in file_input:
+                #print(f, line)
                 m = pattern.match(line)
-                if m:
-                    obj_id = int(m.group('object_id'))
-                    frame = int(m.group('frame'))
-                    cX = int(m.group('x'))
-                    cY = int(m.group('y'))
-                    obj_id = f"{prefix}_{obj_id}_{extension}"
-                    observations[obj_id].append((frame, cX, cY))
+                assert m, (f, line)
+                objectid = int(m.group('objectid'))
+                #occurrence = int(m.group('occurrence'))
+                x = int(m.group('cx'))
+                y = int(m.group('cy'))
+                frame = int(m.group('frame'))
 
-        # Ensure observations are sorted by frame
+                observations[objectid].append((x, y, frame))
+
+        for objectid in observations:
+            observations[objectid].sort()
+
+        return observations
         
-        for object_id in observations:
-            observations[object_id].sort()
+    def load_labels(self,filename):
+        """
+        Processes the input excel file and extracts corresponding object's label.The function checks if the object id was tracked and it was a good track
+        Parameters:
+        -filename: Excel File(with their directory and filename) to extract the label
+        Returns:
+        -loaded_labels: a dictionary (object id: 1/0).
+        """
+        loaded_labels = {}
         
-        for object_id, items in observations.items():
-            assert all(items[i][0] <= items[i + 1][0] for i in range(len(items) - 1)), f"Items for {object_id} are not sorted by frame"    
+        cols_to_use = [
+        "Object Id",
+        "Tracked Object",
+        "Motile Organism",
+        "Good Track?"
+        ]
+        df=pandas.read_excel(filename,skiprows=1, usecols=cols_to_use)
+        df["Tracked Object"] = df["Tracked Object"].apply(lambda x: 1 if str(x).strip().upper() == "YES" else 0)
+        df["Good Track?"] = df["Good Track?"].apply(lambda x: 1 if str(x).strip().upper() == "YES" else 0)
+        df["Motile Organism"] = df["Motile Organism"].apply(lambda x: 1 if str(x) == "X" else 0)
         
-        return observations,obs_type
+        for _, row in df.iterrows():
+            obj_id = str(row["Object Id"])
+            tracked = int(row["Tracked Object"])
+            motile = int(row["Motile Organism"])
+            good_track = int(row["Good Track?"])
+
+            if tracked == 1 and good_track==1:  # only take tracked objects
+                loaded_labels[obj_id] = 1 if motile == 1 else 0
+        #print(df.head())
+        return loaded_labels
     
-    def get_file_prefix(self, filename):
+    def label_observations_by_expert_labels(self,filename,observations,loaded_labels):
+        """
+        Merges two dictionary into one dictionary with their tracking data and their expert labels. Additionally the program parses the text file name to modify the object id
+        modifying object id is neccesary because the text file and excel file starts their object_id with 1..n and in different files have different population of objects tracked
+        Parameters:
+        -filename: Text File(with their directory and filename) to parse the name only for modifying the object_id
+        -observations: a dictionary (object id: [(x_cordinate_1,y_coordinate_1,frame_1),...,(x_cordinate_n,y_coordinate_n,frame_n)]
+        -loaded_labels: a dictionary (object id: 1/0)
+        Returns:
+        -labeled_observations: a dictionary {object id: TRACKING_DATA: [(x_cordinate_1,y_coordinate_1,frame_1),...,(x_cordinate_n,y_coordinate_n,frame_n)],
+                                                        TRUE_LABELS: 0/1                                                                                                    }.
+        """
+        
+        
+    def get_file_prefix(self, filepath):
         '''
         extract the filename/dataset name to append it to object_id, since each dataset starts with 1... appending to same dictionaries will cause issues.
         Parameters:
@@ -79,39 +114,34 @@ class PreProcessingObservations:
         Returns:
         (date_str, image_id) if valid; otherwise None
         '''
-        # Ensure it contains 'ObjectXYs'
-        if "ObjectXYs" not in filename:
+        filename = os.path.basename(filepath)
+        print(filename)
+        # Ensure it contains 'trackStore'
+        if "trackStore" not in filename:
             raise ValueError(f"Filename isn't valid: {filename}")
             
-        if filename.endswith("AliveObjectXYs.txt"):
-            obs_type = 1
-        elif filename.endswith("DeadObjectXYs.txt"):
-            obs_type = 2
-        else:
-            obs_type = 0
-        
         # Regex pattern: match DATE, IMAGE info before ObjectXYs        
-        pattern = re.compile(r'(?P<date>\d{1,2}-\d{1,2}-\d{2})_(?P<image_id>.+)ObjectXYs\.txt$')
+        pattern = re.compile(r'(?P<date>\d{1,2}-\d{1,2}-\d{2})_(?P<image_id>.+)trackStore\.txt$')
         match = pattern.search(filename)
     
         if match:
             date_str = match.group('date')
             image_id = match.group('image_id')
                       
-            return date_str, image_id, obs_type
+            return date_str, image_id
         else:
             raise ValueError(f"Filename pattern mismatch: {filename}")
             
     def is_starting_or_ending_near_edge(self,track, width=4096, height=2160, margin_ratio=0.25):
     
-        x_start, y_start = track[0][1], track[0][2]  # Starting coordinates
-        x_end, y_end = track[-1][1], track[-1][2]    # Ending coordinates
+        x_start, y_start = track[0][0], track[0][1]  # Starting coordinates
+        x_end, y_end = track[-1][0], track[-1][1]    # Ending coordinates
 
         margin_x = margin_ratio * width
         margin_y = margin_ratio * height
        
-        valid_entry = (x_start <= margin_x or y_start <= margin_y)
-        valid_exit = (x_end >= (width - margin_x) or y_end >= (height - margin_y))
+        valid_entry = (x_start <= margin_x)
+        valid_exit = (x_end >= (width - margin_x))
         
         if valid_entry and valid_exit:
             return True
@@ -141,10 +171,10 @@ class PreProcessingObservations:
         for obj_id, obs in curr_obs.items(): 
             curr_obj_dx_dy=[]
             for i in range(len(obs) - 1):
-                dframe = obs[i+1][0] - obs[i][0]
+                dframe = obs[i+1][2] - obs[i][2]
                 if dframe > 0:
-                    dx = (obs[i+1][1] - obs[i][1]) / dframe
-                    dy = (obs[i+1][2] - obs[i][2]) / dframe                  
+                    dx = (obs[i+1][0] - obs[i][0]) / dframe
+                    dy = (obs[i+1][1] - obs[i][1]) / dframe                  
                     curr_obj_dx_dy.append([dx,dy])
                     
                 else:
@@ -190,73 +220,6 @@ class PreProcessingObservations:
                     f"and cov is: {self.total_cov_matrix}")
         return
     
-    def observations_labeling_by_average_variance(self,curr_obs, file_type,enable_global_stats):
-        """
-        label the dictionary with 0/1. Each object's displacements statistics is compared against global statistics.
-        if any object's mean and variance in any direction is greater than mean then we label it is as MOVING otherwise NOTMOVING
-        and if object's trajectory data is less than 5 we discard those objects
-        
-        Parameters:
-        -curr_obs: one dictionary of sample parsed observation {object id: [(frame1,x1,y1)..(framen,xn,yn)]}
-        - file_type: 0/1/2 denoting mixed observations, non-ostracods and ostracods
-        - enable_global_stats: True/False if it is from train observations then we compute global stats otherwise we don't
-        
-        Returns:
-        - labeled_obs: a dictionary of the parsed observations and their true labels; {object id: {TRACKING_DATA: [(frame1,x1,y1)..(framen,xn,yn)], TRUE_LABELS: 0/1}}
-        """
-        
-        labeled_obs=collections.defaultdict(list)
-        
-        if enable_global_stats==True:
-            self.compute_global_stats(curr_obs)
-        else:
-            print(f"It is a test set no need compute stats!")
-        
-        curr_obs_displacements=self.get_displacement_sequence(curr_obs)
-        
-        if file_type==0:
-        
-            global_mean_dx=self.total_mu[0]
-            global_mean_dy=self.total_mu[1]
-            global_std_dx = numpy.sqrt(self.total_cov_matrix[0][0])
-            global_std_dy = numpy.sqrt(self.total_cov_matrix[1][1])
-            
-            for obj_id,displacements in curr_obs_displacements.items():
-                if len(displacements)>5:
-                    
-                    obs=curr_obs[obj_id]
-                    curr_obj_dx_dy=numpy.array(displacements)
-                    
-                    obj_mu=numpy.mean(curr_obj_dx_dy,axis=0)
-                    obj_cov=numpy.cov(curr_obj_dx_dy.T)
-                    obj_var_dx=numpy.sqrt(obj_cov[0][0])
-                    obj_var_dy=numpy.sqrt(obj_cov[1][1])
-
-                    if (obj_mu[0]>global_mean_dx and obj_var_dx>global_std_dx) or (obj_mu[1]>global_mean_dy and obj_var_dy>global_std_dy):
-                        
-                        labeled_obs[obj_id]={ TRACKING_DATA: obs,
-                                      SCORES: obj_mu,
-                                      TRUE_LABELS: MOVING
-                        }
-                    else:
-                        labeled_obs[obj_id]={ TRACKING_DATA: obs,
-                                      SCORES: obj_mu,
-                                      TRUE_LABELS: NOTMOVING
-                        }
-        elif file_type==1:
-            for obj_id,obs in curr_obs.items():
-                if len(obs)>5:
-                     labeled_obs[obj_id]={ TRACKING_DATA: obs,
-                                      TRUE_LABELS: MOVING
-                        }
-        else:
-            for obj_id,obs in curr_obs.items():
-                if len(obs)>5:
-                     labeled_obs[obj_id]={ TRACKING_DATA: obs,
-                                      TRUE_LABELS: NOTMOVING
-                        }
-            
-        return labeled_obs
         
     def prepare_train_test(self,curr_obs,train_ratio=0.8):
         """
