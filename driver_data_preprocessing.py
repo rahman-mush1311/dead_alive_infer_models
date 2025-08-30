@@ -75,7 +75,7 @@ class PreProcessingObservations:
         df["Motile Organism"] = df["Motile Organism"].apply(lambda x: 1 if str(x) == "X" else 0)
         
         for _, row in df.iterrows():
-            obj_id = str(row["Object Id"])
+            obj_id = int(row["Object Id"])
             tracked = int(row["Tracked Object"])
             motile = int(row["Motile Organism"])
             good_track = int(row["Good Track?"])
@@ -97,7 +97,16 @@ class PreProcessingObservations:
         -labeled_observations: a dictionary {object id: TRACKING_DATA: [(x_cordinate_1,y_coordinate_1,frame_1),...,(x_cordinate_n,y_coordinate_n,frame_n)],
                                                         TRUE_LABELS: 0/1                                                                                                    }.
         """
-        
+        date_str,image_id_str = self.get_file_prefix(filename)
+        labeled_observations = collections.defaultdict(list)
+        for obj_id,tracks in observations.items():
+            #obj_id_str = str(obj_id)
+            if obj_id in loaded_labels:
+                object_id=f"{date_str}_{obj_id}_{image_id_str}"
+                labeled_observations[object_id]={TRACKING_DATA: tracks,
+                                                TRUE_LABELS: loaded_labels[obj_id]
+                }
+        return labeled_observations
         
     def get_file_prefix(self, filepath):
         '''

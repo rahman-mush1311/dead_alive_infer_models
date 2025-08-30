@@ -88,17 +88,16 @@ def analyze(objects):
         analyze_object(objects[objectid])
     
 if __name__ == "__main__":
-    collected_train_txt_file_lists=collect_files("train",".txt")
-    #print(collected_train_txt_file_lists)
-    collected_train_excel_file_lists=collect_files("train",".xlsx")
-    #print(collected_train_excel_file_lists)
+    collected_train_txt_file_lists=collect_files("train text files",".txt")
+    collected_train_excel_file_lists=collect_files("train excel files",".xlsx")
     file_processor=PreProcessingObservations()
     for text_file, excel_file in zip(collected_train_txt_file_lists,collected_train_excel_file_lists):
         #print(f" txt file is: {text_file},{excel_file}")
         labeles_loaded=file_processor.load_labels(excel_file)
         tracking_observations=file_processor.load_observations(text_file)
+        labeled_observations=file_processor.label_observations_by_expert_labels(text_file,tracking_observations,labeles_loaded)
         print(f"{text_file} has {len(tracking_observations)}")
         print(f"{excel_file} has {len(labeles_loaded)}")
-        #analyze(observations)
+        print(f"final labeled obs size is: {len(labeled_observations)}")
     
     
