@@ -56,6 +56,25 @@ def collect_files(fileForTrain,typeOffile):
 
     return file_list
 
+def collect_tox_file_from_user_input():
+    """
+    takes folder location and filename as user input returns the full file path in a list
+    Params:
+    -N/A
+    Returns:
+    folder_path or None
+    """
+
+    full_file_path = input("Enter folder location and file name (e.g., C:/data/tracks/obj_track_01.txt): ").strip()
+    file_list=[]
+
+    try:
+        file_list.append(full_file_path)
+        return file_list
+    except FileNotFoundError:
+        print(f"File not found: {full_file_path}")
+        return None
+
 def stats(x):
     n = len(x)
     s = sum(x)
@@ -99,5 +118,8 @@ if __name__ == "__main__":
         print(f"{text_file} has {len(tracking_observations)}")
         print(f"{excel_file} has {len(labeles_loaded)}")
         print(f"final labeled obs size is: {len(labeled_observations)}")
+    collected_tox_text_file_lists=collect_tox_file_from_user_input()
+    loaded_infer_observations=file_processor.load_observations(collected_tox_text_file_lists[0])
+    print(f"{collected_tox_text_file_lists[0]} has {len(loaded_infer_observations)}")
     
     
