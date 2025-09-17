@@ -4,7 +4,9 @@ import glob
 import os 
 import random
 import numpy
+import math
 import pandas
+from collections import Counter
 import matplotlib.pyplot as plt
 
 
@@ -15,8 +17,8 @@ TRAIN="train"
 INFER="infer"
 
 TRACKING_DATA = "tracking_data"
-TRUE_LABELS = "true_labels"
-PREDICTED_LABELS= "predicted_labels"
+TRUE_LABEL = "true_label"
+PREDICTED_LABEL= "predicted_label"
 SCORES = "scores"
 
 class PreProcessingObservations:
@@ -49,7 +51,8 @@ class PreProcessingObservations:
                 observations[objectid].append((x, y, frame))
 
         for objectid in observations:
-            observations[objectid].sort()
+            observations[objectid].sort(key=lambda t: t[2])  # sort by frame index
+
 
         return observations
         
@@ -80,12 +83,91 @@ class PreProcessingObservations:
             motile = int(row["Motile Organism"])
             good_track = int(row["Good Track?"])
 
-            if tracked == 1 and good_track==1:  # only take tracked objects
-                loaded_labels[obj_id] = 1 if motile == 1 else 0
+            if tracked == 1:  # only take tracked objects
+                loaded_labels[obj_id] = MOVING if motile == 1 else NOTMOVING
         #print(df.head())
         return loaded_labels
+        
+    def check_for_short_track(self,tracks):
+
+        if (len(tracks)<10):
+            return True
+        else:
+            return False
     
-    def label_observations_by_expert_labels(self,filename,observations,loaded_labels):
+    def check_for_starting_track_late(self,track, width=4128, height=2196, margin_ratio=0.15):
+    
+        x_start, y_start = track[0][0], track[0][1]
+        margin_x = margin_ratio * width
+        margin_y = margin_ratio * height
+       
+        valid_entry = (x_start <= margin_x)
+        if valid_entry:
+            return True
+        else:
+            return False
+    
+    def check_for_ending_track_early(self,track, width=4128, height=2196, margin_ratio=0.15):
+    
+        x_end, y_end = track[-1][0], track[-1][1]
+        margin_x = margin_ratio * width
+        valid_exit = (x_end >= (width - margin_x))
+        if valid_exit:
+            return True
+        else:
+            return False
+            
+    def filter_tracks(self,tracks):
+    
+        is_valid_entry_exit=False
+        is_skipping_frame=False
+        if(len(tracks)<10):
+            return False
+        
+        else:
+            is_valid_entry_exit=self.is_starting_or_ending_near_edge(tracks)
+            is_skipping_frame=self.is_missing_frame(tracks)
+            if is_valid_entry_exit==True and is_skipping_frame==False:
+                return True
+            else:
+                return False
+        
+
+
+    def match_txt_excel_file_prefix(self,curr_text_filepath, curr_excel_filepath):
+        """
+        Check if the text file and excel file names match up to 'Image_X'.
+    
+        Parameters:
+        - text_filename (str): name of the text file (e.g., 3-19-25_Image_2_trackStore.txt)
+        - excel_filename (str): name of the excel file (e.g., 3-19-25_Image_2.xlsx)
+    
+        Returns:
+        - bool: True if they match up to Image_X, False otherwise
+        """
+        text_filename = os.path.basename(curr_text_filepath)
+        excel_filename= os.path.basename(curr_excel_filepath)
+        # Remove extensions
+        text_name = os.path.splitext(text_filename)[0]
+        excel_name = os.path.splitext(excel_filename)[0]
+    
+        # Find the cutoff at "Image_"
+        if "Image_" in text_name and "Image_" in excel_name:
+            text_parts = text_name.split("_")
+            excel_parts = excel_name.split("_")
+
+            # Get prefix up to the number after Image_
+            text_index = [i for i, p in enumerate(text_parts) if p.startswith("Image")]
+            excel_index = [i for i, p in enumerate(excel_parts) if p.startswith("Image")]
+
+            if text_index and excel_index:
+                text_prefix = "_".join(text_parts[:text_index[0]+2])
+                excel_prefix = "_".join(excel_parts[:excel_index[0]+2])
+                return text_prefix == excel_prefix
+
+        return False
+    
+    def label_observations_by_expert_labels(self,text_filepath,excel_filepath,observations,loaded_labels):
         """
         Merges two dictionary into one dictionary with their tracking data and their expert labels. Additionally the program parses the text file name to modify the object id
         modifying object id is neccesary because the text file and excel file starts their object_id with 1..n and in different files have different population of objects tracked
@@ -97,15 +179,21 @@ class PreProcessingObservations:
         -labeled_observations: a dictionary {object id: TRACKING_DATA: [(x_cordinate_1,y_coordinate_1,frame_1),...,(x_cordinate_n,y_coordinate_n,frame_n)],
                                                         TRUE_LABELS: 0/1                                                                                                    }.
         """
-        date_str,image_id_str = self.get_file_prefix(filename)
+        
         labeled_observations = collections.defaultdict(list)
-        for obj_id,tracks in observations.items():
-            #obj_id_str = str(obj_id)
-            if obj_id in loaded_labels:
-                object_id=f"{date_str}_{obj_id}_{image_id_str}"
-                labeled_observations[object_id]={TRACKING_DATA: tracks,
-                                                TRUE_LABELS: loaded_labels[obj_id]
-                }
+        date_str,image_id_str = self.get_file_prefix(text_filepath)
+        if self.match_txt_excel_file_prefix(text_filepath,excel_filepath)==True:
+            for obj_id,tracks in observations.items():
+                good_track_flag=self.filter_tracks(tracks)
+                if obj_id in loaded_labels and good_track_flag==True:
+                    object_id=f"{date_str}_{obj_id}_{image_id_str}"
+                    labeled_observations[object_id]={TRACKING_DATA: tracks,
+                                                TRUE_LABEL: loaded_labels[obj_id]
+                    }
+                else:
+                    print(f"{obj_id} is not good track")
+        else:
+            print(f"!!!ERROR!!! Text filename and Excel filenames don't match")
         return labeled_observations
         
     def get_file_prefix(self, filepath):
@@ -140,8 +228,150 @@ class PreProcessingObservations:
             return date_str, image_id
         else:
             raise ValueError(f"Filename pattern mismatch: {filename}")
+    
+    def compute_traveled_distance(self,tracks):
+        """
+        takes observation dictionary and returns a dictionary of mean Euclidean magnitude of tracking points per frame
+        Parameters:
+        -observations: a dictionary (object id: (frame,x_cordinate,y_coordinate)).
+        Returns:
+        -avg_jump_per_frame: a dictionary (frame: (mean_magnitude_of_frame))
+        """
+        total_distance_traveled=0
+        
+        for i in range(len(tracks) - 1):
+            df=tracks[i+1][2] - tracks[i][2]
+            if df>0:
+                dx=tracks[i+1][0] - tracks[i][0]
+                dy=tracks[i+1][1] - tracks[i][1]
+                dist = math.sqrt(dx**2+dy**2)
+                total_distance_traveled+=dist
             
-    def is_starting_or_ending_near_edge(self,track, width=4096, height=2160, margin_ratio=0.25):
+        return total_distance_traveled
+    def angle_between(self,v1, v2):
+        """
+        takes two vector and calculates the angle between them
+        Parameters:
+        v1 = vector between point xn0,yn0->xn1,yn1
+        v2 = vector between point xn1,yn1->xn2,yn2
+        Returns:
+        angle in degree
+        """
+        dot = numpy.dot(v1, v2)
+        norm = numpy.linalg.norm(v1) * numpy.linalg.norm(v2)
+        if norm == 0:
+            return 0
+        cos_theta = numpy.clip(dot / norm, -1.0, 1.0)
+        return math.degrees(numpy.arccos(cos_theta))
+        
+    def detect_direction_stability(self,points, angle_threshold):
+        """
+        takes observation dictionary and returns a lists of object_id which has biologically impossible angle turn. we compute the angle between consecutive vectors
+        Parameters:
+        -observations: a dictionary (object id: (frame,x_cordinate,y_coordinate)).
+        -angle_threshold: int, value we consider as impossible turns
+        Returns:
+        -unstable_ids: list of object_id whose tracking vector has more than 30 turn
+        """
+        sharp_turn_fraction=0.0
+        angles=[]
+        sharp_turn_count=0
+        for i in range(len(points) - 2):
+            x1, y1, f1 = points[i]
+            x2, y2, f2 = points[i+1]
+            x3, y3, f3 = points[i+2]
+
+            v1 = [x2 - x1, y2 - y1]
+            v2 = [x3 - x2, y3 - y2]
+
+            if f2 > f1 and f3 > f2:
+                angle = self.angle_between(v1, v2)
+                angles.append(angle)
+                if angle > angle_threshold:
+                    sharp_turn_count+=1
+                    
+                    
+        num_of_turns=len(angles)
+        if num_of_turns!=0:
+            sharp_turn_fraction=sharp_turn_count/num_of_turns
+        else:
+            sharp_turn_fraction=0
+        
+        
+        if sharp_turn_count>5:
+            #print(f"!!THREHSOLD!!!!")
+            turning_angle_flag=True
+        else:
+            #print(f"NOT MATCHING!!!")
+            turning_angle_flag=False
+        
+        return turning_angle_flag
+        
+    def label_tox_observations(self,observations):
+        labeled_observations = collections.defaultdict(list)
+        
+        for object_id,tracks in observations.items():
+            good_track_flag=self.filter_tracks(tracks)
+            print(f"{object_id}: good_track: {good_track_flag}")
+            if good_track_flag==True:
+                turning_angle_flag=self.detect_direction_stability(tracks,30)
+                #print(f"{object_id}: good_track: {good_track_flag}, turning_angle: {turning_angle_flag}")
+                if turning_angle_flag==True:
+                    labeled_observations[object_id]={TRACKING_DATA: tracks,
+                                                TRUE_LABEL: MOVING
+                    }
+                else:
+                     labeled_observations[object_id]={TRACKING_DATA: tracks,
+                                                TRUE_LABEL: NOTMOVING
+                    }
+        label_counter_train = Counter(data[TRUE_LABEL] for data in labeled_observations.values())
+        print(f"MOVING: {label_counter_train[MOVING]}")
+        print(f"NON_MOVING: {label_counter_train[NOTMOVING]}")
+        return labeled_observations
+                
+        
+    def label_tox_observations_by_ranking(self,observations,cut_off_percentage):
+    
+        scored_observations = collections.defaultdict(list)
+        
+        for object_id,tracks in observations.items():
+            is_short_track=self.check_for_short_track(tracks)
+            is_frame_skipping=self.is_missing_frame(tracks)
+            is_valid_entry_track=self.check_for_starting_track_late(tracks)
+            is_valid_exit_track=self.check_for_ending_track_early(tracks)
+            
+            if is_short_track==False and is_frame_skipping==False and is_valid_entry_track==True:
+                turn_signal=self.detect_direction_stability(tracks,30)
+                total_frame_distance_travel=self.compute_traveled_distance(tracks)
+                score=total_frame_distance_travel+turn_signal
+                scored_observations[object_id]=score
+            else:
+                print(f"{object_id} is not a good track")
+        
+        # Sort objects by score (descending order)
+        sorted_items = sorted(scored_observations.items(), key=lambda x: x[1], reverse=True)
+
+        # Find cutoff index for top 30%
+        cutoff = max(1, int(len(sorted_items) * cut_off_percentage))
+        
+        labeled_observations = collections.defaultdict(list)
+        
+        for i, (object_id, score) in enumerate(sorted_items):
+            if i < cutoff:
+                labeled_observations[object_id] = {TRACKING_DATA: observations[object_id],
+                                                TRUE_LABEL: MOVING
+                    }
+            else:
+                labeled_observations[object_id] = {TRACKING_DATA: observations[object_id],
+                                                TRUE_LABEL: NOTMOVING
+                    }
+                    
+        label_counter_train = Counter(data[TRUE_LABEL] for data in labeled_observations.values())
+        print(f"MOVING: {label_counter_train[MOVING]}")
+        print(f"NON_MOVING: {label_counter_train[NOTMOVING]}")
+        return labeled_observations        
+            
+    def is_starting_or_ending_near_edge(self,track, width=4128, height=2196, margin_ratio=0.25):
     
         x_start, y_start = track[0][0], track[0][1]  # Starting coordinates
         x_end, y_end = track[-1][0], track[-1][1]    # Ending coordinates
@@ -152,21 +382,24 @@ class PreProcessingObservations:
         valid_entry = (x_start <= margin_x)
         valid_exit = (x_end >= (width - margin_x))
         
-        if valid_entry and valid_exit:
+        if valid_entry:
             return True
         else:
             return False
-            
-    def trajectory_quality_analysis(self,curr_obs):
-        
-        truncated_observations=collections.defaultdict(list)
-        for obj_id,obs in curr_obs.items():
-            is_valid=self.is_starting_or_ending_near_edge(obs)
-            if is_valid==True:
-                truncated_observations[obj_id]=obs
-            else:
-                print(f"{obj_id} is starting late or ending early!!")
-        return truncated_observations        
+    
+    def is_missing_frame(self,o):
+    
+        frames = [r[2] for r in o]  # actual frames observed
+        expected_frames = list(range(min(frames), min(frames) + len(frames)))  # expected consecutive frames
+    
+        missing = sorted(set(expected_frames) - set(frames))
+        extra = sorted(set(frames) - set(expected_frames))  # if needed for debug
+
+        missing_frame_flag = False
+        if len(missing) > 1:
+            missing_frame_flag = True
+
+        return missing_frame_flag
     
     def get_displacement_sequence(self,curr_obs):
         """
@@ -205,9 +438,9 @@ class PreProcessingObservations:
         """
         
         all_dx_dy = []
-        #tracking_only_obs = {obj_id: obj_data[TRACKING_DATA]for obj_id, obj_data in curr_obs.items()}
+        tracking_only_obs = {obj_id: obj_data[TRACKING_DATA]for obj_id, obj_data in curr_obs.items()}
         #gets the displacement sequence
-        curr_obs_displacements=self.get_displacement_sequence(curr_obs)
+        curr_obs_displacements=self.get_displacement_sequence(tracking_only_obs)
        
         for obj_id, dis in curr_obs_displacements.items():                
             if len(dis)>1:
@@ -225,7 +458,7 @@ class PreProcessingObservations:
             self.total_cov_matrix = all_dx_dy_cov
             self.total_obs=len(curr_obs_displacements)
             ##########SANITY CHECKING#########################
-            print(f"current sample files stats mu are: {self.total_mu[0]:.2f},{self.total_mu[1]:.2f}\n"
+            print(f"current sample files stats mu are: {self.total_mu[0]:.4f},{self.total_mu[1]:.4f}\n"
                     f"and cov is: {self.total_cov_matrix}")
         return
     

@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, accuracy_score, f1_score, recall_score, precision_score,roc_curve,ConfusionMatrixDisplay,auc
 
-TRUE_LABEL = "true_label"
-PREDICTED_LABEL= "predicted_label"
+TRUE_LABELS = "true_labels"
+PREDICTED_LABELS= "predicted_labels"
 LOG_PDFS="log_pdfs"
 
 MOVING=1
@@ -37,7 +37,7 @@ class OutlierModelEvaluation:
                 if log_pdf not in seen:
                     seen.add(log_pdf)
                     log_pdf_values.append(log_pdf)
-                    true_labels.append(obj_data[TRUE_LABEL])
+                    true_labels.append(obj_data[TRUE_LABELS])
                     
         true_labels=np.array(true_labels)
         log_pdf_values=np.array(log_pdf_values)
@@ -68,15 +68,15 @@ class OutlierModelEvaluation:
         # Update the dictionary with predicted and true labels
             curr_obs[obj_id] = {
                 LOG_PDFS: curr_obs[obj_id][LOG_PDFS],  # Original log PDF values
-                TRUE_LABEL: curr_obs[obj_id][TRUE_LABEL],
-                PREDICTED_LABEL: cls
+                TRUE_LABELS: curr_obs[obj_id][TRUE_LABELS],
+                PREDICTED_LABELS: cls
             }
         return curr_obs
         
     def plot_confusion_matrix_outlier_model(self,curr_obs, typeofset):
     
-        true_labels = [curr_obs[obj_id][TRUE_LABEL] for obj_id in curr_obs]
-        predicted_labels = [curr_obs[obj_id][PREDICTED_LABEL] for obj_id in curr_obs]
+        true_labels = [curr_obs[obj_id][TRUE_LABELS] for obj_id in curr_obs]
+        predicted_labels = [curr_obs[obj_id][PREDICTED_LABELS] for obj_id in curr_obs]
 
         # Create the confusion matrix
         cm = confusion_matrix(true_labels, predicted_labels, labels=[NOTMOVING, MOVING])
@@ -128,7 +128,7 @@ class OutlierModelEvaluation:
         self.get_thresholds_from_roc(curr_obs)
         
         for window in window_sizes:
-            print(f"for window {window} thresholds to explore: {len(self.filtered_thresholds)}")
+            #print(f"for window {window} thresholds to explore: {len(self.filtered_thresholds)}")
             
             for threshold in self.filtered_thresholds:
                 true_labels = []
@@ -144,7 +144,7 @@ class OutlierModelEvaluation:
                             break
                     
                     predictions.append(cls)
-                    true_labels.append(values[TRUE_LABEL])
+                    true_labels.append(values[TRUE_LABELS])
                            
                 
                 cm = confusion_matrix(true_labels, predictions, labels=[0, 1])
@@ -167,8 +167,8 @@ class OutlierModelEvaluation:
                     self.window_size=window
                     self.optimal_threshold= threshold
                     
-                    print(f"window_reset to {self.window_size} classify {self.best_classify} {accuracy:<10.3f}{f1:<10.3f}{recall:<10.3f}{precision:<10.3f}\n"
-                            f"Optimal Threshold: {self.optimal_threshold}")
+                    #print(f"window_reset to {self.window_size} classify {self.best_classify} {accuracy:<10.3f}{f1:<10.3f}{recall:<10.3f}{precision:<10.3f}\n"
+                            #f"Optimal Threshold: {self.optimal_threshold}")
                             
-            print(f"for threshold: {threshold} {accuracy:<10.3f}{f1:<10.3f}{recall:<10.3f}{precision:<10.3f}")   
+            #print(f"for threshold: {threshold} {accuracy:<10.3f}{f1:<10.3f}{recall:<10.3f}{precision:<10.3f}")   
             
