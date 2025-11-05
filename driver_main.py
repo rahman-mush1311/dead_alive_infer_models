@@ -1,7 +1,7 @@
 from driver_data_preprocessing import PreProcessingObservations
 from driver_training_processer import run_outlier_model,run_bayesian_model,infer_with_trained_outlier_model,infer_with_trained_bayesian_model
 #from driver_data_preprocessing_utils import run_hourly_graph,get_visualization_ids,run_tracked_videos_by_filename,infer_with_trained_model,run_trajectory_plot,run_outlier_model,collect_infer_data,prepare_train_infer_data,calculate_class_probability
-from visualize_object_trajectory import plot_object_trajectories,plot_confusion_matrix,plot_hourly_prediction,plot_grid_coordinates,plot_accuracy_window
+from visualize_object_trajectory import plot_object_trajectories,plot_confusion_matrix,plot_hourly_prediction,grouped_bar_chart,plot_accuracy_window,mean_covariance_overlay_plot,create_montage,plot_motile_fraction_heatmap,plot_two_treatment_curves
 
 from driver_GridDisplacementModel import GridDisplacementModel
 from GridOutlierModel import OutlierModelEvaluation
@@ -14,6 +14,10 @@ import math
 from collections import Counter
 from PIL import Image
 import matplotlib.pyplot
+from collections import Counter
+from matplotlib.patches import Ellipse
+import matplotlib.transforms as transforms
+
 
 TRUE_LABEL = "true_label"
 PREDICTED_LABEL = "predicted_label"
@@ -107,6 +111,10 @@ def analyze(objects):
         print(f'analyzing {objectid} with {len(objects[objectid])} objects')
         analyze_object(objects[objectid])
 
+def count_lables(curr_obs_dict):
+    curr_obs_label_counter = Counter(data[TRUE_LABEL] for data in curr_obs_dict.values())
+    return curr_obs_label_counter[MOTILE],curr_obs_label_counter[NOTMOTILE],
+
 def prepare_train_data(collected_text_file_lists,collected_excel_file_lists):
     
     observation_stats ={}
@@ -114,81 +122,94 @@ def prepare_train_data(collected_text_file_lists,collected_excel_file_lists):
     all_train_observations={}
     all_test_observations={}
     
+    total_obs_size=0
+    total_train, total_test = 0, 0
+    motile_train, nonmotile_train = 0, 0
+    motile_test, nonmotile_test = 0, 0
+    
     
     for text_file, excel_file in zip(collected_train_txt_file_lists,collected_train_excel_file_lists):
         #print(f" txt file is: {text_file},{excel_file}")
         file_processor=PreProcessingObservations()
-        labeles_loaded=file_processor.load_labels(excel_file)
+        #labeles_loaded=file_processor.load_labels(excel_file)
         tracking_observations=file_processor.load_observations(text_file)
-        labeled_observations=file_processor.label_observations_by_expert_labels(text_file,excel_file,tracking_observations,labeles_loaded)
+        file_processor.analyze(tracking_observations)
+        #labeled_observations=file_processor.label_observations_by_expert_labels(text_file,excel_file,tracking_observations,labeles_loaded)
+        
+        #---File wise summary---
+        '''
         print(f"{text_file} has {len(tracking_observations)}")
         print(f"{excel_file} has {len(labeles_loaded)}")
-        print(f"final labeled obs size is: {len(labeled_observations)}")
+        print(f"final labeled obs size is: {len(labeled_observations)}")  
+        
         first_key, first_value = next(iter(labeled_observations.items()))
-        #print(f"{first_key},{first_value}")
+        print(f"{first_key},{first_value}")
+        '''
+        '''
         train_observations,test_observations=file_processor.prepare_train_test(labeled_observations,train_ratio=0.8)
         if len(train_observations)>0:
             file_processor.compute_global_stats(train_observations)
             all_train_observations[text_file]=train_observations
             observation_stats[text_file]={'mu': file_processor.total_mu, 'cov': file_processor.total_cov_matrix}
         if len(test_observations)>0:
-                all_test_observations[text_file]=test_observations
+            all_test_observations[text_file]=test_observations
         
+        curr_train_motile_obs,curr_train_non_motile_obs=count_lables(train_observations)
+        curr_test_motile_obs,curr_test_non_motile_obs=count_lables(test_observations)
+        
+        # --- accumulate counts ---
+        total_train += len(train_observations)
+        total_test  += len(test_observations)
+        motile_train += curr_train_motile_obs
+        nonmotile_train += curr_train_non_motile_obs
+        motile_test += curr_test_motile_obs
+        nonmotile_test += curr_test_non_motile_obs
+        total_obs_size += len(labeled_observations)       
+    
+    # --- final summary ---
+    print(f"\n==== Training/Test Summary ====")
+    print(f"Total train objects: {total_train}")
+    print(f"  Motile (alive):     {motile_train}")
+    print(f"  Non-motile (dead):  {nonmotile_train}")
+    print(f"Total test objects:  {total_test}")
+    print(f"  Motile (alive):     {motile_test}")
+    print(f"  Non-motile (dead):  {nonmotile_test}")
+    print(f"===============================\n")
+    '''   
     return observation_stats,all_train_observations,all_test_observations
+
+
+
+def infer_toxic_objects():
+    
+    for i in range(7):
+        infer_observation_stats={}
+        all_infer_observations={}
+        collected_tox_text_file_lists=collect_tox_file_from_user_input()
+        file_processor=PreProcessingObservations()
+        loaded_infer_observations=file_processor.load_observations(collected_tox_text_file_lists[0])
+        labeled_infer_observations=file_processor.label_tox_observations(loaded_infer_observations)
+        #labeled_infer_observations=file_processor.label_tox_observations_by_ranking(loaded_infer_observations,.4)
+        print(f"{collected_tox_text_file_lists[0]} has {len(labeled_infer_observations)}")
+    
+    
+        file_processor.compute_global_stats(labeled_infer_observations)
+        infer_observation_stats[collected_tox_text_file_lists[0]]={'mu': file_processor.total_mu, 'cov': file_processor.total_cov_matrix}
+        all_infer_observations[collected_tox_text_file_lists[0]]=labeled_infer_observations
+        #infer_obs_predicted=infer_with_trained_outlier_model(collected_tox_text_file_lists,infer_observation_stats,all_infer_observations,dead_model,outlier_model_eval)
+        infer_observations_pred=infer_with_trained_bayesian_model(collected_tox_text_file_lists,infer_observation_stats,all_infer_observations,dead_model,alive_model,bayesian_model_with_threshold)
+    
     
 if __name__ == "__main__":
-    #collected_train_txt_file_lists=collect_files("train text files",".txt")
-    #collected_train_excel_file_lists=collect_files("train excel files",".xlsx")
-
     
-    hour_list=[0,4,8,12]
-    total_list=[33,36,360,205]
-    alive_list=[24,5,14,17]
-    plot_hourly_prediction(hour_list,total_list,alive_list,240)
+    collected_train_txt_file_lists=collect_files("train text files",".txt")
+    collected_train_excel_file_lists=collect_files("train excel files",".xlsx")
     
-    
-    '''
-    file_processor=PreProcessingObservations()
-    loaded_observations=file_processor.load_observations(collected_train_txt_file_lists[2])
-    labeles_loaded=file_processor.load_labels(collected_train_excel_file_lists[3])
-    name_matching=file_processor.match_txt_excel_file_prefix(collected_train_txt_file_lists[2],collected_train_excel_file_lists[3])
-    print(f"{collected_train_excel_file_lists[3]}: {collected_train_txt_file_lists[2]}, {name_matching}")
-    
+   
     observation_stats,all_train_observations,all_test_observations=prepare_train_data(collected_train_txt_file_lists,collected_train_excel_file_lists)
     #dead_model,outlier_model_eval=run_outlier_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,True)
-    #dead_model,alive_model,bayesian_model_without_threshold=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,False,True)
-    dead_model,alive_model,bayesian_model_with_threshold=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,True,True)
+    #dead_model,alive_model,bayesian_model_without_threshold=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,False,True)  
+    #dead_model,alive_model,bayesian_model_with_threshold=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,True,True)
     
-    
-    infer_observation_stats={}
-    all_infer_observations={}
-    collected_tox_text_file_lists=collect_tox_file_from_user_input()
-    file_processor=PreProcessingObservations()
-    loaded_infer_observations=file_processor.load_observations(collected_tox_text_file_lists[0])
-    labeled_infer_observations=file_processor.label_tox_observations(loaded_infer_observations)
-    #labeled_infer_observations=file_processor.label_tox_observations_by_ranking(loaded_infer_observations,.4)
-    print(f"{collected_tox_text_file_lists[0]} has {len(labeled_infer_observations)}")
-    
-    
-    file_processor.compute_global_stats(labeled_infer_observations)
-    infer_observation_stats[collected_tox_text_file_lists[0]]={'mu': file_processor.total_mu, 'cov': file_processor.total_cov_matrix}
-    all_infer_observations[collected_tox_text_file_lists[0]]=labeled_infer_observations
-    #infer_obs_predicted=infer_with_trained_outlier_model(collected_tox_text_file_lists,infer_observation_stats,all_infer_observations,dead_model,outlier_model_eval)
-    infer_observations_pred=infer_with_trained_bayesian_model(collected_tox_text_file_lists,infer_observation_stats,all_infer_observations,dead_model,alive_model,bayesian_model_with_threshold)
-    '''
-    
-    '''
-    file_processor=PreProcessingObservations()
-    for text_file, excel_file in zip(collected_train_txt_file_lists,collected_train_excel_file_lists):
-        #print(f" txt file is: {text_file},{excel_file}")
-        labeles_loaded=file_processor.load_labels(excel_file)
-        tracking_observations=file_processor.load_observations(text_file)
-        labeled_observations=file_processor.label_observations_by_expert_labels(text_file,tracking_observations,labeles_loaded)
-        print(f"{text_file} has {len(tracking_observations)}")
-        print(f"{excel_file} has {len(labeles_loaded)}")
-        print(f"final labeled obs size is: {len(labeled_observations)}")
-        first_key, first_value = next(iter(labeled_observations.items()))
-        print(f"{first_key},{first_value}")
-    '''
     
     

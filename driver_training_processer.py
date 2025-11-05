@@ -19,8 +19,8 @@ TRACKING_DATA = "tracking_data"
 TRAIN="train"
 INFER="infer"
 
-MOVING=1
-NOTMOVING=0 
+MOTILE=1
+NOTMOTILE=0   
 
 def alive_model_training(collected_file_lists,observation_stats,train_observations):
 
@@ -34,7 +34,7 @@ def alive_model_training(collected_file_lists,observation_stats,train_observatio
             curr_obs_stats= observation_stats[file]
             curr_train_obs=train_observations[file]
            
-            filtered_curr_moving_obs={obj_id: obj_data[TRACKING_DATA] for obj_id, obj_data in curr_train_obs.items() if obj_data[TRUE_LABEL] == MOVING}
+            filtered_curr_moving_obs={obj_id: obj_data[TRACKING_DATA] for obj_id, obj_data in curr_train_obs.items() if obj_data[TRUE_LABEL] == MOTILE}
             if len(curr_obs_stats)!=0 and len(filtered_curr_moving_obs)!=0:
                 grid_displacement_model=GridDisplacementModel() 
                 grid_displacement_model.total_mu=curr_obs_stats['mu']
@@ -64,7 +64,7 @@ def dead_model_training(collected_file_lists,observation_stats,train_observation
             curr_train_obs=train_observations[file]
             
             contains_valid_stats, dx_norm, dy_norm, sx_norm, sy_norm = get_sample_file_stats(curr_obs_stats)
-            filtered_curr_nonmoving_obs={obj_id: obj_data[TRACKING_DATA] for obj_id, obj_data in curr_train_obs.items() if obj_data[TRUE_LABEL] == NOTMOVING}
+            filtered_curr_nonmoving_obs={obj_id: obj_data[TRACKING_DATA] for obj_id, obj_data in curr_train_obs.items() if obj_data[TRUE_LABEL] == NOTMOTILE}
             if len(curr_obs_stats)!=0 and len(filtered_curr_nonmoving_obs)!=0:
                 grid_displacement_model=GridDisplacementModel() 
                 grid_displacement_model.total_mu=curr_obs_stats['mu']
@@ -214,7 +214,7 @@ def combine_dictionary_dead_alive_probs(train_obs_probs_dead_model,train_obs_pro
         if moving_entry[TRUE_LABEL] == non_moving_entry[TRUE_LABEL]:
             label=moving_entry[TRUE_LABEL]
             # Separate based on true label
-            if label == MOVING:
+            if label == MOTILE:
                 alive_train_obs_probs[obj_id] = moving_entry
             else:
                 dead_train_obs_probs[obj_id] = non_moving_entry

@@ -5,8 +5,11 @@ import shlex
 import numpy
 
 import matplotlib.pyplot as plt
+import seaborn as sns
 from matplotlib.patches import Ellipse
 from sklearn.metrics import confusion_matrix, accuracy_score, f1_score, recall_score, precision_score,roc_curve,ConfusionMatrixDisplay,auc
+from PIL import Image
+
 
 TRUE_LABEL = "true_label"
 PREDICTED_LABEL= "predicted_label"
@@ -223,8 +226,8 @@ def get_axis_limits(curr_obs):
     
 def mean_covariance_overlay_plot(grid_mu_alive, grid_cov_alive, grid_mu_dead, grid_cov_dead):
     # Step 1: Compute global min/max across both alive and dead models
-    global_min_x, global_max_x = float('inf'), float('-inf')
-    global_min_y, global_max_y = float('inf'), float('-inf')
+    global_min_x, global_max_x = -2.00, 2.00
+    global_min_y, global_max_y = -3.50, 3.50
 
     all_models = [(grid_mu_alive, grid_cov_alive), (grid_mu_dead, grid_cov_dead)]
 
@@ -237,11 +240,12 @@ def mean_covariance_overlay_plot(grid_mu_alive, grid_cov_alive, grid_mu_dead, gr
                 eigenvalues, _ = numpy.linalg.eigh(cov_matrix)
                 width, height = 2 * numpy.sqrt(eigenvalues)
                 max_range = max(width, height) * 1.5
-
+                '''
                 global_min_x = min(global_min_x, mu[0] - max_range)
                 global_max_x = max(global_max_x, mu[0] + max_range)
                 global_min_y = min(global_min_y, mu[1] - max_range)
                 global_max_y = max(global_max_y, mu[1] + max_range)
+                '''
 
     # Step 2: Plot overlay for each grid cell
     for i in range(len(grid_mu_alive)):
@@ -251,7 +255,7 @@ def mean_covariance_overlay_plot(grid_mu_alive, grid_cov_alive, grid_mu_dead, gr
             mu_dead = grid_mu_dead[i][j]
             cov_dead = grid_cov_dead[i][j]
 
-            fig, ax = plt.subplots(figsize=(8, 8))
+            fig, ax = plt.subplots(figsize=(5, 5))
 
             # Plot alive mean
             ax.plot(mu_alive[0], mu_alive[1], 'go', label="Moving Mean", markersize=10)
@@ -375,12 +379,12 @@ def grouped_bar_chart():
     plt.tight_layout()
     plt.show()
     '''
-
+    #"480 ppb (Days-old)": {0: 127, 4: 12, 8: 378},
     # Data
     data = {
     "60 ppb (Days-old)": {0: 107, 4: 180, 8: 46, 12: 194, 16: 68, 28: 124, 32: 138, 33: 50, 34: 81, 35: 86, 36: 43},
     "240 ppb (Days-old)": {0: 32, 4: 37, 8: 386, 12: 215},
-    "480 ppb (Days-old)": {0: 127, 4: 12, 8: 378},
+    "480 ppb (Days-old)": {0: 52, 1: 32, 1.5: 36, 2: 33, 2.5: 30, 3: 31, 3.5: 40},
     "960 ppb (Week-old)": {0: 32, 4: 156, 8: 96, 12: 59}
     }
 
@@ -478,5 +482,207 @@ def plot_accuracy_window():
     plt.legend()
     plt.tight_layout()
     plt.show()
+
+def create_montage(image_directory, output_name,grid_size=(5, 5), image_size=(100, 100)):
+    """
+    Create a montage from grid stat images
+    
+    Parameters:
+    - image_directory: directory containing the images
+    - output_name: output filename
+    - grid_size: tuple (rows, cols) for the grid
+    - image_size: tuple (width, height) to resize each image
+    """
+    
+    rows, cols = grid_size
+    width, height = image_size
+    
+    # Create the montage canvas
+    montage_width = cols * width
+    montage_height = rows * height
+    montage = Image.new('RGB', (montage_width, montage_height), 'white')
+    
+    # Collect all images
+    images = []
+    missing_files = []
+    loaded_files = []
+    
+    for row in range(rows):
+        for col in range(cols):
+            filename = f"{row}_{col}.png"
+            filepath = os.path.join(image_directory, filename)
+            # Debug: Print the full path being checked
+            print(f"Checking: {filepath}")
+            
+            if os.path.exists(filepath):
+                try:
+                    with Image.open(filepath) as img:
+                        # Resize image to standardize
+                        img = img.resize((width, height), Image.Resampling.LANCZOS)
+                        images.append(img)
+                        loaded_files.append(filename)
+                        print(f" Successfully loaded: {filename}")
+                except Exception as e:
+                    print(f"Error loading {filename}: {e}")
+                    print(f"Full traceback: {traceback.format_exc()}")
+                    missing_files.append(filename)
+            else:
+                print(f"File not found: {filename}")
+                # Create a placeholder image
+                placeholder = Image.new('RGB', (width, height), 'lightgray')
+                images.append(placeholder)
+                missing_files.append(filename)
+    
+    # Arrange images in the montage
+    for i, img in enumerate(images):
+        row = i // cols
+        col = i % cols
+        x = col * width
+        y = row * height
+        montage.paste(img, (x, y))
+    
+    # Save the montage
+    montage.save(output_name)
+    print(f"Montage saved as: {output_name}")
+    print(f"Montage size: {montage_width}x{montage_height}")
+    
+    if missing_files:
+        print(f"Missing files replaced with placeholders: {missing_files}")
+    
+    return montage
+
+def plot_motile_fraction_heatmap(data_dict, figsize=(10, 6)):
+    """
+    Create heatmap: rows=doses, cols=time bins, cells=motile fraction
+    
+    Parameters:
+    - data_dict: {dose: {'times': [0,4,8,12], 'motile_fractions': [1.0,0.8,0.4,0.1]}}
+    """
+    
+    # Get all unique time points
+    all_times = sorted(set(time for data in data_dict.values() for time in data['times']))
+    doses = sorted(data_dict.keys())
+    
+    # Create matrix
+    matrix = numpy.full((len(doses), len(all_times)), numpy.nan)
+    
+    for i, dose in enumerate(doses):
+        for j, time in enumerate(all_times):
+            if time in data_dict[dose]['times']:
+                time_idx = data_dict[dose]['times'].index(time)
+                matrix[i, j] = data_dict[dose]['motile_fractions'][time_idx]
+    
+    # Plot heatmap
+    fig, ax = plt.subplots(figsize=figsize)
+    
+    sns.heatmap(matrix, 
+                xticklabels=[f'{t}h' for t in all_times],
+                yticklabels=[f'{d} ppb' for d in doses],
+                annot=True, fmt='.2f', cmap='RdYlGn', 
+                cbar_kws={'label': 'Motile Fraction'},
+                ax=ax)
+    
+    ax.set_title('Motile Fraction Over Time by Dose', fontweight='bold')
+    ax.set_xlabel('Time')
+    ax.set_ylabel('Dose')
+    
+    plt.tight_layout()
+    plt.show()
+
+def plot_two_treatment_curves(figsize=(10, 6)):
+    """
+    Plot two treatment curves on the same plot
+    """
+    
+    # Data
+    time_480 = [0, 1, 1.5, 2, 2.5, 3, 3.5]
+    motile_480 = [0.59, 0.56, 0.47, 0.33, 0.10, 0.05, 0.06]
+    
+    time_960 = [0, 4, 8, 12]
+    motile_960 = [0.28, 0.04, 0.06, 0.01]
+    
+    # Plot
+    fig, ax = plt.subplots(figsize=figsize)
+    
+    ax.plot(time_480, motile_480, 'o-', linewidth=2, markersize=8, 
+            color='blue', label='480 ppb (young ostracods)')
+    
+    ax.plot(time_960, motile_960, 's-', linewidth=2, markersize=8, 
+            color='red', label='960 ppb (week-old ostracods)')
+    
+    ax.set_xlabel('Time (hours)', fontsize=12)
+    ax.set_ylabel('Motile Fraction', fontsize=12)
+    ax.set_title('Motile Response Under Different Treatments', fontweight='bold', fontsize=14)
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.show()
+    
+def plot_three_confidence_ellipses(means, covariances, labels=['File 1', 'File 2', 'File 3'], 
+                                  figsize=(8, 8), n_std=2.0):
+    """
+    Plot three confidence ellipses with different means and covariances
+    
+    Parameters:
+    - means: list of 3 mean vectors [[mu_x1, mu_y1], [mu_x2, mu_y2], [mu_x3, mu_y3]]
+    - covariances: list of 3 covariance matrices [cov1, cov2, cov3]
+    - labels: list of 3 labels for the ellipses
+    - n_std: number of standard deviations for ellipse size
+    """
+    
+    fig, ax = matplotlib.pyplot.subplots(figsize=figsize)
+    colors = ['red', 'green', 'blue']
+    
+    for i in range(3):
+        mean = numpy.array(means[i])
+        cov = covariances[i]
+        
+        # Plot mean point
+        ax.scatter(mean[0], mean[1], color=colors[i], s=200, 
+                  marker='o', label=labels[i], edgecolor='black', 
+                  linewidth=2, zorder=5)
+        
+        # Calculate ellipse parameters
+        eigenvals, eigenvecs = numpy.linalg.eigh(cov)
+        eigenvals = numpy.maximum(eigenvals, 1e-8)  # Avoid negative eigenvalues
+        
+        angle = numpy.degrees(numpy.arctan2(eigenvecs[1, 0], eigenvecs[0, 0]))
+        width = 2 * n_std * numpy.sqrt(eigenvals[0])
+        height = 2 * n_std * numpy.sqrt(eigenvals[1])
+        
+        # Create and add ellipse
+        ellipse = Ellipse(mean, width, height, angle=angle,
+                         facecolor=colors[i], alpha=0.3, 
+                         edgecolor=colors[i], linewidth=2)
+        ax.add_patch(ellipse)
+    
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_title(f'mean & covariance of 3 different sample files')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    ax.set_aspect('equal', adjustable='box')
+    
+    matplotlib.pyplot.tight_layout()
+    matplotlib.pyplot.show()
+
+def plot_different_charts():
+    '''
+    hour_list=[0,4,8,12]
+    total_list=[28,167,94,61]
+    alive_list=[8,7,6,1]
+    plot_hourly_prediction(hour_list,total_list,alive_list,960)
+    '''
+    #grouped_bar_chart()
+    data = {
+    60: {'times': [0, 4, 8, 12], 'motile_fractions': [.61, .55, .82, .51]},
+    240: {'times': [0, 4, 8, 12], 'motile_fractions': [.72, .13, 0.038, 0.083]},
+    960: {'times': [0, 4, 8, 12], 'motile_fractions': [.28, 0.04, 0.06, 0.01]}
+}
+    
+    #plot_motile_fraction_heatmap(data)
+    #plot_two_treatment_curves()
+    #mean_covariance_overlay_plot(alive_model.mu,alive_model.cov_matrix,dead_model.mu,dead_model.cov_matrix)
 
     

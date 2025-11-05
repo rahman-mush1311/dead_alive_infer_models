@@ -10,8 +10,8 @@ from collections import Counter
 import matplotlib.pyplot as plt
 
 
-MOVING=1
-NOTMOVING=0
+MOTILE=1
+NOTMOTILE=0 
 
 TRAIN="train"
 INFER="infer"
@@ -80,11 +80,11 @@ class PreProcessingObservations:
         for _, row in df.iterrows():
             obj_id = int(row["Object Id"])
             tracked = int(row["Tracked Object"])
-            motile = int(row["Motile Organism"])
+            is_motile = int(row["Motile Organism"])
             good_track = int(row["Good Track?"])
 
             if tracked == 1:  # only take tracked objects
-                loaded_labels[obj_id] = MOVING if motile == 1 else NOTMOVING
+                loaded_labels[obj_id] = MOTILE if is_motile == 1 else NOTMOTILE
         #print(df.head())
         return loaded_labels
         
@@ -95,7 +95,7 @@ class PreProcessingObservations:
         else:
             return False
     
-    def check_for_starting_track_late(self,track, width=4128, height=2196, margin_ratio=0.15):
+    def check_for_starting_track_late(self,track, width=4128, height=2196, margin_ratio=0.25):
     
         x_start, y_start = track[0][0], track[0][1]
         margin_x = margin_ratio * width
@@ -107,11 +107,12 @@ class PreProcessingObservations:
         else:
             return False
     
-    def check_for_ending_track_early(self,track, width=4128, height=2196, margin_ratio=0.15):
+    def check_for_ending_track_early(self,track, width=4128, height=2196, margin_ratio=0.25):
     
         x_end, y_end = track[-1][0], track[-1][1]
         margin_x = margin_ratio * width
-        valid_exit = (x_end >= (width - margin_x))
+        #margin_y = margin_ratio * height
+        valid_exit = (x_end >= (width - margin_x) )
         if valid_exit:
             return True
         else:
@@ -119,20 +120,23 @@ class PreProcessingObservations:
             
     def filter_tracks(self,tracks):
     
-        is_valid_entry_exit=False
+        is_valid_entry=False
+        is_valid_exit=True
         is_skipping_frame=False
         if(len(tracks)<10):
             return False
         
         else:
-            is_valid_entry_exit=self.is_starting_or_ending_near_edge(tracks)
+            is_valid_entry=self.check_for_starting_track_late(tracks)
+            is_valid_exit=self.check_for_ending_track_early(tracks)
             is_skipping_frame=self.is_missing_frame(tracks)
-            if is_valid_entry_exit==True and is_skipping_frame==False:
+            if is_valid_entry==True and is_valid_exit==True and is_skipping_frame==False:
                 return True
             else:
                 return False
         
-
+    
+    
 
     def match_txt_excel_file_prefix(self,curr_text_filepath, curr_excel_filepath):
         """
@@ -159,7 +163,7 @@ class PreProcessingObservations:
             # Get prefix up to the number after Image_
             text_index = [i for i, p in enumerate(text_parts) if p.startswith("Image")]
             excel_index = [i for i, p in enumerate(excel_parts) if p.startswith("Image")]
-
+            
             if text_index and excel_index:
                 text_prefix = "_".join(text_parts[:text_index[0]+2])
                 excel_prefix = "_".join(excel_parts[:excel_index[0]+2])
@@ -190,11 +194,36 @@ class PreProcessingObservations:
                     labeled_observations[object_id]={TRACKING_DATA: tracks,
                                                 TRUE_LABEL: loaded_labels[obj_id]
                     }
+                '''
                 else:
                     print(f"{obj_id} is not good track")
+                '''
         else:
             print(f"!!!ERROR!!! Text filename and Excel filenames don't match")
         return labeled_observations
+    
+    def track_length_stats(self, curr_obs):
+    
+        min_len = float("inf")
+        max_len = float("-inf")
+        total_len=0
+        
+        for obj_id, entry in curr_obs.items():
+            tracks = entry.get("tracking_data", [])
+            length = len(tracks)
+
+            if length == 0:
+                continue
+
+            min_len = min(min_len, length)
+            max_len = max(max_len, length)
+            total_len += length
+
+        avg_len = total_len / len(curr_obs)
+        
+        print(f"min len is: {min_len}, max len is: {max_len}, avg_len is: {avg_len}")
+        return 
+                
         
     def get_file_prefix(self, filepath):
         '''
@@ -318,15 +347,15 @@ class PreProcessingObservations:
                 #print(f"{object_id}: good_track: {good_track_flag}, turning_angle: {turning_angle_flag}")
                 if turning_angle_flag==True:
                     labeled_observations[object_id]={TRACKING_DATA: tracks,
-                                                TRUE_LABEL: MOVING
+                                                TRUE_LABEL: MOTILE
                     }
                 else:
                      labeled_observations[object_id]={TRACKING_DATA: tracks,
-                                                TRUE_LABEL: NOTMOVING
+                                                TRUE_LABEL: NOTMOTILE
                     }
         label_counter_train = Counter(data[TRUE_LABEL] for data in labeled_observations.values())
-        print(f"MOVING: {label_counter_train[MOVING]}")
-        print(f"NON_MOVING: {label_counter_train[NOTMOVING]}")
+        print(f"MOTILE: {label_counter_train[MOTILE]}")
+        print(f"NON_MOTILE: {label_counter_train[NOTMOTILE]}")
         return labeled_observations
                 
         
@@ -359,16 +388,16 @@ class PreProcessingObservations:
         for i, (object_id, score) in enumerate(sorted_items):
             if i < cutoff:
                 labeled_observations[object_id] = {TRACKING_DATA: observations[object_id],
-                                                TRUE_LABEL: MOVING
+                                                TRUE_LABEL: MOTILE
                     }
             else:
                 labeled_observations[object_id] = {TRACKING_DATA: observations[object_id],
-                                                TRUE_LABEL: NOTMOVING
+                                                TRUE_LABEL: NOTMOTILE
                     }
                     
         label_counter_train = Counter(data[TRUE_LABEL] for data in labeled_observations.values())
-        print(f"MOVING: {label_counter_train[MOVING]}")
-        print(f"NON_MOVING: {label_counter_train[NOTMOVING]}")
+        print(f"MOTILE: {label_counter_train[MOTILE]}")
+        print(f"NON_MOTILE: {label_counter_train[NOTMOTILE]}")
         return labeled_observations        
             
     def is_starting_or_ending_near_edge(self,track, width=4128, height=2196, margin_ratio=0.25):
@@ -396,7 +425,7 @@ class PreProcessingObservations:
         extra = sorted(set(frames) - set(expected_frames))  # if needed for debug
 
         missing_frame_flag = False
-        if len(missing) > 1:
+        if len(missing) > 2:
             missing_frame_flag = True
 
         return missing_frame_flag
@@ -458,8 +487,10 @@ class PreProcessingObservations:
             self.total_cov_matrix = all_dx_dy_cov
             self.total_obs=len(curr_obs_displacements)
             ##########SANITY CHECKING#########################
+            '''
             print(f"current sample files stats mu are: {self.total_mu[0]:.4f},{self.total_mu[1]:.4f}\n"
                     f"and cov is: {self.total_cov_matrix}")
+            '''
         return
     
         
@@ -491,5 +522,36 @@ class PreProcessingObservations:
         test_dict = {key: curr_obs[key] for key in test_keys}
 
         return train_dict,test_dict
+    
+    def stats(self,x):
+        n = len(x)
+        s = sum(x)
+        mu = s / n if n else 0
+        std = math.sqrt(sum([(xi - mu) ** 2 for xi in x]))
+        max_x = max(x) if n else 0
+        min_x = min(x) if n else 0
+        print(f'{n=} {s=} {mu=} {std=} {max_x=} {min_x=}')
+    
+    def analyze_object(self,o):
+        #occurrences = [r[0] for r in o]
+        #assert occurrences == list(range(1, len(o) + 1)) # occurrences are sequential
+        dx = []
+        dy = []
+        for i in range(1, len(o)):
+            dx.append(o[i][1] - o[i-1][1])
+            dy.append(o[i][2] - o[i-1][2])
+        print('stats dx')
+        self.stats(dx)
+        print('stats dy')
+        self.stats(dy)
+        frames = [r[2] for r in o]
+        if frames != list(range(o[0][2], o[0][2] + len(o))):
+            print(f'**** FRAMES ARE NOT SEQUENTIAL: {frames}') # frame numbers are sequential
+    
+    def analyze(self,objects):
+        for objectid in objects:
+            print()
+            print(f'analyzing {objectid} with {len(objects[objectid])} objects')
+            self.analyze_object(objects[objectid])
     
     

@@ -6,8 +6,8 @@ TRUE_LABEL = "true_label"
 PREDICTED_LABEL= "predicted_label"
 LOG_PDFS="log_pdfs"
 
-MOVING=1
-NOTMOVING=0
+MOTILE=1
+NOTMOTILE=0   
 
 class OutlierModelEvaluation:
     def __init__(self, window=3):
@@ -58,11 +58,11 @@ class OutlierModelEvaluation:
         - curr_obs :dictionary {object_id: {LOG_PDFS:list of log of probabilities}{TRUE_LABELS:d/a}{PREDICTED_LABELS: d/a}}
         '''
         for obj_id in curr_obs:
-            cls = NOTMOVING
+            cls = NOTMOTILE
             for i in range(len(curr_obs[obj_id][LOG_PDFS]) - self.window_size + 1):
                 w = curr_obs[obj_id][LOG_PDFS][i:i+self.window_size]
                 if all([p <= self.optimal_threshold for p in w]):
-                    cls = MOVING
+                    cls = MOTILE
                     break
 
         # Update the dictionary with predicted and true labels
@@ -135,12 +135,12 @@ class OutlierModelEvaluation:
                 predictions = []
  
                 for obj_id, values in curr_obs.items():
-                    cls = NOTMOVING
+                    cls = NOTMOTILE
                     log_values = values[LOG_PDFS]
                     for i in range(len(log_values) - window + 1):
                         w = log_values[i:i + window]
                         if all(p <= threshold for p in w):
-                            cls = MOVING
+                            cls = MOTILE
                             break
                     
                     predictions.append(cls)
