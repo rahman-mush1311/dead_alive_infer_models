@@ -8,14 +8,14 @@ import sklearn.preprocessing
 TRUE_LABELS = "true_labels"
 LOG_PDFS="log_pdfs"
 
-MOVING=1
-NOTMOVING=0
+MOTILE=1
+NOTMOTILE=0
 
 TRAIN="train"
 INFER="infer"
 
 class GridDisplacementModel:
-    def __init__(self, grid_rows=5, grid_cols=5, max_x=4128, max_y=2196):
+    def __init__(self, grid_rows=3, grid_cols=3, max_x=4128, max_y=2196):
         # self.n represents the number of observations for each cell
         self.n = [[ 0 for _ in range(grid_cols)] for _ in range(grid_rows)]
 
@@ -53,15 +53,15 @@ class GridDisplacementModel:
         points=[]
         for obj_id, obs in observations.items():
             for i in range(len(obs) - 1):
-                dframe = obs[i+1][0] - obs[i][0]
+                dframe = obs[i+1][2] - obs[i][2]
                 #to do: dframe<=0 continue logging error
                 if dframe>0:
                 
-                    dx = obs[i+1][1] - obs[i][1]
-                    dy = obs[i+1][2] - obs[i][2]
+                    dx = obs[i+1][0] - obs[i][0]
+                    dy = obs[i+1][1] - obs[i][1]
 
-                    grid_row, grid_cell = self.find_grid_cell(obs[i][1],
-                                                      obs[i][2])
+                    grid_row, grid_cell = self.find_grid_cell(obs[i][0],
+                                                      obs[i][1])
                     grid_pos=grid_dis[grid_row][grid_cell]
                     
                     self.n[grid_row][grid_cell] += 1
@@ -206,10 +206,10 @@ class GridDisplacementModel:
         for obj_id, obs in observations.items():
             obj_probabilities=[]
             for i in range(len(obs) - 1):
-                x,y=obs[i][1],obs[i][2]
-                dframe = obs[i+1][0] - obs[i][0]
-                dx = obs[i+1][1] - obs[i][1]
-                dy = obs[i+1][2] - obs[i][2]
+                x,y=obs[i][0],obs[i][1]
+                dframe = obs[i+1][2] - obs[i][2]
+                dx = obs[i+1][0] - obs[i][0]
+                dy = obs[i+1][1] - obs[i][1]
                 if dframe>0:
                     dx,dy=(dx/dframe),(dy/dframe)
                     norm_dx = (dx - dx_norm) / sx_norm 

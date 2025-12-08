@@ -65,7 +65,7 @@ class GridFeatureModel:
                 df1 = f1 - f0
                 df2 = f2 - f1
                 
-                if df1 <= 0 or df2 <= 0:
+                if df1 <= 0 or df2<=0:
                     print(f"Invalid frame sequence for {obj_id}: frames {f0}, {f1}, {f2}")
                     continue
                 
@@ -91,10 +91,11 @@ class GridFeatureModel:
                 ax, ay = accel[0], accel[1]
                 
                 # Find grid cell based on middle position
-                grid_row, grid_col = self.find_grid_cell(x0, y0)
+                grid_row, grid_col = self.find_grid_cell(x1, y1)
                 
                 # Store features [dx_norm, dy_norm, heading, turning, accel]
                 feature_vector = [dx2_norm, dy2_norm, heading, turning,  ax, ay]
+                #feature_vector = [dx2_norm, dy2_norm, heading,turning]
                 grid_features[grid_row][grid_col].append(feature_vector)
                 all_features.append(feature_vector)
                 
@@ -104,7 +105,166 @@ class GridFeatureModel:
             print(f"No valid observations for feature extraction")
                 
         return grid_features
+    '''
+    def calculate_features(self, observations):
+        """
+        Extract features with proper angle handling
         
+        Returns:
+        - grid_features: [rows][cols] lists of feature vectors
+        """
+        mu_dx = self.total_mu[0]
+        mu_dy = self.total_mu[1]
+        std_dx = numpy.sqrt(self.total_cov_matrix[0, 0])
+        std_dy = numpy.sqrt(self.total_cov_matrix[1, 1])
+        
+        # Prevent division by zero
+        if std_dx < 1e-10:
+            std_dx = 1.0
+        if std_dy < 1e-10:
+            std_dy = 1.0
+            
+        grid_features = [[[] for _ in range(self.num_cols())] 
+                        for _ in range(self.num_rows())]
+        
+        for obj_id, obs in observations.items():
+            # Need at least 3 points for all features
+            if len(obs) < 3:
+                continue
+            
+            for i in range(2, len(obs)):
+                # Get grid cell from starting position
+                grid_row, grid_col = self.find_grid_cell(obs[i-1][0], obs[i-1][1])
+                
+                # ========== DISPLACEMENT ==========
+                dframe1 = obs[i][2] - obs[i-1][2]
+                dframe0 = obs[i-1][2] - obs[i-2][2]
+                
+                if dframe1 <= 0 or dframe0 <= 0:
+                    continue
+                
+                # Current displacement
+                dx_curr = (obs[i][0] - obs[i-1][0]) / dframe1
+                dy_curr = (obs[i][1] - obs[i-1][1]) / dframe1
+                
+                #current displacement normalized
+                dx_curr_norm=(dx_curr-mu_dx)/std_dx
+                dy_curr_norm=(dy_curr-mu_dy)/std_dy
+                
+                # Previous displacement
+                dx_prev = (obs[i-1][0] - obs[i-2][0]) / dframe0
+                dy_prev = (obs[i-1][1] - obs[i-2][1]) / dframe0
+                
+                #previous displacement normalized
+                dx_prev_norm=(dx_prev-mu_dx)/std_dx
+                dy_prev_norm=(dy_prev-mu_dy)/std_dy
+                
+                # ========== HEADING ANGLE (as unit circle) ==========
+                theta = numpy.arctan2(dy_curr_norm, dx_curr_norm)
+                cos_theta = numpy.cos(theta)
+                sin_theta = numpy.sin(theta)
+                
+                # ========== TURNING ANGLE (as unit circle) ==========
+                d_curr = numpy.array([dx_curr_norm, dy_curr_norm])
+                d_prev = numpy.array([dx_prev_norm, dy_prev_norm])
+                
+                norm_curr = numpy.linalg.norm(d_curr)
+                norm_prev = numpy.linalg.norm(d_prev)
+                
+                if norm_curr > 0 and norm_prev > 0:
+                    cos_phi_raw = numpy.dot(d_curr, d_prev) / (norm_curr * norm_prev)
+                    cos_phi_raw = numpy.clip(cos_phi_raw, -1, 1)
+                    phi = numpy.arccos(cos_phi_raw)
+                    
+                    # Convert to unit circle
+                    cos_phi = numpy.cos(phi)
+                    sin_phi = numpy.sin(phi)
+                else:
+                    cos_phi = 1.0
+                    sin_phi = 0.0
+                
+                # ========== ACCELERATION ==========
+                dt = obs[i][2] - obs[i-2][2]
+                if dt > 0:
+                    ax = (dx_curr_norm - dx_prev_norm) / dt
+                    ay = (dy_curr_norm - dy_prev_norm) / dt
+                else:
+                    continue
+                
+                # ========== ASSEMBLE FEATURE VECTOR ==========
+                # Order: [dx, dy, cos_θ, sin_θ, cos_φ, sin_φ, ax, ay]
+                feature_vector = [dx_prev_norm, dy_prev_norm, cos_theta, sin_theta, 
+                                cos_phi, sin_phi, ax, ay]
+                self.n[grid_row][grid_col] += 1
+                
+                grid_features[grid_row][grid_col].append(feature_vector)
+        
+        return grid_features
+        
+    def _compute_single_feature_vector(self, obs, obs_type, mu_dx, mu_dy, std_dx, std_dy):
+        """
+        Compute feature vector for observation
+        
+        Returns:
+        - feature_vector: [dx, dy, cos_θ, sin_θ, cos_φ, sin_φ, ax, ay]
+        """
+        # Frame differences
+        dframe1 = obs[i][2] - obs[i-1][2]
+        dframe0 = obs[i-1][2] - obs[i-2][2]
+        
+        if dframe1 <= 0 or dframe0 <= 0:
+            return None
+        
+        # ========== DISPLACEMENT (Linear) ==========
+        dx_curr = (obs[i][0] - obs[i-1][0]) / dframe1
+        dy_curr = (obs[i][1] - obs[i-1][1]) / dframe1
+        
+        dx_prev = (obs[i-1][0] - obs[i-2][0]) / dframe0
+        dy_prev = (obs[i-1][1] - obs[i-2][1]) / dframe0
+        
+        #current displacement normalized
+        dx_curr_norm=(dx_curr-mu_dx)/std_dx
+        dy_curr_norm=(dy_curr-mu_dy)/std_dy
+        
+        #previous displacement normalized
+        dx_prev_norm=(dx_prev-mu_dx)/std_dx
+        dy_prev_norm=(dy_prev-mu_dy)/std_dy
+        
+        # ========== HEADING ANGLE (Angular → Cartesian) ==========
+        theta = numpy.arctan2(dy_curr_norm, dx_curr_norm)
+        cos_theta = numpy.cos(theta)
+        sin_theta = numpy.sin(theta)
+        
+        # ========== TURNING ANGLE (Angular → Cartesian) ==========
+        d_curr = numpy.array([dx_curr_norm, dy_curr_norm])
+        d_prev = numpy.array([dx_prev_norm, dy_prev_norm])
+        
+        norm_curr = numpy.linalg.norm(d_curr)
+        norm_prev = numpy.linalg.norm(d_prev)
+        
+        if norm_curr > 1e-6 and norm_prev > 1e-6:
+            cos_phi_raw = numpy.dot(d_curr, d_prev) / (norm_curr * norm_prev)
+            cos_phi_raw = numpy.clip(cos_phi_raw, -1, 1)
+            phi = numpy.arccos(cos_phi_raw)
+            cos_phi = numpy.cos(phi)
+            sin_phi = numpy.sin(phi)
+        else:
+            cos_phi = 1.0
+            sin_phi = 0.0
+        
+        # ========== ACCELERATION (Linear) ==========
+        dt = obs[i][2] - obs[i-2][2]
+        if dt > 0:
+            ax = (dx_curr_norm - dx_prev_norm) / dt
+            ay = (dy_curr_norm - dy_prev_norm) / dt
+        else:
+            return None
+        
+        # Assemble feature vector
+        # Order: [dx, dy, cos_θ, sin_θ, cos_φ, sin_φ, ax, ay]
+        return numpy.array([dx_curr, dy_curr, cos_theta, sin_theta, 
+                        cos_phi, sin_phi, ax, ay])
+    '''    
     def compute_heading_angle(self, dy_norm, dx_norm):
         """
         Compute heading angle between two consecutive points
@@ -304,7 +464,7 @@ class GridFeatureModel:
                 df1 = f1 - f0
                 df2 = f2 - f1
                 
-                if df1 <= 0 or df2 <= 0:
+                if df1 <= 0 or df2<=0:
                     continue
                 
                 # Step 1: Calculate RAW displacements
@@ -327,9 +487,10 @@ class GridFeatureModel:
                 
                 # Create 6D feature vector [dx_norm, dy_norm, heading, turning, ax, ay]
                 features = numpy.array([dx2_norm, dy2_norm, heading, turning, ax, ay])
+                #features = numpy.array([dx2_norm, dy2_norm, heading,turning])
                 
                 # Compute probability using these features
-                prob = self.probability(x0, y0, features)
+                prob = self.probability(x1, y1, features)
                 obj_probabilities.append(prob)
             
             if len(obj_probabilities) > 0:
@@ -339,14 +500,53 @@ class GridFeatureModel:
                 print(f"No valid probabilities for {obj_id}")
         
         return probabilities
+    '''
     
+    def compute_probabilities(self, observations,mu_dx, mu_dy, std_dx, std_dy):
+        """
+        Compute log probabilities for all observations
+        
+        Parameters:
+        - observations: dict {obj_id: [(x, y, frame), ...]}
+        
+        Returns:
+        - probabilities: dict {obj_id: {'log_pdfs': [...]}}
+        """
+        probabilities = {}
+        
+        for obj_id, obs in observations.items():
+            if len(obs) < 3:
+                continue
+            
+            obj_probabilities = []
+            
+            for i in range(2, len(obs)):
+                # Get starting position
+                x, y = obs[i-1][0], obs[i-1][1]
+                
+                # Compute normalized feature vector 
+                feature_vector = self._compute_single_feature_vector(obs, i, mu_dx, mu_dy, std_dx, std_dy)
+                
+                if feature_vector is not None:
+                    prob = self.probability(x, y, feature_vector)
+                    #print(f"{feature_vector} {prob}")
+                    obj_probabilities.append(prob)
+            if len(obj_probabilities) > 0:
+                log_probs = self.log_probability(obj_probabilities)
+                probabilities[obj_id] = {LOG_PDFS: log_probs}
+            else:
+                print(f"No valid probabilities for {obj_id}")
+        
+        return probabilities
+    '''    
     def log_probability(self, curr_pdf_list):
         """Convert probabilities to log probabilities"""
         log_values = []
         
         for x in curr_pdf_list:
             if x <= 0:
-                print(f"Warning: invalid probability {x}")
+                #print(f"Warning: invalid probability {x}")
+                continue
             else:
                 log_values.append(math.log(x))
         

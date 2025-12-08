@@ -1,5 +1,8 @@
 from driver_data_preprocessing import PreProcessingObservations
-from driver_training_inference import run_bayesian_model
+from driver_training_inference import run_bayesian_model,fisher_feature_analysis,_calculate_train_acc_summary,analyze_feature_importance
+from driver_train_infer_svm import run_complete_svm_pipeline,run_multiple_svm_experiments,run_feature_statistics_test,run_feature_statistics_test_per_file,feature_correlation_analysis
+from visualize_object_trajectory import visualize_model_features_correlations,extract_correlations_from_model,plot_corr
+#from GridBayesianModel import BayesianModel
 
 
 import numpy
@@ -118,15 +121,93 @@ def prepare_train_data(collected_text_file_lists,collected_excel_file_lists):
     print(f"===============================\n")
     '''   
     return observation_stats,all_train_observations,all_test_observations
+
+def run_multiple_experiments(collected_train_txt_file_lists,observation_stats,all_train_observations, all_test_observations, n_runs=10):
+    """
+    Run the experiment multiple times and collect results
+    """
+    
+    analyzer = MultiRunAnalyzer()
+    
+    for run_id in range(1, n_runs + 1):
+        print(f"\n{'='*80}")
+        print(f"RUN {run_id}/{n_runs}")
+        print(f"{'='*80}\n")
+        
+        # Train models (with different random seeds if applicable)
+        dead_model, alive_model, predictions = run_single_experiment(
+            collected_train_txt_file_lists,
+            observation_stats,
+            all_train_observations,
+            all_test_observations,
+            run_id=run_id
+        )
+        
+        # Add results to analyzer
+        analyzer.add_run(f"Run_{run_id}", predictions)
+    
+    # Compute statistics
+    summary = analyzer.compute_statistics()
+    
+    # Generate LaTeX table
+    analyzer.generate_latex_table()
+    analyzer.save_latex_table('results_table.tex')
+    
+    # Visualizations
+    analyzer.plot_results(save_path='multi_run_boxplots.png')
+    analyzer.plot_run_comparison(save_path='multi_run_comparison.png')
+    
+    # Export raw data
+    analyzer.export_to_csv('all_runs_data.csv')
+    
+    # Get reporting strings
+    print(f"\n{'='*80}")
+    print("REPORTING STRINGS FOR PAPER")
+    print(f"{'='*80}")
+    print(f"Accuracy:  {analyzer.get_reporting_string('accuracy')}")
+    print(f"F1-Score:  {analyzer.get_reporting_string('f1')}")
+    print(f"Precision: {analyzer.get_reporting_string('precision')}")
+    print(f"Recall:    {analyzer.get_reporting_string('recall')}")
+    
+    return analyzer
+
+
+
+
+    
     
 if __name__ == "__main__":
-
+    #_calculate_train_acc_summary()
     collected_train_txt_file_lists=collect_files("train text files",".txt")
     collected_train_excel_file_lists=collect_files("train excel files",".xlsx")
+    #run_multiple_svm_experiments(collected_train_txt_file_lists,collected_train_excel_file_lists)
+    #run_feature_statistics_test(collected_train_txt_file_lists,collected_train_excel_file_lists)
+    observation_stats,all_train_observations,all_test_observations=prepare_train_data(collected_train_txt_file_lists,collected_train_excel_file_lists)
+    #dead_model,alive_model=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,True)
+    #run_feature_statistics_test_per_file(collected_train_txt_file_lists,all_train_observations)
+    #feature_correlation_analysis(collected_train_txt_file_lists,collected_train_excel_file_lists)
+    analyze_feature_importance(collected_train_txt_file_lists,observation_stats,all_train_observations)
+    '''
+    print("\n---: Run Pipeline ---")
+    svm_classifier, train_obs, test_obs, test_preds, metrics = run_complete_svm_pipeline(collected_train_txt_file_lists,collected_train_excel_file_lists)
     
-    for i in range(1):
+    print("\n--- PIPELINE FINISHED ---")
+    print(f"Final test accuracy: {metrics['accuracy']:.3f}")
+    print(f"Final test F1-score: {metrics['f1']:.3f}")
+    '''
+    '''
+    
+    for i in range(5):
         observation_stats,all_train_observations,all_test_observations=prepare_train_data(collected_train_txt_file_lists,collected_train_excel_file_lists)
-        dead_model,alive_model,bayesian_model_without_threshold=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,True)
+        dead_model,alive_model,bayesian_without_threshold=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,True)
+    '''
+    #visualize_model_features_correlations(dead_model)
+    #visualize_model_features_correlations(alive_model)
+    #alive_corrs = extract_correlations_from_model(alive_model)
+    #dead_corrs  = extract_correlations_from_model(dead_model)
+    #plot_corr(alive_corrs[(0,1)], "Motile Model Cell [0,1]")
+    #plot_corr(dead_corrs[(0,1)],  "Non-motile Model Cell [0,1]")
+    
     '''
     print(f"--------printing stats for dead model------------------")
     print(f"{dead_model.mu}")
@@ -136,5 +217,7 @@ if __name__ == "__main__":
     print(f"{alive_model.mu}")
     #print(f"{alive_model.cov_matrix}")
     '''
+    #fisher_feature_analysis(collected_train_txt_file_lists,collected_train_excel_file_lists)
+    #_calculate_train_acc_summary()
     
     

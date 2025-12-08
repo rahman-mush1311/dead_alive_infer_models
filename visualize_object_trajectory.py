@@ -2,7 +2,7 @@ import subprocess
 import os
 import platform
 import shlex
-import numpy
+import numpy as np
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -59,3 +59,126 @@ def plot_confusion_matrix(curr_obs, obs_type,color, model_type):
         )
     
     plt.show()
+
+def extract_correlations_from_model(model):
+    """
+    Converts each trained cell's covariance matrix into a correlation matrix.
+    
+    Parameters:
+    - model : trained GridFeatureModel or GridDisplacementModel
+              (must have .cov_matrix and .n attributes)
+    
+    Returns:
+    - corr_matrices : dict {(row, col): correlation_matrix}
+    """
+    corr_matrices = {}
+    rows, cols = model.num_rows(), model.num_cols()
+
+    for r in range(rows):
+        for c in range(cols):
+            cov = model.cov_matrix[r][c]
+            n = model.n[r][c]
+
+            # skip cells with too few observations
+            if n < 2:
+                continue
+            if np.allclose(cov, 0):
+                continue
+
+            # compute per-feature std deviations
+            std = np.sqrt(np.diag(cov))
+            # avoid divide-by-zero
+            std[std == 0] = np.inf
+            corr = cov / np.outer(std, std)
+            corr_matrices[(r, c)] = corr
+
+    return corr_matrices
+    
+def visualize_model_features_correlations(curr_model):
+    
+    features = ['dx', 'dy', 'heading', 'turning', 'ax', 'ay']
+    for r in range(curr_model.num_rows()):
+        for c in range(curr_model.num_cols()):
+            if curr_model.n[r][c] > 1:
+                cov = curr_model.cov_matrix[r][c]
+                corr = np.corrcoef(cov)
+                sns.heatmap(corr, xticklabels=features, yticklabels=features,
+                        annot=True, vmin=-1, vmax=1, cmap='coolwarm')
+                plt.title(f'Correlation matrix cell [{r},{c}]')
+                plt.show()
+
+def plot_corr(corr, title):
+    features = ['dx', 'dy', 'heading', 'turning', 'ax', 'ay']
+    sns.heatmap(corr, vmin=-1, vmax=1, cmap='coolwarm',
+                xticklabels=features, yticklabels=features, annot=True)
+    plt.title(title)
+    plt.show()
+
+def visualize_auc_score(auc_pairs):
+    feature_names = ['dx', 'dy', 'heading', 'turning', 'ax', 'ay']
+    n_feat = len(feature_names)
+
+    # Initialize AUC matrix with NaNs
+    auc_mat = np.full((n_feat, n_feat), np.nan)
+
+    # Fill symmetric matrix: AUC for pair (i,j) goes in [i,j] and [j,i]
+    for fi, fj, auc in auc_pairs:
+        i = feature_names.index(fi)
+        j = feature_names.index(fj)
+        auc_mat[i, j] = auc
+        auc_mat[j, i] = auc
+
+    # Diagonal: set to 0.5 or NaN (no pair)
+    np.fill_diagonal(auc_mat, 0.5)
+
+    plt.figure(figsize=(6, 5))
+    sns.heatmap(auc_mat,vmin=0.5, vmax=1.0,annot=True, fmt=".2f",xticklabels=feature_names,yticklabels=feature_names)
+    plt.title("Feature-Pair AUC Matrix")
+    plt.tight_layout()
+    plt.show()
+
+def _plot_top_ranked_pair(X_all,y_all):
+    feature_names = ['dx', 'dy', 'heading', 'turning', 'ax', 'ay']
+
+    # Choose which two features to plot
+    i = feature_names.index('dy')   # X-axis
+    j = feature_names.index('ay')   # Y-axis
+    plt.figure(figsize=(6,5))
+    plt.scatter(X_all[y_all==0, i], X_all[y_all==0, j],alpha=0.3, color='red', label='Non-motile')
+    plt.scatter(X_all[y_all==1, i], X_all[y_all==1, j],alpha=0.3, color='green', label='Motile')
+
+    plt.xlabel(feature_names[i])
+    plt.ylabel(feature_names[j])
+    plt.legend()
+    plt.title(f'{feature_names[i]} vs {feature_names[j]}')
+    plt.tight_layout()
+    plt.show()
+
+def _svm_feature_coorelation (X, feature_names):
+    
+    # Compute correlation matrix
+    correlation_matrix = np.corrcoef(X.T)
+    
+    # Create heatmap
+    plt.figure(figsize=(16, 14))
+    sns.heatmap(correlation_matrix, 
+                xticklabels=feature_names, 
+                yticklabels=feature_names,
+                cmap='coolwarm', 
+                center=0,
+                vmin=-1, 
+                vmax=1,
+                annot=True,  # Show correlation values
+                fmt='.2f',
+                square=True,
+                cbar_kws={'label': 'Correlation'})
+    
+    plt.title('Feature Correlation Matrix', fontsize=16, pad=20)
+    plt.xticks(rotation=45, ha='right')
+    plt.yticks(rotation=0)
+    plt.tight_layout()
+    
+    plt.show()
+
+
+    
