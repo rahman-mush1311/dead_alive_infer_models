@@ -19,8 +19,8 @@ ALIVE_PDFS="alive_log_sum_pdfs"
 class BayesianModel:
     def __init__(self):
         
-        self.prior_dead=0.0
-        self.prior_alive=0.0
+        self.prior_dead=0.5
+        self.prior_alive=0.5
         
         self.filtered_thresholds = []
         self.best_accuracy_threshold = None
