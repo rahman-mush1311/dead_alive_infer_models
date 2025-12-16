@@ -1,10 +1,6 @@
 from driver_data_preprocessing import PreProcessingObservations
 from driver_training_gmm_processer import prepare_train_test_setup
-from GridBayesianModel import BayesianModel
-from driver_GridDisplacementGMM import GMMDisplacementModel
 from driver_frame_stat_collector import TrackStatisticsCollector
-from gmm_visualization import plot_gmm_overlay_grid
-from visualize_object_trajectory import plot_confusion_matrix
 
 import numpy
 import os

@@ -69,19 +69,24 @@ class GridDisplacementModel:
                     dx=dx/dframe
                     dy=dy/dframe
                     grid_pos.append((dx,dy))
-                    points.append((dx,dy))
                     
                 else:
                     print(f"distance of frame is getting invalid values for calculation: {dframe}")
-        
-        if len(points)>=1:
-            grid_dis=self.apply_normalization(grid_dis)
-        else:
-            print(f"it doesn't contain any observations")
                     
         return grid_dis
       
         
+    def set_normalization_params(self, mu, cov):
+        """
+        Set global normalization parameters.
+        
+        Parameters:
+        - mu: mean [dx_mean, dy_mean]
+        - std: standard deviation [dx_std, dy_std]
+        """
+        self.total_mu = numpy.array(mu)
+        self.total_cov_matrix = numpy.array(cov)
+    
     def apply_normalization(self,grid_displacements):
         '''
         we apply the normalization to each points located in the grid displacements lists.
@@ -104,7 +109,7 @@ class GridDisplacementModel:
                                 
         return grid_displacements
     
-    def calculate_parameters(self,grid_displacements):
+    def calculate_parameters(self,grid_normalized_displacements):
         '''
         we calculate the each cell's mu & covariance matrices. traverse over each cell one by one then calculates mu, covariance using the points in that cell. 
         - Parameters:
@@ -119,9 +124,9 @@ class GridDisplacementModel:
                 if n>1:
                     if n<30:
                         print(f"at grid {row}{col} obs are: {n} less than 30")
-                        assert n == len(grid_displacements[row][col]), f"Mismatch: {n} is but items are: {len(grid_displacements[row][col])}"        
+                        assert n == len(grid_normalized_displacements[row][col]), f"Mismatch: {n} is but items are: {len(grid_normalized_displacements[row][col])}"        
                           
-                    dxdy_items = numpy.array(grid_displacements[row][col])
+                    dxdy_items = numpy.array(grid_normalized_displacements[row][col])
                         
                     cell_mu = numpy.mean(dxdy_items, axis=0)
                     self.mu[row][col]=cell_mu
@@ -187,7 +192,7 @@ class GridDisplacementModel:
         
         return combined
     
-    def compute_probabilities(self, observations,dx_norm, dy_norm, sx_norm, sy_norm):
+    def compute_probabilities(self, observations):
         '''
         this calculates the probability of all objects using the given dead/alive model the calculation happens in probability(). for sanity checking purpose we don't consider if any object has only one set of coordinates.
         Parameters:
@@ -201,7 +206,6 @@ class GridDisplacementModel:
         -probabilities: a dictionary containing {object_id: {LOG_PDFS:list of log of probabilities}
         '''
         probabilities={}
-        empty_obs=0
         
         for obj_id, obs in observations.items():
             obj_probabilities=[]
@@ -212,27 +216,23 @@ class GridDisplacementModel:
                 dy = obs[i+1][1] - obs[i][1]
                 if dframe>0:
                     dx,dy=(dx/dframe),(dy/dframe)
-                    norm_dx = (dx - dx_norm) / sx_norm 
-                    norm_dy = (dy - dy_norm) / sy_norm
+                    total_std = numpy.sqrt(numpy.diag(self.total_cov_matrix))
+                    norm_displacement = (numpy.array([dx, dy]) - self.total_mu) / total_std
+                    norm_dx,norm_dy = norm_displacement
+                    
                     probs=self.probability(x, y, norm_dx, norm_dy)    
                     obj_probabilities.append(probs)
                 
                 else:
                     print(f"!!!WARNING!!! invalid frame distance {dframe} for {x,y} for {obj_id}")
-                    
-            if len(obs)-1<=0:
-                empty_obs+=1
-                print(f"!!! WARNING!!! {obj_id} has {len(obs)} therefore empty probs!!")
-            else:
-                assert len(obj_probabilities) == len(obs)-1 and len(obs)>0, f"Mismatch: {obj_id} has {len(obj_probabilities)} probabilities but {len(obs)-1} observations!"
             
             
             log_obj_probabilities=self.log_probability(obj_probabilities)
             
             if len(log_obj_probabilities)>=1:
                 probabilities[obj_id]={LOG_PDFS:log_obj_probabilities}
-                
-        #print(f"emptys are for the current sample file is: {empty_obs}")  
+            else:
+                print(f"Warning: No valid probabilities for obj_id={obj_id}")
         
         return probabilities
         

@@ -1,6 +1,7 @@
 from driver_data_preprocessing import PreProcessingObservations
 from GridBayesianModel import BayesianModel
 from driver_GridDisplacementGMM import GMMDisplacementModel
+from driver_GridDisplacementModel import GridDisplacementModel
 
 from gmm_visualization import plot_gmm_overlay_grid
 from visualize_object_trajectory import plot_confusion_matrix
@@ -267,19 +268,31 @@ def training_parameters(training_motile_obs,training_nonmotile_obs,observation_s
     curr_motile_displacements=motile_GMM.collect_displacements(training_motile_obs)
     curr_motile_normalized_displacements=motile_GMM.apply_normalization(curr_motile_displacements)
     motile_GMM.calculate_GMM_parameters(curr_motile_normalized_displacements)
-    #train_motile_obs_probs_motile_gmm=motile_GMM.compute_probabilities(training_motile_obs)
-    #train_nonmotile_obs_probs_motile_gmm=motile_GMM.compute_probabilities(training_nonmotile_obs)
     
     non_motile_GMM=GMMDisplacementModel()
     non_motile_GMM.set_normalization_params(observation_stats['mu'], observation_stats['cov'])
-    curr_nonmotile_displacements=motile_GMM.collect_displacements(training_nonmotile_obs)
-    curr_nonmotile_normalized_displacements=motile_GMM.apply_normalization(curr_nonmotile_displacements)
+    curr_nonmotile_displacements=non_motile_GMM.collect_displacements(training_nonmotile_obs)
+    curr_nonmotile_normalized_displacements=non_motile_GMM.apply_normalization(curr_nonmotile_displacements)
     non_motile_GMM.calculate_GMM_parameters(curr_nonmotile_normalized_displacements)
-    #train_motile_obs_probs_nonmotile_gmm=non_motile_GMM.compute_probabilities(training_motile_obs)
-    #train_nonmotile_obs_probs_nonmotile_gmm=non_motile_GMM.compute_probabilities(training_nonmotile_obs)
     
     
     return motile_GMM,non_motile_GMM
+
+def mgd_training_parameters(training_motile_obs,training_nonmotile_obs,observation_stats):
+    motile_mgd=GridDisplacementModel()
+    motile_mgd.set_normalization_params(observation_stats['mu'], observation_stats['cov'])
+    curr_motile_displacements=motile_mgd.calculate_displacements(training_motile_obs)
+    curr_motile_normalized_displacements=motile_mgd.apply_normalization(curr_motile_displacements)
+    motile_mgd.calculate_parameters(curr_motile_normalized_displacements)
+   
+    
+    non_motile_mgd=GridDisplacementModel()
+    non_motile_mgd.set_normalization_params(observation_stats['mu'], observation_stats['cov'])
+    curr_nonmotile_displacements=non_motile_mgd.calculate_displacements(training_nonmotile_obs)
+    curr_nonmotile_normalized_displacements=non_motile_mgd.apply_normalization(curr_nonmotile_displacements)
+    non_motile_mgd.calculate_parameters(curr_nonmotile_normalized_displacements)
+    
+    return motile_mgd, non_motile_mgd
 
 def probability_estimation(motile_gmm, non_motile_gmm, curr_obs):
     tracking_only_obs = {obj_id: obj_data[TRACKING_DATA]for obj_id, obj_data in curr_obs.items()}
@@ -297,6 +310,13 @@ def probability_estimation(motile_gmm, non_motile_gmm, curr_obs):
     print(f"First item: {first_item_non_motile}") 
     '''
     return curr_obs_probs_motile_gmm,curr_obs_probs_non_motile_gmm
+
+def probability_estimation_with_mgd(motile_mgd, non_motile_mgd, curr_obs):
+    tracking_only_obs = {obj_id: obj_data[TRACKING_DATA]for obj_id, obj_data in curr_obs.items()}
+    curr_obs_probs_motile_mgd=motile_mgd.compute_probabilities(tracking_only_obs)
+    curr_obs_probs_non_motile_mgd=non_motile_mgd.compute_probabilities(tracking_only_obs)
+   
+    return curr_obs_probs_motile_mgd,curr_obs_probs_non_motile_mgd
 
 def combine_dictionary_probs_labels(curr_obs_probs_motile_gmm,curr_obs_probs_non_motile_gmm,curr_obs):
     combined_log_probs = {}
@@ -349,6 +369,44 @@ def estimate_evaluate_gmm_models_with_train_data(train_text_files,train_excel_fi
     train_acc, train_F1, train_precision, train_recall=plot_confusion_matrix(train_probs_bayesin_model_without_threshold, "Train","Greens", "Bayesian")
     
     return motile_GMM,non_motile_GMM,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile
+
+def estimate_evaluate_mgd_models_with_train_data(train_text_files,train_excel_files):
+    train_observation_stats,all_train_observations,train_obs, train_motile, train_non_motile=prepare_train_data(train_text_files,train_excel_files)
+    training_motile_obs=get_only_tracking_data(all_train_observations,MOTILE)
+    training_nonmotile_obs=get_only_tracking_data(all_train_observations,NOTMOTILE)
+            
+    motile_mgd,non_motile_mgd=mgd_training_parameters(training_motile_obs,training_nonmotile_obs,train_observation_stats)
+    train_motile_probs, train_non_motile_probs=probability_estimation_with_mgd(motile_mgd,non_motile_mgd, all_train_observations)
+    combined_probs_train=combine_dictionary_probs_labels(train_motile_probs, train_non_motile_probs,all_train_observations)
+    
+    bayesian_model_without_threshold=BayesianModel()  
+    bayesian_model_without_threshold.calculate_prior(training_nonmotile_obs,training_motile_obs)
+    train_probs_bayesin_model_without_threshold=bayesian_model_without_threshold.sum_log_probabilities(combined_probs_train)
+    train_acc, train_F1, train_precision, train_recall=plot_confusion_matrix(train_probs_bayesin_model_without_threshold, "Train","Greens", "Bayesian")
+    
+    return motile_mgd,non_motile_mgd,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile
+
+def evaluate_mgd_models_with_test_data(fold_test_text_file,fold_test_excel_file,motile_mgd, non_motile_mgd,bayesian_model_without_threshold):
+    
+    file_processor=PreProcessingObservations()
+    tracking_test_observations=file_processor.load_observations(fold_test_text_file)
+    labeles_test_loaded=file_processor.load_labels(fold_test_excel_file)
+    labeled_test_observations=file_processor.label_observations_by_expert_labels(fold_test_text_file,fold_test_excel_file,tracking_test_observations,labeles_test_loaded)
+    
+    test_motile = sum(1 for obj_data in labeled_test_observations.values() 
+                   if obj_data[TRUE_LABEL] == MOTILE)
+    test_non_motile = len(labeled_test_observations) - test_motile
+    
+    file_processor.compute_global_stats(labeled_test_observations)
+    motile_mgd.set_normalization_params(file_processor.total_mu, file_processor.total_cov_matrix)
+    non_motile_mgd.set_normalization_params(file_processor.total_mu, file_processor.total_cov_matrix)
+    
+    test_motile_probs, test_non_motile_probs=probability_estimation(motile_mgd, non_motile_mgd, labeled_test_observations)
+    combined_probs_test=combine_dictionary_probs_labels(test_motile_probs, test_non_motile_probs,labeled_test_observations)
+    test_probs_bayesin_model_without_threshold=bayesian_model_without_threshold.sum_log_probabilities(combined_probs_test)
+    test_acc, test_F1, test_precision, test_recall=plot_confusion_matrix(test_probs_bayesin_model_without_threshold, "Test","Greens", "Bayesian")
+    
+    return test_acc, test_F1, test_precision, test_recall, len(labeled_test_observations), test_motile, test_non_motile
     
 def prepare_train_test_setup():
     
@@ -367,7 +425,7 @@ def prepare_train_test_setup():
         for fold_data in splits:
             fold_num = fold_data['fold']
             test_pop = fold_data['test_population']
-        
+            #print(test_pop)
             train_text_files = fold_data['train_text']
             train_excel_files= fold_data['train_excel']
             
@@ -376,11 +434,13 @@ def prepare_train_test_setup():
             test_excel_file = fold_data['test_excel']
         
             print(f"\nFold {fold_num}:")
-            motile_GMM,non_motile_GMM,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile=estimate_evaluate_gmm_models_with_train_data(train_text_files,train_excel_files)
+            #motile_GMM,non_motile_GMM,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile=estimate_evaluate_gmm_models_with_train_data(train_text_files,train_excel_files)
+            motile_mgd,non_motile_mgd,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile=estimate_evaluate_mgd_models_with_train_data(train_text_files,train_excel_files)
             print(f"Train size: {train_obs}, Train_motile: {train_motile}, Train non-motile: {train_non_motile}")
             print(f"Train Acc: {train_acc}, Train F1: {train_F1}, Train Recall: {train_recall}, Train Precision: {train_precision}")
            
-            test_acc, test_F1, test_precision, test_recall,test_obs, test_motile, test_non_motile=evaluate_gmm_models_with_test_data(test_text_file,test_excel_file,motile_GMM, non_motile_GMM,bayesian_model_without_threshold)
+            #test_acc, test_F1, test_precision, test_recall,test_obs, test_motile, test_non_motile=evaluate_gmm_models_with_test_data(test_text_file,test_excel_file,motile_GMM, non_motile_GMM,bayesian_model_without_threshold)
+            test_acc, test_F1, test_precision, test_recall,test_obs, test_motile, test_non_motile=evaluate_mgd_models_with_test_data(test_text_file,test_excel_file,motile_mgd, non_motile_mgd,bayesian_model_without_threshold)
             print(f"Test size: {test_obs}, Test_motile: {test_motile}, Test non-motile: {test_non_motile}")
             print(f"Test Acc: {test_acc}, Test F1: {test_F1}, Test Recall: {test_recall}, Test Precision: {test_precision}")
             fold_results = {
@@ -404,7 +464,8 @@ def prepare_train_test_setup():
             'test_accuracy': test_acc,
             'test_f1_score': test_F1,
             'test_recall': test_recall,
-            'test_precision': test_precision
+            'test_precision': test_precision,
+            'test_population': test_pop
             }
         
             all_results.append(fold_results)
@@ -443,3 +504,4 @@ def prepare_train_test_setup():
             'Train_Precision_Std': numpy.std(train_precisions),
         }
         pprint.pprint( final_stats)
+        

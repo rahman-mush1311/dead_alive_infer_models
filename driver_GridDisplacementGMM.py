@@ -4,7 +4,7 @@ import math
 from sklearn.mixture import GaussianMixture
 
 # String literals to constants
-TRUE_LABELS = "true_labels"
+TRUE_LABEL = "true_label"
 LOG_PDFS = "log_pdfs"
 
 MOVING = 1
