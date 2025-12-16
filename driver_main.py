@@ -1,116 +1,146 @@
 from driver_data_preprocessing import PreProcessingObservations
-from driver_data_preprocessing_utils import run_hourly_graph,get_visualization_ids,run_tracked_videos_by_filename,infer_with_trained_model,run_trajectory_plot,run_outlier_model,collect_infer_data,prepare_train_infer_data,calculate_class_probability
-from visualize_object_trajectory import plot_object_trajectories,plot_confusion_matrix
-
-from driver_GridDisplacementModel import GridDisplacementModel
-from GridOutlierModel import OutlierModelEvaluation
+from driver_training_gmm_processer import prepare_train_test_setup
 from GridBayesianModel import BayesianModel
-
+from driver_GridDisplacementGMM import GMMDisplacementModel
+from driver_frame_stat_collector import TrackStatisticsCollector
+from gmm_visualization import plot_gmm_overlay_grid
+from visualize_object_trajectory import plot_confusion_matrix
 
 import numpy
+import os
+import glob
+import math
+from collections import Counter
+from PIL import Image
+import matplotlib.pyplot
+from collections import Counter
+from matplotlib.patches import Ellipse
+import matplotlib.transforms as transforms
+import pprint
+import matplotlib.pyplot as plt
 
-TRUE_LABELS = "true_labels"
+TRUE_LABEL = "true_label"
+PREDICTED_LABEL = "predicted_label"
 LOG_PDFS="log_pdfs"
+TRACKING_DATA = "tracking_data"
+DEAD_PDFS="dead_log_sum_pdfs"
+ALIVE_PDFS="alive_log_sum_pdfs"
 
-DEAD='d'
-ALIVE='a'
-MIXED='m'
-TOX='t'
 
-MOVING=1
-NOTMOVING=0   
+MOTILE=1
+NOTMOTILE=0   
 
-TRAIN="train"
-INFER="infer"
-SEARCH="search"
+def collect_files(fileForTrain,typeOffile):
+    """
+    takes the folder path from user and returns the filelists contained inside that folder. 
+    Parameters:
+    fileForTrain: string containing either train/ infer
+    typeOffile: string either .txt or .xlsx
+    Returns:
+    file_list- a list containing the filename along with the folder location
+    """
+    
+    user_base_dir = input(f"Enter the base directory where your {fileForTrain} data folder is located: ")
+    if not os.path.isdir(user_base_dir):
+        raise ValueError(f"{user_base_dir} is not a valid directory")
+        
+    else:
+        if typeOffile==".txt":
+            file_list = [
+                os.path.join(user_base_dir, f)
+                for f in os.listdir(user_base_dir)
+                if os.path.isfile(os.path.join(user_base_dir, f)) and f.lower().endswith(".txt")
+            ]
+        elif typeOffile==".xlsx":
+            file_list = [
+                os.path.join(user_base_dir, f)
+                for f in os.listdir(user_base_dir)
+                if os.path.isfile(os.path.join(user_base_dir, f)) and f.lower().endswith(".xlsx")
+            ]
+        else:
+            raise ValueError("Unsupported file type. Please use '.txt' or '.xlsx'")
+
+    return file_list
+    
+def count_lables(curr_obs_dict):
+    curr_obs_label_counter = Counter(data[TRUE_LABEL] for data in curr_obs_dict.values())
+    return curr_obs_label_counter[MOTILE],curr_obs_label_counter[NOTMOTILE],
+
+def prepare_train_data(collected_text_file_lists,collected_excel_file_lists):
+    
+    observation_stats ={}
+    
+    all_train_observations={}
+    all_test_observations={}
+    
+    total_obs_size=0
+    total_train, total_test = 0, 0
+    motile_train, nonmotile_train = 0, 0
+    motile_test, nonmotile_test = 0, 0
+    
+    
+    for text_file, excel_file in zip(collected_train_txt_file_lists,collected_train_excel_file_lists):
+        print(f" txt file is: {text_file},{excel_file}")
+        file_processor=PreProcessingObservations()
+        tracking_observations=file_processor.load_observations(text_file)
+        labeles_loaded=file_processor.load_labels(excel_file)
+        labeled_observations=file_processor.label_observations_by_expert_labels(text_file,excel_file,tracking_observations,labeles_loaded)
+        
+        file_processor.print_track_statistics(labeled_observations, text_file)
+        file_processor.print_track_statistics_by_label(labeled_observations, text_file)
+        #---File wise summary---
+    '''
+        curr_motile_obs,curr_non_motile_obs=count_lables(labeled_observations)
+        print(f"{text_file} has {len(tracking_observations)}")
+        print(f"{excel_file} has {len(labeles_loaded)}")
+        print(f"final labeled obs size is: {len(labeled_observations)}") 
+        print(f"it has {curr_motile_obs} motile and {curr_non_motile_obs} non-motile")
+        
+    '''
+        
+    '''    
+        train_observations,test_observations=file_processor.prepare_train_test(labeled_observations,train_ratio=0.8)
+        if len(train_observations)>0:
+            file_processor.compute_global_stats(train_observations)
+            all_train_observations[text_file]=train_observations
+            observation_stats[text_file]={'mu': file_processor.total_mu, 'cov': file_processor.total_cov_matrix}
+        if len(test_observations)>0:
+            all_test_observations[text_file]=test_observations
+    '''
+    '''    
+        curr_train_motile_obs,curr_train_non_motile_obs=count_lables(train_observations)
+        curr_test_motile_obs,curr_test_non_motile_obs=count_lables(test_observations)
+        
+        # --- accumulate counts ---
+        total_train += len(train_observations)
+        total_test  += len(test_observations)
+        motile_train += curr_train_motile_obs
+        nonmotile_train += curr_train_non_motile_obs
+        motile_test += curr_test_motile_obs
+        nonmotile_test += curr_test_non_motile_obs
+        total_obs_size += len(labeled_observations)       
+    
+    # --- final summary ---
+    print(f"\n==== Training/Test Summary ====")
+    print(f"Total train objects: {total_train}")
+    print(f"  Motile (alive):     {motile_train}")
+    print(f"  Non-motile (dead):  {nonmotile_train}")
+    print(f"Total test objects:  {total_test}")
+    print(f"  Motile (alive):     {motile_test}")
+    print(f"  Non-motile (dead):  {nonmotile_test}")
+    print(f"===============================\n")
+    '''   
+    return observation_stats,all_train_observations,all_test_observations
+
+
+
     
 if __name__ == "__main__":
-    #run_outlier_for_infer()
-
-    #run_bayesian_model()
-    #run_tracked_videos_by_filename()
-    
-    user_test_performance=False  
-    user_file_selected_mode=INFER
-    user_selected_mode = input("Do you want to test on the toxic data? (y/n): ").strip().lower()
-    
-    if user_selected_mode == 'y':
-    
-        user_file_mode= int(input(
-                """If you select see the performance of the test set on non toxic elmenet multiple sample press:
-                1 → yes
-                2 → no
-                Enter your choice: """
-            ))
-            
-        user_model_mode = int(input(
-                """If you want to train model press:
-                1 → outlier model trainning
-                2 → bayesian model trainning
-                3 → bayesian model trainning with boundary adjustment
-                Enter your choice: """
-            ))
-            
-        user_test_performance_mode = int(input(
-                """If you want see the performance of the test set on non toxic elmenets press:
-                1 → yes
-                2 → no
-                Enter your choice: """
-            ))
-            
-        if user_test_performance_mode==1:
-            user_test_performance=True
-        else:
-            user_test_performance=False
-        if user_file_mode ==1:
-            user_file_selected_mode = INFER
-        else:
-            user_file_selected_mode = SEARCH
-        all_infer_obs_labeled=infer_with_trained_model(user_model_mode, user_test_performance,user_file_selected_mode)        
-        user_visual_mode = input("Do you want visualize trajectory of the predicted tox data (y/n): ").strip().lower()
-        
-        if user_visual_mode== 'y':
-            while True:
-                command = input("type 'e' to quit): ").strip().lower()            
-                if command == "e":
-                    print("Exiting loop. Goodbye!")
-                    break
-                else:
-                    visualize_objects = int(input(
-                        """If you want to visualize:
-                        1 → Correctly predicted MOVING objects
-                        2 → Correctly predicted NOTMOVING objects
-                        3 → Falsely predicted objects
-                        Enter your choice: """
-                    ))
-
-                    if visualize_objects==1:
-                        moving_obs_ids= get_visualization_ids(all_infer_obs_labeled, MOVING, MOVING)
-                        plot_object_trajectories(all_infer_obs_labeled,moving_obs_ids,user_model_mode)
-                    elif visualize_objects==2:
-                        non_moving_obs_ids= get_visualization_ids(all_infer_obs_labeled, NOTMOVING, NOTMOVING)
-                        plot_object_trajectories(all_infer_obs_labeled,non_moving_obs_ids,user_model_mode)
-                    else:
-                        moving_mislabeled_obs_ids= get_visualization_ids(all_infer_obs_labeled, MOVING, NOTMOVING)
-                        plot_object_trajectories(all_infer_obs_labeled,moving_mislabeled_obs_ids,user_model_mode)
-                        non_moving_mislabeled_obs_ids= get_visualization_ids(all_infer_obs_labeled, NOTMOVING, MOVING)
-                        plot_object_trajectories(all_infer_obs_labeled,non_moving_mislabeled_obs_ids,user_model_mode)
-        else:
-            print(f"user doesn't want to see the predicted tox objects tracks!")
-    else:
-        print(f"user wants to visualize per file trajectory related data!")
-        run_hourly_graph()
-        '''
-        while True:
-            command = input("Enter command (type 'exit' to quit): ").strip().lower()
-            
-            if command == "exit":
-                print("Exiting loop. Goodbye!")
-                break
-            else:
-                print(f"going to plot trajectory function!")
-                run_trajectory_plot()
-        '''
-    
-    
-    
+    #collected_train_txt_file_lists=collect_files("train text files",".txt")
+    #collected_train_excel_file_lists=collect_files("train excel files",".xlsx")
+    #observation_stats,all_train_observations,all_test_observations=prepare_train_data(collected_train_txt_file_lists,collected_train_excel_file_lists)
+    #dead_model,alive_model,bayesian_model_without_threshold=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,False,True)
+    prepare_train_test_setup()
+    #stat_collector=TrackStatisticsCollector()
+    #collector, all_data=stat_collector.collector_frame_stat_data() 
+    #stat_collector.call_frame_stat_visualizor()

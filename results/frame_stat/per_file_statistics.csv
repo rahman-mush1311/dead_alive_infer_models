@@ -1,0 +1,12 @@
+population,file,total_objects,motile_count,notmotile_count,mean_length,median_length,max_length,min_length
+week-old,3-19-25_Image_2_trackStore.txt,64,63,1,120.0,108.0,319,23
+week-old,3-19-25_Image_3_trackStore.txt,81,74,7,75.29629629629629,66.0,192,37
+week-old,3-19-25_Image_4_trackStore.txt,56,50,6,75.92857142857143,69.5,150,40
+week-old,3-19-25_Image_7_trackStore.txt,94,85,9,64.54255319148936,59.5,134,42
+day-old,8-14-25_0Hr_2200_T0_Image_2_trackStore.txt,63,61,2,235.36507936507937,230.0,499,87
+day-old,8-14-25_0Hr_2200_T0_Image_3_trackStore.txt,72,72,0,272.0,258.0,616,102
+day-old,8-14-25_0Hr_2200_T0_Image_4_trackStore.txt,25,25,0,246.8,249.0,426,121
+day-old,8-14-25_0Hr_2200_T0_Image_5_trackStore.txt,24,23,1,218.75,221.0,360,118
+day-old,8-14-25_0Hr_2200_T0_Image_6_trackStore.txt,23,23,0,265.69565217391306,259.0,447,150
+mixed,1-6-25_Image_1_1_trackStore.txt,308,2,306,98.53896103896103,96.5,151,62
+mixed,1-6-25_Image_1_2_trackStore.txt,263,2,261,100.75665399239544,100.0,153,71
