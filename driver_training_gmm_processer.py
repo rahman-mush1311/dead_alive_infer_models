@@ -8,6 +8,7 @@ from visualize_object_trajectory import plot_confusion_matrix
 
 import numpy
 import os
+import random
 import glob
 import math
 from collections import Counter
@@ -211,6 +212,23 @@ def create_unified_lovo_cv_splits(collected_data):
 def count_lables(curr_obs_dict):
     curr_obs_label_counter = Counter(data[TRUE_LABEL] for data in curr_obs_dict.values())
     return curr_obs_label_counter[MOTILE],curr_obs_label_counter[NOTMOTILE]
+
+def balance_training_observations(train_obs):
+    """Balance classes by undersampling majority"""
+    motile_obs = {k: v for k, v in train_obs.items() if v[TRUE_LABEL] == MOTILE}
+    non_motile_obs = {k: v for k, v in train_obs.items() if v[TRUE_LABEL] == NOTMOTILE}
+    
+    if len(motile_obs) == 0 or len(non_motile_obs) == 0:
+        return train_obs
+    
+    min_size = min(len(motile_obs), len(non_motile_obs))
+    
+    if len(motile_obs) > min_size:
+        motile_obs = dict(random.sample(list(motile_obs.items()), min_size))
+    if len(non_motile_obs) > min_size:
+        non_motile_obs = dict(random.sample(list(non_motile_obs.items()), min_size))
+    
+    return {**motile_obs, **non_motile_obs}
     
 def prepare_train_data(fold_train_text_file_lists,fold_train_excel_file_lists):
     
@@ -228,7 +246,8 @@ def prepare_train_data(fold_train_text_file_lists,fold_train_excel_file_lists):
         curr_motile_obs,curr_non_motile_obs=count_lables(labeled_observations)
         for obj_id, obj_data in labeled_observations.items():
                 all_train_observations[obj_id] = obj_data
-      
+    
+    all_train_observations = balance_training_observations(all_train_observations)
     train_motile = sum(1 for obj_data in all_train_observations.values() 
                    if obj_data[TRUE_LABEL] == MOTILE)
     train_non_motile = len(all_train_observations) - train_motile
@@ -267,13 +286,13 @@ def training_parameters(training_motile_obs,training_nonmotile_obs,observation_s
     motile_GMM.set_normalization_params(observation_stats['mu'], observation_stats['cov'])
     curr_motile_displacements=motile_GMM.collect_displacements(training_motile_obs)
     curr_motile_normalized_displacements=motile_GMM.apply_normalization(curr_motile_displacements)
-    motile_GMM.calculate_GMM_parameters(curr_motile_normalized_displacements)
+    motile_GMM.calculate_GMM_parameters(curr_motile_normalized_displacements,1)
     
     non_motile_GMM=GMMDisplacementModel()
     non_motile_GMM.set_normalization_params(observation_stats['mu'], observation_stats['cov'])
     curr_nonmotile_displacements=non_motile_GMM.collect_displacements(training_nonmotile_obs)
     curr_nonmotile_normalized_displacements=non_motile_GMM.apply_normalization(curr_nonmotile_displacements)
-    non_motile_GMM.calculate_GMM_parameters(curr_nonmotile_normalized_displacements)
+    non_motile_GMM.calculate_GMM_parameters(curr_nonmotile_normalized_displacements,0)
     
     
     return motile_GMM,non_motile_GMM
@@ -422,7 +441,7 @@ def prepare_train_test_setup():
         #pprint.pprint(splits)
         all_results = []
         
-        for fold_data in splits:
+        for fold_data in splits[5:7]:
             fold_num = fold_data['fold']
             test_pop = fold_data['test_population']
             #print(test_pop)
@@ -434,13 +453,13 @@ def prepare_train_test_setup():
             test_excel_file = fold_data['test_excel']
         
             print(f"\nFold {fold_num}:")
-            #motile_GMM,non_motile_GMM,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile=estimate_evaluate_gmm_models_with_train_data(train_text_files,train_excel_files)
-            motile_mgd,non_motile_mgd,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile=estimate_evaluate_mgd_models_with_train_data(train_text_files,train_excel_files)
+            motile_GMM,non_motile_GMM,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile=estimate_evaluate_gmm_models_with_train_data(train_text_files,train_excel_files)
+            #motile_mgd,non_motile_mgd,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile=estimate_evaluate_mgd_models_with_train_data(train_text_files,train_excel_files)
             print(f"Train size: {train_obs}, Train_motile: {train_motile}, Train non-motile: {train_non_motile}")
             print(f"Train Acc: {train_acc}, Train F1: {train_F1}, Train Recall: {train_recall}, Train Precision: {train_precision}")
            
-            #test_acc, test_F1, test_precision, test_recall,test_obs, test_motile, test_non_motile=evaluate_gmm_models_with_test_data(test_text_file,test_excel_file,motile_GMM, non_motile_GMM,bayesian_model_without_threshold)
-            test_acc, test_F1, test_precision, test_recall,test_obs, test_motile, test_non_motile=evaluate_mgd_models_with_test_data(test_text_file,test_excel_file,motile_mgd, non_motile_mgd,bayesian_model_without_threshold)
+            test_acc, test_F1, test_precision, test_recall,test_obs, test_motile, test_non_motile=evaluate_gmm_models_with_test_data(test_text_file,test_excel_file,motile_GMM, non_motile_GMM,bayesian_model_without_threshold)
+            #test_acc, test_F1, test_precision, test_recall,test_obs, test_motile, test_non_motile=evaluate_mgd_models_with_test_data(test_text_file,test_excel_file,motile_mgd, non_motile_mgd,bayesian_model_without_threshold)
             print(f"Test size: {test_obs}, Test_motile: {test_motile}, Test non-motile: {test_non_motile}")
             print(f"Test Acc: {test_acc}, Test F1: {test_F1}, Test Recall: {test_recall}, Test Precision: {test_precision}")
             fold_results = {

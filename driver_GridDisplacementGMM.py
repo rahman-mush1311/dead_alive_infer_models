@@ -111,7 +111,7 @@ class GMMDisplacementModel:
     
     
     
-    def calculate_GMM_parameters(self, grid_normalized_displacements):
+    def calculate_GMM_parameters(self, grid_normalized_displacements, model_type):
         # Fit GMM for each cell
         print("\n=== Fitting GMMs per Cell ===")
         for row in range(self.num_rows()):
@@ -124,18 +124,41 @@ class GMMDisplacementModel:
                         cell_data = numpy.array(grid_normalized_displacements[row][col])
                         
                         # Fit GMM
-                        gmm = GaussianMixture(
+                        if model_type==1:
+                            '''
+                            gmm = GaussianMixture(
                             n_components=self.n_components,
                             covariance_type='full',
                             max_iter=100,
                             n_init=10,
                             random_state=42
-                        )
-                        gmm.fit(cell_data)
+                            )
+                            '''
+                            motile_gmm = GaussianMixture(
+                                n_components=self.n_components,           # REDUCED from probably 5+
+                                covariance_type='tied',   # CHANGED from 'full'
+                                reg_covar=0.1,          # ADDED regularization
+                                max_iter=100,            # LIMIT iterations
+                                random_state=42          # For reproducibility
+                                )
+                            motile_gmm.fit(cell_data)
                         
-                        self.gmm[row][col] = gmm
-                        print(f"  Cell [{row}][{col}]: Fitted GMM with {n_samples} samples, "
-                              f"weights={gmm.weights_}")
+                            self.gmm[row][col] = motile_gmm
+                            print(f"  Cell [{row}][{col}]: MOTILE Fitted GMM with {n_samples} samples, "
+                                f"weights={motile_gmm.weights_}")
+                        else:
+                            non_motile_gmm = GaussianMixture(
+                                n_components=1,           
+                                covariance_type='full',
+                                reg_covar=0.1,
+                                max_iter=100,
+                                random_state=42
+                                )
+                            non_motile_gmm.fit(cell_data)
+                        
+                            self.gmm[row][col] = non_motile_gmm
+                            print(f"  Cell [{row}][{col}]: NON MOTILE Fitted GMM with {n_samples} samples, "
+                                f"weights={non_motile_gmm.weights_}")
                     
                     except Exception as e:
                         print(f"  Cell [{row}][{col}]: Failed to fit GMM - {e}")
