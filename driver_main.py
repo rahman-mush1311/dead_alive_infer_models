@@ -1,6 +1,7 @@
 from driver_data_preprocessing import PreProcessingObservations
-#from driver_training_gmm_processer import prepare_train_test_setup
-from training_processor_combined_model import prepare_train_test_setup_for_combined
+from driver_training_gmm_processer import prepare_train_test_setup
+from feature_model_combined_processor import train_test_setup_for_combined_model
+#from training_processor_combined_model import prepare_train_test_setup_for_combined
 
 from driver_frame_stat_collector import TrackStatisticsCollector
 from GridBayesianModel import BayesianModel
@@ -63,10 +64,6 @@ def collect_files(fileForTrain,typeOffile):
             raise ValueError("Unsupported file type. Please use '.txt' or '.xlsx'")
 
     return file_list
-    
-def count_lables(curr_obs_dict):
-    curr_obs_label_counter = Counter(data[TRUE_LABEL] for data in curr_obs_dict.values())
-    return curr_obs_label_counter[MOTILE],curr_obs_label_counter[NOTMOTILE],
 
 def prepare_train_data(collected_text_file_lists,collected_excel_file_lists):
     
@@ -75,31 +72,13 @@ def prepare_train_data(collected_text_file_lists,collected_excel_file_lists):
     all_train_observations={}
     all_test_observations={}
     
-    total_obs_size=0
-    total_train, total_test = 0, 0
-    motile_train, nonmotile_train = 0, 0
-    motile_test, nonmotile_test = 0, 0
-    
     
     for text_file, excel_file in zip(collected_train_txt_file_lists,collected_train_excel_file_lists):
         print(f" txt file is: {text_file},{excel_file}")
         file_processor=PreProcessingObservations()
         tracking_observations=file_processor.load_observations(text_file)
         labeles_loaded=file_processor.load_labels(excel_file)
-        labeled_observations=file_processor.label_observations_by_expert_labels(text_file,excel_file,tracking_observations,labeles_loaded)
-        
-        #file_processor.print_track_statistics(labeled_observations, text_file)
-        #file_processor.print_track_statistics_by_label(labeled_observations, text_file)
-        #---File wise summary---
-        '''
-        curr_motile_obs,curr_non_motile_obs=count_lables(labeled_observations)
-        print(f"{text_file} has {len(tracking_observations)}")
-        print(f"{excel_file} has {len(labeles_loaded)}")
-        print(f"final labeled obs size is: {len(labeled_observations)}") 
-        print(f"it has {curr_motile_obs} motile and {curr_non_motile_obs} non-motile")
-        
-        '''
-        
+        labeled_observations=file_processor.label_observations_by_expert_labels(text_file,excel_file,tracking_observations,labeles_loaded)      
       
         train_observations,test_observations=file_processor.prepare_train_test(labeled_observations,train_ratio=0.8)
         if len(train_observations)>0:
@@ -113,29 +92,6 @@ def prepare_train_data(collected_text_file_lists,collected_excel_file_lists):
             for obj_id, obj_data in test_observations.items():
                 all_test_observations[obj_id] = obj_data
     
-    '''    
-        curr_train_motile_obs,curr_train_non_motile_obs=count_lables(train_observations)
-        curr_test_motile_obs,curr_test_non_motile_obs=count_lables(test_observations)
-        
-        # --- accumulate counts ---
-        total_train += len(train_observations)
-        total_test  += len(test_observations)
-        motile_train += curr_train_motile_obs
-        nonmotile_train += curr_train_non_motile_obs
-        motile_test += curr_test_motile_obs
-        nonmotile_test += curr_test_non_motile_obs
-        total_obs_size += len(labeled_observations)       
-    
-    # --- final summary ---
-    print(f"\n==== Training/Test Summary ====")
-    print(f"Total train objects: {total_train}")
-    print(f"  Motile (alive):     {motile_train}")
-    print(f"  Non-motile (dead):  {nonmotile_train}")
-    print(f"Total test objects:  {total_test}")
-    print(f"  Motile (alive):     {motile_test}")
-    print(f"  Non-motile (dead):  {nonmotile_test}")
-    print(f"===============================\n")
-    '''
     global_processor = PreProcessingObservations()
 
     global_processor.compute_global_stats(all_train_observations)
@@ -169,7 +125,8 @@ def combine_dictionary_probs_labels(curr_obs_probs_motile_gmm,curr_obs_probs_non
     
 if __name__ == "__main__":
     #prepare_train_test_setup()
-    prepare_train_test_setup_for_combined()
+    #prepare_train_test_setup_for_combined()
+    train_test_setup_for_combined_model()
     '''
     for i in range(5):
         collected_train_txt_file_lists=collect_files("train text files",".txt")
@@ -214,4 +171,5 @@ if __name__ == "__main__":
     #stat_collector=TrackStatisticsCollector()
     #collector, all_data=stat_collector.collector_frame_stat_data() 
     #stat_collector.call_frame_stat_visualizor()
+    
     '''

@@ -92,6 +92,8 @@ class GridGMMModel:
         if std_y < 1e-10:
             std_y = 1.0
         
+        points = []
+        
         for obj_id, obs in observations.items():
             for i in range(len(obs) - 1):
                 dframe = obs[i+1][2] - obs[i][2]
@@ -111,8 +113,12 @@ class GridGMMModel:
                     # Store
                     grid_dis[grid_row][grid_col].append((dx_norm, dy_norm))
                     self.n[grid_row][grid_col] += 1
+                    points.append((dx_norm, dy_norm))
                 else:
                     print(f"Warning: Invalid frame distance {dframe} for object {obj_id}")
+        
+        if len(points) < 1:
+            print("Warning: No valid displacements found")
         
         return grid_dis
     
@@ -165,7 +171,7 @@ class GridGMMModel:
         
         return best_k
     
-    def fit_gmm_per_cell(self, grid_normalized_displacements):
+    def fit_gmm_per_cell(self, grid_displacements):
         """
         Fit GMM for each grid cell with optimal component selection.
         
@@ -188,7 +194,7 @@ class GridGMMModel:
                     continue
                 
                 # Convert to numpy array
-                data = numpy.array(grid_normalized_displacements[row][col])
+                data = numpy.array(grid_displacements[row][col])
                 
                 # Select optimal number of components
                 optimal_k = self.select_optimal_n_components(data)
@@ -213,7 +219,7 @@ class GridGMMModel:
                     print(f"Cell [{row}][{col}]: GMM fitting failed - {e}")
                     self.gmm_params[row][col] = None
     
-    def calculate_parameters(self, grid_normalized_displacements):
+    def calculate_parameters(self, grid_displacements):
         """
         Calculate GMM parameters for each grid cell.
         Wrapper for fit_gmm_per_cell() to match API of other models.
@@ -223,7 +229,7 @@ class GridGMMModel:
         grid_displacements : list of list of lists
             [rows][cols] -> list of (dx_norm, dy_norm) tuples
         """
-        self.fit_gmm_per_cell(grid_normalized_displacements)
+        self.fit_gmm_per_cell(grid_displacements)
     
     def match_components_euclidean(self, means1, means2):
         """
@@ -458,35 +464,70 @@ class GridGMMModel:
                 combined_means = numpy.zeros((target_k, 2))
                 combined_covs = numpy.zeros((target_k, 2, 2))
                 
-                # For each component position, weighted average across models
+                # Match components using greedy assignment PER MODEL to prevent reuse
+                # For each model, match its K components to reference K components
+                matched_components = [[] for _ in range(target_k)]  # matched_components[k] = list of (model_idx, comp_idx)
+                
+                for model_idx, param in enumerate(adjusted_params):
+                    # Compute distance matrix: ref_comp x model_comp
+                    distance_matrix = numpy.zeros((target_k, target_k))
+                    for ref_k in range(target_k):
+                        for model_k in range(target_k):
+                            distance_matrix[ref_k, model_k] = numpy.linalg.norm(
+                                ref_means[ref_k] - param['means'][model_k]
+                            )
+                    
+                    # Greedy assignment: for each reference component, find best available model component
+                    used_model_comps = set()
+                    assignments = {}  # ref_k -> model_k
+                    
+                    for ref_k in range(target_k):
+                        # Find closest unused model component
+                        best_model_k = None
+                        best_dist = float('inf')
+                        
+                        for model_k in range(target_k):
+                            if model_k not in used_model_comps:
+                                dist = distance_matrix[ref_k, model_k]
+                                if dist < best_dist:
+                                    best_dist = dist
+                                    best_model_k = model_k
+                        
+                        if best_model_k is not None:
+                            assignments[ref_k] = best_model_k
+                            used_model_comps.add(best_model_k)
+                            matched_components[ref_k].append((model_idx, best_model_k))
+                    
+                    # Sanity check: should have K assignments
+                    if len(assignments) != target_k:
+                        print(f"Warning: Model {model_idx} only matched {len(assignments)}/{target_k} components")
+                
+                # Now average matched components
                 for k in range(target_k):
-                    # Collect this component from all models
-                    # (After adjustment, all models have same K, but components may not be aligned)
+                    matches = matched_components[k]  # List of (model_idx, comp_idx) tuples
                     
-                    # Simple approach: match each model's components to reference model
-                    ref_mean = ref_means[k]
-                    
-                    w_sum = 0.0
+                    # Weighted average using ONLY model weights (not component weights)
+                    # This treats all components equally, weighted only by model size
                     mean_sum = numpy.zeros(2)
                     cov_sum = numpy.zeros((2, 2))
+                    weight_sum_unnorm = 0.0  # Sum of component weights (for renormalization)
                     
-                    for i, param in enumerate(adjusted_params):
-                        # Find closest component in this model to reference
-                        distances = [numpy.linalg.norm(param['means'][j] - ref_mean) 
-                                    for j in range(target_k)]
-                        closest_idx = numpy.argmin(distances)
+                    for model_idx, comp_idx in matches:
+                        param = adjusted_params[model_idx]
+                        model_weight = p_values[model_idx]  # Model's weight by n_obs
+                        comp_weight = param['weights'][comp_idx]  # Component's weight in GMM
                         
-                        # Weight by model's n_obs and component's weight
-                        w = p_values[i] * param['weights'][closest_idx]
+                        # Accumulate for mean/cov using model weight only
+                        mean_sum += model_weight * param['means'][comp_idx]
+                        cov_sum += model_weight * param['covariances'][comp_idx]
                         
-                        w_sum += w
-                        mean_sum += w * param['means'][closest_idx]
-                        cov_sum += w * param['covariances'][closest_idx]
+                        # Accumulate component weights for final GMM weight
+                        weight_sum_unnorm += model_weight * comp_weight
                     
-                    if w_sum > 0:
-                        combined_weights[k] = w_sum
-                        combined_means[k] = mean_sum / w_sum
-                        combined_covs[k] = cov_sum / w_sum
+                    # Store averaged parameters
+                    combined_means[k] = mean_sum  # Already weighted by p_values (sum to 1)
+                    combined_covs[k] = cov_sum    # Already weighted by p_values (sum to 1)
+                    combined_weights[k] = weight_sum_unnorm  # Will be renormalized later
                 
                 # Renormalize weights
                 if combined_weights.sum() > 0:
@@ -549,6 +590,12 @@ class GridGMMModel:
                 else:
                     print(f"Warning: Invalid frame distance {dframe} for object {obj_id} at position ({x},{y})")
             
+            if len(obs) - 1 <= 0:
+                empty_obs += 1
+                print(f"Warning: Object {obj_id} has {len(obs)} observations, no displacements")
+            else:
+                assert len(obj_probabilities) == len(obs) - 1, \
+                    f"Mismatch: {obj_id} has {len(obj_probabilities)} probabilities but {len(obs)-1} displacements"
             
             log_obj_probabilities = self.log_probability(obj_probabilities)
             
@@ -578,13 +625,14 @@ class GridGMMModel:
         n = self.n[grid_row][grid_col]
         
         if cell_gmm is None or n < 1:
-            print(f"Warning: Cell [{grid_row}][{grid_col}] has no GMM fitted")
+            # Don't print warning every time, just return default
             return 1e-10  # Small non-zero value
         
         # GMM probability: sum over all components
         point = numpy.array([dx_norm, dy_norm]).reshape(1, -1)
         
         total_prob = 0.0
+        component_probs = []
         
         for k in range(cell_gmm['n_components']):
             weight = cell_gmm['weights'][k]
@@ -593,14 +641,25 @@ class GridGMMModel:
             
             if weight > 1e-10:  # Skip zero-weight components
                 try:
-                    mvn = scipy.stats.multivariate_normal(mean=mean, cov=cov)
-                    component_prob = mvn.pdf(point)
-                    total_prob += weight * component_prob
-                except:
-                    # If covariance is singular, skip this component
-                    pass
+                    # Check for singular covariance
+                    if numpy.linalg.det(cov) < 1e-10:
+                        # Regularize singular covariance
+                        cov = cov + numpy.eye(2) * 1e-6
+                    
+                    mvn = scipy.stats.multivariate_normal(mean=mean, cov=cov, allow_singular=True)
+                    component_prob = mvn.pdf(point.flatten())
+                    weighted_prob = weight * component_prob
+                    total_prob += weighted_prob
+                    component_probs.append(weighted_prob)
+                except Exception as e:
+                    # If this component fails, skip it
+                    continue
         
-        return max(total_prob, 1e-10)  # Avoid exact zero
+        # Ensure we return a reasonable value
+        if total_prob <= 0 or numpy.isnan(total_prob) or numpy.isinf(total_prob):
+            return 1e-10
+        
+        return total_prob
     
     def log_probability(self, curr_pdf_list):
         """
@@ -627,34 +686,62 @@ class GridGMMModel:
         
         return log_values
     
+    def combine_computed_probability_with_labels(self, curr_log_pdf_dict, 
+                                                  dis_prob_with_label, 
+                                                  obs_dict_with_labels):
+        """
+        Combine log probabilities with true labels.
+        
+        Parameters:
+        -----------
+        curr_log_pdf_dict : dict
+            {obj_id: {LOG_PDFS: [...]}}
+        dis_prob_with_label : dict
+            Accumulator dictionary
+        obs_dict_with_labels : dict
+            {obj_id: {TRACKING_DATA: ..., TRUE_LABEL: ...}}
+            
+        Returns:
+        --------
+        dis_prob_with_label : dict
+            Updated dictionary
+        """
+        for obj_id, values in curr_log_pdf_dict.items():
+            if obj_id not in dis_prob_with_label:
+                dis_prob_with_label[obj_id] = {}
+            
+            dis_prob_with_label[obj_id][LOG_PDFS] = values[LOG_PDFS]
+            dis_prob_with_label[obj_id][TRUE_LABEL] = obs_dict_with_labels[obj_id][TRUE_LABEL]
+        
+        return dis_prob_with_label
     
     def find_grid_cell(self, x, y):
-        '''
-        find the where a particular displacement dx/dy should be assigned but it uses the starting x,y to calculate them.
+        """
+        Find grid cell for a given (x, y) position.
+        
         Parameters:
-        x - int value of x-axis coordinate
-        y - int value of y-axis coordinate
+        -----------
+        x, y : float
+            Position coordinates
+            
         Returns:
-        grid_row,grid_col- int value of 0<=grid_row, grid_col<5
-        '''
-        grid_row = y * self.num_rows() // self.max_y
-        grid_col = x * self.num_cols() // self.max_x
+        --------
+        grid_row, grid_col : int, int
+            Grid cell indices
+        """
+        grid_row = int(y * self.num_rows() // self.max_y)
+        grid_col = int(x * self.num_cols() // self.max_x)
+        
+        # Handle boundary cases
+        grid_row = min(grid_row, self.num_rows() - 1)
+        grid_col = min(grid_col, self.num_cols() - 1)
+        
         return grid_row, grid_col
-
+    
     def num_rows(self):
-        '''
-        returns the number of grid rows in the model.
-        
-        Returns:
-        -len(self.n): int rows in the grid model.
-        '''
-        return len(self.n)
-
+        """Return number of grid rows."""
+        return self.grid_rows
+    
     def num_cols(self):
-        '''
-        returns the number of grid collums in the model.
-        
-        Returns:
-        len(self.n[0]): int cols in the grid model.
-        '''
-        return len(self.n[0])
+        """Return number of grid columns."""
+        return self.grid_cols

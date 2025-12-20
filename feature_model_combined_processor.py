@@ -1,8 +1,6 @@
 from driver_data_preprocessing import PreProcessingObservations
+from driver_GridFeatureModel import GridFeatureModel
 from GridBayesianModel import BayesianModel
-from driver_GridGMM import GridGMMModel
-
-from gmm_visualization import plot_gmm_overlay_grid
 from visualize_object_trajectory import plot_confusion_matrix
 
 import numpy
@@ -205,6 +203,23 @@ def create_unified_lovo_cv_splits(collected_data):
     
     return folds
 
+def prepare_train_set(fold_train_text_files, fold_train_excel_files):
+
+    all_train_observations={}
+    observation_stats ={}
+
+    for text_file, excel_file in zip(fold_train_text_files,fold_train_excel_files):
+        file_processor=PreProcessingObservations()
+        tracking_observations=file_processor.load_observations(text_file)
+        labeles_loaded=file_processor.load_labels(excel_file)
+        labeled_observations=file_processor.label_observations_by_expert_labels(text_file,excel_file,tracking_observations,labeles_loaded)
+        
+        file_processor.compute_global_stats(labeled_observations)
+        all_train_observations[text_file]=labeled_observations
+        observation_stats[text_file]={'mu': file_processor.total_mu, 'cov': file_processor.total_cov_matrix}
+   
+    return observation_stats,all_train_observations
+
 def motile_model_training(collected_file_lists,fold_observation_stats,fold_train_observations):
 
     motile_models_params = {}
@@ -220,14 +235,14 @@ def motile_model_training(collected_file_lists,fold_observation_stats,fold_train
             filtered_curr_moving_obs={obj_id: obj_data[TRACKING_DATA] for obj_id, obj_data in curr_train_obs.items() if obj_data[TRUE_LABEL] == MOTILE}
             
             if len(curr_obs_stats)!=0 and len(filtered_curr_moving_obs)!=0:
-                grid_gmm_motile_model=GridGMMModel()
-                grid_gmm_motile_model.total_mu=curr_obs_stats['mu']
-                grid_gmm_motile_model.total_cov_matrix=curr_obs_stats['cov']
+                grid_mgd_motile_model=GridFeatureModel()
+                grid_mgd_motile_model.total_mu=curr_obs_stats['mu']
+                grid_mgd_motile_model.total_cov_matrix=curr_obs_stats['cov']
                 print(f"$$$$ motile model training for single file {os.path.basename(file)}")
-                curr_grid_displacements=grid_gmm_motile_model.calculate_displacements(filtered_curr_moving_obs)
-                grid_gmm_motile_model.calculate_parameters(curr_grid_displacements)
+                curr_grid_displacements=grid_mgd_motile_model.calculate_displacements(filtered_curr_moving_obs)
+                grid_mgd_motile_model.calculate_parameters(curr_grid_displacements)
         
-                motile_models_params[file] = grid_gmm_motile_model
+                motile_models_params[file] = grid_mgd_motile_model
             else:
                 if len(curr_obs_stats)==0:
                     print(f"!!!!!!!Warning!!!!!!!!: normalization content empty for {file} {len(curr_obs_stats)}.")
@@ -249,7 +264,7 @@ def non_motile_model_training(collected_file_lists,fold_observation_stats,fold_t
             
             filtered_curr_nonmoving_obs={obj_id: obj_data[TRACKING_DATA] for obj_id, obj_data in curr_train_obs.items() if obj_data[TRUE_LABEL] == NOTMOTILE}
             if len(curr_obs_stats)!=0 and len(filtered_curr_nonmoving_obs)!=0:
-                grid_non_motile_model=GridGMMModel()
+                grid_non_motile_model=GridFeatureModel()
                 grid_non_motile_model.total_mu=curr_obs_stats['mu']
                 grid_non_motile_model.total_cov_matrix=curr_obs_stats['cov']
                 print(f"$$$$ non-motile model training for single file {os.path.basename(file)}")
@@ -274,7 +289,7 @@ def non_motile_model_training(collected_file_lists,fold_observation_stats,fold_t
     
 def combine_trained_models(collected_file_lists, curr_models_params):
     
-    combined_model = GridGMMModel()
+    combined_model = GridFeatureModel()
     
     # Track the models
     calculated_models = []
@@ -316,7 +331,7 @@ def get_sample_file_stats(curr_obs_stats):
         sx_norm, sy_norm = numpy.sqrt(numpy.diag(curr_obs_stats['cov']))
         
     return contains_valid_stats,dx_norm,dy_norm,sx_norm,sy_norm
-    
+
 def computed_probability_with_labels(curr_log_pdf_dict,dis_prob_with_label,obs_dict_with_labels):
     """
     Combines log-probability values from a current dictionary into a master dictionary with true labels.    
@@ -354,8 +369,9 @@ def calculate_class_probability(combined_model,collected_file_lists,fold_observa
             if contains_valid_stats and curr_tracking_obs:
                       
                 calculator = combined_model
-                
-                curr_log_pdf_dict= calculator.compute_probabilities(curr_tracking_obs, dx_norm, dy_norm, sx_norm, sy_norm)      
+                calculator.total_mu=curr_obs_stats['mu']
+                calculator.total_cov_matrix=curr_obs_stats['cov']
+                curr_log_pdf_dict= calculator.compute_probabilities(curr_tracking_obs)      
                 displacement_probabilities_labeled=computed_probability_with_labels(curr_log_pdf_dict,displacement_probabilities_labeled,curr_obs_for_probability_calculation)
                 
             elif not curr_tracking_obs:
@@ -396,58 +412,54 @@ def combine_dictionary_non_motile_motile_probs(train_obs_probs_non_motile_model,
         else:
             print(f"!!!WARNING!!! {obj_id} have mismatching true labels, the motile model calculated dictionary has {moving_entry[TRUE_LABEL]} non-motile {non_moving_entry[TRUE_LABEL]}")
     return combined_log_probs,motile_train_obs_probs,non_motile_train_obs_probs
-    
-def per_fold_train_data(fold_train_text_file_list, fold_train_excel_file_list):
-
-    observation_stats ={}   
-    all_train_observations={}
-    
-    
-    for text_file, excel_file in zip(fold_train_text_file_list, fold_train_excel_file_list):
-    
-        print(f" txt file is: {os.path.basename(text_file)}, excel file is: {os.path.basename(excel_file)}")
-        file_processor=PreProcessingObservations()
-        tracking_observations=file_processor.load_observations(text_file)
-        labeles_loaded=file_processor.load_labels(excel_file)
-        train_labeled_observations=file_processor.label_observations_by_expert_labels(text_file,excel_file,tracking_observations,labeles_loaded)
-        
-        if len(train_labeled_observations)>0:
-            file_processor.compute_global_stats(train_labeled_observations)
-            all_train_observations[text_file]=train_labeled_observations
-            observation_stats[text_file]={'mu': file_processor.total_mu, 'cov': file_processor.total_cov_matrix}
-           
-    return observation_stats,all_train_observations
 
 def per_fold_test_evaluate(fold_test_text_file, fold_test_excel_file, combined_motile_model, combined_non_motile_model, bayesian_model_without_threshold):
+    
+    motile_probs_labeled={}
+    non_motile_probs_labeled={}
     
     file_processor=PreProcessingObservations()
     tracking_observations=file_processor.load_observations(fold_test_text_file)
     labeles_loaded=file_processor.load_labels(fold_test_excel_file)
     test_labeled_observations=file_processor.label_observations_by_expert_labels(fold_test_text_file,fold_test_excel_file,tracking_observations,labeles_loaded)
-        
+    '''
+    all_test_observations[fold_test_text_file]=test_labeled_observations
     if len(test_labeled_observations)>0:
         file_processor.compute_global_stats(test_labeled_observations)
     
-    dx_norm, dy_norm = file_processor.total_mu
-    sx_norm, sy_norm = numpy.sqrt(numpy.diag(file_processor.total_cov_matrix))
+    test_observation_stats[fold_test_text_file]={'mu': file_processor.total_mu, 'cov': file_processor.total_cov_matrix}
+    test_probs_motile_model=calculate_class_probability(combined_motile_model,fold_test_text_file,test_observation_stats,all_test_observations)
+    test_probs_non_motile_model=calculate_class_probability(combined_non_motile_model,fold_test_text_file,test_observation_stats,all_test_observations)
     
-    curr_tracking_obs=get_dictionary_of_tracking_data(test_labeled_observations)
-    motile_calculator = combined_motile_model         
-    motile_test_probs= motile_calculator.compute_probabilities(curr_tracking_obs, dx_norm, dy_norm, sx_norm, sy_norm)    
-    non_motile_calculator = combined_non_motile_model         
-    non_motile_test_probs= non_motile_calculator.compute_probabilities(curr_tracking_obs, dx_norm, dy_norm, sx_norm, sy_norm)
     
-    for obj_id in motile_test_probs:
-        label = test_labeled_observations[obj_id][TRUE_LABEL]
-        motile_test_probs[obj_id][TRUE_LABEL] = label
-        non_motile_test_probs[obj_id][TRUE_LABEL] = label
-    
-    fold_test_probs,_,_=combine_dictionary_non_motile_motile_probs(motile_test_probs,non_motile_test_probs)
+    fold_test_probs,_,_=combine_dictionary_non_motile_motile_probs(test_probs_motile_model,test_probs_non_motile_model)
     test_probs_bayesin_model_without_threshold=bayesian_model_without_threshold.sum_log_probabilities(fold_test_probs)
     plot_confusion_matrix(test_probs_bayesin_model_without_threshold, "Test","Greens", "Bayesian")
+    '''
+    file_processor.compute_global_stats(test_labeled_observations)
+    print(f"{file_processor.total_mu}, { file_processor.total_cov_matrix}")
     
-        
-def prepare_train_test_setup_for_combined():
+    motile_calculator=combined_motile_model
+    motile_calculator.total_mu=file_processor.total_mu
+    motile_calculator.total_cov_matrix=file_processor.total_cov_matrix
+    
+    test_tracking_obs=get_dictionary_of_tracking_data(test_labeled_observations)
+    test_motile_log_pdf_dict= motile_calculator.compute_probabilities(test_tracking_obs)
+    motile_probs_labeled=computed_probability_with_labels(test_motile_log_pdf_dict,motile_probs_labeled,test_labeled_observations)
+    
+    non_motile_calculator=combined_non_motile_model
+    non_motile_calculator.total_mu=file_processor.total_mu
+    non_motile_calculator.total_cov_matrix=file_processor.total_cov_matrix
+    test_non_motile_log_pdf_dict= motile_calculator.compute_probabilities(test_tracking_obs)
+    non_motile_probs_labeled=computed_probability_with_labels(test_non_motile_log_pdf_dict,non_motile_probs_labeled,test_labeled_observations)
+    
+    combined_test_probs,_,_=combine_dictionary_non_motile_motile_probs(non_motile_probs_labeled,motile_probs_labeled)
+    test_probs_bayesin_model_without_threshold=bayesian_model_without_threshold.sum_log_probabilities(combined_test_probs)
+    #test_probs_bayesin_model_with_threshold=bayesian_model_without_threshold.predict_with_bayesian_threshold(test_probs_bayesin_model_without_threshold)
+    plot_confusion_matrix(test_probs_bayesin_model_without_threshold, "Test","Greens", "Bayesian")
+    #print(f"{len(combined_test_probs)},{len(test_motile_log_pdf_dict)}, {len(motile_probs_labeled)}, {len(test_non_motile_log_pdf_dict)}, {len(non_motile_probs_labeled)}")
+    
+def train_test_setup_for_combined_model():
     
     user_base_dir = input(f"Enter the base directory where your data folder is located: ")
     if not os.path.isdir(user_base_dir):
@@ -459,10 +471,9 @@ def prepare_train_test_setup_for_combined():
     
         splits = create_unified_lovo_cv_splits(collected_file_lists)
         #pprint.pprint(splits)
-        
         all_results = []
         
-        for fold_data in splits:
+        for fold_data in splits[:9]:
             fold_num = fold_data['fold']
             test_pop = fold_data['test_population']
             #print(test_pop)
@@ -474,97 +485,32 @@ def prepare_train_test_setup_for_combined():
             test_excel_file = fold_data['test_excel']
         
             print(f"\nFold {fold_num}:")
-            fold_observation_stats,fold_train_observations=per_fold_train_data(train_text_files,train_excel_files)
-            '''
-            motile_count = sum(1 for obj_data in fold_train_observations.values() 
-                       for f_obs in obj_data.values() 
-                       if f_obs[TRUE_LABEL] == MOTILE)
-            non_motile_count = sum(1 for obj_data in fold_train_observations.values() 
-                           for f_obs in obj_data.values() 
-                           if f_obs[TRUE_LABEL] == NOTMOTILE)
-    
-            print(f"Training data: {motile_count} motile, {non_motile_count} non-motile")
-            print(f"Imbalance ratio: {non_motile_count / (motile_count + 1e-10):.2f}:1")
-            '''
-            fold_motile_models=motile_model_training(train_text_files,fold_observation_stats,fold_train_observations)
-            fold_non_motile_models=non_motile_model_training(train_text_files,fold_observation_stats,fold_train_observations)
             
-            print("====MOTILE COMBINED======")
-            fold_motile_model=combine_trained_models(train_text_files,fold_motile_models)
-            print("====NON-MOTILE COMBINED======")
-            fold_non_motile_model=combine_trained_models(train_text_files,fold_non_motile_models)
+            fold_observation_stats,fold_train_observations=prepare_train_set(train_text_files, train_excel_files)
+            fold_motile_model_params=motile_model_training(train_text_files,fold_observation_stats,fold_train_observations)
+            fold_non_motile_model_params=non_motile_model_training(train_text_files,fold_observation_stats,fold_train_observations)
             
-            motile_valid_cells = sum(1 for row in fold_motile_model.gmm_params 
-                             for cell in row if cell is not None)
-            non_motile_valid_cells = sum(1 for row in fold_non_motile_model.gmm_params 
-                                 for cell in row if cell is not None)
-    
-            total_cells = fold_motile_model.grid_rows * fold_motile_model.grid_cols
-    
-            print(f"Motile model: {motile_valid_cells}/{total_cells} cells have GMMs")
-            print(f"Non-motile model: {non_motile_valid_cells}/{total_cells} cells have GMMs")
-    
-            # Check component counts
-            for row in range(fold_motile_model.grid_rows):
-                for col in range(fold_motile_model.grid_cols):
-                    m_cell = fold_motile_model.gmm_params[row][col]
-                    nm_cell = fold_non_motile_model.gmm_params[row][col]
+            combined_motile_model=combine_trained_models(train_text_files,fold_motile_model_params)
+            combined_non_motile_model=combine_trained_models(train_text_files,fold_non_motile_model_params)
             
-                    m_k = m_cell['n_components'] if m_cell else 0
-                    nm_k = nm_cell['n_components'] if nm_cell else 0
+            train_probs_motile_model=calculate_class_probability(combined_motile_model,train_text_files,fold_observation_stats,fold_train_observations)
+            train_probs_non_motile_model=calculate_class_probability(combined_non_motile_model,train_text_files,fold_observation_stats,fold_train_observations)
             
-                    print(f"Cell [{row}][{col}]: Motile K={m_k}, Non-motile K={nm_k}")
+            train_combined_log_probs,motile_train_obs_probs,non_motile_train_obs_probs=combine_dictionary_non_motile_motile_probs(train_probs_non_motile_model,train_probs_motile_model)
             
-            print("=====Class Probability Computation======")
-            fold_train_probs_with_motile=calculate_class_probability(fold_motile_model,train_text_files,fold_observation_stats,fold_train_observations)
-            fold_train_probs_with_non_motile=calculate_class_probability(fold_non_motile_model,train_text_files,fold_observation_stats,fold_train_observations)
-            fold_train_probs,fold_motile_probs,fold_non_motile_probs=combine_dictionary_non_motile_motile_probs(fold_train_probs_with_non_motile,fold_train_probs_with_motile)
-            print("=====Class Probability Computation Ended======")
-            '''
-            for obj_id in list(fold_train_probs.keys())[:5]:  # Check first 5 objects
-                alive_sum = numpy.sum(fold_train_probs[obj_id][ALIVE_PDFS])
-                dead_sum = numpy.sum(fold_train_probs[obj_id][DEAD_PDFS])
-                true_label = "MOTILE" if fold_train_probs[obj_id][TRUE_LABEL] == MOTILE else "NON-MOTILE"
-        
-                print(f"{obj_id} (True: {true_label}):")
-                print(f"  Motile log-sum: {alive_sum:.2f}")
-                print(f"  Non-motile log-sum: {dead_sum:.2f}")
-                print(f"  Difference: {alive_sum - dead_sum:.2f}")
-            '''    
-            print("=====Bayesian Classification ======")
-            bayesian_model_without_threshold=BayesianModel()  
-            bayesian_model_without_threshold.calculate_prior(fold_non_motile_probs,fold_motile_probs)
-            '''
-            print(f"Prior probabilities:")
-            print(f"  P(Motile) = {bayesian_model_without_threshold.prior_alive:.4f}")
-            print(f"  P(Non-motile) = {bayesian_model_without_threshold.prior_dead:.4f}")
-            '''
-            train_probs_bayesin_model_without_threshold=bayesian_model_without_threshold.sum_log_probabilities(fold_train_probs)
+            bayesian_model_with_threshold=BayesianModel()
+            bayesian_model_with_threshold.calculate_prior(non_motile_train_obs_probs,motile_train_obs_probs)
+            train_probs_bayesin_model_without_threshold=bayesian_model_with_threshold.sum_log_probabilities(train_combined_log_probs)
+            #bayesian_model_with_threshold.find_optimal_threshold(train_probs_bayesin_model_without_threshold)
+            #train_probs_bayesin_model_with_threshold=bayesian_model_with_threshold.predict_with_bayesian_threshold(train_probs_bayesin_model_without_threshold)
             plot_confusion_matrix(train_probs_bayesin_model_without_threshold, "Train","Greens", "Bayesian")
-            print("=====Fold Testing ======")
-            per_fold_test_evaluate(test_text_file,test_excel_file,fold_motile_model,fold_non_motile_model,bayesian_model_without_threshold)
             
-          
-        '''
-            motile_GMM,non_motile_GMM,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile=estimate_evaluate_gmm_models_with_train_data(train_text_files,train_excel_files)
-            #motile_mgd,non_motile_mgd,bayesian_model_without_threshold, train_acc, train_F1, train_precision, train_recall, train_obs, train_motile, train_non_motile=estimate_evaluate_mgd_models_with_train_data(train_text_files,train_excel_files)
-            print(f"Train size: {train_obs}, Train_motile: {train_motile}, Train non-motile: {train_non_motile}")
-            print(f"Train Acc: {train_acc}, Train F1: {train_F1}, Train Recall: {train_recall}, Train Precision: {train_precision}")
-           
-            test_acc, test_F1, test_precision, test_recall,test_obs, test_motile, test_non_motile=evaluate_gmm_models_with_test_data(test_text_file,test_excel_file,motile_GMM, non_motile_GMM,bayesian_model_without_threshold)
-            #test_acc, test_F1, test_precision, test_recall,test_obs, test_motile, test_non_motile=evaluate_mgd_models_with_test_data(test_text_file,test_excel_file,motile_mgd, non_motile_mgd,bayesian_model_without_threshold)
-            print(f"Test size: {test_obs}, Test_motile: {test_motile}, Test non-motile: {test_non_motile}")
-            print(f"Test Acc: {test_acc}, Test F1: {test_F1}, Test Recall: {test_recall}, Test Precision: {test_precision}")
+            per_fold_test_evaluate(test_text_file, test_excel_file,combined_motile_model,combined_non_motile_model,bayesian_model_with_threshold)
+            
+            '''
             fold_results = {
             'fold_number': fold_num,
-            
-            # Observation Counts
-            'total_train_obs': train_obs,
-            'total_test_obs': test_obs,
-            'motile_train_obs_size': train_motile,
-            'non_motile_train_obs_size': train_non_motile,
-            'motile_test_obs_size': test_motile,
-            'non_motile_test_obs_size': test_non_motile,
+   
             
             # Training Metrics
             'train_accuracy': train_acc,
