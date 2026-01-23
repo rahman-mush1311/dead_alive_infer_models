@@ -1,16 +1,17 @@
 from driver_data_preprocessing import PreProcessingObservations
 from driver_training_inference import run_bayesian_model,fisher_feature_analysis,_calculate_train_acc_summary,analyze_feature_importance
 from driver_train_infer_svm import run_complete_svm_pipeline,run_multiple_svm_experiments,run_feature_statistics_test,run_feature_statistics_test_per_file,feature_correlation_analysis
-from visualize_object_trajectory import visualize_model_features_correlations,extract_correlations_from_model,plot_corr
+from visualize_object_trajectory import visualize_model_features_correlations,extract_correlations_from_model,plot_corr,visualize_grid_displacements,visualize_grid_displacement_points,visualize_grid_positions
 #from GridBayesianModel import BayesianModel
-
+from driver_GridDisplacementModel import GridDisplacementModel
 
 import numpy
 import os
 import math
+import pprint
 from collections import Counter
 from PIL import Image
-import matplotlib.pyplot
+import matplotlib.pyplot as plt
 from collections import Counter
 from matplotlib.patches import Ellipse
 import matplotlib.transforms as transforms
@@ -79,14 +80,14 @@ def prepare_train_data(collected_text_file_lists,collected_excel_file_lists):
         tracking_observations=file_processor.load_observations(text_file)
         labeles_loaded=file_processor.load_labels(excel_file)
         labeled_observations=file_processor.label_observations_by_expert_labels(text_file,excel_file,tracking_observations,labeles_loaded)
-        
+        '''
         #---File wise summary---
         curr_motile_obs,curr_non_motile_obs=count_lables(labeled_observations)
         print(f"{text_file} has {len(tracking_observations)}")
         print(f"{excel_file} has {len(labeles_loaded)}")
         print(f"final labeled obs size is: {len(labeled_observations)}") 
         print(f"it has {curr_motile_obs} motile and {curr_non_motile_obs} non-motile")
-        
+        '''
 
         
         
@@ -97,7 +98,7 @@ def prepare_train_data(collected_text_file_lists,collected_excel_file_lists):
             observation_stats[text_file]={'mu': file_processor.total_mu, 'cov': file_processor.total_cov_matrix}
         if len(test_observations)>0:
             all_test_observations[text_file]=test_observations
-    '''    
+        
         curr_train_motile_obs,curr_train_non_motile_obs=count_lables(train_observations)
         curr_test_motile_obs,curr_test_non_motile_obs=count_lables(test_observations)
         
@@ -119,8 +120,8 @@ def prepare_train_data(collected_text_file_lists,collected_excel_file_lists):
     print(f"  Motile (alive):     {motile_test}")
     print(f"  Non-motile (dead):  {nonmotile_test}")
     print(f"===============================\n")
-    '''   
-    return observation_stats,all_train_observations,all_test_observations
+       
+    return observation_stats,all_train_observations,all_test_observations,total_train,total_test,motile_train,nonmotile_train,motile_test,nonmotile_test
 
 def run_multiple_experiments(collected_train_txt_file_lists,observation_stats,all_train_observations, all_test_observations, n_runs=10):
     """
@@ -150,15 +151,15 @@ def run_multiple_experiments(collected_train_txt_file_lists,observation_stats,al
     summary = analyzer.compute_statistics()
     
     # Generate LaTeX table
-    analyzer.generate_latex_table()
-    analyzer.save_latex_table('results_table.tex')
+    #analyzer.generate_latex_table()
+    #analyzer.save_latex_table('results_table.tex')
     
     # Visualizations
-    analyzer.plot_results(save_path='multi_run_boxplots.png')
-    analyzer.plot_run_comparison(save_path='multi_run_comparison.png')
+    #analyzer.plot_results(save_path='multi_run_boxplots.png')
+    #analyzer.plot_run_comparison(save_path='multi_run_comparison.png')
     
     # Export raw data
-    analyzer.export_to_csv('all_runs_data.csv')
+    #analyzer.export_to_csv('all_runs_data.csv')
     
     # Get reporting strings
     print(f"\n{'='*80}")
@@ -173,20 +174,84 @@ def run_multiple_experiments(collected_train_txt_file_lists,observation_stats,al
 
 
 
+def prepare_single_file_for_visulaztion(collected_text_file_lists,collected_excel_file_lists):
+    all_observations={}
+    for text_file, excel_file in zip(collected_train_txt_file_lists,collected_train_excel_file_lists):
+        print(f" txt file is: {text_file},{excel_file}")
+        file_processor=PreProcessingObservations()
+        tracking_observations=file_processor.load_observations(text_file)
+        labeles_loaded=file_processor.load_labels(excel_file)
+        labeled_observations=file_processor.label_observations_by_expert_labels(text_file,excel_file,tracking_observations,labeles_loaded)
+        for obj_id, obj_data in labeled_observations.items():
+            all_observations[obj_id] = obj_data      
+        #train_observations,test_observations=file_processor.prepare_train_test(labeled_observations,train_ratio=0.8)
+        
+    return all_observations
 
+def plot_organism_counts(motile_count, nonmotile_count, save_path=None):
+    """
+    Plot bar chart comparing motile and non-motile organism counts.
     
+    Args:
+        motile_count: Number of motile organisms
+        nonmotile_count: Number of non-motile organisms
+        save_path: Optional path to save the figure
+    """
+    fig, ax = plt.subplots(figsize=(8, 6))
+    
+    categories = ['Motile', 'Non-motile']
+    counts = [motile_count, nonmotile_count]
+    colors = ['red', 'blue']
+    
+    bars = ax.bar(categories, counts, color=colors, alpha=0.7, edgecolor='black', linewidth=1.5)
+    
+    # Add count labels on top of bars
+    for bar in bars:
+        height = bar.get_height()
+        ax.text(bar.get_x() + bar.get_width()/2., height,
+                f'{int(height)}',
+                ha='center', va='bottom', fontsize=12, fontweight='bold')
+    
+    # Formatting
+    ax.set_ylabel('Count', fontsize=12)
+    ax.set_title('Motile vs Non-motile Organism Counts', fontsize=14, pad=15)
+    ax.grid(True, alpha=0.3, axis='y')
+    ax.set_axisbelow(True)
+    
+    # Add total count as text
+    total = motile_count + nonmotile_count
+    ax.text(0.95, 0.95, f'Total: {total}', 
+            transform=ax.transAxes, ha='right', va='top',
+            fontsize=11, bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+    
+    plt.tight_layout()
+    
+    if save_path:
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        print(f"Figure saved to {save_path}")
+    
+    plt.show()
     
 if __name__ == "__main__":
-    #_calculate_train_acc_summary()
+ 
+    
     collected_train_txt_file_lists=collect_files("train text files",".txt")
     collected_train_excel_file_lists=collect_files("train excel files",".xlsx")
+    '''
+    labeled_observations=prepare_single_file_for_visulaztion(collected_train_txt_file_lists,collected_train_excel_file_lists)
+    grid_dis_vis=GridDisplacementModel()
+    grid_dis=grid_dis_vis.calculate_displacements_with_labels(labeled_observations)
+    #visualize_grid_displacements(grid_dis)
+    #visualize_grid_displacement_points(grid_dis)
+    visualize_grid_positions(grid_dis)
+    '''
     #run_multiple_svm_experiments(collected_train_txt_file_lists,collected_train_excel_file_lists)
     #run_feature_statistics_test(collected_train_txt_file_lists,collected_train_excel_file_lists)
-    observation_stats,all_train_observations,all_test_observations=prepare_train_data(collected_train_txt_file_lists,collected_train_excel_file_lists)
-    #dead_model,alive_model=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,True)
+    #observation_stats,all_train_observations,all_test_observations=prepare_train_data(collected_train_txt_file_lists,collected_train_excel_file_lists)
+    #dead_model,alive_model,bayesian_without_threshold=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,True)
     #run_feature_statistics_test_per_file(collected_train_txt_file_lists,all_train_observations)
     #feature_correlation_analysis(collected_train_txt_file_lists,collected_train_excel_file_lists)
-    analyze_feature_importance(collected_train_txt_file_lists,observation_stats,all_train_observations)
+    #analyze_feature_importance(collected_train_txt_file_lists,observation_stats,all_train_observations)
     '''
     print("\n---: Run Pipeline ---")
     svm_classifier, train_obs, test_obs, test_preds, metrics = run_complete_svm_pipeline(collected_train_txt_file_lists,collected_train_excel_file_lists)
@@ -195,12 +260,74 @@ if __name__ == "__main__":
     print(f"Final test accuracy: {metrics['accuracy']:.3f}")
     print(f"Final test F1-score: {metrics['f1']:.3f}")
     '''
-    '''
+    
+    all_results=[]
     
     for i in range(5):
-        observation_stats,all_train_observations,all_test_observations=prepare_train_data(collected_train_txt_file_lists,collected_train_excel_file_lists)
-        dead_model,alive_model,bayesian_without_threshold=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,True)
-    '''
+        observation_stats,all_train_observations,all_test_observations,train_obs,test_obs,train_motile,train_non_motile,test_motile,test_motile=prepare_train_data(collected_train_txt_file_lists,collected_train_excel_file_lists)
+        train_acc,train_f1,train_rec,train_pre,test_acc,test_f1,test_rec,test_pre=run_bayesian_model(collected_train_txt_file_lists,observation_stats,all_train_observations,all_test_observations,True)
+        
+        fold_results = {
+            'fold_number': i,
+            
+            # Observation Counts
+            'total_train_obs': train_obs,
+            'total_test_obs': test_obs,
+            'motile_train_obs_size': train_motile,
+            'non_motile_train_obs_size': train_non_motile,
+            'motile_test_obs_size': test_motile,
+            'non_motile_test_obs_size': test_motile,
+            
+            # Training Metrics
+            'train_accuracy': train_acc,
+            'train_f1_score': train_f1,
+            'train_recall': train_rec,
+            'train_precision': train_pre,
+            
+            # Testing Metrics
+            'test_accuracy': test_acc,
+            'test_f1_score': test_f1,
+            'test_recall': test_rec,
+            'test_precision': test_pre
+            }
+        
+        all_results.append(fold_results)
+    
+    print("\n--- Calculating Final Statistics ---")
+    
+    # 3.1. Extract all metric values into separate lists
+    test_accs = [r['test_accuracy'] for r in all_results]
+    test_f1s = [r['test_f1_score'] for r in all_results]
+    test_recalls = [r['test_recall'] for r in all_results]
+    test_precisions = [r['test_precision'] for r in all_results]
+
+    train_accs = [r['train_accuracy'] for r in all_results]
+    train_f1s = [r['train_f1_score'] for r in all_results]
+    train_recalls = [r['train_recall'] for r in all_results]
+    train_precisions = [r['train_precision'] for r in all_results]
+
+    # 3.2. Calculate Mean and Standard Deviation (using numpy)
+    final_stats = {
+        'Test_Accuracy_Mean': numpy.mean(test_accs),
+        'Test_Accuracy_Std': numpy.std(test_accs),
+        'Test_F1_Mean': numpy.mean(test_f1s),
+        'Test_F1_Std': numpy.std(test_f1s),
+        'Test_Recall_Mean': numpy.mean(test_recalls),
+        'Test_Recall_Std': numpy.std(test_recalls),
+        'Test_Precision_Mean': numpy.mean(test_precisions),
+        'Test_Precision_Std': numpy.std(test_precisions),
+            
+        'Train_Accuracy_Mean': numpy.mean(train_accs),
+        'Train_Accuracy_Std': numpy.std(train_accs),
+        'Train_F1_Mean': numpy.mean(train_f1s),
+        'Train_F1_Std': numpy.std(train_f1s),
+        'Train_Recall_Mean': numpy.mean(train_recalls),
+        'Train_Recall_Std': numpy.std(train_recalls),
+        'Train_Precision_Mean': numpy.mean(train_precisions),
+        'Train_Precision_Std': numpy.std(train_precisions),
+        }
+    pprint.pprint( final_stats)
+        
     #visualize_model_features_correlations(dead_model)
     #visualize_model_features_correlations(alive_model)
     #alive_corrs = extract_correlations_from_model(alive_model)

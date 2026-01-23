@@ -15,7 +15,7 @@ TRAIN="train"
 INFER="infer"
 
 class GridDisplacementModel:
-    def __init__(self, grid_rows=3, grid_cols=3, max_x=4128, max_y=2196):
+    def __init__(self, grid_rows=7, grid_cols=7, max_x=4128, max_y=2196):
         # self.n represents the number of observations for each cell
         self.n = [[ 0 for _ in range(grid_cols)] for _ in range(grid_rows)]
 
@@ -79,6 +79,51 @@ class GridDisplacementModel:
         else:
             print(f"it doesn't contain any observations")
                     
+        return grid_dis
+    
+    def calculate_displacements_with_labels(self, labeled_observations):
+        """
+        Calculate displacements for each grid cell, separated by motile/non-motile labels.
+        
+        Args:
+            labeled_observations: dict with structure:
+                {obj_id: {"tracking_data": [...], "true_label": 0 or 1}}
+        
+        Returns:
+            grid_dis: 3D list [row][col] -> list of tuples (dx, dy, label)
+        """
+        
+        
+        # Initialize grid structure
+        grid_dis = [[[] for _ in range(self.num_cols())] for _ in range(self.num_rows())]
+        
+        for obj_id, obj_data in labeled_observations.items():
+            observations = obj_data["tracking_data"]
+            label = obj_data["true_label"]  # 0 or 1
+            
+            for i in range(len(observations) - 1):
+                dframe = observations[i+1][2] - observations[i][2]
+                
+                if dframe > 0:
+                    dx = observations[i+1][0] - observations[i][0]
+                    dy = observations[i+1][1] - observations[i][1]
+                    
+                    grid_row, grid_col = self.find_grid_cell(observations[i][0], 
+                                                              observations[i][1])
+                    grid_row_next, grid_col_next = self.find_grid_cell(observations[i+1][0], 
+                                                              observations[i+1][1])
+                    
+                    self.n[grid_row][grid_col] += 1
+                    
+                    # Normalize by frame difference
+                    
+                    
+                    # Store with label
+                    grid_dis[grid_row][grid_col].append((observations[i][0], observations[i][1], label))
+                    grid_dis[grid_row_next][grid_col_next].append((observations[i+1][0], observations[i+1][1], label))
+                else:
+                    print(f"Invalid frame distance for obj {obj_id}: {dframe}")
+        
         return grid_dis
       
         

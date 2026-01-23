@@ -1,6 +1,6 @@
 
-from driver_GridFeatureModel import GridFeatureModel
-#from driver_GridDisplacementModel import GridDisplacementModel
+#from driver_GridFeatureModel import GridFeatureModel
+from driver_GridDisplacementModel import GridDisplacementModel
 from GridBayesianModel import BayesianModel
 from driver_data_preprocessing import PreProcessingObservations
 from driver_GridFeatureAnalyzer import FeatureImportanceAnalyzer
@@ -57,7 +57,7 @@ def dead_model_training(collected_file_lists,observation_stats,train_observation
             contains_valid_stats, dx_norm, dy_norm, sx_norm, sy_norm = get_sample_file_stats(curr_obs_stats)
             filtered_curr_nonmoving_obs={obj_id: obj_data[TRACKING_DATA] for obj_id, obj_data in curr_train_obs.items() if obj_data[TRUE_LABEL] == NOTMOTILE}
             if len(curr_obs_stats)!=0 and len(filtered_curr_nonmoving_obs)!=0:
-                
+                '''
                 grid_feature_model=GridFeatureModel() 
                 grid_feature_model.total_mu=curr_obs_stats['mu']
                 grid_feature_model.total_cov_matrix=curr_obs_stats['cov']
@@ -75,7 +75,7 @@ def dead_model_training(collected_file_lists,observation_stats,train_observation
                 curr_grid_model_parameters=grid_displacement_model.calculate_parameters(curr_grid_displacements)
         
                 dead_models_params[file] = grid_displacement_model
-                '''
+                
             elif len(filtered_curr_nonmoving_obs)==0:
                 print(f"!!!!!!!Warning!!!!!!!!:  after filtering {file} doesn't contain any dead examples {len(filtered_curr_nonmoving_obs)}.")
             else:
@@ -104,7 +104,7 @@ def alive_model_training(collected_file_lists,observation_stats,train_observatio
            
             filtered_curr_moving_obs={obj_id: obj_data[TRACKING_DATA] for obj_id, obj_data in curr_train_obs.items() if obj_data[TRUE_LABEL] == MOTILE}
             if len(curr_obs_stats)!=0 and len(filtered_curr_moving_obs)!=0:
-                
+                '''
                 grid_feature_model=GridFeatureModel() 
                 grid_feature_model.total_mu=curr_obs_stats['mu']
                 grid_feature_model.total_cov_matrix=curr_obs_stats['cov']
@@ -122,7 +122,7 @@ def alive_model_training(collected_file_lists,observation_stats,train_observatio
                 grid_displacement_model.calculate_parameters(curr_grid_displacements)
         
                 alive_models_params[file] = grid_displacement_model
-                '''
+                
             else:
                 if len(curr_obs_stats)==0:
                     print(f"!!!!!!!Warning!!!!!!!!: normalization content empty for {file} {len(curr_obs_stats)}.")
@@ -133,8 +133,8 @@ def alive_model_training(collected_file_lists,observation_stats,train_observatio
 
 def combine_trained_models(collected_file_lists, curr_models_params):
     
-    combined_model = GridFeatureModel()
-    #combined_model = GridDisplacementModel()
+    #combined_model = GridFeatureModel()
+    combined_model = GridDisplacementModel()
     
     # Track the models
     calculated_models = []
@@ -176,7 +176,7 @@ def calculate_class_probability(combined_model,collected_file_lists,observation_
             contains_valid_stats, dx_norm, dy_norm, sx_norm, sy_norm = get_sample_file_stats(curr_obs_stats)
 
             if contains_valid_stats and curr_tracking_obs:
-                     
+                '''     
                 calculator = GridFeatureModel()
                 calculator.mu = combined_model.mu
                 calculator.cov_matrix = combined_model.cov_matrix
@@ -190,7 +190,7 @@ def calculate_class_probability(combined_model,collected_file_lists,observation_
                 calculator.n = combined_model.n
                 
                 curr_log_pdf_dict= calculator.compute_probabilities(curr_tracking_obs, dx_norm, dy_norm, sx_norm, sy_norm)
-                '''
+                
                 feature_probabilities_labeled=computed_probability_with_labels(curr_log_pdf_dict,feature_probabilities_labeled,curr_obs_for_probability_calculation)
                 
             elif not curr_tracking_obs:
@@ -272,7 +272,7 @@ def run_bayesian_model(collected_file_lists,obs_stats,all_train_obs,all_test_obs
     bayesian_model_without_threshold=BayesianModel()  
     bayesian_model_without_threshold.calculate_prior(dead_train_obs_probs,alive_train_obs_probs)
     train_probs_bayesin_model_without_threshold=bayesian_model_without_threshold.sum_log_probabilities(combined_obs_probs)
-    plot_confusion_matrix(train_probs_bayesin_model_without_threshold, "Train","Greens", "Bayesian")
+    train_acc,train_f1,train_rec,train_pre=plot_confusion_matrix(train_probs_bayesin_model_without_threshold, "Train","Greens", "Bayesian")
     
     #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$TESTING WITHOUT MARGIN###############################
     if test_performance==True:
@@ -280,11 +280,13 @@ def run_bayesian_model(collected_file_lists,obs_stats,all_train_obs,all_test_obs
         test_obs_probs_alive_model=calculate_class_probability(alive_model,collected_file_lists,obs_stats,all_test_obs)
         dead_train_obs_probs,alive_train_obs_probs,combined_test_obs_probs=combine_dictionary_nonmotile_motile_probs(test_obs_probs_dead_model,test_obs_probs_alive_model)
         test_probs_bayesin_model_without_threshold=bayesian_model_without_threshold.sum_log_probabilities(combined_test_obs_probs)
-        plot_confusion_matrix(test_probs_bayesin_model_without_threshold, "Test","Greens", "Bayesian")
+        test_acc,test_f1,test_rec,test_pre=plot_confusion_matrix(test_probs_bayesin_model_without_threshold, "Test","Greens", "Bayesian")
+        
+        return train_acc,train_f1,train_rec,train_pre,test_acc,test_f1,test_rec,test_pre
     else:
         print(f"user doesn't want the model to see the test set performance")
        
-    return dead_model,alive_model,bayesian_model_without_threshold
+    #return dead_model,alive_model,bayesian_model_without_threshold
     '''
     return dead_model,alive_model
     '''
